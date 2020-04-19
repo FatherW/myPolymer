@@ -177,3 +177,4 @@ To deploy the app to your own Firebase project:
     ```
     firebase deploy
     ```
+# myPolymer
