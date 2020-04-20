@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta tid="natori" />
+		<meta uid="natori"/>
+		<title></title>
+	<base href="/" />
+	<!-- <script src="assets/components/person-details.js" defer></script> -->
+	<!-- <script src="assets/components/edit-word.js" defer></script>  -->
+		<!-- <script src="assets/components/vqfund.js" defer></script> -->
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://d25k6mzsu7mq5l.cloudfront.net/cdn7.0/styles.css"></head>
+	<body>
+	<dazzle-root></dazzle-root>
+	<script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn7.2-admin/runtime-es2015.js" type="module"></script>
+	<script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn7.2/polyfills-es2015.js" type="module"></script>
+	<script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn7.2-admin/runtime-es5.js" nomodule></script>
+	<script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn7.2-admin/polyfills-es5.js" nomodule></script>
+	<script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn7.2-admin/scripts.js"></script>
+	<script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn7.2-admin/main-es2015.js" type="module"></script>
+	<script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn7.2-admin/main-es5.js" nomodule></script></body>
+</html>

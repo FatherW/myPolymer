@@ -1,0 +1,15 @@
+{
+  "name": "iron-lazy-pages",
+  "homepage": "https://github.com/TimvdLippe/iron-lazy-pages",
+  "version": "3.0.2",
+  "_release": "3.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.2",
+    "commit": "3fb46a896f962ba6753aa764e491192a4c784496"
+  },
+  "_source": "https://github.com/TimvdLippe/iron-lazy-pages.git",
+  "_target": "^3.0.2",
+  "_originalSource": "iron-lazy-pages",
+  "_direct": true
+}

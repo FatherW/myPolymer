@@ -1,0 +1,16 @@
+{
+  "name": "iron-ajax",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/PolymerElements/iron-ajax",
+  "version": "3.0.1",
+  "_release": "3.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.1",
+    "commit": "303b51595e874002c4e1774b8e83b6b2a87bd1a6"
+  },
+  "_source": "https://github.com/PolymerElements/iron-ajax.git",
+  "_target": "^3.0.1",
+  "_originalSource": "iron-ajax",
+  "_direct": true
+}

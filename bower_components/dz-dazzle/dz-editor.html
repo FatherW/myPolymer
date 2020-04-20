@@ -1,0 +1,315 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A material design [Floating Action Button with Speed Dial](https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-transitions)
+
+### Styling
+
+Style                                                   | Description
+------------------------------------------------        | ------------
+--paper-fab-speed-dial-background                       | The background color of the Floating Action Button
+--paper-fab-speed-dial-keyboard-focus-background        | The background color of the Floating Action Button when focused
+--paper-fab-speed-dial-background-close                 | The background color of the Floating Action Button when opened
+--paper-fab-speed-dial-keyboard-focus-background-close  | The background color of the Floating Action Button when opened and focused
+--paper-fab-speed-dial-position                         | The type of positioning method used for the Floating Action Button (default: absolute)
+--paper-fab-speed-dial-right                            | Margin to the right of the screen (default: 16px)
+--paper-fab-speed-dial-bottom                           | Margin to the bottom of the screen (default: 16px)
+
+### Example
+
+```html
+<paper-fab-speed-dial>
+<paper-fab-speed-dial-action icon="icons:content-copy">Copy</paper-fab-speed-dial-action>
+<paper-fab-speed-dial-action icon="icons:print">Print</paper-fab-speed-dial-action>
+</paper-fab-speed-dial>
+```
+
+@demo demo/index.html
+-->
+<dom-module id="dz-editor">
+
+</dom-module>
+
+<script>
+
+(function() {
+
+
+
+	Polymer({
+		is: 'dz-editor',
+		properties: {
+			block: String,
+		},
+
+		created:function() {
+
+			this.dzPage = document.querySelector('dz-page');
+			this.tid = this.dzPage.tid;
+
+			this.dzPage.loadScript("https://d25k6mzsu7mq5l.cloudfront.net/cdn6.0/js/medium-editor-5.23.1.min.js");
+			this.dzPage.loadStyle("https://d25k6mzsu7mq5l.cloudfront.net/cdn6.0/css/medium-editor-5.23.1.min.css");
+			
+
+
+		},
+		ready() {
+			this.loadEditor();
+		},
+		loadEditor() {
+    //    console.log('Load Editor',this.inUse);
+        
+    
+        console.log('Load　Editor');
+        let SaveButton = MediumEditor.Extension.extend({
+          name: 'saveButton',
+          init: function () {
+              this.button = this.document.createElement('button');
+              this.button.classList.add('medium-editor-action');
+              this.button.innerHTML = '<i class="fa fa-save"></i>';
+              this.on(this.button, 'click', this.handleClick.bind(this));
+          },
+          getButton: function () {
+              return this.button;
+          },
+          handleClick: function (event) {
+          }
+      });
+    
+        let AnchorButton = MediumEditor.Extension.extend({
+          name: 'anchorButton',
+          init: function () {
+              this.button = this.document.createElement('button');
+              this.button.classList.add('medium-editor-action');
+              this.button.innerHTML = '<i class="fa fa-anchor"></i>';
+              // this.button.addEventListener('click',(e)=>{
+              //   console.log(e,this);
+              // });
+             this.on(this.button, 'click', this.handleClick.bind(this));
+          },
+          getButton: function () {
+              return this.button;
+          },
+          handleClick: function (event) {
+            console.log('Anchor Selected',event);
+            let text;
+            let selObj = document.querySelector('dz-page').getSelection(); 
+            console.log(selObj);
+            text = selObj.toString();
+            let newAnchor = document.createElement('a');
+            let selectedText = selObj.getRangeAt(0);
+            newAnchor.href=text.trim();
+            console.log(selectedText);
+            selectedText.surroundContents(newAnchor);
+       
+      
+      
+              // console.log(event);
+          }
+      
+        } );
+    
+      let youtubeButton = MediumEditor.Extension.extend({
+          name: 'youtubeButton',
+          init: function () {
+              this.button = this.document.createElement('button');
+              this.button.classList.add('medium-editor-action');
+              this.button.innerHTML = '<i class="fab fa-youtube"></i>';
+              this.on(this.button, 'click', this.handleClick.bind(this));
+          },
+          getButton: function () {
+              return this.button;
+          },
+          handleClick: function (event) {
+             console.log('Youtube Selected');
+    
+    
+          }
+      });
+      let ImageElementButton = MediumEditor.Extension.extend({
+          name: 'imageElementButton',
+          init: function () {
+              this.button = this.document.createElement('button');
+              this.button.classList.add('medium-editor-action');
+              this.button.innerHTML = '<i class="fa fa-picture-o"></i>';
+              this.on(this.button, 'click', this.handleClick.bind(this));
+          },
+          getButton: function () {
+              return this.button;
+          },
+          handleClick: function (event) {
+              let html = "<img src='http://dazzle.website/image/lgo.png' />";
+              // const img: HTMLImageElement= this.renderer.createElement('img');
+           
+              let selObj = document.querySelector('dz-page').getSelection(); 
+              console.log(selObj);
+              let selectedText = selObj.getRangeAt(0);
+              console.log('Selection Obj',selObj);
+              // selectedText.collapse (false);
+              let img = document.createElement("img");
+    //          newNode.appendChild(document.createTextNode("hello"));
+              img.src = 'http://dazzle.website/image/lgo.png' ;   
+              selectedText.insertNode(img);
+    
+          }
+      });
+    
+          
+          //target.wrap("<m-editor></m-editor>");      
+          // console.log('Load',target);
+    
+          this.editor = new MediumEditor(this,
+            {   autoLink: false,
+              buttonLabels: 'fontawesome',
+              placeholder: false,
+              imageDragging: false,
+              anchorPreview: false,
+              static: true,
+               paste: {
+                  /* This example includes the default options for paste,
+                     if nothing is passed this is what it used */
+                  forcePlainText: false,
+                  cleanPastedHTML: true,
+                  cleanReplacements: [],
+                  cleanAttrs: ['class', 'style', 'dir'],
+                  cleanTags: ['meta'],
+                  unwrapTags: []
+              },
+              toolbar: {
+                  buttons: ['saveButton','youtubeButton', 'anchorButton', 'imageElementButton',  'fontsize', 'bold', 'italic', 'underline', 'orderedList', 'unorderList', 'justifyLeft', 'justifyRight', 'justifyCenter', 'justifyFull', 'removeFormat', 'h1', 'h2', 'h3', 'p'],
+                  static: true,
+                  sticky: true,
+                  updateOnEmptySelection: true
+              },
+    
+              extensions: {
+                  'saveButton': new SaveButton(),
+                  'youtubeButton': new youtubeButton(),
+                  'imageElementButton': new ImageElementButton(),
+                  'anchorButton': new AnchorButton(),
+              },
+               keyboardCommands: {
+                      /* This example includes the default options for keyboardCommands,
+                         if nothing is passed this is what it used */
+                      commands: [
+                        {
+                          command: 'saveButton',
+                          key: 'S',
+                          meta: true,
+                          shift: false,
+                          alt: false
+                        },
+                        {
+                              command: 'bold',
+                              key: 'B',
+                              meta: true,
+                              shift: false,
+                              alt: false
+                          },
+                          {
+                              command: 'italic',
+                              key: 'I',
+                              meta: true,
+                              shift: false,
+                              alt: false
+                          },
+                          
+                          {
+                              command: 'fieldButton',
+                              key: 'F',
+                              meta: true,
+                              shift: false,
+                              alt: false
+                          },
+                          {
+                              command: 'anchorButton',
+                              key: 'A',
+                              meta: true,
+                              shift: false,
+                              alt: false
+                          },
+                          {
+                          command: 'imageElementButton',
+                              key: 'I',
+                              meta: true,
+                              shift: true,
+                              alt: false
+                          },
+    
+                          {
+                              command: 'underline',
+                              key: 'U',
+                              meta: true,
+                              shift: false,
+                              alt: false
+                          }
+                      ],
+              }
+        });  
+        let bound = this.getBoundingClientRect();
+        let c =  window.pageYOffset || document.documentElement.scrollTop;
+        console.log('Bound',bound,c);
+        let id = this.editor.id;
+        let toolbar = document.querySelector('#medium-editor-toolbar-'+id);
+        // let toolbar = this.editor.getToolbarElement();
+        toolbar.style.top = bound.y + c-50;
+        let top = bound.y + c-50;
+        let left;
+        console.log('width',toolbar.getBoundingClientRect().width,bound.x,window.innerWidth);
+        let docuW = window.innerWidth;
+        let eleW = bound.x;
+        let toolbarW = toolbar.getBoundingClientRect().width;
+        if ((docuW - eleW) < toolbarW){
+            left = docuW - toolbarW;
+        } else 
+            left = eleW;
+
+        toolbar.style.left = left+"px";
+        toolbar.style.top = top+"px";
+        toolbar.style.visibility = "visible";
+        // toolbar.classList.add('medium-editor-toolbar-active');
+        console.log('Toolbar',this.editor,toolbar);     
+      
+      
+      },
+
+      removeEditor(){
+          document.querySelector('.medium-editor-toolbar').remove();
+          this.editor.destroy();
+          this.outerHTML = this.innerHTML;
+      },
+		loadScript:function(url){
+			const fileref=document.createElement('script');    
+			fileref.setAttribute("type","text/javascript");
+			fileref.setAttribute("src", url+"?id="+new Date().getTime());
+			document.getElementsByTagName("head")[0].appendChild(fileref);
+		},
+		postData:function(url, data) {
+			// Default options are marked with *
+			console.log('Post Data');
+			return new Promise(function (resolve, reject) {
+				fetch(url, {
+					body: JSON.stringify(data), // must match 'Content-Type' header
+					cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+					credentials: 'same-origin', // include, same-origin, *omit
+					headers: {
+					'user-agent': 'Mozilla/4.0 MDN Example',
+					'content-type': 'application/json'
+					},
+					method: 'POST', // *GET, POST, PUT, DELETE, etc.
+					mode: 'cors', // no-cors, cors, *same-origin
+					redirect: 'follow', // manual, *follow, error
+					referrer: 'no-referrer', // *client, no-referrer
+				})
+				.then(response => {
+					resolve(response.json());
+				}) // parses response to JSON
+			});
+			
+		}
+	});
+
+})();
+
+
+</script>

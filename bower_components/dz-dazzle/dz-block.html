@@ -1,0 +1,89 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+A material design [Floating Action Button with Speed Dial](https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-transitions)
+
+### Styling
+
+Style                                                   | Description
+------------------------------------------------        | ------------
+--paper-fab-speed-dial-background                       | The background color of the Floating Action Button
+--paper-fab-speed-dial-keyboard-focus-background        | The background color of the Floating Action Button when focused
+--paper-fab-speed-dial-background-close                 | The background color of the Floating Action Button when opened
+--paper-fab-speed-dial-keyboard-focus-background-close  | The background color of the Floating Action Button when opened and focused
+--paper-fab-speed-dial-position                         | The type of positioning method used for the Floating Action Button (default: absolute)
+--paper-fab-speed-dial-right                            | Margin to the right of the screen (default: 16px)
+--paper-fab-speed-dial-bottom                           | Margin to the bottom of the screen (default: 16px)
+
+### Example
+
+```html
+<paper-fab-speed-dial>
+<paper-fab-speed-dial-action icon="icons:content-copy">Copy</paper-fab-speed-dial-action>
+<paper-fab-speed-dial-action icon="icons:print">Print</paper-fab-speed-dial-action>
+</paper-fab-speed-dial>
+```
+
+@demo demo/index.html
+-->
+<dom-module id="dz-block">
+
+</dom-module>
+
+<script>
+
+(function() {
+
+
+
+	Polymer({
+		is: 'dz-block',
+		properties: {
+			block: String,
+		},
+
+		created:function() {
+			this.block = this.getAttribute('block') || '_default';
+			console.log('Block',this.block);
+
+			this.dzPage = document.querySelector('dz-page');
+			this.tid = this.dzPage.tid;
+			this.dzPage.getContent('template/'+this.tid+'/_dz-block/'+this.block+'/html').then(html=>{
+				this.innerHTML = html;
+			});
+		},
+		loadScript:function(url){
+			const fileref=document.createElement('script');    
+			fileref.setAttribute("type","text/javascript");
+			fileref.setAttribute("src", url+"?id="+new Date().getTime());
+			document.getElementsByTagName("head")[0].appendChild(fileref);
+		},
+		postData:function(url, data) {
+			// Default options are marked with *
+			console.log('Post Data');
+			return new Promise(function (resolve, reject) {
+				fetch(url, {
+					body: JSON.stringify(data), // must match 'Content-Type' header
+					cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+					credentials: 'same-origin', // include, same-origin, *omit
+					headers: {
+					'user-agent': 'Mozilla/4.0 MDN Example',
+					'content-type': 'application/json'
+					},
+					method: 'POST', // *GET, POST, PUT, DELETE, etc.
+					mode: 'cors', // no-cors, cors, *same-origin
+					redirect: 'follow', // manual, *follow, error
+					referrer: 'no-referrer', // *client, no-referrer
+				})
+				.then(response => {
+					resolve(response.json());
+				}) // parses response to JSON
+			});
+			
+		}
+	});
+
+})();
+
+
+</script>

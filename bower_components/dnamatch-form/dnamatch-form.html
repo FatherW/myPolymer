@@ -1,0 +1,63 @@
+<!--
+@license
+Copyright (c) 2015 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../polymer/polymer.html">
+
+<dom-module id="dnamatch-form">
+  <!-- <link rel="import" type="css" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+  
+  <template strip-whitespace>
+    <style>
+
+    </style>
+
+  </template>
+
+  <script>
+    Polymer({
+      is: 'dnamatch-form',
+      properties: {
+      
+      },
+      ready:function() {
+        // super.ready();
+
+        let editMode = store.get('editMode') || 'normal';
+        let user = store.get('user') || null;
+        let fileManager;  
+        let that = this;
+        const shadow = this.shadowRoot;
+        if (editMode==="admin"){
+          console.log('My HTML',this.is);
+          fileManager = new AwsPackage(user);
+          fileManager.getFile('template/'+window['tid']+'/'+this.is+'/_header/html').then(html=>{
+                  shadow.innerHTML = html;
+          });
+          
+          
+          document.addEventListener('save',e=>{
+            const shadow = this.shadowRoot;
+            console.log('Content',shadow.innerHTML);
+            // fileManager.saveUserData('DZ-MENU/_header/html',shadow.innerHTML);
+            fileManager.saveFile('template/'+window['tid']+'/'+this.is+'/_header/html',shadow.innerHTML);
+            
+          });
+        }
+
+
+      },
+
+      click: function(e) {
+         
+      },
+
+    });
+  </script>
+</dom-module>

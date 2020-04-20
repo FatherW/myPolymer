@@ -1,0 +1,40 @@
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<!--	<base href="https://inovatik.com/bono-coming-soon-page/" /> -->
+	<!-- Website Title -->
+	<title>Bono - Coming Soon Page Template</title>
+	
+	<!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+-->
+	<meta property="og:site_name" content=""> <!-- website name -->
+	<meta property="og:site" content=""> <!-- website link -->
+	<meta property="og:title" content=""> <!-- title shown in the actual shared post -->
+	<meta property="og:description" content=""> <!-- description shown in the actual shared post -->
+	<meta property="og:image" content=""> <!-- image link, make sure it's jpg -->
+	<meta property="og:url" content=""> <!-- where do you want your post to link to -->
+	<meta property="og:type" content="article">
+	
+	<!-- SEO Meta Tags -->
+	<meta name="description" content="Let your online audience know about your upcoming project launch, whether it's an event, a new website, product or service">
+	<meta name="keywords" content="coming soon, new website, product launch, services, event, preview, marketing, business, responsive, bootstrap 4, html, landing page, template">
+	
+	<!-- Styles -->
+	
+	
+	
+	
+	
+	
+	<!-- Favicon  -->
+    <link rel="icon" href="presentation/images/favicon.png">
+	
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	
+<script src="//natori.dazzle.website/presentation/js/jquery-2.2.4.min.js" type="text/javascript"></script>
