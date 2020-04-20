@@ -1,0 +1,31 @@
+
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<aside class="single_sidebar_widget newsletter_widget">
+              <h4 class="widget_title">訂閱通訊</h4>
+
+              <form action="#">
+                <div class="form-group">
+                  <input type="email" class="form-control placeholder hide-on-focus" placeholder="Enter email" required="">
+                </div>
+                <button class="button rounded-0 primary-bg text-white w-100" type="submit">訂閱</button>
+              </form>
+            </aside>

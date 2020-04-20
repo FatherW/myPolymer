@@ -1,0 +1,28 @@
+
+   <!-- jquery plugins here-->
+   <script src="http://www.tmiltd.hk/js/jquery-1.12.1.min.js"></script>
+   <!-- popper js -->
+   <script src="http://www.tmiltd.hk/js/popper.min.js"></script>
+   <!-- bootstrap js -->
+   <script src="http://www.tmiltd.hk/js/bootstrap.shadow.js"></script>
+   <!-- magnific js -->
+   <script src="http://www.tmiltd.hk/js/jquery.magnific-popup.min.js"></script>
+   <!-- carousel js -->
+   <script src="http://www.tmiltd.hk/js/owl.carousel.min.js"></script>
+   <!-- easing js -->
+   <script src="http://www.tmiltd.hk/js/jquery.easing.min.js"></script>
+   <!--masonry js-->
+   <script src="http://www.tmiltd.hk/js/masonry.pkgd.min.js"></script>
+   <script src="http://www.tmiltd.hk/js/masonry.pkgd.js"></script>
+   <!--form validation js-->
+   <script src="http://www.tmiltd.hk/js/jquery.nice-select.min.js"></script>
+	<script src="http://www.tmiltd.hk/js/contact.js"></script>
+	<script src="http://www.tmiltd.hk/js/jquery.ajaxchimp.min.js"></script>
+	<script src="http://www.tmiltd.hk/js/jquery.form.js"></script>
+	<script src="http://www.tmiltd.hk/js/jquery.validate.min.js"></script>
+	<script src="http://www.tmiltd.hk/js/mail-script.js"></script>
+   <!-- counter js -->
+   <script src="http://www.tmiltd.hk/js/jquery.counterup.min.js"></script>
+   <script src="http://www.tmiltd.hk/js/waypoints.min.js"></script>
+   <!-- custom js -->
+      <script src="http://www.tmiltd.hk/js/custom2.js"></script>

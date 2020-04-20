@@ -1,0 +1,16 @@
+{
+  "name": "iron-form",
+  "license": "http://polymer.github.io/LICENSE.txt",
+  "homepage": "https://github.com/PolymerElements/iron-form",
+  "version": "3.0.1",
+  "_release": "3.0.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v3.0.1",
+    "commit": "3d06b082d7ccb0f261e59a3b0841a91b52017191"
+  },
+  "_source": "https://github.com/PolymerElements/iron-form.git",
+  "_target": "^3.0.1",
+  "_originalSource": "iron-form",
+  "_direct": true
+}

@@ -1,0 +1,127 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../vaadin-dialog/vaadin-dialog.html">
+<link rel="import" href="dz-login.html">
+<!-- <script src="https://d25k6mzsu7mq5l.cloudfront.net/bower_components/webcomponentsjs/webcomponents-lite.js"></script> -->
+<!-- <script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn6.0/js/aws-sdk-2.83.0.min.js"></script>
+<script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn6.0/js/store-2.0.12.min.js"></script> -->
+
+<!--
+A material design [Floating Action Button with Speed Dial](https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-transitions)
+
+### Styling
+
+Style                                                   | Description
+------------------------------------------------        | ------------
+--paper-fab-speed-dial-background                       | The background color of the Floating Action Button
+--paper-fab-speed-dial-keyboard-focus-background        | The background color of the Floating Action Button when focused
+--paper-fab-speed-dial-background-close                 | The background color of the Floating Action Button when opened
+--paper-fab-speed-dial-keyboard-focus-background-close  | The background color of the Floating Action Button when opened and focused
+--paper-fab-speed-dial-position                         | The type of positioning method used for the Floating Action Button (default: absolute)
+--paper-fab-speed-dial-right                            | Margin to the right of the screen (default: 16px)
+--paper-fab-speed-dial-bottom                           | Margin to the bottom of the screen (default: 16px)
+
+### Example
+
+```html
+<paper-fab-speed-dial>
+<paper-fab-speed-dial-action icon="icons:content-copy">Copy</paper-fab-speed-dial-action>
+<paper-fab-speed-dial-action icon="icons:print">Print</paper-fab-speed-dial-action>
+</paper-fab-speed-dial>
+```
+
+@demo demo/index.html
+-->
+<dom-module id="login-dialog-overlay-styles" theme-for="vaadin-dialog-overlay">
+    <template>
+        <style>
+            :host([theme~="login"]) [part="content"] {
+                padding: 0px;
+            }
+
+            [part="overlay"] {
+                width: 480px;
+            }
+
+            html {
+                --lumo-space-l: 0px;
+
+            }
+        </style>
+    </template>
+</dom-module>
+
+
+<dom-module id="dz-dazzle2">
+
+    <template>
+
+        <style>
+            :host [part="content"] {
+                padding: 0px;
+            }
+
+            :host #dz-logo {
+                position: fixed;
+                right: 0;
+                bottom: 0;
+                width: 100px;
+                height: 30px;
+                background-image: url(http://dazzle.website/image/lgo.png);
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                cursor: pointer;
+                z-index: 99999;
+            }
+        </style>
+        <vaadin-dialog aria-label="simple" id="login" theme="login"></vaadin-dialog>
+        <div id="dz-logo" on-click="login"></div>
+    </template>
+</dom-module>
+
+<script>
+
+    (function () {
+
+
+
+        Polymer({
+            is: 'dz-dazzle2',
+            properties: {
+
+            },
+
+            created: function () {
+                // super.ready();
+                store.clearAll();
+                let user = store.get('user') || null;
+                let that = this;
+                let editMode = store.get('editMode') || 'normal';
+                let thisPage = decodeURIComponent(window.location.pathname).substring(window.location.pathname.indexOf('/') + 1) || 'index.html';
+
+                // if (editMode==="admin"){
+                // 	store.set('uid',user['uid']);
+                // 	store.set('tid',user['uid']);
+                // 	store.set('thisPage',thisPage);		
+                // 	location.href = "https://d25k6mzsu7mq5l.cloudfront.net/_admin";
+                // }
+
+
+
+                customElements.whenDefined('vaadin-dialog').then(function () {
+                    const shadow = that.shadowRoot;
+                    const dialog = shadow.querySelector('vaadin-dialog#login');
+                    dialog.renderer = function (root, dialog) {
+                        root.innerHTML = '<dz-login></dz-login>';
+                    };
+                });
+            },
+            login: function () {
+                const shadow = this.shadowRoot;
+                const dialog = shadow.querySelector('vaadin-dialog#login');
+                dialog.opened = true;
+            }
+        });
+
+    })();
+
+</script>

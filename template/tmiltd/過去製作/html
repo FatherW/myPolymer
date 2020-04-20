@@ -1,0 +1,417 @@
+<style></style><style></style><style></style><style></style><style></style><style></style><style></style><style></style>   <!--::menu part start::-->
+   <dz-page-block id="_header" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<header class="main_menu home_menu menu_fixed animated fadeInDown">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <nav class="navbar navbar-expand-lg navbar-light">
+                  <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse main-menu-item" id="navbarNav">
+                     <ul class="navbar-nav">
+                        <li class="nav-item active">
+                           <a class="nav-link" href="index.html">主頁</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="about.html">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="services.html">動感服務</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="過去製作">過去製作</a>
+                        </li><li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+電影發行及製作                         </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="大將軍">大將軍</a>
+                              
+                           </div>
+                        </li>
+                        
+                        <li class="nav-item">
+                           
+                        <a class="nav-link" href="聯絡我們">聯絡我們</a></li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </header></dz-page-block>
+   <!--::menu part end::-->
+
+   <!--::breadcrumb part start::-->
+   <section class="blog_area area-padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mb-5 mb-lg-0">
+          <div class="blog_left_sidebar">
+            <article class="blog_item">
+              <div class="blog_item_img">
+                <img class="card-img rounded-0" src="http://www.tmiltd.hk/files/l_yuefei-poster.jpg" alt="">
+                <a href="#" class="blog_item_date">
+                  <h3>15</h3>
+                  <p>Jan</p>
+                </a>
+              </div>
+
+              <div class="blog_details">
+                <a class="d-inline-block" href="single-blog.html">
+                  </a><h2>大將軍</h2><a class="d-inline-block" href="single-blog.html">
+                </a>
+                <p>制作年份: 2018监制：梁鸿华导演：何志良电影类型：史诗式古装动作惊险故事片- 以15世纪马六甲时代为依据 【大将军】- 故事大纲（一）月黑风高，雷雨交加，雾锁南洋，浪涛汹涌的南中国海面，漂流着很多支离破碎的船肢制料，船上用品，货物等等，尚有少数来不及回航靠岸的中小型渔船或商船，正被风浪打得颠簸摇晃，情况危危可岌。（二）远处，突现看似万家灯火的移动城市，正排雾而出，乘风破浪，平稳的向前航行，这移动城市，实则由大大小小，少说也有两三百艘不同体积的船，分为五种类型，那就是宝船，马船，粮船，坐船以及战船，并以壮观的燕形编队勇往直前；平稳，除了船身结构的打造，装备，技术，加上航海经验的阵势</p><ul class="blog-info-link">
+                </ul>
+              </div>
+            </article>
+
+            <article class="blog_item">
+              <div class="blog_item_img">
+                <img class="card-img rounded-0" src="http://www.tmiltd.hk/files/s_poposters.jpg" alt="">
+                <a href="#" class="blog_item_date">
+                  <h3>15</h3>
+                  <p>Jan</p>
+                </a>
+              </div>
+
+              <div class="blog_details">
+                <a class="d-inline-block" href="single-blog.html">
+                  </a><h2><a class="d-inline-block" href="single-blog.html"></a><a href="http://www.timespl.com/zh/production/item/223-2013-03-15-09-12-15">澀青298-03</a><br></h2><a class="d-inline-block" href="single-blog.html">
+                </a>
+                <p>＊298-03乃香港法例第 298章第3條之感化令。刑事案件的判罰中， 獲輕判簽保守行為俗稱為「守啷啷」，受感化人士由感化官監管行為。＊ 類型：寫實劇情片 監製：陸劍明（資深導演/電影「天堂口」監製）梁鴻華（資深導演 / 監製 / 影視發行人） 顧問監製：黃家禧（邵氏公司製作總監） 行政策劃：張偉良博士 導演：梁鴻華 執行導演：呂嘉華 編劇：梁鴻華、質能演藝中心創作組 演員：方逸琪、莫澆彤、林紹儀、林凱婷、馮 殷、麥子朗（質能演藝中心演員） 主演：廖啟智、陳奐仁、徐偉棟、何浩文、林超榮、李健宏（LMF鼓手）、雷有暉、盧巧音、米 雪、雪 梨、何佩瑜（Jeana） 攝... </p>
+                <ul class="blog-info-link">
+                  <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
+                  <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="blog_item">
+              <div class="blog_item_img">
+                <img class="card-img rounded-0" src="http://www.tmiltd.hk/files/s_The-Sparkle-in-the-Dark (1).jpg" alt="">
+                <a href="#" class="blog_item_date">
+                  <h3>15</h3>
+                  <p>Jan</p>
+                </a>
+              </div>
+
+              <div class="blog_details">
+                <a class="d-inline-block" href="single-blog.html">
+                  </a><h2><a class="d-inline-block" href="single-blog.html"></a><a href="http://www.timespl.com/zh/production/item/113-the-sparkle-in-the-dark">黑道之無悔今生</a><br></h2><a class="d-inline-block" href="single-blog.html">
+                </a>
+                <p>12年前的一個晚上，一輛大卡車因交通意外以高速撞入小豪家裡，小豪的家在一瞬間消失了。小豪是唯一的生還者，可是孤獨的傷痛，深深的刻在他心上，生存就好像是一種懲罰。在成長的路上，小豪的性格變得十分乖癖暴戾。直到有一天，他遇到了一個改變他一生的人，這人叫自己做「二等兵」......... </p>
+                <ul class="blog-info-link">
+                  <li><a href="#"><i class="far fa-user"></i> Travel, Lifestyle</a></li>
+                  <li><a href="#"><i class="far fa-comments"></i> 03 Comments</a></li>
+                </ul>
+              </div>
+            </article>
+
+            
+
+            
+
+            <nav class="blog-pagination justify-content-center d-flex">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a href="#" class="page-link" aria-label="Previous">
+                    <i class="ti-angle-left"></i>
+                  </a>
+                </li>
+                <li class="page-item">
+                  <a href="#" class="page-link">1</a>
+                </li>
+                <li class="page-item active">
+                  <a href="#" class="page-link">2</a>
+                </li>
+                <li class="page-item">
+                  <a href="#" class="page-link" aria-label="Next">
+                    <i class="ti-angle-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="blog_right_sidebar">
+            
+
+            <dz-page-block id="category" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<aside class="single_sidebar_widget post_category_widget">
+              <h4 class="widget_title">分類</h4>
+              <ul class="list cat-list">
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Resaurant food</p>
+                    <p>(37)</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Travel news</p>
+                    <p>(10)</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Modern technology</p>
+                    <p>(03)</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Product</p>
+                    <p>(11)</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Inspiration</p>
+                    <p>(21)</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Health Care</p>
+                    <p>09</p>
+                  </a>
+                </li>
+              </ul>
+            </aside></dz-page-block>
+
+
+            
+            <dz-page-block id="tag" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<aside class="single_sidebar_widget tag_cloud_widget">
+              <h4 class="widget_title">標籤</h4>
+              <ul class="list">
+                <li>
+                  <a href="#">project</a>
+                </li>
+                <li>
+                  <a href="#">love</a>
+                </li>
+                <li>
+                  <a href="#">technology</a>
+                </li>
+                <li>
+                  <a href="#">travel</a>
+                </li>
+                <li>
+                  <a href="#">restaurant</a>
+                </li>
+                <li>
+                  <a href="#">life style</a>
+                </li>
+                <li>
+                  <a href="#">design</a>
+                </li>
+                <li>
+                  <a href="#">illustration</a>
+                </li>
+              </ul>
+            </aside></dz-page-block>
+
+
+
+            
+
+
+            <dz-page-block id="newsletter" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<aside class="single_sidebar_widget newsletter_widget">
+              <h4 class="widget_title">訂閱通訊</h4>
+
+              <form action="#">
+                <div class="form-group">
+                  <input type="email" class="form-control placeholder hide-on-focus" placeholder="Enter email" required="">
+                </div>
+                <button class="button rounded-0 primary-bg text-white w-100" type="submit">訂閱</button>
+              </form>
+            </aside></dz-page-block>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+   <!--::breadcrumb part start::-->
+
+   <!--::team part end::-->
+   
+   
+
+   
+   
+   
+
+
+   
+   
+   
+
+   
+   
+   <dz-page-block id="_footer" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<footer class="footer_part">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="footer_logo">
+                     <a href="index.html" class="footer_logo_iner"> <img src="img/footer_logo.png" alt="#"> </a>
+               </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>關於我們</h4>
+                  <p>「時代動感製作有限公司」於一九九六年成立，自成立以來一直積極參與電影的製作及發行，至今已製作和全球發行了電影及電視劇超過八十多部。</p>
+                  <div class="footer_icon social_icon">
+                     <ul class="list-unstyled">
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>聯絡我們</h4>
+                  <p>地址： 香港九龍觀塘開源道55號開聯工業中心A座2樓16室</p>
+                  <p>Phone : 2172 4318</p>
+                  <p>Email : info@tmiltd.hk</p>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>重要連結</h4>
+                  <ul class="list-unstyled">
+                     <li><a href=""> WHMCS-bridge</a></li>
+                     <li><a href="">Search Domain</a></li>
+                     <li><a href="">My Account</a></li>
+                     <li><a href="">Shopping Cart</a></li>
+                     <li><a href="">Our Shop</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               
+            </div>
+         </div>
+         <hr>
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="copyright_text text-center">
+                  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer></dz-page-block>
+   

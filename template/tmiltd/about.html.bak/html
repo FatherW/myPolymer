@@ -1,0 +1,449 @@
+<style></style><style></style><style></style>   <!--::menu part start::-->
+   <dz-page-block id="_header" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<header class="main_menu home_menu menu_fixed animated fadeInDown">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <nav class="navbar navbar-expand-lg navbar-light">
+                  <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse main-menu-item" id="navbarNav">
+                     <ul class="navbar-nav">
+                        <li class="nav-item active">
+                           <a class="nav-link" href="index.html">主頁</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="about.html">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="services.html">電影製作</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+電影發行                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="blog.html">錢殺人</a>
+                              <a class="dropdown-item" href="single-blog.html">同步凶間</a>
+                           </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">電影製作</a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="project.html">大將軍</a>
+                              <a class="dropdown-item" href="apartment.html">黑道之無悔今生</a>
+                              <a class="dropdown-item" href="elements.html">恐懼元素</a>
+                           </div>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="contact.html">聯絡我們</a>
+                        </li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </header></dz-page-block>
+   <!--::menu part end::-->
+
+   <!--::breadcrumb part start::-->
+   <section class="breadcrumb blog_bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="breadcrumb_iner">
+                  <div class="breadcrumb_iner_item">
+                     <h2>關於我們</h2>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!--::breadcrumb part start::-->
+
+   <!--::team part end::-->
+   <section class="about_part section-padding">
+      <div class="container">
+         <div class="row">
+            <div class="section_tittle">
+               <h2><span>關於</span>&nbsp;我們</h2>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-6 col-md-6">
+               <div class="about_img">
+                  <img src="img/about.png" alt="">
+               </div>
+            </div>
+            <div class="offset-lg-1 col-lg-5 col-sm-8 col-md-6">
+               <div class="about_text">
+                  <h2>與香港一起成長&nbsp; <span>見證歷史每一步</span></h2>
+                  <p>「時代動感製作有限公司」於一九九六年成立，自成立以來一直積極參與電影的製作及發行，至今已製作和全球發行了電影及電視劇超過八十多部。由於近年來華語電影大受國際注視的緣故，加上香港政府大力推廣電影的政策，本公司正處於漸趨蓬勃的電影業有利位置。展望未來，「時代動感製作有限公司」致力進入及開發中國大陸市場，以達至兩地市場合作的雙贏商機。近年來，為迎接新世紀的激變市場，我們將貫切無限創意的衝勁，致力將全球關注的中、港、臺合作的大型電影和電視劇帶到海外市場，全球發行多元化題材的數碼電影、高清電視劇、動畫製作等，以配合數碼二十一新紀元的發展。</p><li><p>時代動感製作有限公司自成立後，負責監製、攝製及發行之電影有： </p></li><p>飛虎精英之人間有情(The Best Of The Best)、富貴狂花 (Lamb Killer)、的士判官(Taxi Hunter)、拆彈專家之寶貝炸彈(Bomb Disposal Officer – Baby Bomb) 、一線生機 (A Gleam Of Hope)、新房客 (New Tenant)、殺手三分半鐘(The Killer Has No Return)、金田一手稿之奇異檔案 (Mystery Files)、借錢專家 (Top Borrower)、完全摧花手冊(Killing Me Hardly)、夜半三點鐘 (3:00 am)、喜氣逼人 (Happy Together)、詭計 (Wipe Out)、反骨仔 (Ungrateful Tink)、黑血 (Black Blood)、亡命之逃 (Ransom Express)、火遮眼 (Guilty Or Not)、人肉玩具 (A Lamb in Despair)、山村老屍 (A Wicked Ghost)、山村老屍Ⅱ（The Wicked GhostⅡ-The Fear)、陰風耳 (Sound From The Dark)、Q畸戀人(Queenie &amp; King The Lovers)、改正歸邪 (Return To Dark)、趕屍先生 (Vampire Controller)、狙擊目標 (The Assailant)、藍寶石指環 (Following You Loving You)、拜錯神 (Deals With The Dark)、流氓經紀 (A Rascal Agent)、五個墮落的男女(We’re not the worst)、野獸特警2003 (A fight to the finish)、天使死神(The Dark Side Of My Mind)等。</p>
+                  
+                  <dz-page-block id="clock" master="">
+
+	
+		
+<div class="about_part_counter">
+                     <div class="single_counter">
+                        <span class="counter">80</span>
+                        <p>發行</p>
+                     </div>
+                     <div class="single_counter">
+                        <span class="counter">30</span>
+                        <p>製作</p>
+                     </div>
+                     <div class="single_counter">
+                        <span class="counter">50</span>
+                        <p>客戶</p>
+                     </div>
+                  <a href="service.html" class="btn_1">想知更多</a></div>
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</dz-page-block>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!--::team part end::-->
+
+   <!--::team part end::-->
+   <dz-page-block id="art" master="">
+
+	
+		
+
+<section class="project_gallery section-padding">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="project_gallery_tittle">
+                  <h2><span>藝人</span>中介</h2>
+               </div>
+               <div class="grid" style="position: relative; height: 488.463px;">
+                  <div class="grid-sizer"></div>
+                  <div class="grid-item big_weight" style="position: absolute; left: 0%; top: 0px;">
+                     <div class="project_img">
+                        <img src="img/gallery/gallery_1.png" alt="">
+                        <div class="project_gallery_hover_text">
+                           <p>Home Apartment</p>
+                           <h3><a href="apartment.html"> Detached House For Sale</a></h3>
+                           <ul>
+                              <li><a href=""><span class="flaticon-bath"></span></a> 04</li>
+                              <li><a href=""><span class="flaticon-bed"></span></a> 03</li>
+                              <li><a href=""><span class="flaticon-frame"></span></a> 2400 sqft</li>
+                              <li><a href=""><span class="ti-heart"></span></a> like</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="grid-item big_height" style="position: absolute; left: 50%; top: 0px;">
+                     <div class="project_img">
+                        <img src="img/gallery/gallery_4.png" alt="">
+                        <div class="project_gallery_hover_text">
+                           <p>Home Apartment</p>
+                           <h3><a href="apartment.html"> Detached House For Sale</a></h3>
+                           <ul>
+                              <li><a href=""><span class="flaticon-bath"></span></a> 04</li>
+                              <li><a href=""><span class="flaticon-bed"></span></a> 03</li>
+                              <li><a href=""><span class="flaticon-frame"></span></a> 2400 sqft</li>
+                              <li><a href=""><span class="ti-heart"></span></a> like</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="grid-item" style="position: absolute; left: 0%; top: 243.975px;">
+                     <div class="project_img">
+                        <img src="img/gallery/gallery_2.png" alt="">
+                        <div class="project_gallery_hover_text">
+                           <p>Home Apartment</p>
+                           <h3><a href="apartment.html"> Detached House For Sale</a></h3>
+                           <ul>
+                              <li><a href=""><span class="flaticon-bath"></span></a> 04</li>
+                              <li><a href=""><span class="flaticon-bed"></span></a> 03</li>
+                              <li><a href=""><span class="flaticon-frame"></span></a> 2400 sqft</li>
+                              <li><a href=""><span class="ti-heart"></span></a> like</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="grid-item" style="position: absolute; left: 25%; top: 243.975px;">
+                     <div class="project_img">
+                        <img src="img/gallery/gallery_3.png" alt="">
+                        <div class="project_gallery_hover_text">
+                           <p>Home Apartment</p>
+                           <h3><a href="apartment.html"> Detached House For Sale</a></h3>
+                           <ul>
+                              <li><a href=""><span class="flaticon-bath"></span></a> 04</li>
+                              <li><a href=""><span class="flaticon-bed"></span></a> 03</li>
+                              <li><a href=""><span class="flaticon-frame"></span></a> 2400 sqft</li>
+                              <li><a href=""><span class="ti-heart"></span></a> like</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</dz-page-block>
+   <!--::team part end::-->
+
+
+   <!--::review_part start::-->
+   <section class="review_part padding_bottom">
+      <div class="container-fluid">
+         <div class="row justify-content-center">
+            <div class="col-xl-6 col-sm-6">
+               <div class="section_tittle text-center">
+                  <h2>我們的客戶</h2>
+               </div>
+            </div>
+         </div>
+         <div class="row justify-content-center">
+            <div class="col-lg-11 col-sm-8">
+               <!-- THUMBNAILS -->
+               <div class="slider-nav-thumbnails slick-initialized slick-slider">
+                  <div class="slick-list draggable" tabindex="0" style="padding: 0px 50px;"><div class="slick-track" style="opacity: 1; width: 4788px; transform: translate3d(-2394px, 0px, 0px);"><div class="slider-thumbnails slick-slide slick-cloned" data-slick-index="-4" style="width: 399px;">
+                     <img src="img/client/client_1.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide slick-cloned" data-slick-index="-3" style="width: 399px;">
+                     <img src="img/client/client_2.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide slick-cloned" data-slick-index="-2" style="width: 399px;">
+                     <img src="img/client/client_3.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide slick-cloned slick-center" data-slick-index="-1" style="width: 399px;">
+                     <img src="img/client/client_2.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide" data-slick-index="0" style="width: 399px;">
+                     <img src="img/client/client_1.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide" data-slick-index="1" style="width: 399px;">
+                     <img src="img/client/client_2.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide slick-active" data-slick-index="2" style="width: 399px;">
+                     <img src="img/client/client_3.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide slick-active slick-center" data-slick-index="3" style="width: 399px;">
+                     <img src="img/client/client_2.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide slick-cloned slick-active" data-slick-index="4" style="width: 399px;">
+                     <img src="img/client/client_1.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide slick-cloned" data-slick-index="5" style="width: 399px;">
+                     <img src="img/client/client_2.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide slick-cloned" data-slick-index="6" style="width: 399px;">
+                     <img src="img/client/client_3.png" alt="slideimg" class="image">
+                  </div><div class="slider-thumbnails slick-slide slick-cloned" data-slick-index="7" style="width: 399px;">
+                     <img src="img/client/client_2.png" alt="slideimg" class="image">
+                  </div></div></div>
+                  
+                  
+                  
+               </div>
+            </div>
+            <div class="col-lg-7 col-sm-10">
+               <!-- MAIN SLIDES -->
+               <div class="slider slick-initialized slick-slider">
+                  <div class="slick-list draggable" tabindex="0"><div class="slick-track" style="opacity: 1; width: 4500px; transform: translate3d(-3000px, 0px, 0px);"><div data-index="4" class="slick-slide slick-cloned" data-slick-index="-1" style="width: 750px;">
+                     <div class="client_review_text text-center">
+                        <h3>Daniel E Gilcritst</h3>
+                        <h5>Manager, Vision</h5>
+                        <p>Vivamus neque diam sed at, pede laoreet orci. Potenti
+                           vel In sagittis nulla augue vitae et tempus torquent. Lacinia neque mus taciti
+                           ante prsent at facilisis. Enim a, scelerisque aliquet. Vivamus neque diam sed at,
+                           pede laoreet orci Potti, vel. In sagittis nulla augue vitae et tempus torquent Enim a,
+                           scelerisque aliquet. </p>
+                     </div>
+                  </div><div data-index="1" class="slick-slide" data-slick-index="0" style="width: 750px;">
+                     <div class="client_review_text text-center">
+                        <h3>Daniel E Gilcritst</h3>
+                        <h5>Manager, Vision</h5>
+                        <p>Enim a, scelerisque aliquet. Vivamus neque diam sed at, pede laoreet orci.
+                           Potenti vel In sagittis nulla augue vitae et tempus torquent. Lacinia neque
+                           mus taciti ante prsent at facilisis. Enim a, scelerisque aliquet. Vivamus neque
+                           diam sed at, pede laoreet orci Potti, vel. In sagittis nulla augue vitae et
+                           tempus torquent. </p>
+                     </div>
+                  </div><div data-index="2" class="slick-slide" data-slick-index="1" style="width: 750px;">
+                     <div class="client_review_text text-center">
+                        <h3>Daniel E Gilcritst</h3>
+                        <h5>Manager, Vision</h5>
+                        <p> Vivamus neque diam sed at, pede laoreet orci. Potenti
+                           vel In sagittis nulla augue vitae et tempus torquent. Lacinia neque mus taciti
+                           ante prsent at facilisis. Enim a, scelerisque aliquet. Vivamus neque diam sed at,
+                           pede laoreet orci Potti, vel. In sagittis nulla augue vitae et tempus torquent. Enim a,
+                           scelerisque aliquet. </p>
+                     </div>
+                  </div><div data-index="3" class="slick-slide" data-slick-index="2" style="width: 750px;">
+                     <div class="client_review_text text-center">
+                        <h3>Daniel E Gilcritst</h3>
+                        <h5>Manager, Vision</h5>
+                        <p>Enim a, scelerisque aliquet. Vivamus neque diam sed at, pede laoreet orci. Potenti
+                           vel In sagittis nulla augue vitae et tempus torquent. Lacinia neque mus taciti
+                           ante prsent at facilisis. Enim a, scelerisque aliquet. Vivamus neque diam sed at,
+                           pede laoreet orci Potti, vel. In sagittis nulla augue vitae et tempus torquent. </p>
+                     </div>
+                  </div><div data-index="4" class="slick-slide slick-active" data-slick-index="3" style="width: 750px;">
+                     <div class="client_review_text text-center">
+                        <h3>Daniel E Gilcritst</h3>
+                        <h5>Manager, Vision</h5>
+                        <p>Vivamus neque diam sed at, pede laoreet orci. Potenti
+                           vel In sagittis nulla augue vitae et tempus torquent. Lacinia neque mus taciti
+                           ante prsent at facilisis. Enim a, scelerisque aliquet. Vivamus neque diam sed at,
+                           pede laoreet orci Potti, vel. In sagittis nulla augue vitae et tempus torquent Enim a,
+                           scelerisque aliquet. </p>
+                     </div>
+                  </div><div data-index="1" class="slick-slide slick-cloned" data-slick-index="4" style="width: 750px;">
+                     <div class="client_review_text text-center">
+                        <h3>Daniel E Gilcritst</h3>
+                        <h5>Manager, Vision</h5>
+                        <p>Enim a, scelerisque aliquet. Vivamus neque diam sed at, pede laoreet orci.
+                           Potenti vel In sagittis nulla augue vitae et tempus torquent. Lacinia neque
+                           mus taciti ante prsent at facilisis. Enim a, scelerisque aliquet. Vivamus neque
+                           diam sed at, pede laoreet orci Potti, vel. In sagittis nulla augue vitae et
+                           tempus torquent. </p>
+                     </div>
+                  </div></div></div>
+                  
+                  
+                  
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!--::review_part end::-->
+
+   <!--::footer_part start::-->
+   
+   <dz-page-block id="_footer" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<footer class="footer_part">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="footer_logo">
+                     <a href="index.html" class="footer_logo_iner"> <img src="img/footer_logo.png" alt="#"> </a>
+               </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>關於我們</h4>
+                  <p>「時代動感製作有限公司」於一九九六年成立，自成立以來一直積極參與電影的製作及發行，至今已製作和全球發行了電影及電視劇超過八十多部。</p>
+                  <div class="footer_icon social_icon">
+                     <ul class="list-unstyled">
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>聯絡我們</h4>
+                  <p>地址： 香港九龍觀塘開源道55號開聯工業中心A座2樓16室</p>
+                  <p>Phone : 2172 4318</p>
+                  <p>Email : info@tmiltd.hk</p>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>重要連結</h4>
+                  <ul class="list-unstyled">
+                     <li><a href=""> WHMCS-bridge</a></li>
+                     <li><a href="">Search Domain</a></li>
+                     <li><a href="">My Account</a></li>
+                     <li><a href="">Shopping Cart</a></li>
+                     <li><a href="">Our Shop</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               
+            </div>
+         </div>
+         <hr>
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="copyright_text text-center">
+                  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer></dz-page-block>
+   

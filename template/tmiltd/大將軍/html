@@ -1,0 +1,379 @@
+<style></style><style></style><style></style><style></style><style></style><style></style>   <!--::menu part start::-->
+   <dz-page-block id="_header" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<header class="main_menu home_menu">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <nav class="navbar navbar-expand-lg navbar-light">
+                  <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse main-menu-item" id="navbarNav">
+                     <ul class="navbar-nav">
+                        <li class="nav-item active">
+                           <a class="nav-link" href="index.html">主頁</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="about.html">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="services.html">動感服務</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="過去製作">過去製作</a>
+                        </li><li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+電影發行及製作                         </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="大將軍">大將軍</a>
+                              
+                           </div>
+                        </li>
+                        
+                        <li class="nav-item">
+                           
+                        <a class="nav-link" href="聯絡我們">聯絡我們</a></li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </header></dz-page-block>
+   <!--::menu part end::-->
+
+   <!--::breadcrumb part start::-->
+   <section class="blog_area single-post-area area-padding">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-8 posts-list">
+               <div class="single-post">
+                  <div class="feature-img">
+                     <img class="img-fluid" src="http://www.tmiltd.hk/files/s_admiral_poster-1-1.jpg" alt="">
+                  </div>
+                  <div class="blog_details">
+                     <h2>大將軍</h2>
+                     <ul class="blog-info-link mt-3 mb-4">
+                        <li><a href="#"><i class="far fa-user"></i>&nbsp;何志良,&nbsp;&nbsp;</a>歷史</li>
+                     </ul>
+                     <p>制作年份: 2018<br>监制：梁鸿华<br>导演：何志良<br>电影类型：史诗式古装动作惊险故事片- 以15世纪马六甲时代为依据</p><p class="excert">【大将军】- 故事大纲<br>（一）<br>月黑风高，雷雨交加，雾锁南洋，浪涛汹涌的南中国海面，漂流着很多支离破碎的船肢制料，船上用品，货物等等，尚有少数来不及回航靠岸的中小型渔船或商船，正被风浪打得颠簸摇晃，情况危危可岌。<br>（二）<br>远处，突现看似万家灯火的移动城市，正排雾而出，乘风破浪，平稳的向前航行，这移动城市，实则由大大小小，少说也有两三百艘不同体积的船，分为五种类型，那就是宝船，马船，粮船，坐船以及战船，并以壮观的燕形编队勇往直前；平稳，除了船身结构的打造，装备，技术，加上航海经验的阵势，更需要一位出色的航海统帅来带领如斯庞大的海上雄师。<br>（三）<br>近看，船身漆刻着"郑"字为标，船杆紧紧纤绑迎风飘扬着"郑"字旗帜，船队中部，官邸宝船最顶层的寝室，正中立着一位体型魁梧，气势不凡，充满自信与智慧的男子，他就是此次海上雄师的总兵正使/统帅~郑和~！<br>郑和此趟（1410）下南洋，乃是奉明朝当今皇帝明成祖之命，出使前往三千里外的满刺加国，更背负延续宣扬国威，提升明朝现有外交活动，开拓与建立更多的外交关系和贸易。<br>（四）<br>满刺加国的创立，归功于苏门答腊落难王子拜里米苏拉。<br>拜里米苏拉被MAJAPAHIT逼迫，攻占，而从PALEMPANG逃至TEMASIK避难，并夺地自立为王，较后却被北下强国暹罗军队追击，而逃至马来半岛西南部的一个小渔村，在该处一棵树下休息时，亲眼见的一只小鹿为了自卫，竟能将狗踢下河里，深感这是一块庇佑弱势的吉祥地，即以他乘凉之树名，为小渔村定名为满刺加，并定居于此。<br>满刺加创建初期，除了需提防来自南面MAJAPAHIT的威胁，为了随从和村民能安居乐业，满刺加也必须每年向暹罗朝贡。<br>满刺加建国第二年，拜里米苏拉抓紧机会，随当时的出使京官到大明国拜见皇帝明成祖，并正式改向大明国进贡，不再臣属暹罗，而大明皇帝亦在当年正式拜封拜里米苏拉为满刺加国王，拜里米苏拉亦因此有缘得以与大明皇帝爱将郑和结识。</p><p>（五）<br>满刺加国宴..<br>与满刺加国有邦交的各国使臣代表云集在此宴会，共同为郑和的莅临欢庆及巴结，因为众人皆知郑和不但是位难得的航海英雄，对于外交事务，贸易条约的处理，以及纷争调解的处理方式更令他们心折口服。<br>在众多高官达人之中，有一人特别引得整合的关注，那就是满刺加国的王子MEGAT ISKANDAR，也就是满刺加国王位的未来继位人。郑和察觉MEGAT ISKANDAR为人内敛，沉默寡言，却总是眼观四方，耳听八方，高深莫测的神情，故此欲试探MEGAT的实力，在宴会中，以赠兴为由，刻意着自己的得力将领向MEGAT提出切磋，比试结果大出意料之外，原来MEGAT的武功实力更胜郑和的将领，但MEGAT深感以自己的实力，尚且无法解决目前所面对的一项巨大挑战，特借此机会向郑和恳求协助，事缘满刺加国改向大明国进贡，不再臣属暹罗之后，引起暹罗的不满，近期频频向满刺加国发动袭击，若纯粹以步兵交战，满刺加国尚可应付，但最近暹罗出动了他们陆军最强的野象战军，则令满刺加国节节败退，而满刺加国探子回报说暹罗野象战军两日内将再大举来袭。<br>部署就绪，暹罗野象战队果真如期来袭，结果在郑和完美的阵法下，野象战队被一举迁灭，不但轰动了整个满刺加国，就连临近国家亦震动不已，因为有大明国及郑和着支航海雄师的支持，不但打消本欲侵占满刺加国的念头，更加倍巴结进贡满刺加国以示友好。<br>（六）<br>凭着除却外敌的功绩，MEGAT亦顺理成章的继任为满刺加国的国王，在大明国与郑和的支援与协助下，满刺加国从此的发展更是一日千里，满刺加国很快就成为该地区最重要的港口，吸引来自爪哇，印度，阿拉伯，中国，甚至是西欧的商人，作为两次季候风之间的贸易停泊点。<br>（七）<br>满刺加国陆上危机虽然解决，但水上威胁却是日益猖狂......。<br>在众国商旅人当中，一名来自葡萄牙名为MANUEL的商人，特别引得MEGAT的注目，因为MANUEL引进满刺加国的货物产品，都极为新颖，把当时的市场炒得闹哄哄的。渐渐的两人建立了一份商业以外的友谊，碍于MEGAT与MANUEL目前的交情，郑和只能在临别前，告诫MEGAT别过于信任MANUEL，否则会引狼入室，招来祸害，可惜MEGAT却不把这番话放在心上，若干年后应验了郑和的告诫，满刺加国果然落入了葡萄牙军的手里，开启了另一页新的历史。</p><p>完</p>
+                     
+                     
+                     
+                     
+                  </div>
+               </div>
+               <div class="navigation-top">
+                  <div class="d-sm-flex justify-content-between text-center">
+                     <p class="like-info"><span class="align-middle"><i class="far fa-heart"></i></span> Lily and 4
+                        people like this</p>
+                     <div class="col-sm-4 text-center my-2 my-sm-0">
+                        <!-- <p class="comment-count"><span class="align-middle"><i class="far fa-comment"></i></span> 06 Comments</p> -->
+                     </div>
+                     <ul class="social-icons">
+                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                     </ul>
+                  </div>
+                  
+               </div>
+               <div class="blog-author">
+                  <div class="media align-items-center">
+                     <img src="img/blog/author.png" alt="">
+                     <div class="media-body">
+                        <a href="#">
+                           </a><h4>導演何志良</h4><a href="#">
+                        </a>
+                        <p>此片起用史诗式古装动作惊险故事片- 以15世纪马六甲时代为依据。月黑风高，雷雨交加，雾锁南洋，浪涛汹涌的南中国海面，漂流着很多支离破碎的船肢制料，船上用品，货物等等，尚有少数来不及回航靠岸的中小型渔船或商船，正被风浪打得颠簸摇晃，情况危危可岌。</p>
+                     </div>
+                  </div>
+               </div>
+               
+               
+            </div>
+            <div class="col-lg-4">
+               <div class="blog_right_sidebar">
+                  
+                  <dz-page-block id="category" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<aside class="single_sidebar_widget post_category_widget">
+              <h4 class="widget_title">分類</h4>
+              <ul class="list cat-list">
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Resaurant food</p>
+                    <p>(37)</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Travel news</p>
+                    <p>(10)</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Modern technology</p>
+                    <p>(03)</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Product</p>
+                    <p>(11)</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Inspiration</p>
+                    <p>(21)</p>
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="d-flex">
+                    <p>Health Care</p>
+                    <p>09</p>
+                  </a>
+                </li>
+              </ul>
+            </aside></dz-page-block>
+                  
+                  <dz-page-block id="tag" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<aside class="single_sidebar_widget tag_cloud_widget">
+              <h4 class="widget_title">標籤</h4>
+              <ul class="list">
+                <li>
+                  <a href="#">project</a>
+                </li>
+                <li>
+                  <a href="#">love</a>
+                </li>
+                <li>
+                  <a href="#">technology</a>
+                </li>
+                <li>
+                  <a href="#">travel</a>
+                </li>
+                <li>
+                  <a href="#">restaurant</a>
+                </li>
+                <li>
+                  <a href="#">life style</a>
+                </li>
+                <li>
+                  <a href="#">design</a>
+                </li>
+                <li>
+                  <a href="#">illustration</a>
+                </li>
+              </ul>
+            </aside></dz-page-block>
+                  <aside class="single_sidebar_widget instagram_feeds">
+                     
+                     <h4 class="widget_title">劇照</h4><ul class="instagram_row flex-wrap">
+                        <li>
+                           <a href="#">
+                              <img class="img-fluid" src="http://www.timespl.com/images/stories/flexicontent/m_guangming-1.png" alt="">
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <img class="img-fluid" src="http://www.timespl.com/images/stories/flexicontent/m_nanyang.jpg" alt="">
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <img class="img-fluid" src="http://www.timespl.com/images/stories/flexicontent/m_meeting-with-chief-minister-of-malacca.jpg" alt="">
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <img class="img-fluid" src="http://www.timespl.com/images/stories/flexicontent/m_pre-sale-1.jpg" alt="">
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <img class="img-fluid" src="http://www.timespl.com/images/stories/flexicontent/m_location-research.jpg" alt="">
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#">
+                              <img class="img-fluid" src="http://www.timespl.com/images/stories/flexicontent/m_shop-map.jpg" alt="">
+                           </a>
+                        </li>
+                     </ul>
+                  </aside>
+                  <aside class="single_sidebar_widget newsletter_widget">
+                     <h4 class="widget_title">Newsletter</h4>
+                     <form action="#">
+                        <div class="form-group">
+                           <input type="email" class="form-control placeholder hide-on-focus" placeholder="Enter email" required="">
+                        </div>
+                        <button class="button rounded-0 primary-bg text-white w-100" type="submit">Subscribe</button>
+                     </form>
+                  </aside>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!--::breadcrumb part start::-->
+
+   <!--::team part end::-->
+   
+   
+
+   
+   
+   
+
+
+   
+   
+   <!--::review_part end::-->
+
+   <!--::footer_part start::-->
+   
+   <dz-page-block id="_footer" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<footer class="footer_part">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="footer_logo">
+                     <a href="index.html" class="footer_logo_iner"> <img src="img/footer_logo.png" alt="#"> </a>
+               </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>關於我們</h4>
+                  <p>「時代動感製作有限公司」於一九九六年成立，自成立以來一直積極參與電影的製作及發行，至今已製作和全球發行了電影及電視劇超過八十多部。</p>
+                  <div class="footer_icon social_icon">
+                     <ul class="list-unstyled">
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>聯絡我們</h4>
+                  <p>地址： 香港九龍觀塘開源道55號開聯工業中心A座2樓16室</p>
+                  <p>Phone : 2172 4318</p>
+                  <p>Email : info@tmiltd.hk</p>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>重要連結</h4>
+                  <ul class="list-unstyled">
+                     <li><a href=""> WHMCS-bridge</a></li>
+                     <li><a href="">Search Domain</a></li>
+                     <li><a href="">My Account</a></li>
+                     <li><a href="">Shopping Cart</a></li>
+                     <li><a href="">Our Shop</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               
+            </div>
+         </div>
+         <hr>
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="copyright_text text-center">
+                  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer></dz-page-block>
+   

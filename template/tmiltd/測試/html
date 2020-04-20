@@ -1,0 +1,863 @@
+
+                    <div class="page-loader">
+                <div>
+                  <div class="page-loader-body">
+                    <div class="loader"><span class="block-1"></span><span class="block-2"></span><span class="block-3"></span><span class="block-4"></span><span class="block-5"></span><span class="block-6"></span><span class="block-7"></span><span class="block-8"></span><span class="block-9"></span><span class="block-10"></span><span class="block-11"></span><span class="block-12"></span><span class="block-13"></span><span class="block-14"></span><span class="block-15"></span><span class="block-16"></span></div>
+                  </div>
+                </div>
+            </div>
+                <div id="color_preloader">
+            <div class="loader_wrapper">
+                <div class="uil-spin-css"><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div></div>
+                <p>Loading color scheme</p>
+            </div>
+        </div>
+                    <div class="style-switcher">
+                <div class="sp-module "><div class="sp-module-content">
+</div></div>
+            </div>    
+                <div class="body-wrapper">
+            <div class="body-innerwrapper">
+                
+
+
+<div class="mobile-menu-box">
+    <div class="mobile-menu-title" data-title="Home">
+    </div>
+</div>
+
+<header id="sp-header">
+    <div class="sticky-wrapper">
+        <div class="header-box">
+            <div class="container">
+                <div class="container-inner">
+                    <div class="row">
+                        <div id="sp-logo" class="col-10 col-lg-3 col-md-4 col-xl-3">
+                            <div class="sp-column">
+                                                                    
+                                    <div class="logo"><a href="/joomla_prod-25958/"><img class="logo-image" src="/joomla_prod-25958/images/logo.png" alt="Club Area"></a></div>                                                            </div>
+                        </div>
+                        <div id="sp-menu" class="col-2 col-lg-9 col-md-8 col-xl-9">
+                            <div class="sp-column">
+                                                                    
+                                    <a id="offcanvas-toggler" aria-label="Navigation" class="offcanvas-toggler-right" href="#"><i class="linearicons linearicons-menu" aria-hidden="true" title="Navigation"></i></a>                                
+                                <div class="menu-wrapper">
+                                    <address class="sp-module top_menu col-sm-8"><div class="sp-module-content"><ul class="menu">
+<li class="item-973"><a href="/joomla_prod-25958/index.php/pages/elements/pricing" class="txt_link">Pricing</a></li><li class="item-974"><a href="/joomla_prod-25958/index.php/about-us" class="txt_link">About us</a></li><li class="item-975"><a href="/joomla_prod-25958/index.php/contacts" class="txt_link">Contacts</a></li></ul>
+</div></address>
+                                    <div class="sp-module top_social_menu col-sm-4"><div class="sp-module-content"><ul class="nav menu follow_us">
+<li class="item-977"><a href="#" title="Facebook" class="mdi mdi-facebook "></a></li><li class="item-980"><a href="#" title="Instagram" class="mdi mdi-instagram "></a></li><li class="item-978"><a href="#" title="Twitter" class="mdi mdi-twitter "></a></li><li class="item-979"><a href="#" title="Youtube" class="mdi mdi-youtube-play"></a></li></ul>
+</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container-inner">
+            
+        </div>
+    </div>
+
+</header>
+
+                <section id="sp-title"><div class="container"><div class="container-inner"><div class="row"><div id="sp-title" class="col-lg-12 "><div class="sp-column "></div></div></div></div></div></section><section id="sp-main-body"><div class="container"><div class="container-inner"><div class="row"><main id="sp-component" class="col-lg-12 " role="main"><div class="sp-column "><div id="system-message-container">
+	</div>
+
+<div class="blog blog_home">
+	
+		
+	
+	
+				
+	
+	
+	
+	
+	
+	
+</div>
+</div></main></div></div></div></section><section id="sp-pos-1" class="particles0"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-1" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 "><div class="sp-column "><div class="sp-module single_bg_top"><div class="sp-module-content"><div class="mod-article-single mod-article-single__single_bg_top" id="module_310">
+	<div class="item__module" id="item_232">
+				<!-- Item Title -->
+		<h1 class="item-title">
+			It's all about the ride		</h1>
+		
+		
+		
+		
+
+		<!-- Intro Text -->
+		<div class="item_introtext">
+			<h1 class="banner-classic-title"><span class="">Club</span><span class="txt-primary">Area</span></h1>
+		</div>	
+			<a class="btn btn-info readmore" href="/joomla_prod-25958/index.php/232-it-s-all-about-the-ride"><span>learn more</span></a>	</div>
+  </div></div></div></div></div></div></div></div></section><section id="sp-pos-2" class="coutdown particles1"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-2" class="col-lg-3 "><div class="sp-column position-2"><div class="sp-module "><h3 class="sp-module-title">Next Ride</h3><div class="sp-module-content">
+
+<div class="mod_custom mod_custom__">
+	<p>Feel free to take part in our 
+upcoming bike ride!</p></div>
+</div></div></div></div><div id="sp-position-3" class="col-lg-6 "><div class="sp-column "><div class="sp-module countdown"><div class="sp-module-content">
+
+<div id="mod_tm_countdown_315" class="mod_tm_countdown mod_tm_countdown_simple mod_tm_countdown__countdown cols-4"></div>
+
+</div></div></div></div><div id="sp-position-4" class="col-lg-3 "><div class="sp-column "><div class="sp-module count_btn right"><div class="sp-module-content">
+
+<div class="mod_custom mod_custom__count_btn right">
+	<a href="#" class="btn">Register</a></div>
+</div></div></div></div></div></div></div></section><section id="sp-pos-3" class="particles2"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-5" class="col-lg-12 "><div class="sp-column "><div class="sp-module "><div class="sp-module-content"><div class="mod-article-single mod-article-single__" id="module_318">
+	<div class="item__module" id="item_234">
+		
+		
+				<!-- Intro Image -->
+		<figure class="item_img img-intro img-intro__left">
+						<a href="/joomla_prod-25958/index.php/234-about-our-cycling-club">
+							<img src="/joomla_prod-25958/images/home/page1_img1.jpg" alt="">
+							</a>
+					</figure>
+		
+		
+
+		<!-- Intro Text -->
+		<div class="item_introtext">
+
+					<!-- Item Title -->
+		<h2 class="item-title">
+			About Our Cycling Club		</h2>
+					<p>The ClubArea Cycling Club was founded in 1999 and promotes safe cycling practices, physical achievement, and the social benefits of group cycling. </p>
+<p>Our club offers group rides for cyclists of all abilities several days a week in the Spring, Summer, and Fall. Disciplines include road &amp; mountain biking and cyclocross. We have rides that are perfect for any level and skill.</p>
+		</div>	
+			<a class="btn btn-info readmore" href="/joomla_prod-25958/index.php/234-about-our-cycling-club"><span>Read more</span></a>	</div>
+  </div></div></div></div></div></div></div></div></section><section id="sp-pos-4" class="bg"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-6" class="col-lg-12 "><div class="sp-column "><div class="sp-module center col-sm-12"><h3 class="sp-module-title">Join any of our group rides that include over 500 participants!</h3><div class="sp-module-content">
+
+<div class="mod_custom mod_custom__center">
+	<a class="btn btn_1" href="#">Join now</a></div>
+</div></div></div></div></div></div></div></section><section id="sp-pos-5" class="particles3"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-7" class="col-lg-12 "><div class="sp-column "><div class="sp-module team center home_team  col-sm-12"><h2 class="sp-module-title">Our Team</h2><div class="sp-module-content"><div class="mod-newsflash-adv mod-newsflash-adv__team center home_team  cols-3" id="module_320">
+    <div class="pretext">
+    At our club, we hire the best coaches and bike specialists with years of experience. These people enjoy their work and are always ready to help our club members.  </div>
+    <div class="row">
+    <article class="col-sm-4 item item_num0 item__module  " id="item_41">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__none"> 
+		<a href="/joomla_prod-25958/index.php/26-pages/team/41-jack-smith">
+			<img src="/joomla_prod-25958/images/team/team-1.jpg" alt="">
+			</a>
+	</figure>
+	<!-- Item title -->
+		<h4 class="item_title item_title__team center home_team ">
+				<a href="/joomla_prod-25958/index.php/26-pages/team/41-jack-smith">Jack Smith</a>
+			</h4>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p class="post">Head Coach, Founder</p>
+	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    <article class="col-sm-4 item item_num1 item__module  " id="item_42">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__none"> 
+		<a href="/joomla_prod-25958/index.php/26-pages/team/42-kate-mcmillan">
+			<img src="/joomla_prod-25958/images/team/team-2.jpg" alt="">
+			</a>
+	</figure>
+	<!-- Item title -->
+		<h4 class="item_title item_title__team center home_team ">
+				<a href="/joomla_prod-25958/index.php/26-pages/team/42-kate-mcmillan">Kate McMillan</a>
+			</h4>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p class="post">Junior Coach</p>
+	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    <article class="col-sm-4 item item_num2 item__module  lastItem" id="item_43">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__none"> 
+		<a href="/joomla_prod-25958/index.php/26-pages/team/43-peter-wilson">
+			<img src="/joomla_prod-25958/images/team/team-3.jpg" alt="">
+			</a>
+	</figure>
+	<!-- Item title -->
+		<h4 class="item_title item_title__team center home_team ">
+				<a href="/joomla_prod-25958/index.php/26-pages/team/43-peter-wilson">Peter Wilson</a>
+			</h4>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p class="post">Bike Mechanic</p>
+	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    </div> 
+  <div class="clearfix"></div>
+
+     
+  <div class="mod-newsflash-adv_custom-link">
+    <a class="btn btn-info" href="/joomla_prod-25958/index.php/pages/our-team">read more</a>  </div>
+  </div></div></div></div></div></div></div></div></section><section id="sp-pos-6" class="bg particles4"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-8" class="col-lg-6 "><div class="sp-column "><div class="sp-module offer_img"><div class="sp-module-content">
+
+<div class="mod_custom mod_custom__offer_img">
+	              <div class="box-img-animate"> 
+                <div class="box-img-animate-item" data-parallax="{&quot;y&quot;: 0, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }"><img src="/joomla_prod-25958/images/home/offer-images/animate-img-1.jpg" alt=""></div>
+                <div class="box-img-animate-item" data-parallax="{&quot;y&quot;: 150, &quot;x&quot;: 0,  &quot;smoothness&quot;: 50 }"><img src="/joomla_prod-25958/images/home/offer-images/animate-img-2.jpg" alt=""></div>
+                <div class="box-img-animate-item" data-parallax="{&quot;y&quot;:70, &quot;x&quot;: -150,  &quot;smoothness&quot;: 50 }"><img src="/joomla_prod-25958/images/home/offer-images/animate-img-3.jpg" alt=""></div>
+                <div class="box-img-animate-item" data-parallax="{&quot;y&quot;:20, &quot;x&quot;: 20,  &quot;smoothness&quot;: 50 }"><img src="/joomla_prod-25958/images/home/offer-images/animate-img-4.jpg" alt=""></div>
+                <div class="box-img-animate-item" data-parallax="{&quot;y&quot;:60, &quot;x&quot;: 70,  &quot;smoothness&quot;: 50 }"><img src="/joomla_prod-25958/images/home/offer-images/animate-img-5.jpg" alt=""></div>
+                <div class="box-img-animate-item" data-parallax="{&quot;y&quot;:0, &quot;x&quot;: 140,  &quot;smoothness&quot;: 50 }"><img src="/joomla_prod-25958/images/home/offer-images/animate-img-6.jpg" alt=""></div>
+              </div></div>
+
+</div></div></div></div><div id="sp-position-9" class="col-lg-6 "><div class="sp-column "><div class="sp-module we_offer"><h2 class="sp-module-title">What We Offer</h2><div class="sp-module-content"><div class="mod-newsflash-adv mod-newsflash-adv__we_offer cols-1" id="module_323">
+    <div class="pretext">
+    Our club is #1 place for bike enthusiasts and professionals. We offer a variety of opportunities for adults and kids.  </div>
+    <div class="row">
+    <article class="col-sm-12 item item_num0 item__module  " id="item_235">
+    
+<div class="item_content">
+<div class="wrap_i"><i class="linearicons linearicons-bicycle2 "></i></div>
+<div class="wrapper">
+	<!-- Item title -->
+		<h4 class="item_title item_title__we_offer">
+				<a href="/joomla_prod-25958/index.php/93-what-we-offer/235-cyclocross">Cyclocross</a>
+			</h4>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p>Cyclocross is perfect for developing bike skills and getting started with bike racing. </p>
+	</div>
+	</div>
+
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+  </div><div class="row">  <article class="col-sm-12 item item_num1 item__module  " id="item_236">
+    
+<div class="item_content">
+<div class="wrap_i"><i class="linearicons linearicons-flag3 "></i></div>
+<div class="wrapper">
+	<!-- Item title -->
+		<h4 class="item_title item_title__we_offer">
+				<a href="/joomla_prod-25958/index.php/93-what-we-offer/236-road-biking">Road Biking</a>
+			</h4>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p>Learn how to get started and advance at one of the most popular types of biking. </p>
+	</div>
+	</div>
+
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+  </div><div class="row">  <article class="col-sm-12 item item_num2 item__module  lastItem" id="item_237">
+    
+<div class="item_content">
+<div class="wrap_i"><i class="linearicons linearicons-landscape"></i></div>
+<div class="wrapper">
+	<!-- Item title -->
+		<h4 class="item_title item_title__we_offer">
+				<a href="/joomla_prod-25958/index.php/93-what-we-offer/237-mountain-biking">Mountain Biking</a>
+			</h4>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p>We offer a wide range of mountain biking programs for beginners and pros. </p>
+	</div>
+	</div>
+
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    </div> 
+  <div class="clearfix"></div>
+
+  </div></div></div></div></div></div></div></div></section><section id="sp-pos-7" class="particles5"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-10" class="col-lg-12 "><div class="sp-column "><div class="sp-module events"><h2 class="center">Featured Events</h2><div class="sp-module-content"><div class="mod-newsflash-adv mod-newsflash-adv__events cols-1" id="module_324">
+    <div class="row">
+    <article class="col-sm-12 item item_num0 item__module  " id="item_238">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__left"> 
+			<img src="/joomla_prod-25958/images/events/event-1.jpg" alt="">
+		</figure>
+	<time datetime="2019-11-15 09:03" class="item_published">
+		November 15, 2019	</time>
+	
+
+	<!-- Item title -->
+		<h4 class="item_title item_title__events">
+		Mountain Biking for Beginners	</h4>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p class="address">Address:<span>86 N. Rockcrest Ave., Baldwin Park, CA 91706</span></p>	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+  </div><div class="row">  <article class="col-sm-12 item item_num1 item__module  " id="item_239">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__left"> 
+			<img src="/joomla_prod-25958/images/events/event-2.jpg" alt="">
+		</figure>
+	<time datetime="2019-11-15 09:03" class="item_published">
+		November 15, 2019	</time>
+	
+
+	<!-- Item title -->
+		<h4 class="item_title item_title__events">
+		Intermediate Road Ride	</h4>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p class="address">Address:<span>6 S. New Saddle Lane, Los Angeles, CA 90044</span></p>
+<p>ClubArea invites you to our first road biking event in 2019 for Intermediate Riders! Bring your bike or borrow one at our club to get an unforgettable experience of biking with our club members.</p>
+<p class="type">Type: Road biking</p>
+	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+  </div><div class="row">  <article class="col-sm-12 item item_num2 item__module  " id="item_240">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__left"> 
+			<img src="/joomla_prod-25958/images/events/event-3.jpg" alt="">
+		</figure>
+	<time datetime="2019-11-15 09:03" class="item_published">
+		November 15, 2019	</time>
+	
+
+	<!-- Item title -->
+		<h4 class="item_title item_title__events">
+		National MTB Championship	</h4>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p class="address">Address:<span>463 Clay Ave., South Gate, CA 90280</span></p>
+
+	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+  </div><div class="row">  <article class="col-sm-12 item item_num3 item__module  lastItem" id="item_241">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__left"> 
+			<img src="/joomla_prod-25958/images/events/event-4.jpg" alt="">
+		</figure>
+	<time datetime="2019-11-15 09:03" class="item_published">
+		November 15, 2019	</time>
+	
+
+	<!-- Item title -->
+		<h4 class="item_title item_title__events">
+		ClubArea Group Ride	</h4>
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<p class="address">Address:<span>60 Lilac St., San Jose, CA 95123</span></p>
+
+	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    </div> 
+  <div class="clearfix"></div>
+
+  </div></div></div></div></div></div></div></div></section><section id="sp-pos-8" class="bg particles6"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-11" class="col-lg-12 "><div class="sp-column "><div class="sp-module partners"><h2 class="center">Our Partners</h2><div class="sp-module-content"><div class="owl-carousel owl-carousel_325 mod_owl_carousel mod_owl_carousel__partners" id="module_325" data-margin="51" data-xs-margin="51" data-sm-margin="51" data-md-margin="51" data-lg-margin="51" data-stage-padding="50" data-xs-stage-padding="50" data-sm-stage-padding="50" data-md-stage-padding="50" data-lg-stage-padding="50" data-autoplay="false" data-nav="false" data-dots="true" data-lg-items="4" data-sm-items="3" data-xs-items="2" data-items="1" data-loop="true">
+			<div id="item_242">
+			<div class="owl-item_content"><a class="part_logo" href="#"><img src="/joomla_prod-25958/images/home/partners/logo1.png" alt=""></a>	
+<!-- Read More link -->
+</div>
+		</div>	
+			<div id="item_243">
+			<div class="owl-item_content"><a class="part_logo" href="#"><img src="/joomla_prod-25958/images/home/partners/logo2.png" alt=""></a>	
+<!-- Read More link -->
+</div>
+		</div>	
+			<div id="item_244">
+			<div class="owl-item_content"><a class="part_logo" href="#"><img src="/joomla_prod-25958/images/home/partners/logo3.png" alt=""></a>	
+<!-- Read More link -->
+</div>
+		</div>	
+			<div id="item_245">
+			<div class="owl-item_content"><a class="part_logo" href="#"><img src="/joomla_prod-25958/images/home/partners/logo4.png" alt=""></a>	
+<!-- Read More link -->
+</div>
+		</div>	
+			<div id="item_246">
+			<div class="owl-item_content"><a class="part_logo" href="#"><img src="/joomla_prod-25958/images/home/partners/logo5.png" alt=""></a>	
+<!-- Read More link -->
+</div>
+		</div>	
+			<div id="item_247">
+			<div class="owl-item_content"><a class="part_logo" href="#"><img src="/joomla_prod-25958/images/home/partners/logo6.png" alt=""></a>	
+<!-- Read More link -->
+</div>
+		</div>	
+			<div id="item_248">
+			<div class="owl-item_content"><a class="part_logo" href="#"><img src="/joomla_prod-25958/images/home/partners/logo7.png" alt=""></a>	
+<!-- Read More link -->
+</div>
+		</div>	
+			<div id="item_249">
+			<div class="owl-item_content"><a class="part_logo" href="#"><img src="/joomla_prod-25958/images/home/partners/logo8.png" alt=""></a>	
+<!-- Read More link -->
+</div>
+		</div>	
+	</div>
+
+</div></div></div></div></div></div></div></section><section id="sp-pos-9" class="particles7"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-12" class="col-lg-12 "><div class="sp-column "><div class="sp-module pricing_detailed center col-sm-12"><h2 class="sp-module-title">Pricing Plans</h2><div class="sp-module-content"><div class="mod-newsflash-adv mod-newsflash-adv__pricing_detailed center cols-3" id="module_326">
+    <div class="row">
+    <article class="col-sm-4 item item_num0 item__module  " id="item_75">
+    
+<div class="item_content">
+	<!-- Item title -->
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<div class="pricing-table">
+  <div class="pricing-table__heading">
+    <h5 class="pricing-table__title">Individual</h5>
+    <div class="pricing-table__price">
+      <span class="pricing-table__price-prefix">$</span>
+      <span class="pricing-table__price-val">15</span>
+    </div>
+  </div>
+  <div class="pricing-table__list">
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">1 Member</span>
+      </div>
+    </div>
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">Daily Club Access</span>
+      </div>
+    </div>
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">Individual Coaching</span>
+      </div>
+    </div>
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">Biking Accessories</span>
+      </div>
+    </div>
+  </div> 
+  <div class="pricing-table__action">
+    <a class="btn" href="#">Order Now</a>
+  </div> 
+</div>	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    <article class="col-sm-4 item item_num1 item__module  featured" id="item_76">
+    
+<div class="item_content">
+	<!-- Item title -->
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<div class="pricing-table">
+  <div class="pricing-table__heading">
+    <h5 class="pricing-table__title">Family</h5>
+    <div class="pricing-table__price">
+      <span class="pricing-table__price-prefix">$</span>
+      <span class="pricing-table__price-val">49</span>
+    </div>
+  </div>
+  <div class="pricing-table__list">
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">3 Members</span>
+      </div>
+    </div>
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">Family Programs</span>
+      </div>
+    </div>
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">Free Bike Rentals</span>
+      </div>
+    </div>
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">Member Support</span>
+      </div>
+    </div>
+  </div> 
+  <div class="pricing-table__action">
+    <a class="btn" href="#">Order Now</a>
+  </div> 
+</div>	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    <article class="col-sm-4 item item_num2 item__module  lastItem" id="item_77">
+    
+<div class="item_content">
+	<!-- Item title -->
+		<!-- Introtext -->
+	<div class="item_introtext">
+		<div class="pricing-table">
+  <div class="pricing-table__heading">
+    <h5 class="pricing-table__title">Corporate</h5>
+    <div class="pricing-table__price">
+      <span class="pricing-table__price-prefix">$</span>
+      <span class="pricing-table__price-val">70</span>
+    </div>
+  </div>
+  <div class="pricing-table__list">
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">5+ Members</span>
+      </div>
+    </div>
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">Exclusive Events</span>
+      </div>
+    </div>
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">Corporate Programs</span>
+      </div>
+    </div>
+    <div class="pricing__list-item active">
+      <div class="pricing-feature__inner">
+        <i class="item-icon"></i>
+        <span class="pricing-feature__text">Bike Inspection</span>
+      </div>
+    </div>
+  </div> 
+  <div class="pricing-table__action">
+    <a class="btn" href="#">Order Now</a>
+  </div> 
+</div>	</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    </div> 
+  <div class="clearfix"></div>
+
+  </div></div></div></div></div></div></div></div></section><section id="sp-pos-10" class="full_w"><div class="row"><div id="sp-position-13" class="col-lg-12 "><div class="sp-column "><div class="sp-module home_gallery"><div class="sp-module-content"><div class="mod-newsflash-adv mod-newsflash-adv__home_gallery cols-1" id="module_327">
+    <div class="row">
+    <article class="col-sm-12 item item_num0 item__module  " id="item_256">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__"> 
+	
+	<a class="fancybox-thumb zoom articleGalleryZoom" data-fancybox-group="gallery1" data-fancybox-type="image" data-fancybox="jfancybox" href="/joomla_prod-25958/images/home/gallery/gallery-masonry-3-original.jpg">
+	
+		<img src="/joomla_prod-25958/images/home/gallery/gallery-masonry-3-640x429.jpg" alt="">
+			</a>
+</figure>
+	<!-- Item title -->
+		<!-- Introtext -->
+	<div class="item_introtext">
+			</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+  </div><div class="row">  <article class="col-sm-12 item item_num1 item__module  " id="item_257">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__"> 
+	
+	<a class="fancybox-thumb zoom articleGalleryZoom" data-fancybox-group="gallery1" data-fancybox-type="image" data-fancybox="jfancybox" href="/joomla_prod-25958/images/home/gallery/gallery-masonry-4-original.jpg">
+	
+		<img src="/joomla_prod-25958/images/home/gallery/gallery-masonry-4-960x429.jpg" alt="">
+			</a>
+</figure>
+	<!-- Item title -->
+		<!-- Introtext -->
+	<div class="item_introtext">
+			</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+  </div><div class="row">  <article class="col-sm-12 item item_num2 item__module  " id="item_258">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__"> 
+	
+	<a class="fancybox-thumb zoom articleGalleryZoom" data-fancybox-group="gallery1" data-fancybox-type="image" data-fancybox="jfancybox" href="/joomla_prod-25958/images/home/gallery/gallery-masonry-5-original.jpg">
+	
+		<img src="/joomla_prod-25958/images/home/gallery/gallery-masonry-5-960x429.jpg" alt="">
+			</a>
+</figure>
+	<!-- Item title -->
+		<!-- Introtext -->
+	<div class="item_introtext">
+			</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+  </div><div class="row">  <article class="col-sm-12 item item_num3 item__module  " id="item_259">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__"> 
+	
+	<a class="fancybox-thumb zoom articleGalleryZoom" data-fancybox-group="gallery1" data-fancybox-type="image" data-fancybox="jfancybox" href="/joomla_prod-25958/images/home/gallery/gallery-masonry-6-original.jpg">
+	
+		<img src="/joomla_prod-25958/images/home/gallery/gallery-masonry-6-480x339.jpg" alt="">
+			</a>
+</figure>
+	<!-- Item title -->
+		<!-- Introtext -->
+	<div class="item_introtext">
+			</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+  </div><div class="row">  <article class="col-sm-12 item item_num4 item__module  lastItem" id="item_260">
+    
+<div class="item_content">
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__"> 
+	
+	<a class="fancybox-thumb zoom articleGalleryZoom" data-fancybox-group="gallery1" data-fancybox-type="image" data-fancybox="jfancybox" href="/joomla_prod-25958/images/home/gallery/gallery-masonry-7-original.jpg">
+	
+		<img src="/joomla_prod-25958/images/home/gallery/gallery-masonry-7-480x339.jpg" alt="">
+			</a>
+</figure>
+	<!-- Item title -->
+		<!-- Introtext -->
+	<div class="item_introtext">
+			</div>
+	
+	
+	<!-- Read More link -->
+	</div>
+<div class="clearfix"></div>  </article>
+    </div> 
+  <div class="clearfix"></div>
+
+  </div></div></div></div></div></div></section><section id="sp-pos-11" class="particles8"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-14" class="col-lg-12 "><div class="sp-column "><div class="sp-module home_blog center"><h2 class="sp-module-title">Our Blog</h2><div class="sp-module-content"><div class="owl-carousel owl-carousel_328 mod_owl_carousel mod_owl_carousel__home_blog center" id="module_328" data-margin="21" data-xs-margin="21" data-sm-margin="21" data-md-margin="21" data-lg-margin="21" data-stage-padding="0" data-xs-stage-padding="20" data-sm-stage-padding="20" data-md-stage-padding="0" data-lg-stage-padding="0" data-autoplay="false" data-nav="false" data-dots="true" data-lg-items="3" data-sm-items="3" data-xs-items="2" data-items="1" data-loop="true">
+			<div id="item_11">
+			<div class="owl-item_content">
+
+
+<div class="wrapper">
+		<time datetime="2019-11-15 09:03" class="item_published">
+		Nov 15, 2019	</time>
+<h4 class="item_title item_title__home_blog center">
+		<a href="/joomla_prod-25958/index.php/blog/15-latest/11-the-complete-guide-to-bottom-bracket-standards">The Complete Guide to Bottom Bracket Standards</a>
+	</h4>
+<p>This comprehensive guide tells you everything you need to know about bottom brackets — from a breakdown of all the bottom bracket systems...</p>
+	
+<!-- Read More link -->
+<a class="btn btn-info readmore blog" href="/joomla_prod-25958/index.php/blog/15-latest/11-the-complete-guide-to-bottom-bracket-standards"><span>Read more</span><i class="mdi mdi-arrow-right "></i></a>
+</div>
+
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__none"> 
+		<a href="/joomla_prod-25958/index.php/blog/15-latest/11-the-complete-guide-to-bottom-bracket-standards">
+			<img src="/joomla_prod-25958/images/blog/blog-thumb8.jpg" alt="">
+			</a>
+	</figure>
+
+</div>
+		</div>	
+			<div id="item_13">
+			<div class="owl-item_content">
+
+
+<div class="wrapper">
+		<time datetime="2019-11-15 09:03" class="item_published">
+		Nov 15, 2019	</time>
+<h4 class="item_title item_title__home_blog center">
+		<a href="/joomla_prod-25958/index.php/blog/15-latest/13-replacing-a-bicycle-chain-an-easy-tutorial">Replacing a Bicycle Chain: an Easy Tutorial</a>
+	</h4>
+<p>Knowing how to fit a bike chain is an essential skill for any home mechanic. Chains are one of the consumable parts of your drivetrain and...</p>
+	
+<!-- Read More link -->
+<a class="btn btn-info readmore blog" href="/joomla_prod-25958/index.php/blog/15-latest/13-replacing-a-bicycle-chain-an-easy-tutorial"><span>Read more</span><i class="mdi mdi-arrow-right "></i></a>
+</div>
+
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__none"> 
+		<a href="/joomla_prod-25958/index.php/blog/15-latest/13-replacing-a-bicycle-chain-an-easy-tutorial">
+			<img src="/joomla_prod-25958/images/blog/blog-thumb6.jpg" alt="">
+			</a>
+	</figure>
+
+</div>
+		</div>	
+			<div id="item_14">
+			<div class="owl-item_content">
+
+
+<div class="wrapper">
+		<time datetime="2019-11-15 09:03" class="item_published">
+		Nov 15, 2019	</time>
+<h4 class="item_title item_title__home_blog center">
+		<a href="/joomla_prod-25958/index.php/blog/15-latest/14-james-r-bernard-is-going-to-visit-los-angeles-this-spring">Double Up Your Training Riding In and Outdoors</a>
+	</h4>
+<p>Indoor and outdoor training can be painted as seasonal. The spring and summer is there to ride your bike on the road, the winter to keep fit...</p>
+	
+<!-- Read More link -->
+<a class="btn btn-info readmore blog" href="/joomla_prod-25958/index.php/blog/15-latest/14-james-r-bernard-is-going-to-visit-los-angeles-this-spring"><span>Read more</span><i class="mdi mdi-arrow-right "></i></a>
+</div>
+
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__none"> 
+		<a href="/joomla_prod-25958/index.php/blog/15-latest/14-james-r-bernard-is-going-to-visit-los-angeles-this-spring">
+			<img src="/joomla_prod-25958/images/blog/blog-thumb5.jpg" alt="">
+			</a>
+	</figure>
+
+</div>
+		</div>	
+			<div id="item_120">
+			<div class="owl-item_content">
+
+
+<div class="wrapper">
+		<time datetime="2019-11-15 09:03" class="item_published">
+		Nov 15, 2019	</time>
+<h4 class="item_title item_title__home_blog center">
+		<a href="/joomla_prod-25958/index.php/blog/15-latest/120-london-se-in-frankfurt">London SE in Frankfurt?</a>
+	</h4>
+<p>Recently our partner, Jerry Conrad Lewis has revealed some of his own global plans alongside with a new set of social measures, designed to improve the world we live in.</p>
+	
+<!-- Read More link -->
+<a class="btn btn-info readmore blog" href="/joomla_prod-25958/index.php/blog/15-latest/120-london-se-in-frankfurt"><span>Read more</span><i class="mdi mdi-arrow-right "></i></a>
+</div>
+
+<!-- Intro Image -->
+<figure class="item_img img-intro img-intro__none"> 
+		<a href="/joomla_prod-25958/index.php/blog/15-latest/120-london-se-in-frankfurt">
+			<img src="/joomla_prod-25958/images/blog/blog-thumb3.jpg" alt="">
+			</a>
+	</figure>
+
+</div>
+		</div>	
+	</div>
+
+</div></div></div></div></div></div></div></section><section id="sp-pos-12" class="bg"><div class="container"><div class="container-inner"><div class="row"><div id="sp-position-15" class="col-lg-12 "><div class="sp-column "><div class="sp-module newsletter center"><h2 class="sp-module-title">Subscribe to Stay Informed</h2><div class="sp-module-content"><script type="text/javascript">
+        <!--
+        window.addEventListener('DOMContentLoaded', (event) => {
+acymModule['excludeValuesformAcym73801'] = [];
+acymModule['excludeValuesformAcym73801']['2'] = 'Email';  });
+        //-->
+        </script>	<div class="acym_module " id="acym_module_formAcym73801">
+		<div class="acym_fulldiv" id="acym_fulldiv_formAcym73801">
+			<form enctype="multipart/form-data" id="formAcym73801" name="formAcym73801" method="POST" action="/joomla_prod-25958/index.php/component/acym/?ctrl=frontusers&amp;tmpl=component" onsubmit="return submitAcymForm('subscribe','formAcym73801', 'acySubmitSubForm')">
+				<div class="acym_module_form">
+                    
+<table class="acym_form">
+	<tbody><tr>
+        <td class="acyfield_2 acyfield_text"><input name="user[email]" placeholder="Email" value="" required="" type="email" class="cell" id="acym__user__edit__email"></td>
+		<td class="acysubbuttons">
+			<noscript>
+				<div class="onefield fieldacycaptcha">
+                    Please enable the javascript to submit this form				</div>
+			</noscript>
+			<input type="button" class="btn btn-primary button subbutton" value="Subscribe" name="Submit" onclick="try{ return submitAcymForm('subscribe','formAcym73801', 'acySubmitSubForm'); }catch(err){alert('The form could not be submitted '+err);return false;}">
+            		</td>
+	</tr>
+</tbody></table>
+
+				</div>
+
+				<input type="hidden" name="ctrl" value="frontusers">
+				<input type="hidden" name="task" value="notask">
+				<input type="hidden" name="option" value="com_acym">
+
+                
+				<input type="hidden" name="ajax" value="1">
+				<input type="hidden" name="acy_source" value="">
+				<input type="hidden" name="hiddenlists" value="1">
+				<input type="hidden" name="fields" value="name,email">
+				<input type="hidden" name="acyformname" value="formAcym73801">
+
+                			</form>
+		</div>
+	</div>
+</div></div></div></div></div></div></div></section><section id="sp-bottom" class="center"><div class="container"><div class="container-inner"><div class="row"><div id="sp-bottom-1" class="col-lg-12 "><div class="sp-column "><div class="sp-module footer_logo"><div class="sp-module-content">
+
+<div class="mod_custom mod_custom__footer_logo">
+	<a href="#"><img src="/joomla_prod-25958/images/logo.png" alt=""></a></div>
+</div></div></div></div></div></div></div></section><footer id="sp-footer" class=" d-none d-sm-none d-md-none d-lg-block"><div class="container"><div class="container-inner"><div class="row"><div id="sp-footer-1" class="col-lg-12 "><div class="sp-column "><div class="sp-module bottom_menu center"><div class="sp-module-content"><ul class="menu">
+<li class="item-982"><a href="/joomla_prod-25958/index.php/about-us">About</a></li><li class="item-983"><a href="/joomla_prod-25958/index.php/pages/services">Services</a></li><li class="item-984"><a href="/joomla_prod-25958/index.php/gallery">Gallery</a></li><li class="item-985"><a href="/joomla_prod-25958/index.php/blog">Blog</a></li><li class="item-986"><a href="/joomla_prod-25958/index.php/contacts">Contacts</a></li></ul>
+</div></div><div class="sp-module social-menu"><div class="sp-module-content"><ul class="nav menu social-menu">
+<li class="item-148"><a href="#" title="Facebook" class="fa fa-facebook"></a></li><li class="item-152"><a href="#" title="Instagram" class="fa fa-instagram"></a></li><li class="item-150"><a href="#" title="Twitter" class="fa fa-twitter"></a></li><li class="item-149"><a href="#" title="Youtube" class="fa fa-youtube-play"></a></li><li class="item-280"><a href="#" title="Pinterest" class="fa fa-pinterest"></a></li></ul>
+</div></div></div></div></div></div></div></footer><section id="sp-footer-2"><div class="container"><div class="container-inner"><div class="row"><div id="sp-footer-2" class="col-lg-12 "><div class="sp-column "><span class="sp-copyright">© 2020.  All Rights Reserved. <a href="/joomla_prod-25958/index.php/privacy-policy">Privacy Policy</a></span></div></div></div></div></div></section>            </div>
+        </div>
+
+        <!-- Off Canvas Menu -->
+        <div class="offcanvas-overlay"></div>
+        <div class="offcanvas-menu">
+            <a href="#" class="close-offcanvas"><span class="fa fa-remove"></span></a>
+            <div class="offcanvas-inner">
+                                    <div class="sp-module "><div class="sp-module-content"><ul class="menu">
+<li class="item-101 default current active"><a href="/joomla_prod-25958/index.php" class="fullwidth">Home</a></li><li class="item-584"><a href="/joomla_prod-25958/index.php/about-us">About us</a></li><li class="item-335 menu-divider menu-deeper menu-parent"><span class="menu-separator ">Pages<span class="menu-toggler"></span></span>
+<ul class="menu-child"><li class="item-138"><a href="/joomla_prod-25958/index.php/pages/faqs">FAQs</a></li><li class="item-136"><a href="/joomla_prod-25958/index.php/pages/our-team">Our team</a></li><li class="item-747"><a href="/joomla_prod-25958/index.php/pages/single-team">Single Team</a></li><li class="item-135"><a href="/joomla_prod-25958/index.php/pages/history">History</a></li><li class="item-137"><a href="/joomla_prod-25958/index.php/pages/testimonials">Testimonials</a></li><li class="item-749"><a href="/joomla_prod-25958/index.php/pages/services">Services</a></li><li class="item-750"><a href="/joomla_prod-25958/index.php/pages/single-service">Single service</a></li><li class="item-342"><a href="/joomla_prod-25958/index.php/pages/forum-main">Forum</a></li><li class="item-746"><a href="/joomla_prod-25958/index.php/pages/partners">Partners</a></li><li class="item-343"><a href="/joomla_prod-25958/index.php/pages/careers">Careers</a></li><li class="item-283"><a href="/joomla_prod-25958/index.php/pages/portfolio">Portfolio</a></li><li class="item-426 menu-deeper menu-parent"><a href="/joomla_prod-25958/index.php/pages/elements">Elements<span class="menu-toggler"></span></a><ul class="menu-child"><li class="item-336"><a href="/joomla_prod-25958/index.php/pages/elements/pricing">Pricing</a></li><li class="item-171"><a href="/joomla_prod-25958/index.php/template-settings">Template settings</a></li></ul></li><li class="item-748"><a href="/joomla_prod-25958/index.php/404-page">404 page</a></li><li class="item-800"><a href="/joomla_prod-25958/index.php/pages/coming-soon">Coming soon</a></li></ul></li><li class="item-611"><a href="/joomla_prod-25958/index.php/blog">Blog</a></li><li class="item-203"><a href="/joomla_prod-25958/index.php/gallery" class="gallery">Gallery</a></li><li class="item-142"><a href="/joomla_prod-25958/index.php/contacts">Contacts</a></li><li class="item-622"><a href="/joomla_prod-25958/index.php/login-form">Login</a></li><li class="item-612"><a href="/joomla_prod-25958/index.php/search">Search</a></li></ul>
+</div></div>
+                            </div>
+        </div>
+
+        
+        
+        
+        <!-- Go to top -->
+                    <a href="#" class="sp-scroll-up" aria-label="Scroll Up"><span class="fa fa-chevron-up" aria-hidden="true"></span></a>
+                    
+    

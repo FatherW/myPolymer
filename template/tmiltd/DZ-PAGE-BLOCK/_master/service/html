@@ -1,0 +1,74 @@
+
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<section class="service_part padding_top">
+      <div class="container">
+         <div class="row justify-content-between align-items-center">
+            <div class="col-lg-7 col-xl-6">
+               <div class="section_tittle">
+                  <h2>我們的<span>服務</span></h2>
+               </div>
+               <div class="service_part_iner">
+                  <div class="row">
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="single_service_text ">
+                           <img src="img/icon/service_1.svg" alt="">
+                           <h4>電影發行</h4>
+                           <p>Lorem ipsum dolor sit amet consectetur elit seiusmod tempor incididunt </p>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="single_service_text">
+                           <img src="img/icon/service_2.svg" alt="">
+                           <h4>電影製作</h4>
+                           <p>Lorem ipsum dolor sit amet consectetur elit seiusmod tempor incididunt</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="single_service_text">
+                           <img src="img/icon/service_3.svg" alt="">
+                           <h4>廣告製作</h4>
+                           <p>Lorem ipsum dolor sit amet consectetur elit seiusmod tempor incididunt</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="single_service_text">
+                           <img src="img/icon/service_4.svg" alt="">
+                           <h4>藝人中介</h4>
+                           <p>Lorem ipsum dolor sit amet consectetur elit seiusmod tempor incididunt</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-4 col-sm-10">
+               <div class="service_text">
+                  <h2>接近三十年經驗&nbsp;<span>&nbsp;信心的保證</span></h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipi scing elit,
+                     sed do eiusmodtemporincididunt u labore et dolore magna aliqua.
+                     Quis ipsum pendisse ultrices gravida. Risus commodo viverra
+                     maecenas accumsan lacus vel </p>
+                  <a href="service.html" class="btn_1">想知更多</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>

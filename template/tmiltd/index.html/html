@@ -1,0 +1,713 @@
+<style></style><style></style><style></style><style></style><style></style><style></style><style></style><style></style><style></style><style></style> <dz-page-block id="_header" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<header class="main_menu home_menu menu_fixed animated fadeInDown">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <nav class="navbar navbar-expand-lg navbar-light">
+                  <a class="navbar-brand" href="index.html"> <img src="img/logo.png" alt="logo"> </a>
+                  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse main-menu-item" id="navbarNav">
+                     <ul class="navbar-nav">
+                        <li class="nav-item active">
+                           <a class="nav-link" href="index.html">主頁</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="about.html">關於我們</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="services.html">動感服務</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="過去製作">過去製作</a>
+                        </li><li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+電影發行                           </a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="blog.html">錢殺人</a>
+                              <a class="dropdown-item" href="single-blog.html">同步凶間</a>
+                           </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">電影製作</a>
+                           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <a class="dropdown-item" href="project.html">大將軍</a>
+                              <a class="dropdown-item" href="apartment.html">黑道之無悔今生</a>
+                              <a class="dropdown-item" href="elements.html">恐懼元素</a>
+                           </div>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link" href="contact.html">聯絡我們</a>
+                        </li>
+                     </ul>
+                  </div>
+               </nav>
+            </div>
+         </div>
+      </div>
+   </header></dz-page-block>
+
+   <!--::menu part end::-->
+
+   <!--::banner part start::-->
+   <section class="banner_part">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-5 offset-lg-1 col-sm-8 offset-sm-2">
+               <div class="banner_text aling-items-center">
+                  <div class="banner_text_iner">
+                     <h5><br></h5>
+                     
+                     
+<h2>時代動感製作有限公司</h2>
+                     <p>成立於一九九六年.........</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!--::banner part end::-->
+
+   <!--::team part end::-->
+   <section class="about_part section-padding">
+      <div class="container">
+         <div class="row">
+            <div class="section_tittle">
+               <h2><span>關於</span>我們</h2>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-6 col-md-6">
+               <div class="about_img">
+                  <img src="/files/l_yuefei-poster.jpg" alt="">
+               </div>
+            </div>
+            <div class="offset-lg-1 col-lg-5 col-sm-8 col-md-6">
+               <div class="about_text">
+                  <h2>製作和全球發行超過八十多部 <span>電影發電視劇</span></h2>
+                  <dz-editor contenteditable="true" spellcheck="true" data-medium-editor-element="true" class="medium-editor-element" role="textbox" aria-multiline="true" data-medium-editor-editor-index="1" medium-editor-index="f1e9ca55-52ae-2306-3d83-8947304d59c4"><dz-editor contenteditable="true" spellcheck="true" data-medium-editor-element="true" class="medium-editor-element" role="textbox" aria-multiline="true" data-medium-editor-editor-index="1" medium-editor-index="31ad5ab8-f974-aedf-bf49-fd755f0f7ec8"><p>「時代動感製作有限公司」於一九九六年成立，自成立以來一直積極參與電影的製作及發行，至今已製作和全球發行了電影及電視劇超過八十多部。由於近年來華語電影大受國際注視的緣故，加上香港政府大力推廣電影的政策，本公司正處於漸趨蓬勃的電影業有利位置。展望未來，「時代動感製作有限公司」致力進入及開發中國大陸市場，以達至兩地市場合作的雙贏商機。近年來，為迎接新世紀的激變市場，我們將貫切無限創意的衝勁，致力將全球關注的中、港、臺合作的大型電影和電視劇帶到海外市場，全球發行多元化題材的數碼電影、高清電視劇、動畫製作等，以配合數碼二十一新紀元的發展。2123</p></dz-editor></dz-editor>
+
+<dz-page-block id="clock" master="">
+
+	
+		
+<div class="about_part_counter">
+                     <div class="single_counter">
+                        <span class="counter">22</span>
+                        <p>發行</p>
+                     </div>
+                     <div class="single_counter">
+                        <span class="counter">7</span>
+                        <p>製作</p>
+                     </div>
+                     <div class="single_counter">
+                        <span class="counter">12</span>
+                        <p>客戶</p>
+                     </div>
+                  <a href="service.html" class="btn_1">想知更多</a></div>
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</dz-page-block>
+                  
+                  
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!--::team part end::-->
+
+   <!--::project part start::-->
+   <section class="portfolio_area pt_30 padding_bottom">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="section_tittle">
+                  <h2><span>我們的</span>&nbsp;電影製作</h2>
+               </div>
+               <div class="portfolio-filter">
+                  <h2>那些年，我們的<dz-editor contenteditable="true" spellcheck="true" data-medium-editor-element="true" class="medium-editor-element" role="textbox" aria-multiline="true" data-medium-editor-editor-index="2" medium-editor-index="3e62c81c-e36c-ba8d-b401-5ad94c984c64"><dz-editor contenteditable="true" spellcheck="true" data-medium-editor-element="true" class="medium-editor-element" role="textbox" aria-multiline="true" data-medium-editor-editor-index="22" medium-editor-index="99261a60-ec3b-0456-bc0e-9b2b16f12fb2"><span>電影及電視劇</span></dz-editor></dz-editor></h2>
+                  <ul class="nav nav-tabs" id="myTab" role="tablist">
+                     <li>
+                        <a class="active" id="Architecture-tab" data-toggle="tab" href="#Architecture" role="tab" aria-controls="Architecture" aria-selected="true">喜劇</a>
+                     </li>
+                     <li>
+                        <a id="Interior-tab" data-toggle="tab" href="#Interior" role="tab" aria-controls="Interior" aria-selected="false" class="">恐怖片</a>
+                     </li>
+                     <li>
+                        <a id="Exterior-tab" data-toggle="tab" href="#Exterior" role="tab" aria-controls="Exterior" aria-selected="false" class="">懸疑</a>
+                     </li>
+                     <li>
+                        <a id="Landing-tab" data-toggle="tab" href="#Landing" role="tab" aria-controls="Landing" aria-selected="false" class="">愛情</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="portfolio_item tab-content" id="myTabContent">
+                  <div class="row align-items-center justify-content-between tab-pane fade active show" id="Architecture" role="tabpanel" aria-labelledby="Architecture-tab">
+                     <div class="col-lg-6 col-sm-12 col-md-6">
+                        <div class="portfolio_box">
+                           <a href="img/project-1.png" class="img-gal">
+                              <div class="single_portfolio">
+                                 <img class="img-fluid w-100" src="img/project-1.png" alt="">
+                              </div>
+                           </a>
+                           <div class="short_info">
+                              <p>Exclusive Project</p>
+                              <h4><a href="#">Etiam tortor <br>
+                                    aliquet habitant</a></h4>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-5 col-md-6">
+                        <div class="row">
+                           <div class="col-lg-12 col-sm-6 col-md-12 single_portfolio_project">
+                              <div class="portfolio_box">
+                                 <a href="img/project-2.png" class="img-gal">
+                                    <div class="single_portfolio">
+                                       <img class="img-fluid w-100" src="/files/l_yuefei-poster.jpg" alt="">
+                                    </div>
+                                 </a>
+                                 <div class="short_info">
+                                    <p>新項目</p>
+                                    <h4>大將軍</h4>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-12 col-sm-6 col-md-12 single_portfolio_project">
+                              <div class="portfolio_box">
+                                 <a href="img/project-3.png" class="img-gal">
+                                    <div class="single_portfolio">
+                                       <img class="img-fluid w-100" src="img/project-3.png" alt="">
+                                    </div>
+                                 </a>
+                                 <div class="short_info">
+                                    <p>Exclusive Project</p>
+                                    <h4><a href="#">Etiam tortor <br>
+                                          aliquet habitant</a></h4>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row align-items-center justify-content-between tab-pane fade" id="Interior" role="tabpanel" aria-labelledby="Interior-tab">
+                     <div class="col-lg-6 col-sm-12 col-md-6">
+                        <div class="portfolio_box">
+                           <a href="img/project-2.png" class="img-gal">
+                              <div class="single_portfolio">
+                                 <img class="img-fluid w-100" src="img/project-2.png" alt="">
+                              </div>
+                           </a>
+                           <div class="short_info">
+                                 <p>new Project</p>
+                                 <h4><a href="#">Etiam tortor <br>
+                                       aliquet habitant</a></h4>
+                              </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-5 col-md-6">
+                        <div class="row">
+                           <div class="col-lg-12 col-sm-6 col-md-12 single_portfolio_project">
+                              <div class="portfolio_box">
+                                 <a href="img/project-1.png" class="img-gal">
+                                    <div class="single_portfolio">
+                                       <img class="img-fluid w-100" src="img/project-1.png" alt="">
+                                    </div>
+                                 </a>
+                                 <div class="short_info">
+                                       <p>new Project</p>
+                                       <h4><a href="#">Etiam tortor <br>
+                                             aliquet habitant</a></h4>
+                                    </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-12 col-sm-6 col-md-12 single_portfolio_project">
+                              <div class="portfolio_box">
+                                 <a href="img/project-3.png" class="img-gal">
+                                    <div class="single_portfolio">
+                                       <img class="img-fluid w-100" src="img/project-3.png" alt="">
+                                    </div>
+                                 </a>
+                                 <div class="short_info">
+                                       <p>new Project</p>
+                                       <h4><a href="#">Etiam tortor <br>
+                                             aliquet habitant</a></h4>
+                                    </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row align-items-center justify-content-between tab-pane fade" id="Exterior" role="tabpanel" aria-labelledby="Exterior-tab">
+                     <div class="col-lg-6 col-sm-12 col-md-6">
+                        <div class="portfolio_box">
+                           <a href="img/project-3.png" class="img-gal">
+                              <div class="single_portfolio">
+                                 <img class="img-fluid w-100" src="img/project-3.png" alt="">
+                              </div>
+                           </a>
+                           <div class="short_info">
+                                 <p>new Project</p>
+                                 <h4><a href="#">Etiam tortor <br>
+                                       aliquet habitant</a></h4>
+                              </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-5 col-md-6">
+                        <div class="row">
+                           <div class="col-lg-12 col-sm-6 col-md-12 single_portfolio_project">
+                              <div class="portfolio_box">
+                                 <a href="img/project-2.png" class="img-gal">
+                                    <div class="single_portfolio">
+                                       <img class="img-fluid w-100" src="img/project-2.png" alt="">
+                                    </div>
+                                 </a>
+                                 <div class="short_info">
+                                       <p>new Project</p>
+                                       <h4><a href="#">Etiam tortor <br>
+                                             aliquet habitant</a></h4>
+                                    </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-12 col-sm-6 col-md-12 single_portfolio_project">
+                              <div class="portfolio_box">
+                                 <a href="img/project-1.png" class="img-gal">
+                                    <div class="single_portfolio">
+                                       <img class="img-fluid w-100" src="img/project-1.png" alt="">
+                                    </div>
+                                 </a>
+                                 <div class="short_info">
+                                       <p>new Project</p>
+                                       <h4><a href="#">Etiam tortor <br>
+                                             aliquet habitant</a></h4>
+                                    </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row align-items-center justify-content-between tab-pane fade" id="Landing" role="tabpanel" aria-labelledby="Landing-tab">
+                     <div class="col-lg-6 col-sm-12 col-md-6">
+                        <div class="portfolio_box">
+                           <a href="img/project-1.png" class="img-gal">
+                              <div class="single_portfolio">
+                                 <img class="img-fluid w-100" src="img/project-1.png" alt="">
+                              </div>
+                           </a>
+                           <div class="short_info">
+                                 <p>new Project</p>
+                                 <h4><a href="#">Etiam tortor <br>
+                                       aliquet habitant</a></h4>
+                              </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-5 col-md-6">
+                        <div class="row">
+                           <div class="col-lg-12 col-sm-6 col-md-12 single_portfolio_project">
+                              <div class="portfolio_box">
+                                 <a href="img/project-4.png" class="img-gal">
+                                    <div class="single_portfolio">
+                                       <img class="img-fluid w-100" src="img/project-5.png" alt="">
+                                    </div>
+                                 </a>
+                                 <div class="short_info">
+                                       <p>new Project</p>
+                                       <h4><a href="#">Etiam tortor <br>
+                                             aliquet habitant</a></h4>
+                                    </div>
+                              </div>
+                           </div>
+                           <div class="col-lg-12 col-sm-6 col-md-12 single_portfolio_project">
+                              <div class="portfolio_box">
+                                 <a href="img/project-3.png" class="img-gal">
+                                    <div class="single_portfolio">
+                                       <img class="img-fluid w-100" src="img/project-3.png" alt="">
+                                    </div>
+                                 </a>
+                                 <div class="short_info">
+                                       <p>new Project</p>
+                                       <h4><a href="#">Etiam tortor <br>
+                                             aliquet habitant</a></h4>
+                                    </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <!--::project part end::-->
+
+   <!--::service part end::-->
+   <dz-page-block id="service" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<section class="service_part">
+      <div class="container">
+         <div class="row justify-content-between align-items-center">
+            <div class="col-lg-7 col-xl-6">
+               <div class="section_tittle">
+                  <h2>我們的<span>服務</span></h2>
+               </div>
+               <div class="service_part_iner">
+                  <div class="row">
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="single_service_text ">
+                           <img src="img/icon/service_1.svg" alt="">
+                           <h4>電影發行</h4>
+                           <p>Lorem ipsum dolor sit amet consectetur elit seiusmod tempor incididunt </p>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="single_service_text">
+                           <img src="img/icon/service_2.svg" alt="">
+                           <h4>電影製作</h4>
+                           <p>Lorem ipsum dolor sit amet consectetur elit seiusmod tempor incididunt</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="single_service_text">
+                           <img src="img/icon/service_3.svg" alt="">
+                           <h4>廣告製作</h4>
+                           <p>Lorem ipsum dolor sit amet consectetur elit seiusmod tempor incididunt</p>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-sm-6">
+                        <div class="single_service_text">
+                           <img src="img/icon/service_4.svg" alt="">
+                           <h4>藝人中介</h4>
+                           <p>Lorem ipsum dolor sit amet consectetur elit seiusmod tempor incididunt</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-4 col-sm-10">
+               <div class="service_text">
+                  <h2>接近三十年經驗&nbsp;<span>&nbsp;信心的保證</span></h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipi scing elit,
+                     sed do eiusmodtemporincididunt u labore et dolore magna aliqua.
+                     Quis ipsum pendisse ultrices gravida. Risus commodo viverra
+                     maecenas accumsan lacus vel </p>
+                  <a href="service.html" class="btn_1">想知更多</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section></dz-page-block>
+
+
+   <!--::service part end::-->
+
+   <!--::team part end::-->
+   
+<dz-page-block id="art" master="">
+
+	
+		
+
+<section class="project_gallery section-padding">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="project_gallery_tittle">
+                  <h2><span>藝人</span>中介</h2>
+               </div>
+               <div class="grid" style="position: relative; height: 404.36px;">
+                  <div class="grid-sizer"></div>
+                  <div class="grid-item big_weight" style="position: absolute; left: 0%; top: 0px;">
+                     <div class="project_img">
+                        <img src="img/gallery/gallery_1.png" alt="">
+                        <div class="project_gallery_hover_text">
+                           <p>Home Apartment</p>
+                           <h3><a href="apartment.html"> Detached House For Sale</a></h3>
+                           <ul>
+                              <li><a href=""><span class="flaticon-bath"></span></a> 04</li>
+                              <li><a href=""><span class="flaticon-bed"></span></a> 03</li>
+                              <li><a href=""><span class="flaticon-frame"></span></a> 2400 sqft</li>
+                              <li><a href=""><span class="ti-heart"></span></a> like</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="grid-item big_height" style="position: absolute; left: 50%; top: 0px;">
+                     <div class="project_img">
+                        <img src="img/gallery/gallery_4.png" alt="">
+                        <div class="project_gallery_hover_text">
+                           <p>Home Apartment</p>
+                           <h3><a href="apartment.html"> Detached House For Sale</a></h3>
+                           <ul>
+                              <li><a href=""><span class="flaticon-bath"></span></a> 04</li>
+                              <li><a href=""><span class="flaticon-bed"></span></a> 03</li>
+                              <li><a href=""><span class="flaticon-frame"></span></a> 2400 sqft</li>
+                              <li><a href=""><span class="ti-heart"></span></a> like</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="grid-item" style="position: absolute; left: 0%; top: 201.969px;">
+                     <div class="project_img">
+                        <img src="img/gallery/gallery_2.png" alt="">
+                        <div class="project_gallery_hover_text">
+                           <p>Home Apartment</p>
+                           <h3><a href="apartment.html"> Detached House For Sale</a></h3>
+                           <ul>
+                              <li><a href=""><span class="flaticon-bath"></span></a> 04</li>
+                              <li><a href=""><span class="flaticon-bed"></span></a> 03</li>
+                              <li><a href=""><span class="flaticon-frame"></span></a> 2400 sqft</li>
+                              <li><a href=""><span class="ti-heart"></span></a> like</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="grid-item" style="position: absolute; left: 25%; top: 201.969px;">
+                     <div class="project_img">
+                        <img src="img/gallery/gallery_3.png" alt="">
+                        <div class="project_gallery_hover_text">
+                           <p>Home Apartment</p>
+                           <h3><a href="apartment.html"> Detached House For Sale</a></h3>
+                           <ul>
+                              <li><a href=""><span class="flaticon-bath"></span></a> 04</li>
+                              <li><a href=""><span class="flaticon-bed"></span></a> 03</li>
+                              <li><a href=""><span class="flaticon-frame"></span></a> 2400 sqft</li>
+                              <li><a href=""><span class="ti-heart"></span></a> like</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</dz-page-block>
+
+
+   <!--::team part end::-->
+
+   <!--::blog_part start::-->
+   <section class="service_part">
+<div class="blog_part padding_bottom">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-7 col-lg-5">
+               <div class="blog_part_tittle">
+                  <h2>我們的<span>電影</span> </h2>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-lg-7">
+               <div class="single_blog">
+                  <div class="appartment_img">
+                     <img src="img/blog_1.png" alt="">
+                  </div>
+                  <div class="single_appartment_content">
+                     <p><a href="#">Apartment</a> / March 20, 2019</p>
+                     <a href="blog.html">
+                        <h4>Doee lights without darkness that said
+                           good deep years very.</h4>
+                     </a>
+                     <ul class="list-unstyled">
+                              <li><a href=""> <span class="ti-time"></span> </a> Mar 12</li>
+                              <li><a href=""> <span class="ti-heart"></span> </a> 0 like</li>
+                           </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-5">
+               <div class="right_single_blog">
+                  <div class="single_blog">
+                     <div class="media">
+                        <div class="media-body align-self-center">
+                           <p><a href="#">Apartment</a> / March 20, 2019</p>
+                           <a href="blog.html">
+                              <h5 class="mt-0"> lights without darkness that said.</h5>
+                           </a>
+                           <ul class="list-unstyled">
+                              <li><a href=""> <span class="ti-time"></span> </a> Mar 12</li>
+                              <li><a href=""> <span class="ti-heart"></span> </a> 0 like</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="single_blog">
+                     <div class="media">
+                        <div class="media-body align-self-center">
+                           <p><a href="#">Apartment</a> / March 20, 2019</p>
+                           <a href="blog.html">
+                              <h5 class="mt-0"> lights without darkness that said.</h5>
+                           </a>
+                           <ul class="list-unstyled">
+                              <li><a href=""> <span class="ti-time"></span> </a> Mar 12</li>
+                              <li><a href=""> <span class="ti-heart"></span> </a> 0 like</li>
+                           </ul>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div></section>
+   <!--::blog_part end::-->
+
+   <!--::footer_part start::-->
+   <dz-page-block id="_footer" master="">
+
+	
+		
+		
+		
+		
+	
+		
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<footer class="footer_part">
+      <div class="container">
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="footer_logo">
+                     <a href="index.html" class="footer_logo_iner"> <img src="img/footer_logo.png" alt="#"> </a>
+               </div>
+            </div>
+
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>關於我們</h4>
+                  <p>「時代動感製作有限公司」於一九九六年成立，自成立以來一直積極參與電影的製作及發行，至今已製作和全球發行了電影及電視劇超過八十多部。</p>
+                  <div class="footer_icon social_icon">
+                     <ul class="list-unstyled">
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
+                        <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>聯絡我們</h4>
+                  <p>地址： 香港九龍觀塘開源道55號開聯工業中心A座2樓16室</p>
+                  <p>Phone : 2172 4318</p>
+                  <p>Email : info@tmiltd.hk</p>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               <div class="single_footer_part">
+                  <h4>重要連結</h4>
+                  <ul class="list-unstyled">
+                     <li><a href=""> WHMCS-bridge</a></li>
+                     <li><a href="">Search Domain</a></li>
+                     <li><a href="">My Account</a></li>
+                     <li><a href="">Shopping Cart</a></li>
+                     <li><a href="">Our Shop</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+               
+            </div>
+         </div>
+         <hr>
+         <div class="row">
+            <div class="col-lg-12">
+               <div class="copyright_text text-center">
+                  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright ©<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by Dazzle<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer></dz-page-block>
+
+
+   <!--::footer_part end::-->

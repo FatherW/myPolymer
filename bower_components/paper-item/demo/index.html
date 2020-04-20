@@ -17,21 +17,28 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
   <title>paper-item demo</title>
 
-  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2.0.0/webcomponents-loader.js"></script>
 
-  <link rel="import" href="../../iron-icon/iron-icon.html">
-  <link rel="import" href="../../iron-icons/iron-icons.html">
-  <link rel="import" href="../../iron-icons/communication-icons.html">
-  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-  <link rel="import" href="../../paper-icon-button/paper-icon-button.html">
-  <link rel="import" href="../paper-icon-item.html">
-  <link rel="import" href="../paper-item.html">
-  <link rel="import" href="../paper-item-body.html">
-  <link rel="import" href="../../paper-styles/color.html">
+  <script type="module">
+    import '@polymer/iron-icon/iron-icon.js';
+    import '@polymer/iron-icons/iron-icons.js';
+    import '@polymer/iron-icons/communication-icons.js';
+    import '@polymer/iron-demo-helpers/demo-snippet.js';
+    import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+    import '@polymer/paper-icon-button/paper-icon-button.js';
+    import '../paper-icon-item.js';
+    import '../paper-item.js';
+    import '../paper-item-body.js';
+    import '@polymer/paper-styles/color.js';
+
+    import {html} from '@polymer/polymer/lib/utils/html-tag.js';
+    const template = html
+    `<custom-style><style is="custom-style" include="demo-pages-shared-styles"></style></custom-style>`;
+    document.body.appendChild(template.content);
+  </script>
 
   <custom-style>
-    <style is="custom-style" include="demo-pages-shared-styles">
+    <style is="custom-style">
       div[role="listbox"] {
         border: 1px solid #e5e5e5;
       }

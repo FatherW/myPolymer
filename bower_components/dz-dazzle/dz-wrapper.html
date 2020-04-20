@@ -1,0 +1,39 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../vaadin-dialog/vaadin-dialog.html">
+<link rel="import" href="dz-loader.html?id=sdfsdf">
+
+
+<dom-module id="dz-wrapper">
+
+	<template>
+        <style></style>
+    </template>
+</dom-module>
+
+<script>
+
+(function() {
+
+
+
+	Polymer({
+		is: 'dz-wrapper',
+		properties: {
+			
+		},
+
+		created:function() {
+            Polymer.dzInit();
+
+        },
+        ready:function(){
+            Polymer.pageLoader(this.shadowRoot);
+        },
+		login:function(){
+
+		}
+	});
+
+})();
+
+</script>
