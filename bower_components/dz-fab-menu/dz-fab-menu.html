@@ -2,6 +2,7 @@
 <link rel="import" href="../valle-speed-dial/valle-speed-dial.html">
 <link rel="import" href="../paper-fab-speed-dial/paper-fab-speed-dial-action.html?id=sdfjsl">
 <link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../dz-dazzle/dz-dazzle2.html">
 <!--
 A material design [Floating Action Button with Speed Dial](https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-transitions)
 
@@ -45,7 +46,7 @@ Style                                                   | Description
 
 		</style>
 
-	<valle-speed-dial direction="down" backdrop>
+	<valle-speed-dial direction="down">
 		<paper-fab-speed-dial-action icon="icons:save" on-click="save">儲存及匯出</paper-fab-speed-dial-action>
 		<paper-fab-speed-dial-action icon="icons:settings" on-click="settings">頁面設定</paper-fab-speed-dial-action>
 		<paper-fab-speed-dial-action icon="icons:face" on-click="userSettings">用戶設定</paper-fab-speed-dial-action>
@@ -74,7 +75,7 @@ Style                                                   | Description
 			<paper-fab-speed-dial-action icon="icons:content-copy">Copy</paper-fab-speed-dial-action>
 			<paper-fab-speed-dial-action icon="icons:print">Print</paper-fab-speed-dial-action>
 		</paper-fab-speed-dial> -->
-
+		<dz-dazzle2></dz-dazzle2>
 	</template>
 </dom-module>
 
@@ -135,6 +136,9 @@ Style                                                   | Description
 		},
 		mediaManage:function(e,detail){
 			document.dispatchEvent(new CustomEvent('custom-popup', { detail: {'component':'dz-file-management','size':'big'} }));
+		},
+		history:function(e,detail){
+			document.dispatchEvent(new CustomEvent('history', { }));
 		},
 		// Public methods
 		open: function(e) {

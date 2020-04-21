@@ -42,6 +42,8 @@ This program is available under Apache License Version 2.0, available at https:/
       on-touchstart="_bringOverlayToFront"
       theme$="[[theme]]"
       modeless="[[modeless]]"
+      width="[[width]]"
+      height="[[height]]"
       with-backdrop="[[!modeless]]"
       resizable$="[[resizable]]"
       focus-trap>
@@ -77,6 +79,9 @@ This program is available under Apache License Version 2.0, available at https:/
             memoizedTemplate = super.template.cloneNode(true);
             const contentPart = memoizedTemplate.content.querySelector('[part="content"]');
             const overlayPart = memoizedTemplate.content.querySelector('[part="overlay"]');
+            // console.log('Width',this.width);
+            // overlayPart.style.width = this.width;
+            // overlaypart.style.height = this.height; 
             const resizerContainer = document.createElement('div');
             resizerContainer.id = 'resizerContainer';
             resizerContainer.classList.add('resizer-container');
@@ -89,7 +94,8 @@ This program is available under Apache License Version 2.0, available at https:/
         static get properties() {
           return {
             modeless: Boolean,
-
+            width:Number,
+            height:Number,
             withBackdrop: Boolean
           };
         }
@@ -181,7 +187,12 @@ This program is available under Apache License Version 2.0, available at https:/
               value: false,
               notify: true
             },
-
+            width: {
+              type:Number
+            },
+            height:{
+                type:Number
+            },
             /**
              * Set to true to disable closing dialog on outside click
              */
@@ -270,6 +281,7 @@ This program is available under Apache License Version 2.0, available at https:/
 
         ready() {
           super.ready();
+          console.log('This Width',this.width);
           this.$.overlay.setAttribute('role', 'dialog');
           this.$.overlay.addEventListener('vaadin-overlay-outside-click', this._handleOutsideClick.bind(this));
           this.$.overlay.addEventListener('vaadin-overlay-escape-press', this._handleEscPress.bind(this));
@@ -281,6 +293,20 @@ This program is available under Apache License Version 2.0, available at https:/
           // We need to prevent dragging behind the non-draggable content of the dialog (i.e slotted text / button)
           this.$.overlay.$.content.addEventListener('touchmove', this._preventMove, {passive: false});
         }
+        resize(width,height){
+          console.log('This',this.$.overlay); 
+          let shadow = this.$.overlay.shadowRoot;
+
+          // let shadow=document.querySelector('vaadin-dialog-overlay').shadowRoot;   
+          // console.log('This',shadow)
+          let overlayPart = shadow.querySelector('#overlay');
+          console.log('This',overlayPart);
+           // const overlayPart = memoizedTemplate.querySelector('[part="overlay"]');
+              
+              overlayPart.style.width = width;
+              overlayPart.style.height = height;
+            
+            }
 
         _preventMove(e) {
           if (e.touches.length < 2) {

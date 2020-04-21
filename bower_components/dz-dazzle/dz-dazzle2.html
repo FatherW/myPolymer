@@ -1,51 +1,33 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../vaadin-dialog/vaadin-dialog.html">
 <link rel="import" href="dz-login.html">
-<!-- <script src="https://d25k6mzsu7mq5l.cloudfront.net/bower_components/webcomponentsjs/webcomponents-lite.js"></script> -->
-<!-- <script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn6.0/js/aws-sdk-2.83.0.min.js"></script>
-<script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn6.0/js/store-2.0.12.min.js"></script> -->
+<link rel="import" href="dz-history.html">
 
-<!--
-A material design [Floating Action Button with Speed Dial](https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-transitions)
-
-### Styling
-
-Style                                                   | Description
-------------------------------------------------        | ------------
---paper-fab-speed-dial-background                       | The background color of the Floating Action Button
---paper-fab-speed-dial-keyboard-focus-background        | The background color of the Floating Action Button when focused
---paper-fab-speed-dial-background-close                 | The background color of the Floating Action Button when opened
---paper-fab-speed-dial-keyboard-focus-background-close  | The background color of the Floating Action Button when opened and focused
---paper-fab-speed-dial-position                         | The type of positioning method used for the Floating Action Button (default: absolute)
---paper-fab-speed-dial-right                            | Margin to the right of the screen (default: 16px)
---paper-fab-speed-dial-bottom                           | Margin to the bottom of the screen (default: 16px)
-
-### Example
-
-```html
-<paper-fab-speed-dial>
-<paper-fab-speed-dial-action icon="icons:content-copy">Copy</paper-fab-speed-dial-action>
-<paper-fab-speed-dial-action icon="icons:print">Print</paper-fab-speed-dial-action>
-</paper-fab-speed-dial>
-```
-
-@demo demo/index.html
--->
 <dom-module id="login-dialog-overlay-styles" theme-for="vaadin-dialog-overlay">
     <template>
         <style>
+            :host([theme~="login"]) [part="overlay"] {
+                width: 900px;
+            }
+
             :host([theme~="login"]) [part="content"] {
                 padding: 0px;
             }
 
-            [part="overlay"] {
+
+
+            :host([theme~="theme1-overlay"]) [part="content"] {
+                padding: 0;
+            }
+
+            /* [part="overlay"] {
                 width: 480px;
-            }
+            } */
 
-            html {
+
+            /* html {
                 --lumo-space-l: 0px;
-
-            }
+            } */
         </style>
     </template>
 </dom-module>
@@ -73,7 +55,7 @@ Style                                                   | Description
                 z-index: 99999;
             }
         </style>
-        <vaadin-dialog aria-label="simple" id="login" theme="login"></vaadin-dialog>
+        <vaadin-dialog aria-label="simple" id="login" theme="login" width=900 height=900></vaadin-dialog>
         <div id="dz-logo" on-click="login"></div>
     </template>
 </dom-module>
@@ -110,6 +92,18 @@ Style                                                   | Description
                 customElements.whenDefined('vaadin-dialog').then(function () {
                     const shadow = that.shadowRoot;
                     const dialog = shadow.querySelector('vaadin-dialog#login');
+
+                    document.addEventListener('history',e=>{
+
+                        dialog.renderer = function (root, dialog) {
+                            root.innerHTML = '<dz-history></dz-history';
+                        };
+                        dialog.resizable = true;
+                        dialog.resize('90%','90%');
+                        dialog.opened = true;
+                        
+                    });
+
                     dialog.renderer = function (root, dialog) {
                         root.innerHTML = '<dz-login></dz-login>';
                     };
@@ -118,7 +112,11 @@ Style                                                   | Description
             login: function () {
                 const shadow = this.shadowRoot;
                 const dialog = shadow.querySelector('vaadin-dialog#login');
+                dialog.resizable = true;
+                // dialog.resize('900px','900px');
+                // dialog.addThemeVariants("theme1");
                 dialog.opened = true;
+
             }
         });
 

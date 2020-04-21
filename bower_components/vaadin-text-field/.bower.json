@@ -43,6 +43,7 @@
     "iron-test-helpers": "^2.0.0",
     "webcomponentsjs": "^1.0.0",
     "web-component-tester": "^6.1.5",
+    "sinonjs": "Polymer/sinon.js#^1.14.1",
     "vaadin-demo-helpers": "vaadin/vaadin-demo-helpers#^3.0.0",
     "vaadin-button": "vaadin/vaadin-button#^2.1.0"
   },
@@ -57,15 +58,14 @@
   "resolutions": {
     "vaadin-element-mixin": "^2.0.0"
   },
-  "version": "2.5.3",
-  "_release": "2.5.3",
+  "version": "2.5.5",
+  "_release": "2.5.5",
   "_resolution": {
     "type": "version",
-    "tag": "v2.5.3",
-    "commit": "570fe671063af53d57453ecf2ae0eaa2d50bd1c3"
+    "tag": "v2.5.5",
+    "commit": "54e2367c3d1c028f4389426ac7c94c1f38c29a01"
   },
   "_source": "https://github.com/vaadin/vaadin-text-field.git",
-  "_target": "^2.5.3",
-  "_originalSource": "vaadin/vaadin-text-field",
-  "_direct": true
+  "_target": "^2.4.3",
+  "_originalSource": "vaadin/vaadin-text-field"
 }

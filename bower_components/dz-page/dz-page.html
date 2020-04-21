@@ -101,9 +101,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       //   'click': '_click',
       //   'mouseover': '_mouseover'
       // },
-
+ 
       created: function () {
-
+        
         let editMode = store.get('editMode') || 'normal';
         this.editMode = editMode;
         let user = store.get('user') || null;
@@ -194,7 +194,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       },
       loadComponent(cat, id) {
-        document.querySelector('head').appendChild(this.contentElm('<link rel="import" href="https://d25k6mzsu7mq5l.cloudfront.net/bower_components/' + cat + '/' + id + '.html?id=' + new Date().getTime() + '">'));
+        document.querySelector('head').appendChild(this.contentElm('<link rel="import" href="bower_components/' + cat + '/' + id + '.html?id=' + new Date().getTime() + '">'));
         elm = document.createElement(id);
         this.shadowRoot.appendChild(elm);
       },
@@ -267,10 +267,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         // let dzPage = document.querySelector('dz-page');
         let bodyJs = document.createRange().createContextualFragment(this.bodyJs);
         let extraHead = `
-            <link rel="import" href="https://d25k6mzsu7mq5l.cloudfront.net/bower_components/dz-page/dz-page.html">
+            <link rel="import" href="bower_components/dz-page/dz-page.html">
         `;
         let script = document.createElement('script');
-        script.setAttribute('src', "https://d25k6mzsu7mq5l.cloudfront.net/bower_components/webcomponentsjs/webcomponents-lite.js");
+        script.setAttribute('src', "bower_components/webcomponentsjs/webcomponents-lite.js");
         extraHead += '<link rel="stylesheet" href="css/' + this.thisPage + '.css" />';
         let eHead = document.createRange().createContextualFragment(extraHead);
 
