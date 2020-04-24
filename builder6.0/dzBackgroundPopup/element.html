@@ -1,0 +1,214 @@
+
+    <style>
+    .grid {
+        border: 1px solid #cccccc;
+        list-style: none;
+        background: #ffffff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-transition: all 0.6s ease-out;
+        transition: all 0.6s ease-out;
+    }
+
+    .grid-img {
+        width: 100%;
+        vertical-align: middle;
+        -webkit-transition: opacity 0.6s ease-out;
+        transition: opacity 0.6s ease-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .grid-img:hover {
+        opacity: 0.6 !important;
+    }
+
+    .grid-img:hover,
+    .grid-img:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .dynamic-grid {
+        position: relative;
+        display: none;
+    }
+
+    .dynamic-grid.angular-grid {
+        display: block;
+    }
+
+    .grid {
+        position: absolute;
+        list-style: none;
+        background: #ffffff;;
+        box-sizing: border-box;
+        -webkit-transition: all 400ms ease;
+        transition: all 400ms ease;
+        overflow: hidden;
+        border-radius: 3.5px;
+    }
+
+    .grid.ng-leave {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+    }
+
+    .grid.ng-leave.ng-leave-active {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .grid.ng-enter {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+        -webkit-transition-delay: 500ms;
+        transition-delay: 500ms;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .grid.ng-enter.ng-enter-active {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .grid-img {
+        width: 100%;
+        vertical-align: middle;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+    .search-panel{
+        width:100%;
+        height:15%;
+        display:block;
+    }
+    .dazzle-gallery {
+        width:100%;
+        height:85%;
+        display:block;
+    }
+    
+    md-sidenav, 
+    md-sidenav.md-locked-open, 
+    md-sidenav.md-closed.md-locked-open-add-active {
+        min-width:100% !important;
+      width:100% !important;
+      max-width:100% !important;
+    } 
+    md-radio-button {
+        float:left;
+        padding-right:5px;
+    }
+    .delete {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .delete:hover {
+        color:orange;
+    }
+    
+        .galleryCard .md-card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .galleryCard, md-card md-card-content {
+            padding-bottom: 0px !important;
+        }
+
+        .galleryCard .md-errors-spacer {
+            min-height: 0px !important;
+        }
+
+        .galleryCard md-input-container {
+            margin-bottom: 0px !important;
+        }
+    </style>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>背景圖片</h2>
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="save()">
+                儲存
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="cancel()">
+                取消
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content  style="min-height:70%;" ng-init="init()">
+        <input id="fileChooser" type="file" style="display: none">
+        
+        <md-tabs class="md-primary" md-center-tabs  md-dynamic-height>
+      <md-tab label="背景">
+        <md-content class="md-padding">
+                 <div class="dazzle-gallery">
+                <ul class="dynamic-grid" angular-grid="userGallery"
+                    ag-options="userGalleryAngularGridOptions"
+                    ag-infinite-scroll="loadMore()">
+                    <li data-ng-repeat="image in items" class="grid">
+                        <img ng-click="uploadBg(image)"  ng-src="{{bg2Img(image['bg'])}}" class="grid-img" ng-click="uploadBg(image)"/>
+                        
+<!--                        <div ng-click="delete(image,$index)" class="delete">
+                            <i class="fa fa-2 fa-trash-o"></i>
+                        </div>
+                        <div ng-if="image['selected']" ng-click="delete(image,$index)" class="check" role="button" tabindex="0">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        -->
+                    </li>
+                </ul>
+            </div>
+        
+        </md-content>
+      </md-tab>
+      <md-tab label="圖片">
+        <md-content class="md-padding">
+                   <md-content class="md-padding">
+                 <div class="dazzle-gallery">
+                <ul class="dynamic-grid" angular-grid="userGallery"
+                    ag-options="userGalleryAngularGridOptions"
+                    ag-infinite-scroll="loadMore()">
+                    <li data-ng-repeat="image in items" class="grid">
+                        <img ng-click="uploadBg(image)"  ng-src="{{image['bg']}}" class="grid-img" ng-click="uploadBg(image)"/>
+                        
+<!--                        <div ng-click="delete(image,$index)" class="delete">
+                            <i class="fa fa-2 fa-trash-o"></i>
+                        </div>
+                        <div ng-if="image['selected']" ng-click="delete(image,$index)" class="check" role="button" tabindex="0">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        
+                        -->
+                    </li>
+                </ul>
+            </div>
+        
+        </md-content>
+      </md-tab>
+      
+    </md-tabs>
+
+    </md-dialog-content>

@@ -1,0 +1,11 @@
+<div data-ng-repeat="item in model.news|orderBy:'-publishDate'|filter:{'分類':'工運資訊'}|limitTo:1" class="views-row views-row-{{$index+1}}" ng-class="{'views-row-odd': ($index+1)%2!=0,'views-row-even': ($index+1)%2==0,'views-row-first':$index==0,'views-row-last':$index==model.news.length}">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content">                     <div class="list_point">
+                   <div class="photo">
+                     <div class="news_photo"><img ng-if="item['圖片']" src="{{item['圖片']}}" width="112" height="72" alt=""> </div>
+
+                   </div> 
+                   <div class="text_06"><p><a href="http://lac.dazzle.website/newsPage.html?title={{item['標題']}}">{{item['標題']}}</a> </p></div>
+<div class="fb-like layout-row" data-href="http://lac.dazzle.website/newsPage.html?title={{item['標題']}}" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false" data-width="120"></div>
+                   <div class="clear"></div>
+                 </div></span>  </div>  </div>

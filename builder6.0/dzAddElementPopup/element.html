@@ -1,0 +1,269 @@
+<style>
+/*
+ * Generate different grid panel colors
+ */
+
+.tm-grid-colors > * > * { padding: 5px; }
+
+
+  .grid {
+        border: 1px solid #cccccc;
+        list-style: none;
+        background: #ffffff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-transition: all 0.6s ease-out;
+        transition: all 0.6s ease-out;
+    }
+
+    .grid-img {
+        width: 100%;
+        vertical-align: middle;
+        -webkit-transition: opacity 0.6s ease-out;
+        transition: opacity 0.6s ease-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .grid-img:hover {
+        opacity: 0.6 !important;
+    }
+
+    .grid-img:hover,
+    .grid-img:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .dynamic-grid {
+        position: relative;
+        display: none;
+    }
+
+    .dynamic-grid.angular-grid {
+        display: block;
+    }
+
+    .grid {
+        position: absolute;
+        list-style: none;
+        background: #ffffff;;
+        box-sizing: border-box;
+        -webkit-transition: all 400ms ease;
+        transition: all 400ms ease;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+
+    .grid.ng-leave {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+    }
+
+    .grid.ng-leave.ng-leave-active {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .grid.ng-enter {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+        -webkit-transition-delay: 500ms;
+        transition-delay: 500ms;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .grid.ng-enter.ng-enter-active {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .grid-img {
+        width: 100%;
+        vertical-align: middle;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+/*.tm-grid-colors > :nth-child(8n-7) > * { background: rgba(130,200,240,0.1); }
+.tm-grid-colors > :nth-child(8n-6) > * { background: rgba(130,200,240,0.15); }
+.tm-grid-colors > :nth-child(8n-5) > * { background: rgba(130,200,240,0.2); }
+.tm-grid-colors > :nth-child(8n-4) > * { background: rgba(130,200,240,0.25); }
+.tm-grid-colors > :nth-child(8n-3) > * { background: rgba(130,200,240,0.3); }
+.tm-grid-colors > :nth-child(8n-2) > * { background: rgba(130,200,240,0.35); }
+.tm-grid-colors > :nth-child(8n-1) > * { background: rgba(130,200,240,0.40); }
+.tm-grid-colors > :nth-child(8n) > * { background: rgba(130,200,240,0.45); }
+*/
+/*
+ * Generate different grid panel heights
+ */
+
+/*.tm-grid-heights > :nth-child(8n-7) > * { height: 80px; }
+.tm-grid-heights > :nth-child(8n-6) > * { height: 100px; }
+.tm-grid-heights > :nth-child(8n-5) > * { height: 160px; }
+.tm-grid-heights > :nth-child(8n-4) > * { height: 120px; }
+.tm-grid-heights > :nth-child(8n-3) > * { height: 180px; }
+.tm-grid-heights > :nth-child(8n-2) > * { height: 130px; }
+.tm-grid-heights > :nth-child(8n-1) > * { height: 150px; }
+.tm-grid-heights > :nth-child(8n) > * { height: 110px; }
+*/
+/*
+ * Add a fixed height to grid items
+ */
+.grid-item {
+    margin:10px;
+    width:150px;
+    float:left;
+    height:150px;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.grid-item img {
+    height:100%;
+    width:auto;
+    margin:0 auto;
+    display:block;
+}
+.tm-grid-height-250 > * > * { height: 250px; }
+
+.fdw-background {
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+}
+.fdw-background h4 {
+    font-size: 16px;
+    font-family: 'Dosis',sans-serif;
+    text-align: center;
+    padding: 40px 0 10px 0;
+    color: #fff;
+    font-weight: bold;
+}
+
+
+.a-center {
+    text-align: center;
+}
+.fdw-subtitle {
+    font-size: 0.8em;
+    margin-top: -20px;
+    color: #0CF;
+}
+.fdw-background .fdw-port {
+    text-align: center;
+}
+.fdw-background .fdw-port a {
+    padding: 8px 15px;
+    font-size: 1em;
+}
+.freshdesignweb a:link {
+    text-decoration: none;
+}
+.fdw-port a {
+    background-color: #336699;
+    color: #fff;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-box-shadow: 0 3px 0 #0f3963, 3px 5px 3px #333;
+    -moz-box-shadow: 0 3px 0 #0f3963,3px 5px 3px #333;
+    box-shadow: 0 3px 0 #0f3963, 3px 5px 3px #333;
+    -o-box-shadow: 0 3px 0 #0f3963,3px 5px 3px #333;
+    text-shadow: 0 1px 1px #000;
+}
+.animated { 
+    animation-duration: 1s; 
+    animation-fill-mode: both; 
+} 
+
+@keyframes fadeIn { 
+    0% {opacity: 0;} 
+    100% {opacity: 1;} 
+} 
+.fdw-background:hover { 
+    animation-name: fadeIn; 
+}
+</style>
+
+ <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>元素管理</h2>
+            <span flex></span>
+            <md-button ng-click="closePopup()">關閉</md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content ng-init="init()" style="min-height: 300px;">
+        <div ng-cloak>
+            <md-content>
+<md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="元素">
+        <md-content class="md-padding">
+
+<div ng-repeat="element in elements" class="grid-item" ng-click="closePopup(element)" style="background-image:url({{element.thumbnail}})">
+       <!-- <img ng-src="{{element.thumbnail}}" /> -->
+
+        <div style="opacity: 1;" class="fdw-background animated fadeIn">
+            <h4>{{element.label}}</h4>
+            <p class="fdw-port">
+            <md-button>介紹 </md-button>
+            <md-tooltip
+              md-direction="bottom">
+              {{element.description}}
+            </md-tooltip>
+            </p>
+
+        </div>
+</div>
+  
+<div class="clear"></div>
+
+        </md-content>
+      </md-tab>
+      <md-tab label="結構">
+        <md-content class="md-padding">
+<div ng-repeat="element in structures" class="grid-item" ng-click="closePopup(element)" style="background-image:url({{element.thumbnail}})">
+       <!-- <img ng-src="{{element.thumbnail}}" /> -->
+
+        <div style="opacity: 0;" class="fdw-background animated fadeIn">
+            <h4>{{element.label}}</h4>
+            <p class="fdw-port">
+            <md-button>介紹 </md-button>
+            <md-tooltip
+              md-direction="bottom">
+              {{element.description}}
+            </md-tooltip>
+            </p>
+
+        </div>
+</div>
+  
+<div class="clear"></div>
+
+
+        </md-content>
+      </md-tab>
+
+
+    </md-tabs>
+
+            </md-content>
+        </div>
+    </md-dialog-content>

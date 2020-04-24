@@ -1,0 +1,15 @@
+<div ng-app="myApp" ng-controller="galleryCtrl" ng-init="init()">
+
+<div class="preloader" style="display:none"></div>
+
+	<div id="container" class="container">
+	    <div ng-include="'views/gallery.html'"></div>
+	</div>
+
+	<script src="http://dazzle.gallery/js/angulargrid.js"></script>
+	<script type="text/javascript" src="http://dazzle.gallery/js/services.js?id=438203"></script>
+	<script type="text/javascript" src="http://dazzle.gallery/js/app.js"></script>
+	<script type="text/javascript" src="http://dazzle.gallery/js/upload.js"></script>
+	<script type="text/javascript" src="http://dazzle.gallery/js/index.js"></script>
+
+</div>

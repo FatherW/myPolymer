@@ -1,0 +1,33 @@
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>圖片上傳</h2>
+            <span flex></span>
+            <md-button class="pull-right md-raised md-primary"
+                       ng-click="upload()" ng-show="!uploading && files.length > 0">
+                上傳
+            </md-button>
+            <md-button class="md-primary md-raised"
+                       ng-show="!uploading" ng-click="close()">
+                <md-tooltip>關閉</md-tooltip>
+                <i class="fa fa-times"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content layout-padding layput-magrin>
+        <div layout="column" ng-show="!uploading">
+            <lf-ng-md-file-input lf-files="files" ng-show="!uploading" multiple drag preview accept="image/*"></lf-ng-md-file-input>
+        </div>
+        <md-content ng-show="uploading">
+            <md-list flex>
+                <md-subheader class="md-no-sticky">上傳成功：{{uploadedFiles.length}}/{{files.length}}</md-subheader>
+                <md-list-item class="md-2-line" ng-repeat="file in files">
+                    <img ng-src="{{file.lfDataUrl}}" class="md-avatar"/>
+                    <div class="md-list-item-text">
+                        {{file.lfFileName}}
+                    </div>
+                    <img ng-src="{{file.icon}}" class="md-avatar">
+                </md-list-item>
+            </md-list>
+        </md-content>
+    </md-dialog-content>

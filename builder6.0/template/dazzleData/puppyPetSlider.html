@@ -1,0 +1,25 @@
+ 
+ <div class="hiddenText">
+<img id="img-ele1498980245389-45" class="img-responsive ng-scope" style="max-width:100%;max-height: 100%;" src="http://design101.dazzle.website/image/Screen Shot 2017-07-02 at 3.20.32 PM.png">
+
+</div>
+ <div class="realText header-text-area text-center" ng-init="loadData()">
+            <div class="pogoSlider">
+                <div ng-repeat="item in model.data" class="pogoSlider-slide" data-transition="fade" data-duration="3000" style="background:url({{item.background}}) no-repeat scroll 0 0 / cover;">
+                    <div class="table">
+                        <div class="table-cell">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-8 col-sm-offset-2 padding-top">
+                                        <h1 class="pogoSlider-slide-element" data-in="slideUp" data-out="expand" data-duration="800">{{item.title}}</h1>
+                                        <p class="pogoSlider-slide-element" data-in="slideUp" data-out="expand" data-duration="800">{{item.text}}</p>
+                                        <p class="header-text-button pogoSlider-slide-element hidden-xs" data-in="expand" data-out="expand" data-duration="1200"><a ng-href="{{item.title}}.html" class="battn">View Details</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>     
+ 

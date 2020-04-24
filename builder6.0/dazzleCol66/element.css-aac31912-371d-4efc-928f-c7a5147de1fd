@@ -1,0 +1,30 @@
+.wrapper {
+	width:1280px;
+	margin:0 auto;
+	padding:0 10px;
+	clear:both;
+	display:block;
+	height:auto;
+}
+
+.row {
+	margin:0px;
+	padding:0px;
+	min-height:50px;
+	width:100%;
+}
+
+.col {
+	padding:0 5px;
+}
+.col-6 {
+	width:50%;
+	float:left;
+}
+.clear {
+    clear:both;
+
+}
+editor-container-element {
+	padding:50px 10px;
+}

@@ -1,0 +1,14 @@
+
+                    
+                    <div class="menu_block">
+						<nav id="bt-menu" class="bt-menu bt-menu-open">
+							<a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+							<ul>
+								<li class="bt-icon"><a href="index.html">Home</a></li>
+								<li ng-repeat="item in model.menu" ng-if="item.title!='Home'">
+                                
+                                <a ng-href="{{item.link}}">{{item.title}}</a></li>
+							</ul>
+						</nav>
+						<div class="clear"></div>
+					</div>

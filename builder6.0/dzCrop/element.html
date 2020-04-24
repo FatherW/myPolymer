@@ -1,0 +1,25 @@
+  <style>
+    .container {
+      margin: 20px auto;
+      max-width: 640px;
+    }
+
+    img {
+      max-width: 100%;
+    }
+  </style>
+  
+  <div class="container" ng-init="init()">
+    <h1>Minimum and maximum cropped dimensions</h1>
+    <h3>Image</h3>
+    <div>
+      <img id="image" src="https://fengyuanchen.github.io/cropperjs/images/picture.jpg" alt="Picture">
+    </div>
+    <p>Maximum Width: 640, Maximum Height: 320, Minimum Width: 320, Minimum Height: 160</p>
+    <p>Data: <span id="data"></span></p>
+    <h3>Result</h3>
+    <p>
+      <button type="button" id="button">Crop</button>
+    </p>
+    <div id="result"></div>
+  </div>

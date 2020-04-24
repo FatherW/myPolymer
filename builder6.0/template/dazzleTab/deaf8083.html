@@ -1,0 +1,9 @@
+<div class="tab-content">
+  <div ng-repeat="item in model.menu" id="{{item.id}}" class="tab-pane fade">
+    <h3>{{item.title}}</h3>
+    <editor-container-element id="con-{{item.id}}" custom>
+        <text>Please type Something.</text>
+        
+    </editor-container-element>
+  </div>
+</div>

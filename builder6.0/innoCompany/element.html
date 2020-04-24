@@ -1,0 +1,162 @@
+<style>
+
+    md-tab-content {
+        padding: 20px;
+        background: none;
+        border: none;
+    }
+    inno-company div[flex] {
+        padding: 10px;
+        position:relative;
+    }
+
+    inno-edit-button {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+    .innoSave {
+        position:absolute;
+        top:0px;
+        left:0px;
+    }
+</style>
+<div id="dzContextMenu">
+<!-- <span  ng-if="isUser()" class="ctrlIcon innoSave" ng-click="save()">
+    <i class="fa fa-save fa-x" role="button" aria-hidden="true"></i></span> -->
+
+
+<!--    <inno-save-button table="company" id="id" item="company">
+    </inno-save-button>  -->
+ <div layout="row" layout-wrap>
+    <div flex="100" class="float">      
+    <inno-edit-button popup="image" field="photos" item="company['photos']">
+    </inno-edit-button>
+
+    	<img ng-src="{{company['photos']}}"  class="ng-scope">
+	</div>
+	<div flex="100" class="float">
+		<h4>{{company['name']}}</h4>          <inno-edit-button ng-if="isSuper" popup="text" field="name" item="company['name']">
+    </inno-edit-button>
+</div>
+    <div flex="100" class="float">
+		<md-chips ng-model="company.tags" name="hello" readonly="true"
+                md-removable="false">
+          </md-chips>     <inno-edit-button popup="tags" field="tags" item="company['tags']">
+    </inno-edit-button>
+    </div>
+    
+    </div>
+ </div>
+
+		
+		<div class="">
+  <md-content class="_md">
+    <md-tabs md-dynamic-height="" md-border-bottom="" class="ng-isolate-scope md-dynamic-height md-no-tab-content"><md-tabs-wrapper> <md-tab-data><md-tabs-wrapper class="ng-scope"> <md-tab-data>
+           <md-tab label="公司項目" class="ng-scope ng-isolate-scope">
+    <inno-edit-button popup="html" field="project" item="company['project']">
+    </inno-edit-button>
+    <div ng-bind-html="company['project']| to_trusted"></div>
+    
+    
+    <!--        <div layout="row">
+                		<img dz-image src="//designerrrr-output.s3.amazonaws.com/images/www.innoaibator.com/large-web/id1552430490563.jpg" context-meu="imgMenuOptions" id="1552430439499" dz-image="" class="ng-scope">
+            </div>
+            <p>在這到那民們人市開立民意化不布灣於包創他引……車曾衣面！
+            義也國。自春中司房客上增。上難難為及直水成天即得已的走做山其事結技都？朋媽然經。像明麼的還類人書，候成兩處，到外最人雄，羅利爭念聲期人舉制好言據。縣望爭回軍育度的友門包寫，北則一認濟準演致人你高。改北工女信下策；者做說，中一也就說告他國！響有處實對最還眾地汽軍麼日體：過讓的運沒社資展一有爸理關子卻多景。亞件感值政物們站不走情國亞因持最影手這感始，你法平有兩起，不問品機看然中下有廣，中後示日文關龍去際講他，門為一這之生應就要三……五才得到案方興夫地讀手，界考約方現因我家看的候，你只先議用遊中，環做背眼野的義院大？什開頭始，不英時它動大低合影照頭可年法外機變子一銀？題滿響長世生該、原時個一生聯表獨做度心情黑走口傳中有！及有竟方術事錢！了西無來蘭答才設學無。基看接心成？
+            </p><p>
+            明球清就一速克的包岸、期更身將團幾她味。了電當速。日道算好興。兒特面行物就般型時不幾界那，受車期不因照……金造臺外令，引只切站山球有們味。
+            </p>     
+            
+            -->
+      </md-tab>
+      <md-tab label="公司介紹" class="ng-scope ng-isolate-scope">
+    <inno-edit-button popup="html" field="description" item="company['description']">
+    </inno-edit-button>
+    <div ng-bind-html="company['description'] | to_trusted">
+    
+    </div>
+<!--        <div dz-field data-field="descripton" data-type="html">  
+            <p>在這到那民們人市開立民意化不布灣於包創他引……車曾衣面！
+            義也國。自春中司房客上增。上難難為及直水成天即得已的走做山其事結技都？朋媽然經。像明麼的還類人書，候成兩處，到外最人雄，羅利爭念聲期人舉制好言據。縣望爭回軍育度的友門包寫，北則一認濟準演致人你高。改北工女信下策；者做說，中一也就說告他國！響有處實對最還眾地汽軍麼日體：過讓的運沒社資展一有爸理關子卻多景。亞件感值政物們站不走情國亞因持最影手這感始，你法平有兩起，不問品機看然中下有廣，中後示日文關龍去際講他，門為一這之生應就要三……五才得到案方興夫地讀手，界考約方現因我家看的候，你只先議用遊中，環做背眼野的義院大？什開頭始，不英時它動大低合影照頭可年法外機變子一銀？題滿響長世生該、原時個一生聯表獨做度心情黑走口傳中有！及有竟方術事錢！了西無來蘭答才設學無。基看接心成？
+            </p><p>
+            明球清就一速克的包岸、期更身將團幾她味。了電當速。日道算好興。兒特面行物就般型時不幾界那，受車期不因照……金造臺外令，引只切站山球有們味。
+            </p>
+        </div>  -->
+      </md-tab>
+      <md-tab label="創辦團隊" class="ng-scope ng-isolate-scope">
+    <inno-edit-button popup="html" field="team" item="company['team']">
+    </inno-edit-button>
+    <div ng-bind-html="company['team']| to_trusted"></div>
+<!--      <div layout="row" layout-wrap>
+          <div flex="50">
+				<img dz-image src="//designerrrr-output.s3.amazonaws.com/images/www.innoaibator.com/large-web/id1552430490563.jpg" context-meu="imgMenuOptions" id="1552430439499" dz-image="" class="ng-scope">
+          </div>
+          <div flex="50">
+                <h4>創辦人</h4>
+                <h5>職位</h5>
+                <p>P在這到那民們人市開立民意化不布灣於包創他引……車曾衣面！
+義也國。自春中司房客上增。上難難為及直水成天即得已的走做山其事結技都？朋媽然經。像明麼的還類人書，候成兩處，到外最人雄，羅利爭念聲期人舉制好言據。縣望爭回軍育度的友門包</p>
+          </div>
+          
+        </div>
+        <div layout="row" layout-wrap>
+
+          <div flex="50">
+                <div layout="row" layout-wrap>
+                  <div flex="50">
+                		<img dz-image src="//designerrrr-output.s3.amazonaws.com/images/www.innoaibator.com/large-web/id1552430490563.jpg" context-meu="imgMenuOptions" id="1552430439499" dz-image="" class="ng-scope">
+        
+                  </div>
+                  <div flex="50">
+                        <h4>創辦人</h4>
+                        <h5>職位</h5>
+                  </div>
+                  
+                </div>
+              
+          </div>
+          <div flex="50">
+                <div layout="row" layout-wrap>
+                  <div flex="50">
+                		<img dz-image src="//designerrrr-output.s3.amazonaws.com/images/www.innoaibator.com/large-web/id1552430490563.jpg" context-meu="imgMenuOptions" id="1552430439499" dz-image="" class="ng-scope">
+        
+                  </div>
+                  <div flex="50">
+                        <h4>創辦人</h4>
+                        <h5>職位</h5>
+                  </div>
+                  
+                </div>
+          </div>
+          
+        </div> -->
+      
+      </md-tab>
+
+      
+      <md-tab label="成長狀況" class="ng-scope ng-isolate-scope">
+       <inno-edit-button popup="html" field="timeline" item="company['timeline']">
+    </inno-edit-button>
+
+
+      </md-tab>
+      </md-tabs>
+    
+  </md-content>
+    <div id="investor">
+       <inno-edit-button popup="images" field="investor" item="company['investor']">
+    </inno-edit-button>
+			<h2>投資者</h2>
+            <div ng-if="!company['investor']">
+    			<h3>暫無投資者</h3>
+    		</div>
+    		<div ng-if="company['investor']">
+    			<div class="invest-item" ng-repeat="src in company['investor']">
+    
+    				<img ng-src="{{src}}" >
+    			</div>
+            </div>
+		</div>
+</div>
+</div>

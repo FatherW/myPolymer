@@ -1,0 +1,7 @@
+<div ng-if="isNoData">
+    未有資料 （可右click更新)
+</div>
+<ul id="albums" ng-if="!isNoData">
+    <li ng-repeat="item in model.data" class="photo"><img ng-src="https://{{item.bucket}}.s3-ap-northeast-1.amazonaws.com/{{item.path}}">
+    </li>
+</ul>

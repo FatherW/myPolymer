@@ -1,0 +1,10 @@
+<div layout="row" layout-align="space-between center" class="ng-scope layout-align-space-between-center layout-row">
+    <img ng-src="{{params.image}}" style="max-height: 25px;">
+    <div layout="row" class="layout-row">
+        <div flex="" style="padding-right: 10px;" class="flex" ng-click="upload()">
+            <i class="fa fa-upload hoverClass"></i></div>
+        <div flex="" style="padding-right: 10px;" class="flex" ng-click="remove()">
+            <i class="fa fa-times hoverClass"></i></div>
+    </div>
+    <input type="file" style="display: none;" id="uploader">
+</div>

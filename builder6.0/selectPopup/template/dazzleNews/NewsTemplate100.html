@@ -1,0 +1,34 @@
+<div class="hiddenText" ng-init="loadNews()">
+    <div ng-repeat="item in model.news | orderBy: -'publishDate'">
+        <div class="col-lg-4 col-md-4 col-xs-12 floatRight">
+            <img ng-src="{{item['thumbnail']}}">
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-12">
+            <a ng-href="{{item['標題']}}.html"><h2>{{item['標題']}}</h2></a>
+            <span>{{item['publishDate']}}</span>
+            <br>
+            <br>
+            <p>{{item['簡介']}}...<a ng-href="{{item['標題']}}.html">詳情</a></p>
+        </div>
+        <div class="clear"></div>
+        <hr>
+    </div>
+</div>
+
+
+<div class="realText" myangular-controller="AppController2">
+    <div myangular-repeat="item in rowData | orderBy: -'publishDate'">
+        <div class="col-lg-4 col-md-4 col-xs-12 floatRight">
+            <img myangular-src="[[item['thumbnail']]]">
+        </div>
+        <div class="col-lg-8 col-md-8 col-xs-12">
+            <a myangular-href="[[item['標題']]].html"><h2>[[item['標題']]]</h2></a>
+            <span>[[item['publishDate']]]</span>
+            <br>
+            <br>
+            <p>[[item['簡介']]]...<a myangular-href="[[item['標題']]].html">詳情</a></p>
+        </div>
+        <div class="clear"></div>
+        <hr>
+    </div>
+</div>

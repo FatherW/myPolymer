@@ -1,0 +1,11 @@
+metal-delete-button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 2;
+    width: 20px;
+    height: 20px;
+}
+.product {
+    position:relative;
+}

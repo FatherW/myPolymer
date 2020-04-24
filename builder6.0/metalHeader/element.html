@@ -1,0 +1,109 @@
+<div id="header" ng-init="init()">
+    <a href="https://www.5metal.com.hk/node" id="logo" alt="香港五金網"></a>
+    
+    
+    <div class="member_bar" ng-if="!isUser()">
+        <a href="https://www.5metal.com.hk/user" class="btn_login">登錄</a>
+        <a href="https://www.5metal.com.hk/signup" class="btn_signup">註冊</a>
+    </div>
+    
+    <div class="user_bar" ng-if="isUser()">
+		賬戶: 
+		<span class="user_nav_wrapper">
+			<a href="#" class="username">{{uname}}<span class="arrow"></span></a>
+			<ul class="user_nav">
+				<!--<li><a href="/my-company-order">檢視訂購記錄</a></li>-->
+				<li><a href="/my_products">我的產品</a></li>
+				<!--<li><a href="/user/user-comment/42094">產品問與答</a></li>-->
+				<!--<li><a href="/my_quotes">我的報價</a></li>-->
+				<li><a href="/my_favorites">我的收藏</a></li>
+				<li><a href="/node/31771/edit">編輯公司資料</a></li>
+				<li><a href="/content/aline-solutions-limited">我的公司頁</a></li>
+				<li><a href="/user">帳戶資料</a></li>
+				<li><a ng-href="/user/{{uid}}/edit">重設密碼</a></li>
+				<li><a ng-click="logout()" href="/user/logout">登出</a></li>
+			</ul>
+		</span> 
+		(賣貨者)
+	</div>
+	
+	<div class="member_bar" ng-if="isUser()">
+		<a href="/node/add/product" class="btn_user">刊登產品</a>
+
+	</div>
+	
+	
+    <form action="#" method="GET">
+    <div class="search">
+        <ul>
+            <li><a href="#" rel="product" class="active">產品</a></li>
+            <!--<li><a href="#" rel="purchase" class="">求貨</a></li>-->
+            <li><a href="#" rel="company" class="">公司</a></li>
+        </ul>
+        <div class="search_bar gradient_light_grey">
+            <input type="text" value="" name="keyword" id="keyword" class="search_input">
+            <input type="button" value="搜尋" class="btn_search" ng-click="keyword_search();">
+        </div>
+    </div><!--end of search-->
+    </form>
+    <div class="clearfix"></div>
+
+    <div class="nav_group">
+        <ul class="nav_main gradient_yellow">
+            <li><a href="https://www.5metal.com.hk/" class="nav_main_btn" rel="home">首頁</a></li>
+                            <li ng-class="{ ['current','active']:page==2}"><a href="https://www.5metal.com.hk/product_category?order=update&amp;order_type=desc" class="nav_main_btn" rel="products">產品</a>
+                        </li>
+            <!--<li ><a href="/purchase?order=create&order_type=desc" class="nav_main_btn" rel="purchase">求貨</a></li>-->
+                            <li ng-class="{['current','active']:page==3}" class=""><a href="https://www.5metal.com.hk/company" class="nav_main_btn" rel="companys">公司</a></li>
+                        <li><a href="https://www.5metal.com.hk/wiki" class="nav_main_btn" rel="wiki">五金維基</a></li>
+            <li><a href="https://www.5metal.com.hk/info" class="nav_main_btn" rel="info">行內資訊</a></li>
+            <li><a href="https://www.5metal.com.hk/contact" class="nav_main_btn" rel="about">五金網社區</a></li>
+        <li class="float_nav" rel="products" style="left: 136px; top: 0px; height: 38px; width: 116px;"></li><li class="float_nav" rel="products" style="left: 136px; top: 0px; height: 38px; width: 116px;"></li></ul>
+
+        <div class="nav_subs fixed_subnav">
+            <ul class="nav_sub" id="subnav_products"  ng-class="{ 'active':page==2  }">
+                <li><a href="https://www.5metal.com.hk/product_category?tid=1" class="nav_sub_btn">五金工具</a></li>
+                <li><a href="https://www.5metal.com.hk/product_category?tid=2" class="nav_sub_btn">五金製品</a></li>
+                <li><a href="https://www.5metal.com.hk/product_category?tid=4" class="nav_sub_btn">建築與安全設備</a></li>
+                <li><a href="https://www.5metal.com.hk/product_category?tid=5" class="nav_sub_btn">金屬原料</a></li>
+                <li><a href="https://www.5metal.com.hk/product_category?tid=8" class="nav_sub_btn">電子及光學用品</a></li>
+                <li><a href="https://www.5metal.com.hk/product_category?tid=7" class="nav_sub_btn">環保回收</a></li>
+                <li><a href="https://www.5metal.com.hk/product_category?tid=6" class="nav_sub_btn">五金工業機械</a></li>
+                <li><a href="https://www.5metal.com.hk/product_category?tid=3" class="nav_sub_btn">五金設備工程</a></li>
+                <div class="clearfix"></div>
+            </ul>
+
+            <ul class="nav_sub" id="subnav_purchase">
+                <li><a href="https://www.5metal.com.hk/purchase?tid=1" class="nav_sub_btn">五金工具</a></li>
+                <li><a href="https://www.5metal.com.hk/purchase?tid=2" class="nav_sub_btn">五金製品</a></li>
+                <li><a href="https://www.5metal.com.hk/purchase?tid=4" class="nav_sub_btn">建築與安全設備</a></li>
+                <li><a href="https://www.5metal.com.hk/purchase?tid=5" class="nav_sub_btn">金屬原料</a></li>
+                <li><a href="https://www.5metal.com.hk/purchase?tid=8" class="nav_sub_btn">電子及光學用品</a></li>
+                <li><a href="https://www.5metal.com.hk/purchase?tid=7" class="nav_sub_btn">環保回收</a></li>
+                <li><a href="https://www.5metal.com.hk/purchase?tid=6" class="nav_sub_btn">五金工業機械</a></li>
+                <li><a href="https://www.5metal.com.hk/purchase?tid=3" class="nav_sub_btn">五金設備工程</a></li>
+                <div class="clearfix"></div>
+            </ul>
+
+            <ul class="nav_sub" id="subnav_companys"  ng-class="{'active':page==3}">
+                <li><a href="https://www.5metal.com.hk/company?tid=1" class="nav_sub_btn">五金工具</a></li>
+                <li><a href="https://www.5metal.com.hk/company?tid=2" class="nav_sub_btn">五金製品</a></li>
+                <li><a href="https://www.5metal.com.hk/company?tid=4" class="nav_sub_btn">建築與安全設備</a></li>
+                <li><a href="https://www.5metal.com.hk/company?tid=5" class="nav_sub_btn">金屬原料</a></li>
+                <li><a href="https://www.5metal.com.hk/company?tid=8" class="nav_sub_btn">電子及光學用品</a></li>
+                <li><a href="https://www.5metal.com.hk/company?tid=7" class="nav_sub_btn">環保回收</a></li>
+                <li><a href="https://www.5metal.com.hk/company?tid=6" class="nav_sub_btn">五金工業機械</a></li>
+                <li><a href="https://www.5metal.com.hk/company?tid=3" class="nav_sub_btn">五金設備工程</a></li>
+                <div class="clearfix"></div>
+            </ul>
+
+            <ul class="nav_sub" id="subnav_about">
+                <li><a href="https://www.5metal.com.hk/contact" class="nav_sub_btn">聯絡我們</a></li>
+                                <li><a href="https://www.5metal.com.hk/user-usage" class="nav_sub_btn">使用者流程</a></li>
+                <div class="clearfix"></div>
+            </ul>
+
+            <div class="clearfix"></div>
+        </div>
+    </div><!-- end of nav_group -->
+</div>

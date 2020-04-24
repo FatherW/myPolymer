@@ -1,0 +1,24 @@
+<div class="zerogrid">
+    <div class="wrap-box">
+        <div class="row">
+            <div ng-repeat="item in model.data" class="col-1-3">
+                <div class="wrap-col">
+                    <article>
+                        <div class="post-thumbnail-wrap">
+                            <a ng-href="{{item.imageHyperlink}}" class="portfolio-box">
+                                <img ng-src="{{item.image1}}" alt="">
+                                <div class="portfolio-box-second">
+                                    <img ng-src="{{item.image2}}" alt="">
+                                </div>
+                            </a>
+                        </div>
+                        <div class="entry-header ">
+                            <h3 class="entry-title">{{item.title}}</h3>
+                            <div class="l-tags"><a ng-href="{{item.tag1Hyperlink}}">{{item.tag1}}</a> / <a ng-href="{{item.tag2Hyperlink}}">{{item.tag2}}</a></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

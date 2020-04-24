@@ -1,0 +1,8 @@
+<marquee direction="up" onmouseover="this.stop();" onmouseout="this.start();" scrolldelay="170">
+<ul class="marquee2">
+    <li class="newRow" ng-repeat="item in model.data | orderBy:'-date' track by $index">
+    	<div class="newDate">{{item['date'] | date : "yyyy-MM-dd"}}</div>
+        <div class="newDesc">{{item['描述']}}</div>
+    </li>
+</ul>
+</marquee>

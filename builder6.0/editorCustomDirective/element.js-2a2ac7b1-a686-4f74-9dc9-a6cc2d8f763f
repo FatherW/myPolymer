@@ -1,0 +1,199 @@
+var app = angular.module('demoApp');
+app.directive('custom', function ($compile) {
+    var custom = {
+        restrict: 'A',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            element.addClass('dazzle-custom');
+            // setTimeout(function () {
+            //     if (!angular.isUndefined(scope.model) && !angular.isUndefined(scope.model.masterId)) {
+            //         $(element).append('<i id="masterIcon" class="fa fa-maxcdn"></i>');
+            //     }
+            // }, 3000);
+            var id = element.attr('id');
+
+            console.log('id:'+id+' length:'+length);
+            var startX,startY,start,stop,drag,container,x=0,y=0;
+
+             element.bind("mouseenter", function(event) {
+                    var id = element.attr('id');
+                    var type = element.attr('custom');
+                    console.log('Mouse Enter',id);
+                    var length = $('#'+id).find('.dazzle-custom').length;
+                    if (length) {
+                        var nid=$('#'+id).find('.dazzle-custom').attr('id');
+                        if (angular.isUndefined(scope.atom[nid].toolbar) || !scope.atom[nid].toolbar || type=="editorContainerElement")
+                            scope.atom[id].toolbar= true;
+                    }
+                    else {
+                        scope.atom[id].toolbar = true;
+                    }
+
+                    if (type=="editorContainerElement"){
+                        cls="strColor";
+                        element.addClass('dazzle-frame');
+                    } else
+                        cls = "";
+
+                    var screen = '';
+                    if (element.attr('custom')!="editorTextElement" && !length){
+                      screen = '<div class="dazzle-screen" context-menu="menuOptions"></div>';                       
+                    }
+                    var content = `
+                    <md-toolbar class="md-accent dazzle `+cls+`">
+                        <div class="md-toolbar-tools-dazzle">
+                            <i class="fa fa-x fa-arrows" aria-hidden="true" ng-click="up()"></i>
+                            <i class="fa fa-x fa-cog" aria-hidden="true"></i>
+                            <i class="fa fa-x fa-bank" aria-hidden="true"></i>
+                            <i class="fa fa-x fa-database" aria-hidden="true"></i>                            
+                            <i class="fa fa-x fa-info" aria-hidden="true"></i>                            
+                            <i class="fa fa-close right" ng-click="remove()"></i>
+                        </div>
+                      </md-toolbar>
+                    `;
+
+                    if (scope.atom[id].toolbar) {
+                        str = screen+content;
+                        var newElement = $compile(str)(scope);
+                        element.prepend(newElement);                            
+                    }
+
+
+
+              });
+            element.bind("mouseover",function(event){
+                    var id=element.attr('id');
+                    console.log("Mouse Over",id);
+            });
+
+             element.bind("mouseleave", function(event) {
+                    var id = element.attr('id');
+                    //if (element.attr('custom')!="editorTextElement"){
+                      element.find('md-toolbar').remove();
+                      element.find('.dazzle-screen').remove();
+                      element.removeClass('dazzle-frame');
+                      scope.atom[id].toolbar = false;
+                    //}    
+                    console.log(id+':mouse leave');    
+              });
+
+        element.bind("keydown keypress", function (event) {
+            
+
+            // UP
+            if(event.which === 38) {
+                scope.$apply(function (){
+                    //scope.$eval(attrs.myEnter);
+                });
+
+                event.preventDefault();
+            }
+
+
+            // DOWN
+            if(event.which === 40) {
+                scope.$apply(function (){
+                    //scope.$eval(attrs.myEnter);
+                });
+
+                event.preventDefault();
+            }
+
+            // LEFT
+            if(event.which === 37) {
+                scope.$apply(function (){
+                    var id,nid;
+                    id = element.attr(id);
+                    nid= $('#'+id).closest('.dazzle-custom').attr(id);
+                    console.log('Closest ID'+nid);
+                });
+
+                event.preventDefault();
+            }
+
+            // RIGHT
+            if(event.which === 39) {
+                scope.$apply(function (){
+                    //scope.$eval(attrs.myEnter);
+                });
+
+                event.preventDefault();
+            }
+        });
+
+             element.bind("click",function(e){
+//                e.preventDefault();
+                element.find('.dazzle-screen').remove();
+                element.find('md-toolbar').remove();
+                startX = e.clientX - element[0].offsetLeft;
+                startY = e.clientY - element[0].offsetTop;
+//                if (start) start(e);
+//                element.on('mousemove', mousemove);
+//                element.on('mouseup', mouseup);
+                scope.screen = false;
+                console.log('mousedown');
+                console.log(scope.screen);
+
+             });
+
+//               function mousemove(e) {
+//                 y = e.clientY - startY;
+//                 x = e.clientX - startX;
+// //                setPosition();
+//                 console.log('Top: '+y+'Left: '+x);
+
+//                 //if (drag) drag(e);
+//               }
+
+//             function mouseup(e) {
+//                 element.unbind('mousemove', mousemove);
+//                 element.unbind('mouseup', mouseup);
+// //                if (stop) stop(e);
+//               }
+
+              // Move element, within container if provided
+            //   function setPosition() {
+            //     if (container) {
+            //       if (x < container.left) {
+            //         x = container.left;
+            //       } else if (x > container.right - width) {
+            //         x = container.right - width;
+            //       }
+            //       if (y < container.top) {
+            //         y = container.top;
+            //       } else if (y > container.bottom - height) {
+            //         y = container.bottom - height;
+            //       }
+            //     }
+
+            //     console.log('Top: '+y+'Left: '+x);
+            // }
+
+
+      },
+      
+      
+      controller: function ($scope, $http, $element, $attrs) {
+        $scope.up = function() {
+            console.log('Up');
+            var id = $element.attr('id');
+            var element;
+            var pid;
+            element = $('#'+id).parent().closest('.dazzle-custom');
+            pid = element.attr('id');
+            console.log('PID',pid);
+            if (!angular.isUndefined(pid)){
+                $scope.atom[id].toolbar = false;
+                $scope.atom[pid].toolbar = true;                
+            }
+         
+        }
+        $scope.remove= function(){
+            console.log('Remove');
+            $element.remove();
+        }
+      }
+    };
+    return custom;
+});

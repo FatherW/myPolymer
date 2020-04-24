@@ -1,0 +1,34 @@
+
+<div class="view view-views-download view-id-views_download view-display-id-page hiddenText">
+    <div class="view-content">
+        <div ng-repeat="item in model.data | filter:{'資料類型':'報告書'} | orderBy: '-nid' " class="views-row views-row-1 views-row-odd views-row-first">
+            <div class="views-field views-field-field-doc-cover">
+                <div class="field-content">
+                    <a target="_blank" ng-href="{{item['資源文件']}}">
+                        <img ng-src="{{item['截圖']}}" width="176" height="244" alt="">
+                    </a>
+                </div>
+            </div>
+            <span class="views-field views-field-title">
+                <span class="field-content">{{item['標題']}}</span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="view view-views-download view-id-views_download view-display-id-page realText">
+    <div class="view-content">
+        <div myangular-repeat="item in allRowData | filter:{'資料類型':'報告書'} | orderBy: '-nid' " class="views-row views-row-1 views-row-odd views-row-first">
+            <div class="views-field views-field-field-doc-cover">
+                <div class="field-content">
+                    <a target="_blank" myangular-href="[[item['資源文件'] ]]">
+                        <img myangular-src="[[item['截圖'] ]]" width="176" height="244" alt="">
+                    </a>
+                </div>
+            </div>
+            <span class="views-field views-field-title">
+                <span class="field-content">[[item['標題'] ]]</span>
+            </span>
+        </div>
+    </div>
+</div>

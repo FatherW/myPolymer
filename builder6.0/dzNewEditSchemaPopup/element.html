@@ -1,0 +1,59 @@
+   <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>資料格式編輯</h2>
+            <span flex></span>
+			  <md-button class="md-primary md-raised" ng-click="addSchema()">
+					<md-tooltip>新增欄位</md-tooltip>
+					<i class="fa fa-plus"></i>
+				</md-button>
+				<md-button class="md-primary md-raised" ng-click="removeSchema(selectedIndex)">
+					<md-tooltip>移除欄位</md-tooltip>
+					<i class="fa fa-minus"></i>
+				</md-button>
+				<md-button class="md-primary md-raised" ng-click="saveSchema()">
+					<md-tooltip>儲存</md-tooltip>
+					<i class="fa fa-floppy-o"></i>
+				</md-button>
+
+        </div>
+    </md-toolbar>
+     <md-dialog-content class="model" style="min-height:70%;">
+        <div ui-tree id="tree-root" ng-init="init()">
+            <ol ui-tree-nodes ng-model="schema">
+                <li type="Menu" class="menus" ng-repeat="node in schema" ui-tree-node>
+					<div type="List" class="tree-node">
+					<div class="pull-left tree-handle" ui-tree-handle>
+						<span class="glyphicon glyphicon-list"></span>
+					</div>
+					<div class="tree-node-content">
+						<a class="btn btn-success " data-nodrag ng-click="toggle(node)">
+								<span class="glyphicon" ng-class="{
+								  'glyphicon-chevron-right': collapsed,
+								  'glyphicon-chevron-down': !collapsed
+								  }">
+								</span>
+						</a>
+
+						<input type="text" ng-model="node.title">
+						<input id="link-{{node.id}}" class="hidLink" type="hidden" ng-model="node.link">
+						<a class="pull-right btn btn-danger " data-nodrag ng-click="remove(node)"><span
+								class="glyphicon glyphicon-remove"></span>
+						</a>
+						<a class="pull-right btn btn-success " data-nodrag ng-click="openLinkPopup(node)"><span
+								class="glyphicon glyphicon-pencil"></span>
+						</a>
+						<a class="pull-right btn btn-primary " data-nodrag ng-click="newSubItem(node)"
+						   style="margin-right: 8px;"><span class="glyphicon glyphicon-plus"></span></a>
+						   
+					   <a class="pull-right btn btn-info " data-nodrag ng-click="addCss(node)"
+						   style="margin-right: 8px;"><i class="fa fa-css3" aria-hidden="true"></i></a>
+					</div>
+				</div>
+				
+				</li>
+            </ol>
+        </div>
+     </md-dialog-content>  
+  
+     
+

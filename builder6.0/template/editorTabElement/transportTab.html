@@ -1,0 +1,31 @@
+<div class="col-md-6 tabs-left">
+    <div class="col-xs-2 tab-grid-left">
+        <!-- required for floating -->
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <!--<li class="active"><a href="#Tab1" data-toggle="tab" aria-expanded="true">Tab1</a></li>-->
+            <!--<li class=""><a href="#Tab2" data-toggle="tab" aria-expanded="false">Tab2</a></li>-->
+            <!--<li class=""><a href="#Tab3" data-toggle="tab" aria-expanded="false">Tab3</a></li>-->
+            <li ng-repeat="item in model.menu">
+                <a href="#{{item.id}}" data-toggle="tab" aria-expanded="true">{{item.title}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-10 tab-grid-right">
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div ng-repeat="item in model.menu" ng-class="$index? '':'active'" class="tab-pane" id="{{item.id}}">
+                <div class="w3-text">
+                    <h3 class="title">{{item.title}}</h3>
+                    <editor-container-element id="con-{{item.id}}">
+                    <p text>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat.
+                        <span>Nam vitae tellus posuere, auctor metus eget, imperdiet augue. Morbi at dui tortor. Maecenas in lacus gravida, elementum est vitae, laoreet ex.</span>
+                    </p>                        
+                    </editor-container-element>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix"> </div>
+</div>

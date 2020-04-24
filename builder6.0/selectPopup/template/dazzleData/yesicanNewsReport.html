@@ -1,0 +1,63 @@
+<div class="row hiddenText">
+	<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+		<table class="newstable" st-table="rowCollection" class="table table-striped">
+		<thead>
+		<tr>
+			<th><h2>報導媒體</h2></th>
+			<th><h2>簡介</h2></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="row in model.data">
+			<td class="fullLine">{{row['文章標題']}}</td>
+			<td><a ng-href="{{row['文章連結']}}" target="_blank">{{row['文章簡介']}}</a></td>
+		</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="5" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+	    <div class="newImageLeft" ng-repeat="item in model.data |orderBy:'-date' | limitTo:'2' track by $index">
+	        <a target="_blank" ng-href="{{item['文章圖片']}}"><img ng-src="{{item['文章圖片']}}"></a>
+	    </div>
+	</div>
+</div>
+
+<div class="row realText" myangular-controller="newsController">
+	<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+		<table st-table="displayedCollection" st-safe-src="rowdata" class="newstable table table-striped realText">
+		<thead>
+		<tr>
+			<th><h2>報導媒體</h2></th>
+			<th><h2>簡介</h2></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr myangular-repeat="row in displayedCollection">
+			<td class="fullLine"><span myangular-bind="row['文章標題']"></span></td>
+			<td><a myangular-href="[[row['文章連結']]]" target="_blank"><span myangular-bind="row['文章簡介']"></span></a></td>
+		</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="10" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	</div>
+	<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+	    <div class="newImageLeft" myangular-repeat="item in rowdata |orderBy:'-date' | limitTo:'2' track by $index">
+	        <a data-fancybox myangular-href="[[item['文章圖片']]]">
+	            <img myangular-src="[[item['文章圖片']]]">
+	        </a>
+	    </div>
+	</div>
+</div>

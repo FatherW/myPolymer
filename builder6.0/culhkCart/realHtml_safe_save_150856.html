@@ -1,0 +1,43 @@
+<div class="element">
+    <div class="cart-icon-text">購物車</div>
+    <div id="shppingCartController" ng-controller="shppingCartController" ng-init="init()">
+        <div class="row hidden-xs">
+            <div class="col col-md-7">產品</div>
+            <div class="col col-md-2">數量</div>
+            <div class="col col-md-2">價錢</div>
+            <div class="col col-md-1"></div>
+        </div>
+        <div class="row activity-row" ng-repeat="p in products">
+            <div class="col col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col col-md-5 col-xs-12">
+                        <a ng-href="{{p.photo}}" target="_blank">
+                            <img class="thumbnail img-responsive" src="{{p.photo}}">
+                        </a>
+                    </div>
+                    <div class="col col-md-7 col-xs-12">
+                        <div class="col col-md-12 itemtitle">{{p.title}}</div>
+                        <div class="col col-md-12 hidden-xs">{{p.detail}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2 col-xs-5">
+                <input type="number" class="col-lg-12 col-md-12 col-xs-12" ng-model="p.volume" min="1" ng-change="volumeChanged(p)">
+            </div>
+            <div class="col col-md-3 col-xs-6">{{p.totalPrice | currency:"HKD$"}}</div>
+            <div class="col col-md-1 col-xs-12" ng-click="remove(p,$index)">
+                <div class="pull-right">X</div>
+            </div>
+        </div>
+        <div class="margin-block row" ng-show="(allTotalPrice > 0)"> 
+            <hr>
+            <div class="col col-md-7 itemtitle">
+                <div class="pull-right">{{allTotalPrice | currency:"HKD$"}}</div>
+            </div>
+            <div class="col col-md-5">
+                <div class="confirm-btn w-button" ng-click="confirmPay()">確認付款</div>
+            </div>
+            <hr>
+        </div>
+    </div>
+</div>

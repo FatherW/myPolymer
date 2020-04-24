@@ -1,0 +1,22 @@
+<div ng-init="init()">
+    123123
+    <div class="views-row views-row-1 views-row-odd views-row-first" ng-repeat="item in model.data">
+        <div class="views-field views-field-field-events-picture">
+            <a ng-href="{{item['標題']}}.html">
+                <img class="img-responsive" style="max-width:100%;max-height: 100%;" ng-src="{{item['截圖']}}">
+            </a>
+        </div>
+        <span class="field-content">{{item['日期'] | date}}</span>
+        <div class="views-field views-field-title">
+            <span class="field-content">
+                <a ng-href="{{item['標題']}}.html">{{item['標題']}}</a>
+            </span>
+        </div>
+        <a ng-href="{{item['標題']}}.html">全文</a>
+        <div class="views-field views-field-nothing">
+            <span class="field-content">
+                <div class="grid_s"></div>
+            </span>
+        </div>
+    </div>
+</div>

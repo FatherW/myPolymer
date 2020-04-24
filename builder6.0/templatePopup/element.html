@@ -1,0 +1,76 @@
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Template管理</h2>
+            <span flex></span>
+            <md-button ng-click="openRight()">新增</md-button>
+            <md-button ng-click="closePopup()">關閉</md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content ng-init="init()" style="min-height:200px;">
+        <div ng-cloak>
+            <md-content>
+                <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+                    <md-tab label="{{template.name}}" ng-repeat="template in templates">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container flex>
+                                    <label>名稱</label>
+                                    <input ng-model="template.name" disabled>
+                                </md-input-container>
+                                <md-input-container flex>
+                                    <label>介紹</label>
+                                    <textarea ng-model="template.description" md-maxlength="75"
+                                              md-select-on-focus></textarea>
+                                </md-input-container>
+                            </div>
+                            <div layout="row" layout-align="space-around center">
+                                <md-button class="md-raised" aria-label="Edit JS"
+                                           ng-if="isMine(template)" ng-click="edit(template,'js')">
+                                    <i class="fa fa-2x fa-code" aria-hidden="true"></i>
+                                    <md-tooltip md-direction="top">編緝JS</md-tooltip>
+                                </md-button>
+                                <md-button class="md-raised md-primary" aria-label="Edit CSS"
+                                           ng-if="isMine(template)" ng-click="edit(template,'css')">
+                                    <i class="fa fa-2x fa-css3" aria-hidden="true"></i>
+                                    <md-tooltip md-direction="top">編緝CSS</md-tooltip>
+                                </md-button>
+                                <md-button class="md-raised md-warn" aria-label="Edit HTML"
+                                           ng-if="isMine(template)" ng-click="edit(template,'html')">
+                                    <i class="fa fa-2x fa-html5" aria-hidden="true"></i>
+                                    <md-tooltip md-direction="top">編緝HTML</md-tooltip>
+                                </md-button>
+                            </div>
+                            <div layout="row" layout-align="center center" layout-wrap>
+                                <md-button class="md-fab md-primary" aria-label="使用"
+                                           ng-click="closePopup(template)">
+                                    <md-tooltip md-direction="top">使用</md-tooltip>
+                                    <i class="fa fa-2x fa-check" aria-hidden="true"></i>
+                                </md-button>
+                                <md-button class="md-fab" aria-label="移除"
+                                           ng-if="isMine(template)"
+                                           ng-click="removeTemplate(template)">
+                                    <md-tooltip md-direction="top">移除</md-tooltip>
+                                    <i class="fa fa-2x fa-trash" aria-hidden="true"></i>
+                                </md-button>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+            </md-content>
+        </div>
+    </md-dialog-content>
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="rightAddTemplate">
+        <md-toolbar class="md-theme-light">
+            <h1 class="md-toolbar-tools">新Template</h1>
+        </md-toolbar>
+        <md-content ng-controller="rightAddTemplateCtrl" layout-padding>
+            <form>
+                <md-input-container>
+                    <label>Template名稱</label>
+                    <input type="text" ng-model="name" md-autofocus>
+                </md-input-container>
+            </form>
+            <span flex></span>
+            <md-button ng-click="add()" class="md-primary">新增</md-button>
+        </md-content>
+    </md-sidenav>

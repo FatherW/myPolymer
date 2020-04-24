@@ -1,0 +1,9 @@
+<nav>
+	<ul id="menu">
+		<!--<li class="active"><a href="index.html">Restaurant</a></li>-->
+		<li ng-repeat="item in model.menu" ng-if="item.title!='Home'">
+		    <a ng-href="{{item.link}}">{{item.title}}</a>
+		</li>
+		
+	</ul>
+</nav>

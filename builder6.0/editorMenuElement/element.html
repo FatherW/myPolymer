@@ -1,0 +1,7 @@
+<ol id="menu1">
+    <li ng-repeat="m in model.menu">{{m.title}}
+        <ul>
+            <li ng-repeat="item in m.list">{{item.title}}</li>
+        </ul>
+    </li>
+</ol>

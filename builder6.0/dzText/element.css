@@ -1,0 +1,17 @@
+
+dz-text{
+    position:relative;
+    display: block;
+    min-height:20px;
+}
+.dz-text-border{
+    border: grey dashed 1px;
+    display: block;
+    position:relative;
+    min-height:20px;
+}
+
+dazzle-toolbar {
+    display:block;
+    position:absolute !important;
+}

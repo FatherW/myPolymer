@@ -1,0 +1,165 @@
+<style>
+nav.sidebar {
+    position: relative;
+    margin-top: 30px;
+    /* margin-left: 30px; */
+    line-height: 30px;
+    list-style: none;
+}
+nav.sidebar a{
+        list-style: none;
+        text-decoration:none;
+}
+.left-side-panel {
+    padding-left: 40px;
+    border-right:1px #707070 black;
+    
+}
+.box {
+    padding-left:30px;
+}
+</style>
+ <div layout="row">
+ 
+  <div flex="25"  class="left-side-panel">
+  
+    <h2>帳號設定</h2>
+    
+        <nav class="sidebar">
+
+            <li ng-click="select(0)"><a href="#">帳戶資料</a></li>
+            <li ng-click="select(1)"><a href="#">聯絡人</a></li>
+            <li ng-click="select(2)"><a href="#">公司資料</a></li>
+            <li ng-click="select(3)"><a href="#">公司簡介</a></li>            
+
+
+        </nav>
+  </div>
+  
+  <div flex="75" class="box">
+        <md-tabs md-dynamic-height md-selected="selectedIndex">
+            <md-tab label="帳戶資料">
+                <h4>帳戶資料</h4>
+                    <md-input-container class="md-block">
+                      <label>用戶名</label>
+                      <input ng-model="user['username']">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <label>電郵</label>
+                      <input ng-model="user['email']">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <label>電郵</label>
+                      <input ng-model="user['password']" type="password">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <label>電話號碼</label>
+                      <input ng-model="user['mobile']">
+                    </md-input-container>
+            </md-tab>
+            <md-tab label="聯絡人">
+                <h4>聯絡人</h4>
+                    <md-input-container class="md-block">
+                      <label>姓</label>
+                      <input ng-model="user['surname']">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <label>名</label>
+                      <input ng-model="user['givenname']">
+                    </md-input-container>
+
+            </md-tab>
+            <md-tab label="公司資料">
+                <h4>公司資料</h4>
+                   <md-input-container class="md-block">
+                      <label>公司名稱</label>
+                      <input ng-model="user['company_name']">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>過去一年營業額 (HKD $萬)</label>
+                        <input required type="number" step="any" name="rate" ng-model="company['revenue']" min="0"
+                         ng-pattern="/^1234$/" />
+                
+                        <div ng-messages="projectForm.rate.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                                這是必填位置. 
+                          </div>
+                
+                          <div ng-message="min">
+                                    最少要$0 起
+                          </div>
+                
+                          <div ng-message="pattern">
+                                輸入需要是銀碼/數字
+                          </div>
+                
+
+                        </div>
+                      </md-input-container>
+                      
+                      <md-input-container class="md-block">
+                        <label>過去三年營業額 (HKD $萬)</label>
+                        <input required type="number" step="any" name="rate" ng-model="company['revenue3']" min="0"
+                         ng-pattern="/^1234$/" />
+                
+                        <div ng-messages="projectForm.rate.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                                這是必填位置. 
+                          </div>
+                
+                          <div ng-message="min">
+                                    最少要$0 起
+                          </div>
+                
+                          <div ng-message="pattern">
+                                輸入需要是銀碼/數字
+                          </div>
+                
+
+                        </div>
+                      </md-input-container>
+                      
+                      
+                                    <md-input-container class="md-block">
+                        <label>公司現值規模 (HKD $萬)</label>
+                        <input required type="number" step="any" name="rate" ng-model="company['scale']" min="0"
+                         ng-pattern="/^1234$/" />
+                
+                        <div ng-messages="projectForm.rate.$error" multiple md-auto-hide="false">
+                          <div ng-message="required">
+                                這是必填位置. 
+                          </div>
+                
+                          <div ng-message="min">
+                                    最少要$0 起
+                          </div>
+                
+                          <div ng-message="pattern">
+                                輸入需要是銀碼/數字
+                          </div>
+                
+
+                        </div>
+                      </md-input-container>
+            
+            
+            </md-tab>            
+            <md-tab label="公司簡介">
+                <h4>公司簡介</h4>
+             <md-input-container class="md-block">
+                      <label>公司名稱</label>
+                      <input ng-model="company['company_name']">
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                      <label>領域</label>
+                      <input ng-model="company['type']">
+                    </md-input-container>
+
+            
+            
+            
+            </md-tab>
+        </md-tabs>
+  </div>
+  
+  </div>

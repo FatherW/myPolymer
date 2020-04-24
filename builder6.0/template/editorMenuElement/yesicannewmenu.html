@@ -1,0 +1,26 @@
+    <!--<ul class="nav-list">
+            <li class="nav-item" ng-repeat="menu in model.menu track by $index">
+                <a class="" ng-href="{{menu.link}}">{{menu.title}}</a>
+                <ul ng-if="menu.list" class="dropdown-menu">
+				        
+				</ul>
+            </li>
+            
+			</ul>-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <ul class="nav navbar-nav">
+      <li ng-repeat="item in model.menu" class="dropdown">
+        <a ng-if="item.list.length!=0" class="dropdown-toggle" data-toggle="dropdown" ng-href="{{item.link}}">{{item.title}}
+            <span class="caret"></span>
+        </a>
+        <a ng-if="item.list.length==0" ng-href="{{item.link}}">
+            {{item.title}}
+        </a>
+        <ul class="dropdown-menu">
+          <li ng-repeat="subitem in item.list"><a ng-href="{{subitem.link}}">{{subitem.title}}</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

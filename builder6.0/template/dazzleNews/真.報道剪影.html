@@ -1,0 +1,27 @@
+<div ng-repeat="item in model.news|orderBy:'-nid'" ng-if="item.type=='報道剪影'&& item.layout=='havesquare'" class="node sticky"><h2><a ng-href="http://hkswgu.dazzle.website/{{item['標題']}}.html">{{item.title}}</a></h2>
+ <div class="content clear-block">
+      </div>
+
+  <div class="clear-block">
+    <!--<div class="meta">
+          <div class="terms"><ul class="links inline"><li class="taxonomy_term_11 first last"><a href="/taxonomy/term/11" rel="tag" title="">報道剪影</a></li>
+</ul></div>
+        </div>-->
+
+      </div>
+
+</div>
+
+<div ng-repeat="item in model.news|orderBy:'-nid'" ng-if="item.type=='報道剪影'&& item.layout=='havetext'" ><h2><a ng-href="http://hkswgu.dazzle.website/{{item['標題']}}.html">{{item['標題']}}</a></h2>
+ <div class="content clear-block">{{item.detail}}
+      </div>
+
+  <div class="clear-block">
+    <!--<div class="meta">
+          <div class="terms"><ul class="links inline"><li class="taxonomy_term_11 first last"><a href="/taxonomy/term/11" rel="tag" title="">報道剪影</a></li>
+</ul></div>
+        </div>-->
+
+      </div>
+
+</div>

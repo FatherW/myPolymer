@@ -1,0 +1,11 @@
+<div id="cssmenu">
+    <ul>
+        <li ng-repeat="item in model.menu" ng-class="{'active':$index==0,'has-sub':item.list.length,'last':$index==model.data.length}">
+            <a href="{{item.link}}"><span>{{item.title}}</span></a>
+                <ul ng-if="item.list.length">
+                    <li ng-repeat="subitem in item.list"><a ng-href="{{subitem.link}}"><span>{{subitem.title}}</span></a></li>
+                
+                </ul> 
+        </li>
+    </ul>
+</div>

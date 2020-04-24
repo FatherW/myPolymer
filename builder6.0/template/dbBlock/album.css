@@ -1,0 +1,11 @@
+#album ul {
+    list-style:none;
+}
+#album ul li {
+    list-style:none;
+    float:left;
+}
+#album ul li img {
+    height:100px;
+    margin:5px 10px;
+}

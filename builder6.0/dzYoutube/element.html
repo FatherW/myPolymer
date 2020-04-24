@@ -1,0 +1,18 @@
+<style>
+.video-container {
+    min-height:300px;
+}
+</style>
+<div class="video-container">
+    <iframe ng-src="{{model.src}}" frameborder="0" allowfullscreen style="height:300px; width:560px"></iframe>
+    <div class="dz-toolbar" ng-if="isAdmin">
+           <md-toolbar class="md-accent dazzle">
+                        <tb-div class="md-toolbar-tools-dazzle">
+                            <dz-i class="fa fa-x fa-cog" aria-hidden="true" ng-click="changeYoutube()"></dz-i>
+                            <dz-i class="fa fa-close" ng-click="remove()"></dz-i>
+                        </tb-div>
+                      </md-toolbar>
+    
+    </div>
+</div>
+

@@ -1,0 +1,15 @@
+<div class="tab-content">
+		<div ng-repeat="item in model.data" ng-class="tab-pane" id="{{item.id}}">
+			<div class="agileits-text">
+				<div class="col-md-6 care-w3limg"><img alt="" src="{{item.image}}"></div>
+				<div class="col-md-6 care-w3text">
+					<h4>{{item.title}}</h4>
+					<p>{{item.content}}</p>
+					<div class="w3lsmore">
+						<a class="button-pipaluk button--inverted" href="{{item.html}}">Read More</a>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>

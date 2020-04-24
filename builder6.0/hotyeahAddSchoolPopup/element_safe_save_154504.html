@@ -1,0 +1,326 @@
+<style>
+.dazzle-schema md-input-container {
+    margin: 5px 0;
+}
+.md-select-menu-container.md-active {
+    z-index:10000;
+}
+.md-button.md-icon-button {
+    width:20px;
+}
+</style>    
+    
+    <form name="myForm" ng-cloak ng-init="init()">
+     <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>表單設定</h2>
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="addItem(-1)">
+                <md-tooltip>新增</md-tooltip>
+                <i class="fa fa-plus"></i>
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="close()">
+                <md-tooltip>取消</md-tooltip>
+                <i class="fa fa-window-close"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" style="min-height: 400px; height:600px; width:100%;">
+                <md-tabs  md-selected="selectedIndex" md-dynamic-height md-border-bottom>
+                    <md-tab label="學校基本資料"  ng-disabled="tabOrder(0)">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container flex="50">
+
+                                             <input required ng-model="model['學校名稱']" placeholder="學校名稱">
+                                </md-input-container>
+                                <md-input-container flex="50">
+
+                                             <input required ng-model="model['電話號碼']" placeholder="電話號碼">
+                                </md-input-container>
+                            </div>
+							<div layout="row">
+
+                                <md-input-container flex="70">
+
+                                            <label>地址</label>                                            
+                                            <input required ng-model="model['地址']" type="text" placeholder="地址" >
+                                            
+                                </md-input-container>
+
+                                <md-input-container flex="30">
+										  <md-select required ng-model="model['學校類型']" placeholder="學校類型" class="md-no-underline">
+												<md-option ng-value="item['ID']" ng-repeat="item in activities | orderBy: 'Layer1' ">{{item.Layer1}}--{{item.Layer2}}</md-option>
+										  </md-select>
+                                </md-input-container>
+
+							</div>
+
+                            <div layout="row">
+                                <md-input-container flex="50">
+                                             <input required ng-model="model['電郵']" placeholder="電郵">
+                                </md-input-container>
+
+                               <md-input-container flex="25">
+										 <label>價錢由</label>
+										<input type="number" step="any" ng-model="model['價錢由']" min="0"
+											   max="10000"/>
+								</md-input-container>
+								<md-input-container flex="25">
+
+										<label>價錢至</label>
+										<input type="number" step="any" ng-model="model['價錢至']" min="0"
+											   max="10000"/>
+
+                                </md-input-container>
+								
+							</div>
+
+
+							<div layout="row">
+                                <md-input-container flex="50">
+
+                                             <input required ng-model="model['聯絡人名稱']" placeholder="聯絡人名稱">
+                                </md-input-container>
+                                <md-input-container flex="50">
+
+                                             <input required ng-model="model['聯絡人電話']" placeholder="聯絡人電話">
+                                </md-input-container>
+                            </div>
+
+
+                            <div layout="row">
+                                <md-input-container flex="100">
+                                        <span flex></span>
+                                        <md-button class="md-primary md-raised" ng-click="setOrder(1)">
+                                            下一步
+                                        </md-button>                                        
+                                        
+                                </md-input-container>
+                              </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="學校介紹"   ng-disabled="tabOrder(1)">
+                        <md-content class="md-padding">
+                            
+                            <div layout="row" height="200px">
+
+                                <md-input-container flex="100">
+
+                                            <label>學校簡介</label>           
+                                            <textarea ng-model="model['學校簡介']" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+
+                                </md-input-container>
+							</div>
+														
+							<div layout="row">
+                                <md-input-container flex="25">
+                                             <input ng-model="model['Facebook Page']" placeholder="Facebook Page">
+                                </md-input-container>
+                                <md-input-container flex="25">
+                                             <input ng-model="model['Youtube Channel']" placeholder="Youtube Channel">
+                                </md-input-container>
+								<md-input-container flex="25">
+                                             <input  ng-model="model['微信']" placeholder="微信">
+                                </md-input-container>
+                                <md-input-container flex="25">
+                                             <input ng-model="model['Instagram']" placeholder="Instagram">
+                                </md-input-container>
+
+                            </div>
+
+							<div layout="row" height="200px">
+                                <md-input-container flex="100">
+
+                                            <label>營業時間</label>           
+                                            <textarea ng-model="model['營業時間']" md-maxlength="500" rows="5" md-select-on-focus></textarea>
+
+                                </md-input-container>
+
+
+                            </div>
+
+                            <div layout="row">
+                                <md-input-container flex="100">
+                                        <span flex></span>
+                                        <md-button class="md-primary md-raised" ng-click="setOrder(0)">
+                                            上一步
+                                        </md-button>
+
+                                        <md-button class="md-primary md-raised" ng-click="setOrder(2)">
+                                            下一步
+                                        </md-button>  
+                                        
+                                        
+                                </md-input-container>
+                              </div>
+
+                        </md-content>
+                        
+                        
+                        
+                    </md-tab>
+               
+                    <md-tab label="學校標籤"   ng-disabled="tabOrder(2)">
+                        <md-content class="md-padding">
+							<div layout="row">
+								<div flex="100">
+									<p>所有標籤按Enter即能輸入, 每項目最多5個標籤 </p>
+								</div>
+							</div>
+                            <div layout="row">
+                                <md-input-container flex="50">
+								  <label>地點</label>
+											   <md-chips ng-model="model['地點']" md-removable="ctrl.removable"></md-chips>											
+
+											   <!--
+										<md-chips ng-model="model['地點']" md-autocomplete-snap="" md-transform-chip="transformChip($chip)" md-require-match="autocompleteDemoRequireMatch">
+										  <md-autocomplete md-selected-item="selectedItem" md-search-text="searchText" md-items="item in querySearch(searchText)" md-item-text="item" placeholder="地點搜尋">
+											<span md-highlight-text="searchText">{{item}}</span>
+											<md-not-found>
+											  <div class="chip-not-found" ng-click="notFound(searchText)">找不到. 點擊就能加新了</div>
+											</md-not-found>
+										  </md-autocomplete>
+										  <md-chip-template>
+											<span>
+											  <strong>{{$chip.name}}</strong>
+											</span>
+										  </md-chip-template>
+										</md-chips>
+						-->
+                                </md-input-container>
+								<md-input-container flex="50">
+                                            <label>對象</label>     
+											   <md-chips ng-model="model['對象']" md-removable="ctrl.removable"></md-chips>											
+                                </md-input-container>
+								
+							</div>
+							
+							<div layout="row">
+                                <md-input-container flex="50">
+                                            <label>語言</label>     
+											   <md-chips ng-model="model['語言']" md-removable="ctrl.removable"></md-chips>											
+                                </md-input-container>
+								<md-input-container flex="50">
+                                            <label>其他標籤</label>     
+											   <md-chips ng-model="model['其他標籤']" md-removable="ctrl.removable"></md-chips>											
+                                </md-input-container>
+								
+							</div>
+
+							
+                            <div layout="row">
+                                <md-input-container flex="100">
+                                        <span flex></span>
+                                        <md-button class="md-primary md-raised" ng-click="setOrder(1)">
+                                            上一步
+                                        </md-button>
+
+                                        <md-button class="md-primary md-raised" ng-click="setOrder(3)">
+                                            下一步
+                                        </md-button>  
+                                        
+                                        
+                                </md-input-container>
+                              </div>
+
+                        </md-content>
+                        
+                        
+                        
+                    </md-tab>
+
+                    <md-tab label="課程、相片及檔案"   ng-disabled="tabOrder(3)">
+                        <md-content class="md-padding"  style="font-size:10px;">
+                                <div layout="row">
+                                <md-input-container flex="30">
+										<md-button class="md-raised" ng-click="uploadPhoto('Albums')">上載相片</md-button>
+								</md-input-container>	
+								<md-input-container flex="70">
+										<p>首張照片將成為學校的頭像, 建議是logo商標之類. 建議照片大小為~1Mb 左右. 太大將做成載入困難, 太小將會變形或走樣. </p>
+										<p>建議相片為橫向. 直向圖片會被自動剪裁, 或會裁去重要部份. </p>
+										<p>本站亦設有購買照片及攝影服務</p>
+                                </md-input-container>
+								
+							</div>
+
+							<div layout="row">
+								<md-input-container flex="30">
+                                		<md-button class="md-raised" ng-click="uploadFiles('文件庫')">上載檔案</md-button>
+								</md-input-container>	
+								<md-input-container flex="70">
+										<p>所有檔案將設為公開。若某些檔案只讓報讀學生下載, 如教材等, 請在編輯課程時上載. </p>
+										<p>每用戶有免費1Gb空間, 檔案大小沒有限制。太大檔案會讓檔案上下載困難.  </p>
+                                </md-input-container>
+							</div>
+
+							<div layout="row">
+                                <md-input-container flex="30">
+										<md-button  class="md-raised" ng-click="coursePopup('課程s')">編輯課程</md-button>
+								</md-input-container>	
+								
+								<md-input-container flex="70">
+									<p>每個課程均會生成專頁, 顥示相關資料及報名程況.  </p>
+										<p>網上教學、教材下載、網上報名等為付費功能 </p>
+										<p>本站亦提供租用課室及器材、招生及編輯教材服務. 請至35926298查詢</p>										
+                                </md-input-container>								
+							</div>
+							
+\
+							
+                            <div layout="row">
+                                <md-input-container flex="100">
+                                        <span flex></span>
+                                        <md-button class="md-primary md-raised" ng-click="setOrder(2)">
+                                            上一步
+                                        </md-button>
+
+                                        <md-button class="md-primary md-raised" ng-click="generate()">
+											製成頁面
+                                        </md-button>  
+                                        
+                                        
+                                </md-input-container>
+                              </div>
+
+                        </md-content>
+                        
+                        
+                        
+                    </md-tab>
+                    <md-tab label="生成網站"   ng-disabled="tabOrder(4)">
+                        <md-content class="md-padding"  style="font-size:10px;">
+                            <div layout="row" layout-align="center center">
+                                <h4>匯出成功！</h4>
+                            </div>
+
+                            <div layout="row" layout-align="center center">
+                                <h4>網址:
+                                    http://www.hot-yeah.com/singleSchool.html#{{model['id']}}
+                                    <md-button ng-href="http://www.hot-yeah.com/singleSchool.html#{{model['id']}}"
+                                               title="{{model['學校名稱']}}"
+                                               target="_blank"
+                                               aria-label="{{model['學校名稱']}}"
+                                               class="md-icon-button launch">
+                                        <i class="fa fa-2x fa-external-link"></i>
+                                    </md-button>
+                                </h4>
+                            </div>
+
+
+                        </md-content>
+                    </md-tab>
+
+			   </md-tabs>
+					   
+
+
+			   </md-tabs>
+            </div>
+        </md-dialog-content>
+
+
+
+
+    </form>

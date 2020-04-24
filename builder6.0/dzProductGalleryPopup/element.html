@@ -1,0 +1,247 @@
+<style>
+     .grid {
+        border: 1px solid #cccccc;
+        list-style: none;
+        background: #ffffff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-transition: all 0.6s ease-out;
+        transition: all 0.6s ease-out;
+    }
+
+    .grid-img {
+        width: 100%;
+        vertical-align: middle;
+        -webkit-transition: opacity 0.6s ease-out;
+        transition: opacity 0.6s ease-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .grid-img:hover {
+        opacity: 0.6 !important;
+    }
+
+    .grid-img:hover,
+    .grid-img:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .dynamic-grid {
+        position: relative;
+        display: none;
+    }
+
+    .dynamic-grid.angular-grid {
+        display: block;
+    }
+
+    .grid {
+        position: absolute;
+        list-style: none;
+        background: #ffffff;;
+        box-sizing: border-box;
+        -webkit-transition: all 400ms ease;
+        transition: all 400ms ease;
+        overflow: hidden;
+        border-radius: 3.5px;
+    }
+
+    .grid.ng-leave {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+    }
+
+    .grid.ng-leave.ng-leave-active {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .grid.ng-enter {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+        -webkit-transition-delay: 500ms;
+        transition-delay: 500ms;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .grid.ng-enter.ng-enter-active {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .grid-img {
+        width: 100%;
+        vertical-align: middle;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+    .search-panel{
+        width:100%;
+        height:15%;
+        display:block;
+    }
+    .dazzle-gallery {
+        width:100%;
+        height:85%;
+        display:block;
+    }
+    
+    md-sidenav, 
+    md-sidenav.md-locked-open, 
+    md-sidenav.md-closed.md-locked-open-add-active {
+        min-width:100% !important;
+      width:100% !important;
+      max-width:100% !important;
+    } 
+    md-radio-button {
+        float:left;
+        padding-right:5px;
+    }
+    .delete {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .delete:hover {
+        color:orange;
+    }
+</style>   
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>產品管理</h2>
+            <span flex></span>
+            <md-switch ng-model="multiple" aria-label="Switch 1">
+            多項選擇
+            </md-switch>
+            <md-button ng-click="init()">重載</md-button>
+            <md-button ng-click="newUpload()">上載</md-button>
+            <md-button ng-click="closePopup()">關閉</md-button>
+        </div>
+    </md-toolbar>
+    <md-toolbar ng-if="multiple">
+        <div class="md-toolbar-tools">
+            <h3>多項選擇</h3>
+            <span flex></span>
+
+            <md-button ng-click="select()">多項選擇</md-button>
+            <md-button ng-click="deleteChoice()">多項刪除</md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content ng-init="init()" class="model" style="min-height:800px; display:block;">
+        <div layout="row" layout-sm="column" layout-align="space-around" ng-if="!inited">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+            <div class="search-panel">
+                <md-chips ng-model="tags" md-on-add="init()" md-on-remove="init()" md-removable="true" md-autofocus placeholder="搜尋關鍵字"></md-chips>
+            </div>
+            <div class="dazzle-gallery">
+                
+<!--                <div ng-repeat="image in userGallery">
+                    <img ng-click="choose(image)"  ng-src="{{getFileUrl('small-web',image.gid)}}" class="grid-img"/>
+                </div>
+                -->
+                <ul class="dynamic-grid" ng-if="inited"
+                    angular-grid="userGallery"
+                    ag-options="userGalleryAngularGridOptions"
+                    ag-infinite-scroll="loadMore()">
+                    <li data-ng-repeat="image in userGallery" class="grid">
+                        <md-tooltip md-z-index="10000">{{buildTags(image.tags)}}</md-tooltip>
+<!--                        <img ng-click="choose(image)"  ng-src="{{getFileUrl('small-web',image.gid)}}" class="grid-img"/>  -->
+                        <img ng-click="choose(image)"  ng-src="{{getFileUrl('small-web',image.gid)}}" class="grid-img"/>
+                        
+                        <div ng-click="delete(image,$index)" class="delete">
+                            <i class="fa fa-2 fa-trash-o"></i>
+                        </div>
+                        
+                        <div ng-if="image['selected']" ng-click="delete(image,$index)" class="check" role="button" tabindex="0">
+                            <i class="fa fa-check"></i>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+    </md-dialog-content>
+    
+    <md-sidenav style="width:100%; height:800px;" class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+
+      <md-toolbar class="md-theme-light">
+                  <div class="md-toolbar-tools">
+
+            <h2>圖片資訊</h2>
+                <span flex></span>
+                <md-button ng-click="select()">選擇</md-button>
+                <md-button ng-click="delete()">刪除</md-button>
+                <md-button ng-click="cancel()">取消</md-button>
+            </div>
+      </md-toolbar>
+      <md-content ng-controller="RightCtrl" layout-padding>
+            <div layout="row">
+                <div layout="column" flex="60" style="padding:5px 5px; display:block;">
+                    <img ng-click="select()" ng-src="{{getFileUrl('medium-web',myGid)}}" />                    
+                    
+                </div>
+                
+                <div layout="column" flex="40">
+                    <form>
+                        <md-input-container>
+                            <label>名稱
+                            </label>
+                            <input ng-model="model['title']">
+                        </md-input-container>
+                        <md-input-container>
+                            <label>價錢</label>
+                            <input ng-model="model['price']" />
+                            
+                            
+                        </md-input-container>
+                        <md-input-container class="md-block">
+                              <label>產品介紹</label>
+                              <textarea ng-model="model['intro']" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                            </md-input-container>
+
+                      <md-input-container>
+                        <label for="testInput">圖片標籤</label>
+                          <md-chips ng-model="myTags" md-removable="true" md-autofocus placeholder="圖片關鍵字"></md-chips>
+                      </md-input-container>    
+                      <md-input-container>
+                        <label>輸出大小</label>
+                        <br>
+            
+                            <md-radio-group ng-model="mySize">
+                        
+                              <md-radio-button value="small-web" class="md-primary">小</md-radio-button>
+                              <md-radio-button value="medium-web">中 </md-radio-button>
+                              <md-radio-button value="large-web">大</md-radio-button>
+                        
+                            </md-radio-group>
+                      </md-input-container>
+            
+                    </form>
+                    <md-button ng-click="saveTag(image)">儲存標籤</md-button>
+                </div>
+            </div>
+
+      </md-content>
+
+    </md-sidenav>
+ 

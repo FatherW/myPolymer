@@ -1,0 +1,6 @@
+<div ng-if="isNoData">
+    未有資料 （可右click更新)
+</div>
+<div ng-if="!isNoData" ng-repeat="item in model.ids">
+    {{item}}
+</div>

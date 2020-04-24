@@ -1,0 +1,18 @@
+<style>
+ul.nav>li:hover>ul {
+    display: block !important;
+}
+
+</style>
+<ul class="nav navbar-nav cancel-ul-margin-2level sm" data-smartmenus-id="1554255812605645" id="_nav_navbar-nav_cancel-ul-margin-2level_sm">
+            <li ng-repeat="item in menu" class="dropdown open">
+              <a href="javascript:void(0)" class="dropdown-toggle has-submenu" data-toggle="dropdown" aria-expanded="false" context-menu="aOptions">{{item.label}}</a>
+              <ul class="dropdown-menu sm-nowrap" role="menu" style="width: auto; display:none; top: auto; left: 0px; margin-left: 0px; margin-top: 0px; min-width: 15em; max-width: 15em;">
+                    <li ng-repeat="subitem in item.submenu">
+                        <a ng-href="{{subitem}}.html">{{subitem}}</a>
+                    </li>
+<!--                    <div class="divider" context-menu="conMenuOptions"></div>  -->
+                </ul>
+            </li>
+</ul>
+ 

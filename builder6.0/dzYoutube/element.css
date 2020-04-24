@@ -1,0 +1,11 @@
+.video-container{
+    position:relative;
+}
+.video-container md-toolbar.dazzle{
+    position:absolute;
+    top:0px;
+    left:0px;
+    background-color:rgb(0,125,75);
+    width:auto;
+    max-width:70px;
+}

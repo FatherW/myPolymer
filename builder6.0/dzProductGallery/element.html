@@ -1,0 +1,160 @@
+<div class="shopGallery">
+                             <h1 class="md-display-2">{{selected}}</h1>
+                      <div id="select-panel"><label>選擇類別：</label><select ng-change="findType()" class="custom-select" ng-model="selected">
+                                	<option value="所有產品" selected ng-click="findType(null)">所有產品</option>
+                                	<option ng-repeat="item in type" ng-value="item" >{{item}}</option>
+                                </select>
+                        
+                        </div>
+                        <div class="clear"></div>
+                        <div class="element" id="ele1482920593116">
+                       
+                       
+                        <dz-dataset id="productController" class="row"  data-table="product" data-filter="type:保健">
+                            <div dz-template>
+                            <div class="col-lg-4 col-md-5 col-xs-11 item" >
+                                    
+<div class="photo">
+    <div class="node_photo">
+				<div class="node_big_photo">
+				    <img dz-field data-field="截圖" data-type="image" class="img-responsive photo" >
+				</div>
+
+		    <!--    <div class="node_small_photo">
+                    <a ng-click="loadBigImage()" ng-href="#" class="thumb_img active ng-scope" rel="product_img_large_0" href="#" style="">
+                        <img src="http://www.rainbowcu.org.hk/image/made in hong kong.jpg">
+                    </a>
+                </div>
+            -->
+
+			</div>
+</div>
+                                    <div class="title" dz-field data-field="標題" data-type="text"></div>
+                                    <div class="detail" dz-field data-field="介紹" data-type="text"></div>
+                                    <div class="col col-md-12 price">
+                                        <div class="pull-right" dz-field data-field="價錢" data-type="currency"></div>
+                                    </div>                                    
+                                    <button dz-field class="buttons" type="button" ng-click="addToCart($event)">加入購物車</button>
+                            </div>
+                        </div>
+                    </dz-dataset>    
+        </div>
+                    
+                    
+        <!--<md-tabs md-dynamic-height md-border-bottom>-->
+        <!--      <md-tab label="保健">-->
+        <!--        <md-content class="md-padding">-->
+        <!--          <h1 class="md-display-2">保健</h1>-->
+        <!--               <div class="element" id="ele1482920593116">-->
+        <!--                <div id="productController" class="row">-->
+        <!--                    <div class="col-lg-4 col-md-5 col-xs-11 item" ng-repeat="p in product | filter: {type:'保健'}">-->
+        <!--                        <a ng-href="{{p['截圖']}}" target="_blank"><img class="img-responsive photo" ng-src="{{p['截圖']}}">-->
+        <!--                        </a>-->
+        <!--                        <div class="title">{{p['標題']}}</div>-->
+        <!--                        <div class="detail">{{p['介紹']}}</div>-->
+        <!--                        <div class="col col-md-12 price">-->
+        <!--                            <div class="pull-right">{{p['價錢'] | currency:"$"}}</div>-->
+        <!--                        </div>-->
+        <!--                        <button class="buttons" type="button" ng-click="addToCart(p)">加入購物車</button>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>           -->
+        <!--        </md-content>-->
+        <!--      </md-tab>-->
+        <!--      <md-tab label="食品">-->
+        <!--        <md-content class="md-padding">-->
+        <!--          <h1 class="md-display-2">Tab Two</h1>-->
+        <!--          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis ante augue. Phasellus volutpat neque ac dui mattis vulputate. Etiam consequat aliquam cursus. In sodales pretium ultrices. Maecenas lectus est, sollicitudin consectetur felis nec, feugiat ultricies mi. Aliquam erat volutpat. Nam placerat, tortor in ultrices porttitor, orci enim rutrum enim, vel tempor sapien arcu a tellus. Vivamus convallis sodales ante varius gravida. Curabitur a purus vel augue ultrices ultricies id a nisl. Nullam malesuada consequat diam, a facilisis tortor volutpat et. Sed urna dolor, aliquet vitae posuere vulputate, euismod ac lorem. Sed felis risus, pulvinar at interdum quis, vehicula sed odio. Phasellus in enim venenatis, iaculis tortor eu, bibendum ante. Donec ac tellus dictum neque volutpat blandit. Praesent efficitur faucibus risus, ac auctor purus porttitor vitae. Phasellus ornare dui nec orci posuere, nec luctus mauris semper.</p>-->
+        <!--          <p>Morbi viverra, ante vel aliquet tincidunt, leo dolor pharetra quam, at semper massa orci nec magna. Donec posuere nec sapien sed laoreet. Etiam cursus nunc in condimentum facilisis. Etiam in tempor tortor. Vivamus faucibus egestas enim, at convallis diam pulvinar vel. Cras ac orci eget nisi maximus cursus. Nunc urna libero, viverra sit amet nisl at, hendrerit tempor turpis. Maecenas facilisis convallis mi vel tempor. Nullam vitae nunc leo. Cras sed nisl consectetur, rhoncus sapien sit amet, tempus sapien.</p>-->
+        <!--          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>-->
+        <!--        </md-content>-->
+        <!--      </md-tab>-->
+        <!--      <md-tab label="沖劑">-->
+        <!--        <md-content class="md-padding">-->
+        <!--          <h1 class="md-display-2">Tab Three</h1>-->
+        <!--          <p>Integer turpis erat, porttitor vitae mi faucibus, laoreet interdum tellus. Curabitur posuere molestie dictum. Morbi eget congue risus, quis rhoncus quam. Suspendisse vitae hendrerit erat, at posuere mi. Cras eu fermentum nunc. Sed id ante eu orci commodo volutpat non ac est. Praesent ligula diam, congue eu enim scelerisque, finibus commodo lectus.</p>-->
+        <!--        </md-content>-->
+        <!--      </md-tab>-->
+        <!--</md-tabs>-->
+               
+                      
+                                
+                        
+                        
+</div>
+                    
+                    
+    <style>
+    .shopGallery{
+        min-height:300px;
+        background-size:100%;
+    }
+    .shopGallery .item {
+        background: white;
+        height:830px;
+        
+    }
+    .shopGallery .detail {
+        margin: 5px;
+        padding: 5px;
+        overflow: hidden;
+        max-height: 240px;
+        font-size: 15px;
+        line-height: 1.5;
+        height:215px;
+        font-size:24px;
+    }
+    .price {
+
+    }
+    .pull-right{
+        font-size:40px;
+    }
+ .node_photo{ float:left; width:100%; padding:10px; border:1px solid #EEE; border-radius:5px; }
+ .node_photo .node_big_photo{   margin-bottom:10px; text-align:center; }
+ .node_photo .node_big_photo img{ max-width:100%; width:auto; height:360px; }
+ .node_small_photo{ display:block; width:100%; height:107px; overflow:hidden; overflow-x:auto; }
+ .node_small_photo a{ display:table-cell; width:90px; height:90px; text-align:center; vertical-align:middle; background:#EEE;  line-height:0px; }
+ .node_small_photo a.active{ background:#FFD518; }
+ .node_small_photo a img{ max-width:70px; max-height:80px; }
+ .custom-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 57px;
+    padding: 10px 38px 10px 16px;
+    background: #fff url("https://anselmurban.de/codepen-img/select-arrows.svg") no-repeat right 16px center;
+    background-size: 10px;
+    transition: border-color .1s ease-in-out,box-shadow .1s ease-in-out;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+.custom-select:hover {
+    border: 1px solid #999;
+}
+.custom-select:focus {
+    border: 1px solid #999;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.2);
+    outline: none;
+}
+/* remove default arrow in IE */
+select::-ms-expand {
+    display:none;
+}
+
+
+.custom-select {
+    font-family: "Source Sans Pro", sans-serif;
+    font-size: 1.6rem;
+}
+div#select-panel {
+    float: right;
+    clear: both;
+    margin-bottom: 10px;
+}
+
+.clear{
+    clear:both;
+}
+ 
+    </style>

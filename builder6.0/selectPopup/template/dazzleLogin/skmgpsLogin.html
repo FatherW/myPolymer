@@ -1,0 +1,32 @@
+<div class="element" id="ele1478244348684" myangular-init="userInit()">
+                              <div class="row loginWapper logining" aria-hidden="true" style="">
+                                 <div class="col col-md-2 col-lg-2 hidden-xs"></div>
+                                 <div class="col col-md-4 col-lg-4 col-xs-12">
+                                    <div class="input-group input-group-md row">
+                                       <!--<span class="input-group-addon">登入名稱</span>-->
+                                       <input class="form-control " placeholder="登入名稱" type="text" myangular-model="username" aria-invalid="false" style="">
+                                    </div>
+                                 </div>
+                                 <div class="col col-md-4 col-lg-4 col-xs-12">
+                                    <div class="input-group input-group-md row">
+                                       <!--<span class="input-group-addon">密碼</span>-->
+                                       <input class="form-control    " placeholder="密碼" type="password" myangular-model="password" aria-invalid="false" style="">
+                                    </div>
+                                 </div>
+                                 <div class="col col-md-2 col-lg-2 col-xs-12">
+                                    <div class="hidden-lg hidden-md col-xs-8"></div>
+                                    <button class="col col-md-12 col-lg-12 col-xs-4 btn btn-default" myangular-click="login()">登入</button>
+                                 </div>
+                              </div>
+                              <div class="row loginWapper logined" aria-hidden="false" style="display:none;">
+                                 <div class="row">
+                                    <div class="col col-lg-4 col-md-2 hidden-xs"></div>
+                                    <div class="col col-lg-4 col-md-5 col-xs-5">
+                                       <span class="welcome " style="font-size: 20px;color: red;">歡迎:<span class="loginname"></span></span>
+                                    </div>
+                                    <div class="col col-lg-4 col-md-5 col-xs-7">
+                                       <button class="btn btn-default" myangular-click="logout()">登出</button>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>

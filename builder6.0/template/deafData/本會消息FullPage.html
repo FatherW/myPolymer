@@ -1,0 +1,46 @@
+<!--<div class="view view--xiao-xi view-id-_xiao_xi view-display-id-page view-dom-id-528659e8c9c981ffb111b342e01c77b5">
+            
+  
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          
+          <li class="views-row views-row-2 views-row-even"  ng-repeat="item in model.data | orderBy: '-publishDate' ">  
+  <div class="views-field views-field-created">        <span class="field-content">{{item['publishDate'] | date }}</span>  </div>  
+  <span class="views-field views-field-title">        <span class="field-content"><a ng-href="{{item['標題']}}.html">{{item['標題']}}</a></span>  </span></li>
+          
+      </ul></div>    </div>
+  
+
+</div>-->
+
+
+<table st-table="displayedCollection" st-safe-src="model.data" class="table table-striped">
+		<thead>
+		<tr>
+			<th>時間</th>
+			<th>標題</th>
+		</tr>
+		<!--<tr>
+			<th>
+				<input st-search="'firstName'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+			</th>
+			<th colspan="4">
+				<input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+			</th>
+		</tr>-->
+		</thead>
+		<tbody>
+		<tr ng-repeat="item in displayedCollection | orderBy: '-nid' ">
+			<td>{{item['時間'] | date:'yyyy-MM-dd'}}</td>
+			<td><a ng-href="{{item['標題']}}.html">{{item['標題']}}</a></td>
+		</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="2" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>

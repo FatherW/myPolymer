@@ -1,0 +1,31 @@
+                 <div class="dazzle-button">
+                        <img src="//www.hot-yeah.com/image/svg/Add-01.svg" style="width:30px; height:30px; margin:5px;">    
+                                <img src="//www.hot-yeah.com/image/svg/Minus-01.svg" style="width:30px; height:30px; margin:5px;">        
+                    </div>
+                
+<div class="tutor-row"  ng-repeat="item in model.tutors track by $index" context-menu="menuOptions"  item-row="{{$index}}">
+     <div layout="row" class="card layout-row">
+
+    <div flex="20" class="flex-20">
+        <img context-menu="imgOptions"  item-row="{{$index}}" class="img-responsive ng-scope" style="width:50px;height: 50px;margin: 0 auto;" ng-src="{{item.src}}">        
+
+<span class="profile_name" type="text"  item-row="{{$index}}" context-menu="textOptions">{{item.name}}</span>
+
+
+    </div>
+    <div flex="80" class="flex-80">
+        
+    <p class="ng-scope" context-menu="introOptions"  item-row="{{$index}}">
+            {{item.introduction}}
+    </p>      
+                <!--    <div class="dazzle-button">
+                        <img src="//www.hot-yeah.com/image/svg/Add-01.svg" style="width:30px; height:30px; margin:5px;">    
+                                <img src="//www.hot-yeah.com/image/svg/Minus-01.svg" style="width:30px; height:30px; margin:5px;">        
+                    </div>
+                    -->
+    </div>
+  </div>
+<hr>  
+</div>
+
+  

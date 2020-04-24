@@ -1,0 +1,222 @@
+<style>
+    .virtualRepeatdemoInfiniteScroll #vertical-container {
+    min-height: 1000px;
+    width: 100%;
+}
+
+.virtualRepeatdemoInfiniteScroll .repeated-item {
+    /*border-bottom: 1px solid #ddd;*/
+    /*box-sizing: border-box;*/
+    /*height: 40px;*/
+    /*padding-top: 10px;*/
+}
+
+.virtualRepeatdemoInfiniteScroll md-content {
+    margin: 0;
+}
+
+.virtualRepeatdemoInfiniteScroll md-virtual-repeat-container {
+    /*border: solid 1px grey;*/
+}
+
+.virtualRepeatdemoInfiniteScroll .md-virtual-repeat-container .md-virtual-repeat-offsetter {
+    /*padding-left: 16px;*/
+}
+</style>
+
+<div ng-init="init('product')">
+    <div class="hello"></div>
+    <div class="new_cat_path" style="position: relative; float: left; width: 100%; height: auto; display: none;">
+        <div class="cat_parents" style="position:relative; float:left; width:100%; height:auto;o;">
+            <div class="tidtag" style="position:relative; float:left; width:80%; margin-right:20px;">
+                <input id="tags_1" class="tags" value="" style="display:none;"><div id="tags_1_tagsinput" class="tagsinput" style="width: 100%; min-height: 100px;"></div><div id="tags_1_tagsinput" class="tagsinput" style="width: 100%; min-height: 100px;"></div>         
+            </div>
+            <div class="searchlist" style="position:relative; float:left; width:100%;">
+                <div style="display:table; margin:0 auto;">
+                    <div id="remove_all_tag" style="position:relative; float:left; width:150px; height:30px; font-size:20px; border-radius:4px; background-color:#fed517; cursor:pointer; display: flex; align-items: center; justify-content: center; padding:5px; margin-right:50px;">
+                        清除所有搜尋
+                    </div>
+                    <div id="tag_search" style="position:relative; float:left; width:150px; height:30px; font-size:20px; border-radius:4px; background-color:#fed517; cursor:pointer; display: flex; align-items: center; justify-content: center; padding:5px;">
+                        搜尋
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="search_bar">
+            <input type="text" id="q" name="keyword" value="" ng-model="keyword" placeholder="輸入公司關鍵字搜尋">
+            <input type="button" value="搜尋" id="search_btn" ng-click="keyword_search()">
+                    </div>
+        <div class="clearfix"></div>
+    </div>
+    
+    
+    <div class="cat_path">
+        <div class="cat_parents">
+    <a href="https://www.5metal.com.hk/product_category">產品列表</a> <span class="gt">&gt;</span> <a class="path_item" ng-href="https://www.5metal.com.hk/product_category?tid={{tid}}">{{category}}</a>    </div>
+    
+        <div class="cat_parents" ng-show="keyword">
+    <a href="#">搜尋字</a> <span class="gt">&gt;</span> <a class="path_item" ng-href="https://www.5metal.com.hk/product_category?keyword={{keyword}}">{{keyword}}</a>    </div>
+    
+        <div class="search_bar">
+            <input type="text" id="q" name="keyword" ng-model="keyword" placeholder="輸入產品關鍵字搜尋">
+            <input type="button"  placeholder="搜尋" id="search_btn" ng-click="keyword_search();">
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    
+    <div class="cat_path" style="height:auto !important;"  ng-init="getCategoryChildren(tid)"  ng-hide="!catChildren.length">
+
+        <div class="cat_order_list cat_ref_list">
+            <div class="list_box">
+                <label class="order">次分類</label>
+                <ul class="order_list">
+                    <li ng-repeat="cat in catChildren" ng-hide="cat['tid']==453 || cat['tid']==452 || cat['tid']==454"><a ng-href="/product_category?tid={{cat['tid']}}" href="#" id="sort_view">{{cat['name']}}</a></li>
+                </ul>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="cat_order_list cat_ref_list">
+        <div class="list_box">
+            <label class="order">排序方式</label>
+            <ul class="order_list">
+     
+                <li><a ng-click="sort('view')" href="#" ng-class="sortClass('view')" id="sort_view">瀏覽次數(多-&gt;少)</a></li>
+     
+                <li><a href="#" ng-click="sort('price')" ng-class="sortClass('price')"  id="sort_price">產品價格(高-&gt;低)</a></li>
+     
+                <li><a href="#" ng-click="sort('update')" ng-class="sortClass('update')" id="sort_update">上架日期(近-&gt;遠)</a></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    
+    
+<div class="gap_div"></div>
+<div class="cat_path">
+    <div class="product_list">
+        <h2 class="gradient_yellow">產品列表</h2>
+        <div class="plist">
+            <div class="phead"></div>
+            <div class="pcontent">
+                
+               <!--<div  class="virtualRepeatdemoInfiniteScroll" ng-controller="AppCtrl as ctrl" ng-cloak>-->
+               <!--     <md-content layout="column">-->
+               <!--       <md-virtual-repeat-container id="vertical-container" flex>-->
+               <!--             <div md-virtual-repeat="item in infiniteItems" md-on-demand-->
+               <!--                  class="repeated-item" flex>-->
+               <!--                 Hello:{{item.nid}}-->
+               <!--             </div>-->
+               <!--         </md-virtual-repeat-container>-->
+               <!--     </md-content>-->
+               <!-- </div>-->
+
+<div class="view view-product-inner view-id-product_inner view-display-id-block view-dom-id-049b79c23303f9c42d46beafde828e61 jquery-once-1-processed" rel="loaded"  ng-cloak>
+              
+     <div class="view-content" infinite-scroll="loadMore()" infinite-scroll-disabled='loading' infinite-scroll-distance="1"> 
+        <div class="views-row views-row-1 views-row-odd" ng-repeat="item in data">
+              <!--<metal-product-item  ng-init="init(item['nid'])">-->
+
+
+              <!--</metal-product-item>-->
+                    <div class="views-field views-field-nothing">        <span class="field-content"><div class="product" id="desktop">
+                        <div class="product_c">
+                        <metal-delete-button></metal-delete-button>
+                        <div class="over_tips"><a href="/node/{{item['nid']}}">按入產品詳情</a></div>
+                        <div class="product_thumb"><a class="" target="_blank" ng-href="/node/{{item['nid']}}"><img ng-src="{{loadImage(item['images'])}}" width="383" height="215" alt=""></a></div>
+                        <div class="product_title"><a target="_blank" ng-href="/node/{{item['nid']}}">{{item['title']}}</a></div>
+                        <!--<div class="views">點擊︰{{item['product_views']}} </div>-->
+                        <div class="price">{{returnPrice(item)}} </div>
+                        <!--<div class="date">刊登日期：{{item['created']}} </div>-->
+                        <!--<div class="date">更新日期：{{item['changed']}} </div>-->
+                        <div class="provider"><a target="_blank" ng-href="/node/{{item['company_id']}}">{{item['product_company']}}</a></div>
+                        </div>
+                        <div class="pfoot"></div>
+                        </div></span>  </div>
+                                  <div class="views-field views-field-nothing-1">        <span class="field-content"><div class="product" id="mobile">
+                        <div class="product_c">
+                        <div class="over_tips"><a ng-href="/node/{{item['nid']}}">按入產品詳情</a></div>
+                        <div class="product_thumb"><a class="" ng-href="/node/{{item['nid']}}"><img ng-src="{{loadImage(item['images'])}}" width="383" height="215" alt=""></a></div>
+                        <div class="product_title"><a ng-href="/node/{{item['nid']}}">{{item['title']}}</a></div>
+                        <!--<div class="views">點擊︰{{item['product_views']}} </div>-->
+                        <!--<div class="provider">產品型號：{{item['product_item']}} </div>-->
+                        <!--<div class="provider">刊登日期：{{item['created']}} </div>-->
+                        <div class="provider"><a target="_blank" ng-href="/node/{{item['company_id']}}">{{item['product_company']}}</a></div>
+                        <div class="price">{{returnPrice(item)}} </div>
+                        </div>
+                        <div class="pfoot"></div>
+                        </div></span>  </div>
+              
+        </div>
+        <div class="clearfix"></div>
+    </div>
+
+
+    <div class="item-list"><ul class="pager"><li class="pager-previous first">&nbsp;</li>
+<li class="pager-current">1 of 22</li>
+<li class="pager-next last"><a title="到下一頁" href="https://www.5metal.com.hk/content/%E5%BE%B7%E8%A8%98%E4%BA%94%E9%87%91%E7%99%BC%E5%B1%95%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8?page=1&amp;tid=2">下一頁 ›</a></li>
+</ul></div>  
+ 
+  
+  
+  
+</div>          </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+    <div class="product_featured">
+        <h2 class="gradient_yellow" style="width:194px;">特色產品</h2>
+        <div class="plist">
+            <div class="phead"></div>
+            <div class="view view-product-inner view-id-product_inner view-display-id-block_1 view-dom-id-d5e50a5c89cdecfd2c5f71bccd888c2f">
+            
+                        <div class="view-content">
+                            <div class="views-row views-row-1 views-row-odd" ng-repeat="randomItem in randomData track by $index">
+                                 
+                                  <!--<metal-product-item  ng-init="init(randomItem['nid'])">-->
+                    
+                    
+                                  <!--</metal-product-item>-->
+                                        <div class="views-field views-field-nothing">        <span class="field-content"><div class="product" id="desktop">
+                                            <div class="product_c">
+                                            <div class="over_tips"><a href="/node/{{randomItem['nid']}}">按入產品詳情</a></div>
+                                            <div class="product_thumb"><a class="" target="_blank" ng-href="/node/{{randomItem['nid']}}"><img ng-src="{{loadImage(randomItem['images'])}}" width="383" height="215" alt=""></a></div>
+                                            <div class="product_title"><a target="_blank" ng-href="/node/{{randomItem['nid']}}">{{randomItem['title']}}</a></div>
+                                            <!--<div class="views">點擊︰{{randomItem['product_views']}} </div>-->
+                                            <div class="price">{{returnPrice(randomItem)}} </div>
+                                            <!--<div class="date">刊登日期：{{randomItem['created']}} </div>-->
+                                            <!--<div class="date">更新日期：{{randomItem['changed']}} </div>-->
+                                            <div class="provider"><a target="_blank" ng-href="/node/{{randomItem['company_id']}}">{{randomItem['product_company']}}</a></div>
+                                            </div>
+                                            <div class="pfoot"></div>
+                                            </div></span>  </div>
+                                                      <div class="views-field views-field-nothing-1">        <span class="field-content"><div class="product" id="mobile">
+                                            <div class="product_c">
+                                            <div class="over_tips"><a ng-href="/node/{{randomItem['nid']}}">按入產品詳情</a></div>
+                                            <div class="product_thumb"><a class="" ng-href="/node/{{randomItem['nid']}}"><img ng-src="{{loadImage(randomItem['images'])}}" width="383" height="215" alt=""></a></div>
+                                            <div class="product_title"><a ng-href="/node/{{randomItem['nid']}}">{{randomItem['title']}}</a></div>
+                                            <!--<div class="views">點擊︰{{randomItem['product_views']}} </div>-->
+                                            <!--<div class="provider">產品型號：{{randomItem['product_randomItem']}} </div>-->
+                                            <!--<div class="provider">刊登日期：{{randomItem['created']}} </div>-->
+                                            <div class="provider"><a target="_blank" ng-href="/node/{{randomItem['company_id']}}">{{randomItem['product_company']}}</a></div>
+                                            <div class="price">{{returnPrice(randomItem)}}</div>
+                                            </div>
+                                            <div class="pfoot"></div>
+                                            </div></span>  </div>
+                        
+                                  
+                                 
+                            </div>
+                        </div>
+            </div>     
+        </div>
+    </div>
+    
+    <div class="clearfix"></div>
+
+    <div ng-show="loading" class="loading" id="loading">請稍等，正在載入...</div>
+</div>
+
+</div>

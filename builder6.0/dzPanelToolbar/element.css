@@ -1,0 +1,10 @@
+dz-panel-toolbar-header button {
+    color: white !important;
+    border: none !important;
+}
+dz-panel-toolbar button:hover{
+  background-color:none !important;
+}
+dz-panel-toolbar {
+    z-index:8000;
+}

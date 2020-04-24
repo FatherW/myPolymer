@@ -1,0 +1,2 @@
+<editor-toolbar></editor-toolbar>
+<img context-menu="imgMenuOptions" id="img-{{model.id}}" class="img-responsive" ng-src="{{model.src}}">

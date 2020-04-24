@@ -1,0 +1,6 @@
+<ul>
+    <li ng-repeat="item in model.data | filter: { '分類': 'Publication','語言':'!zh-hant'} | orderBy:'-nid' | limitTo:6 ">
+        <a ng-href="{{item['標題'] | replacetitle}}.html">{{item['標題']}}</a>
+    </li>
+                                                            
+</ul>

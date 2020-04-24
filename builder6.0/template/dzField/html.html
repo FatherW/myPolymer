@@ -1,0 +1,4 @@
+<div ng-if="isNoData">
+    未有資料(可右click 更新)
+</div>
+<div ng-if="!isNoData" ng-bind-html="model.data | to_trusted" class="ng-binding ng-scope"></div>

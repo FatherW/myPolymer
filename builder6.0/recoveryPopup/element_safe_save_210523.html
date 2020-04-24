@@ -1,0 +1,44 @@
+   <form>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>請選擇要還原到的時間</h2>
+                <span flex></span>
+
+            </div>
+        </md-toolbar>
+        <md-dialog-content layout-padding>
+            <div layout="row" layout-align="center center" layout-padding>
+                <md-input-container>
+                <p>注意：<ol><li>只能回復登入用戶所屬的網站。閣下所屬的網站為：{{restoreSite}}</li><li>閣下所有儲存但未匯出的改動資料, 同樣會被回復。但其他用戶的改動資料則不受影響。</li><li>所有時間版本都可以回復，故回復後有問題，可設定回現在時間再回復，即能還原現有版本。</li></ol></p>
+                </md-input-container>
+                <md-input-container>
+                    <label>請選擇日期</label>
+                    <md-datepicker ng-model="recoveryDate" md-min-date="minDate" md-max-date="maxDate"></md-datepicker>
+                </md-input-container>
+                <md-input-container>
+                    <label>時鐘</label>
+                    <input ng-model="recoveryHours" type="number" step="1" min="0" max="23">
+                </md-input-container>
+                <md-input-container>
+                    <label>分鐘</label>
+                    <input ng-model="recoveryMinutes" type="number" step="1" min="0" max="59">
+                </md-input-container>
+                <md-input-container>
+                    <label>秒鐘</label>
+                    <input ng-model="recoverySeconds" type="number" step="1" min="0" max="59">
+                </md-input-container>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="recoveryData()">
+                還原資料
+            </md-button>
+            <md-button ng-click="recoveryPage()">
+                還原本頁
+            </md-button>
+            <md-button ng-click="recovery()">
+                還原網站
+            </md-button>
+        </md-dialog-actions>
+    </form>

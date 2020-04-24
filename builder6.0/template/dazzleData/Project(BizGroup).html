@@ -1,0 +1,17 @@
+<div class="container_12">
+				<div class="gallery">
+					<div ng-repeat="item in model.data" class="grid_3">
+						<a ng-href="{{item.photo}}" class="{{class}}"><img src="{{item.photo2}}" alt=""></a>
+						<div class="text1"><a href="#">{{item.title}}</a></div>
+						{{item.detail}}
+						<br>
+						<a ng-href="{{item.link}}" class="btn">more</a>
+					</div>
+				</div>
+			</div>
+			
+			<style>
+			    .grid_3 {
+			        margin-bottom:30px;
+			    }
+			</style>

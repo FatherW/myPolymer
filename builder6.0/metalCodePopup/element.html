@@ -1,0 +1,50 @@
+    <script src="https://ace.c9.io/build/src/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+
+//    var beautify = ace.require("ace/ext/beautify"); // get reference to extension
+    var editor = ace.edit("editor");
+ //   beautify.beautify(editor.session);
+
+    editor.setTheme("ace/theme/monokai");
+//    editor.setFontSize(14);
+    editor.session.setMode("ace/mode/html");
+    editor.setOptions({
+          fontFamily: "Monaco !important",
+          fontSize: "14pt"
+        });
+</script>
+
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+</style>
+
+
+<md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>選擇分類</h2>
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="save()">
+                儲存
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="cancel()">
+                取消
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content style="min-height:70%;" ng-init="init()">
+ <md-content class="md-padding" style="min-height:400px;">
+     
+     
+    <div id="editor" class="editor">
+            
+        
+    </div>
+    </md-content>
+</md-dialog-content>

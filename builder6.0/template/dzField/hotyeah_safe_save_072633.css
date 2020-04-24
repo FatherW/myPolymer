@@ -1,0 +1,100 @@
+
+        .link {
+            cursor: pointer;
+            text-decoration: none;
+            color: #444;
+        }
+
+.ahotworkshop{
+    margin-top: 16px;
+    width: 258px;
+    height: 432px;
+    border: 1px solid #dedede;
+    font-family: 微軟正黑體, Arial, Verdana;
+    margin-right: 24px;
+    float: left;
+                border-width: 1px;
+            border-style: solid;
+            border-color: rgb(222, 222, 222);
+            border-image: initial;
+}
+.ahotworkshop.nomargin{
+    margin-right: 0px !important;
+}
+.ahotworkshop .pic{
+    float: left;
+}
+.ahotworkshop .days{
+    width: 87px;
+    height: 26px;
+    background: url(http://www.classes.com.hk/images/index/2015/clock.png) 8px 4px no-repeat #fcfcfc;
+    color: red;
+    line-height: 26px;
+    padding-left: 28px;
+    font-size: 14px;
+    font-weight:bold;
+    float: right;
+}
+.ahotworkshop .title{
+    font-size: 11pt;
+    color: #444;
+    margin: 8px 12px 0px 12px;
+    font-weight: bold;
+}
+.ahotworkshop .bylike{
+
+    margin: 12px 12px 12px 12px;
+    
+}
+.ahotworkshop .bylike .by{
+    float: left;
+    font-size: 10pt;
+    color: #aaa;
+}
+
+.ahotworkshop .bylike .by a{
+    color: #aaa;
+}
+
+.ahotworkshop .bylike .like{
+    float: right;
+}   
+.ahotworkshop .desc{
+    margin: 0 12px;
+    padding: 12px 0px;
+    border-top: 1px solid #efefef;
+    color: #666;
+    font-size: 10pt;
+    line-height: 22px;
+}
+.ahotworkshop .desc a{
+    color: #666;
+}
+.ahotworkshop .tagsbox{
+    height: 32px;
+    margin: 0px 12px;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    padding-left: 30px;
+    line-height: 32px;
+    font-size: 10pt;
+
+    color: #888;
+    background: url(../images/index/2015/flag.png) 10px 11px no-repeat;
+}   
+.ahotworkshop .applynow{
+    margin: 0 auto;
+    margin-top: 16px;
+    text-align: center;
+}
+.ahotworkshop .applynow img{
+    cursor:pointer;
+}
+.moreworkshop{
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+.moreworkshop img{
+    cursor:pointer;
+}

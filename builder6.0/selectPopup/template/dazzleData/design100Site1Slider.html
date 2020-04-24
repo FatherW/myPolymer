@@ -1,0 +1,21 @@
+<div class="hiddenText">
+請右click 管理slider 資料
+</div>
+
+
+<div class="realText">
+	<div class="slider_wrapper" ng-init="loadData()">
+				<div id="camera_wrap" class="">
+					<div ng-repeat="item in model.data" data-src="{{item.photo}}">
+						<div class="caption fadeIn">
+							<div class="title">{{item.title}}</div>
+							<div ng-bind-html="item.introduction">
+                            
+                            </div>
+                            
+                            <a ng-href="item.link">Learn More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>

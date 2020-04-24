@@ -1,0 +1,15 @@
+
+	<div class="blog-agileinfo">
+		<div ng-repeat="item in model.data" ng-class="col-md-6 blog-grids agileits">
+			<div class="blog-w3img">
+				<a href="{{item.html}}"><img alt="" class="img-responsive zoom-img" src="{{item.images}}"></a>
+			</div>
+			<h4><a href="{{item.html}}">{{item.title}}</a></h4>
+			<p class="w3-agilep">Posted By <a href="{{item.writerhtml}}">{{item.name}}</a> &nbsp;&nbsp;on {{item.date}} &nbsp;&nbsp;</p>
+			<p>{{item.content}}</p>
+			<div class="w3lsmore">
+				<a class="button-pipaluk button--inverted" href="{{item.html}}">{{item.readmore}}</a>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>

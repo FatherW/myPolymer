@@ -1,0 +1,11 @@
+
+<div ng-init="loadNews()">
+            <div class="" ng-repeat="item in model.news | filter: { type: '會員資訊'}">
+            	<div class="node sticky">
+		            <h2><a ng-href="{{item.title}}.html" title="{{item.title}}" class="">{{item.title}}</a></h2>
+  		            <div class="content clear-block"></div>
+  		            <div class="clear-block"></div>
+	            </div>
+            </div>
+
+    </div>

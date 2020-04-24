@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="column col-lg-3 hidden-md hidden-xs">
+        <ul class="nav nav-pills nav-stacked">
+            <li ng-repeat="item in model.menu" ng-class="{active:$index == 0}">
+                <a ng-href="#tab{{$index}}" data-toggle="pill">{{item.title}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="column col-lg-9">
+        <div class="tab-content">
+            <div id="tab{{$index}}" class="tab-pane fade in"
+                 ng-repeat="item in model.menu" ng-class="{active:$index == 0}">
+                <h3>{{item.title}}</h3>
+                <editor-container-element model id="{{item.id}}">
+                    container start~~
+                    <div text></div>
+                    container end~~~~
+                </editor-container-element>
+            </div>
+        </div>
+    </div>
+</div>

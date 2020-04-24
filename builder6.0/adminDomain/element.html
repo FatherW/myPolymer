@@ -1,0 +1,60 @@
+<md-content class="md-padding">
+                            
+                        <div layout-gt-xs="row">
+                        <div flex="50">
+                          <md-input-container class="md-block" >
+                            <label>網站域名(請勿加入www等subdomain)</label>
+                            <input ng-model="website.domain" ng-blur="checkDomain()">
+
+                          </md-input-container>                        
+                        </div>
+                        <div flex="50">
+                        
+                            <div layout-gt-xs="row">
+                                <div flex="20">
+                                  <md-input-container>
+                                   <md-progress-circular id="dz-pregress" class="md-hue-2" md-diameter="12px"></md-progress-circular>
+                                    <md-icon id="av_domain" md-svg-src = '//d27btag9kamoke.cloudfront.net/file6.0/images/icon/check.svg'></md-icon>
+                                    <md-icon id="av_undomain" md-svg-src = '//d27btag9kamoke.cloudfront.net/file6.0/images/icon/cancel.svg'></md-icon>
+                                
+                                    </md-input-container>
+                                
+                                
+                                </div>
+                                
+                                <div flex="80">
+                                    <md-input-container class="md-block">
+                                            <md-button ng-click="checkDomain()">檢查域名</md-button>
+                                            <md-button ng-click="buyDomain()">購買域名</md-button>
+                                        </md-input-container>                                
+                                </div>
+                            </div>
+                            
+    
+                        </div>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <div flex="100">
+                                <h3>購買域名須知</h3>
+                                <ol>
+                                    <li>每個域名每年會扣除120積分，約為港幣$120 (其他地區會以增值時的匯率作換算)</li>
+                                    <li>新張期內，若已購買Dazzle年費服務，會免費連接域名乙個。域名與寄存續期日會同步處理</li>
+                                    <li>每個賬號只能連接一個域名，敬希注意。</li>
+                                    <li>購買後，可點擊「連接域名」轉移整個網站檔案名資料。舊網站資料，將會完全刪除。故請作好所有備份工作。</li>
+                                    <li>域名每年需續期。新張期內到期時，會於賬戶自動扣除，若過期，會致使網站不能應用。</li>
+                                    <li>若貴公司已經購買域名，請作以下改動以連接網站</li>
+                                    <ul>
+                                        <li>若已有DNS，請在DNS內加入「www IN CNAME s3-website-ap-northeast-1.amazonaws.com.」</li>
+                                        <li>若未有DNS，請點擊「查詢DNS」（購買後方能顯示)，把以下DNS設為你域名的DNS。<md-button ng-click="checkDNS()">查詢DNS</md-button></li>
+                                        
+                                        <div ng-if="myDNS">
+                                            <h4>{{myDNS}}</h4>
+                                        </div>
+                                        <div ng-if="!myDNS">
+                                            <h4>暫未適用</h4>
+                                        </div>
+                                    <ul>
+                                </ol>
+                            </div>
+                        </div>
+                        </md-content>

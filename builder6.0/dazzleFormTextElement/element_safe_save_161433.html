@@ -1,0 +1,4 @@
+<md-input-container class="md-block">
+	<label ng-class="(model.textElement.required) ? 'md-required':''">{{model.textElement.label}}</label>
+	<input required="model.textElement.required" id="{{model.textElement.name}}" type=text name="{{model.textElement.name}}" myangular-model="form['{{formElement.id}}']">
+</md-input-container>

@@ -1,0 +1,11 @@
+<table class="views-table cols-0">
+    <tbody>
+    <tr ng-repeat="item in model.data | orderBy:'-date'"  ng-class="$index %2? 'odd':'even' ">
+        <td class="views-field views-field-field-ddtime">
+            <span class="date-display-single">{{myDate(item['date'])}}</span></td>
+        <td class="views-field views-field-title">
+            {{item['標題']}}</td>
+    </tr>
+
+    </tbody>
+</table>

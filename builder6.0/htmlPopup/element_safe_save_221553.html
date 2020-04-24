@@ -1,0 +1,38 @@
+
+            <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>HTML編緝器</h2>
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="save()">
+                <md-tooltip>儲存</md-tooltip>
+                <i class="fa fa-floppy-o"></i>
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="cancel()">
+                <md-tooltip>取消</md-tooltip>
+                <i class="fa fa-window-close"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+
+        <md-dialog-content>
+            <div class="md-dialog-content" style="min-height: 400px;">
+                <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+                    <md-tab label="內容">
+                        <md-content class="md-padding">
+                            <div ng-bind-html="code">
+                            </div>
+
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="HTML">
+                        <md-content class="md-padding">
+                            <div ui-ace="aceOption" ng-model="code" style="height: 100%;"></div>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+            </div>
+        </md-dialog-content>
+
+     

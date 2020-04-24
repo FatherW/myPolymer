@@ -1,0 +1,27 @@
+
+    	<div class="header_title" id="pass_home_work_tab">Assignment</div>
+				<div class="clear"></div>
+				
+				<div class="pass_home_work_tab_content tab_content">
+				
+				<div class="header_wrapper">
+					<div class="header_label">Course Code</div>
+				
+					<div class="header_label label_name">Assignment Name</div>
+					<div class="header_label label_assignment">Assignment</div>
+					<div class="header_label label_Deadline">Deadline</div>
+					<div class="header_label label_upload header_label_center">Upload Assignment</div>
+				</div>
+
+				<div class="header_wrapper" ng-repeat="item in assignment">
+					<div class="header_label ">{{item['Course Code']}}</div>
+				
+					<div class="header_label label_name ">{{item['Assignment Name']}}</div>
+					<div class="header_label label_assignment"><a ng-href="{{item['Assignment']}}">  <img src="https://rocketdock.com/images/screenshots/floppy.png"></a></div>
+					<div class="header_label label_Deadline ">{{item['Deadline'] | date}}</div>
+					<div class="header_label label_upload header_label_center"><img src="http://iconizer.net/files/Bunch_of_Bluish_Icons/orig/upload.png"></div>
+				</div>
+
+				
+				</div>
+	</div>

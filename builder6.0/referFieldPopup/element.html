@@ -1,0 +1,64 @@
+<style>
+    .layout-row md-select {
+        margin:0px;
+    }
+    .layout-row > div {
+        padding:5px;
+    }
+    
+</style>
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>欄位管理員</h2>
+            <span flex></span>
+            <md-button ng-click="newRootItem()">新增欄位</md-button>
+            <md-button ng-click="cancel()">取消</md-button>
+            <md-button ng-click="saveMenu()">儲存</md-button>
+        </div>
+    </md-toolbar>
+     <md-dialog-content class="model" style="min-height:70%;" ng-init="init()">
+        <div ui-tree id="tree-root">
+            <ol ui-tree-nodes ng-model="schemas">
+                <li type="Menu" class="menus" ng-repeat="node in schemas" ui-tree-node
+                    ng-include="'nodes_renderer.html'" ></li>
+            </ol>
+        </div>
+        <script type="text/ng-template" id="nodes_renderer.html">
+        <div layout="row" class="tree-node" type="List">
+        
+          <div flex="5" class="flex-5">
+                <div class="pull-left tree-handle" ui-tree-handle>
+                    <span class="glyphicon glyphicon-list"></span>
+                </div>
+          
+          </div>
+          
+          <div flex="30" class="flex-30">
+                <input type="text" ng-model="node.headerName">
+          </div>
+          
+          <div flex="30" class="flex-30">
+                    <md-select ng-model="user.state">
+                      <md-option ng-repeat="state in states" value="{{state.abbrev}}">
+                        {{state.abbrev}}
+                      </md-option>
+                    </md-select>  
+          </div>
+
+          <div flex>
+                    <a class="pull-right btn btn-danger " data-nodrag ng-click="remove(node)"
+                       style="margin-right: 8px;"><i class="fa fa-ban" aria-hidden="true"></i></a>
+                       
+                   <a class="pull-right btn btn-primary " data-nodrag ng-click="fieldSettings(node)"
+                       style="margin-right: 8px;"><i class="fa fa-cog" aria-hidden="true"></i></a>
+                   <a class="pull-right btn btn-success " data-nodrag ng-click="choose(node)"
+                       style="margin-right: 8px;"><i class="fa fa-check" aria-hidden="true"></i></a>         
+         
+          </div>
+        
+        </div>
+        
+ 
+        </script>
+     </md-dialog-content>

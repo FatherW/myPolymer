@@ -1,0 +1,22 @@
+<div class="grid_12">
+	<div id="grid" class="main">
+		<div ng-repeat="item in model.data" class="view">
+			<div class="view-back">
+				<span data-icon="" class="fa fa-eye"><span>{{item.eye1}}</span></span>
+				<span data-icon="" class="fa fa-heart-o"><span>{{item.heart1}}</span></span>
+				<a href="{{item.link1}}">→</a>
+			</div>
+			<img src="{{item.photo1}}" class="ng-scope" id="ele1498529724508-11" custom="editorImageElement">
+		</div>
+		<div class="clear"></div>
+		<div ng-repeat="item in model.data" class="view">
+			<div class="view-back">
+				<span data-icon="" class="fa fa-eye"><span>{{item.eye2}}</span></span>
+				<span data-icon="" class="fa fa-heart-o"><span>{{item.heart2}}</span></span>
+				<a href="{{item.link2}}">→</a>
+			</div>
+			<img src="{{item.photo2}}" class="ng-scope" id="ele1498529724508-11" custom="editorImageElement">
+		</div>
+		
+	</div>
+</div>

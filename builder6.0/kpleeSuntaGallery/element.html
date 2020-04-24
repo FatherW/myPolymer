@@ -1,0 +1,12 @@
+<div class="contentWrapper" id="scrollable">
+    <div ng-repeat="item in items | orderBy:&apos;-album_date&apos;" 
+    lazy-img="https://designerrrr-output.s3-ap-northeast-1.amazonaws.com/images/original/{{item.album_data[0] | imageEmpty}}.jpg" class="galleryRow">
+        <a ng-href="webDetail.html?cat={{item.album_tag}}&amp;album={{item.album_name}}">
+            <div class="galleryRowWrapper">
+                <div class="galleryRowDate">{{item.album_date | date:&apos;yyyy-MM-dd&apos;}}</div>
+                <div class="galleryRowText">{{item.album_name}}</div>
+                <div class="imagecount">Images: {{item.album_data.length}}</div>
+            </div>
+        </a>
+    </div>
+</div>

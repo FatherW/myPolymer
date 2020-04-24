@@ -1,0 +1,34 @@
+<md-fab-speed-dial id="head-dial" ng-hide="hidden" md-direction="left" md-open="isOpen"
+                   class="md-scale md-fab-top-right">
+    <md-fab-trigger ng-hide="dataManagement">
+        <md-button aria-label="menu" class="md-fab md-warn">
+            <i class="fa fa-2x fa-bars" aria-hidden="true"></i>
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <label  style="background:white; line-height:60px;">{{thisPage}}</label>
+        
+        <md-button aria-label="export" class="md-fab md-primary" ng-click="export()">
+            <md-tooltip md-direction="down">匯出</md-tooltip>
+            <i class="fa fa-sign-out fa-2x"></i>
+        </md-button>
+        <md-button aria-label="saveAtom" class="md-fab md-primary" ng-click="saveAtom()">
+            <md-tooltip md-direction="down">儲存</md-tooltip>
+            <i class="fa fa-floppy-o fa-2x"></i>
+        </md-button>
+        <md-button aria-label="recovery" class="md-fab md-primary" ng-click="recovery()">
+            <md-tooltip md-direction="down">還原</md-tooltip>
+            <i class="fa fa-calendar-check-o fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="home()">
+            <md-tooltip md-direction="down">回到管理台</md-tooltip>
+            <i class="fa fa-home fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="reload()">
+            <md-tooltip md-direction="down">重新載入</md-tooltip>
+            <i class="fa fa-refresh fa-2x"></i>
+        </md-button>
+
+
+    </md-fab-actions>
+</md-fab-speed-dial>

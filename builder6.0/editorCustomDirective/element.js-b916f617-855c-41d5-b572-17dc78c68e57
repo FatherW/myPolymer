@@ -1,0 +1,199 @@
+var app = angular.module('demoApp');
+var store = window.store;
+app.directive('custom', function ($compile) {
+    var custom = {
+        restrict: 'A',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            element.addClass('dazzle-custom');
+            // setTimeout(function () {
+
+            var id = element.attr('id');
+
+//            console.log('id:'+id+' length:'+length);
+              element.prop('draggable', true);
+              
+              
+            var startX,startY,start,stop,drag,container,x=0,y=0;
+              element.on('dragstart', function(event) {
+                    store.set('dragContentId',id);
+                console.log('Drag',id);
+                    store.set('dragPageX',event.pageX);
+                    store.set('dragPageY',event.pageY);
+                    console.log(event);
+              });
+
+
+            element.bind('dragover',function(event){
+                console.log('drag over',id);            
+            });
+            element.bind('dragenter',function(event){
+                console.log('drag enter',id);    
+                store.set('dropId',id);
+                
+            });
+            element.bind('dragend',function(event){
+                var dragId,dragPageX,dragPageY;
+                var dropEle;
+                var dropId = store.get('dropId');
+                dropELe = angular.element( document.querySelector( '#'+dropId ) );
+                console.log('Drop ID',dropId);
+                console.log('drag end',id);      
+                dragId= store.get('dragContentId');
+                console.log('Drag ID',dragId);
+                dragPageX = store.get('dragPageX');
+                dragPageY = store.get('dragPageY');
+                console.log(dragPageX+','+dragPageY);
+                console.log(event);
+                console.log(event.pageX+','+event.pageY);
+                
+                if (dragId !=dropId){
+                
+                    if (event.pageY > dragPageY)
+                        dropFn("up");
+                    else
+                        dropFn("down");
+                }
+            });
+            element.bind('dragleave',function(event){
+                console.log('drag leave',id);            
+            });
+            element.bind('drop',function(event){
+                console.log('drop',id);            
+            });
+            
+             element.bind("mouseenter", function(event) {
+                    var id = element.attr('id');
+                    var type = element.attr('custom');
+                    //console.log('Mouse Enter',id);
+                    var length = $('#'+id).find('.dazzle-custom').length;
+                    if (length) {
+                        var nid=$('#'+id).find('.dazzle-custom').attr('id');
+                        if (angular.isUndefined(scope.atom[nid].toolbar) || !scope.atom[nid].toolbar || type=="editorContainerElement")
+                            scope.atom[id].toolbar= true;
+                    }
+                    else {
+                        scope.atom[id].toolbar = true;
+                    }
+
+
+                    var screen = '';
+                    if (element.attr('custom')!="editorTextElement" && !length){
+                      screen = '<div class="dazzle-screen" context-menu="menuOptions"></div>';                       
+                    }
+                    var content = `
+                    <md-toolbar class="md-accent dazzle">
+                        <div class="md-toolbar-tools-dazzle">
+                            <i class="fa fa-x fa-arrows" aria-hidden="true" ng-click="up()"></i>
+                            <i class="fa fa-x fa-cog" aria-hidden="true"></i>
+                            <i class="fa fa-x fa-bank" aria-hidden="true"></i>
+                            <i class="fa fa-x fa-database" aria-hidden="true"></i>                            
+                            <i class="fa fa-x fa-info" aria-hidden="true"></i>                            
+                            <i class="fa fa-close right" ng-click="remove()"></i>
+                        </div>
+                      </md-toolbar>
+                    `;
+
+                    if (scope.atom[id].toolbar) {
+                        str = screen+content;
+                        var newElement = $compile(str)(scope);
+                        element.prepend(newElement);                            
+                    }
+
+
+
+              });
+              
+              element.bind('mouseup',function(event){
+                    console.log('Mouse Up',element.attr('id'));
+              });
+            element.bind("mouseover",function(event){
+                    var id=element.attr('id');
+//                    console.log("Mouse Over",id);
+            });
+
+             element.bind("mouseleave", function(event) {
+                    var id = element.attr('id');
+                      element.find('md-toolbar').remove();
+                      element.find('.dazzle-screen').remove();
+                      element.removeClass('dazzle-frame');
+                      scope.atom[id].toolbar = false;
+ //                   console.log(id+':mouse leave');    
+              });
+              
+              
+             
+
+             element.bind("click",function(e){
+                element.find('.dazzle-screen').remove();
+                element.find('md-toolbar').remove();
+                startX = e.clientX - element[0].offsetLeft;
+                startY = e.clientY - element[0].offsetTop;
+                scope.screen = false;
+                console.log('mousedown');
+             });
+                function dropFn(direction) {
+                    var dragId =store.get('dragContentId');
+                    var dropId =store.get('dropId');
+                    var containerDropId = store.get('containerDropId');
+                    
+                    var vacuum = $('#'+containerDropId).children('[context-menu]').eq(0).html();
+                    
+                    if (vacuum) {
+                    
+                        console.log('Drag Id',dragId);
+                        console.log('Drop Id',dropId);
+                    
+                        var DropEle = $('#'+dropId);                
+                        var $clone = $('#'+dragId).clone();
+                        $clone.wrap('<div>');
+                        var code = $clone.parent().html();
+                        $('#'+dragId).remove();
+                        var html = angular.element(code);
+                        if (direction =="up")
+                            html.insertAfter(DropEle);
+                        else
+                            html.insertBefore(DropEle);
+                        $compile(html)(scope);
+                    } else {
+                        var DropEle = $('#'+containerDropId);                
+                        var $clone = $('#'+dragId).clone();
+                        $clone.wrap('<div>');
+                        var code = $clone.parent().html();
+                        $('#'+dragId).remove();
+                        var html = angular.element(code);
+                        DropEle.children('[context-menu]').eq(0).append(html);
+                        $compile(html)(scope);
+                    
+                    }
+                    
+                
+                }
+
+      },
+      
+      
+      controller: function ($scope, $http, $element, $attrs) {
+        $scope.up = function() {
+            console.log('Up');
+            var id = $element.attr('id');
+            var element;
+            var pid;
+            element = $('#'+id).parent().closest('.dazzle-custom');
+            pid = element.attr('id');
+            console.log('PID',pid);
+            if (!angular.isUndefined(pid)){
+                $scope.atom[id].toolbar = false;
+                $scope.atom[pid].toolbar = true;                
+            }
+         
+        }
+        $scope.remove= function(){
+            console.log('Remove');
+            $element.remove();
+        }
+      }
+    };
+    return custom;
+});

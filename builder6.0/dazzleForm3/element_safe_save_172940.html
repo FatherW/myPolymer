@@ -1,0 +1,66 @@
+<form id="form1" style="margin:2em; width:50%;">
+  <div class="form-group" ng-repeat="f in model.form">
+
+    <label for="{{f.id}}">{{f.title}}</label>
+
+    <div ng-switch="f.type">
+
+    	<div ng-switch-when="input">
+  			<input type="text" class="form-control" id="{{f.id}}">
+  		</div>
+
+  		<div ng-switch-when="textarea">
+  			<textarea class="form-control" id="{{f.id}}"></textarea>
+  		</div>
+
+  		<div ng-switch-when="checkbox">
+  			<input type="checkbox" class="form-control" id="{{f.id}}">
+  		</div>
+
+  		<div ng-switch-when="date">
+  			<input type="date" class="form-control" id="{{f.id}}">
+  		</div>
+
+  		<div ng-switch-when="datetime-local">
+  			<input type="datetime-local" class="form-control" id="{{f.id}}">
+  		</div>
+
+   		<div ng-switch-when="email">
+  			<input type="email" class="form-control" id="{{f.id}}">
+  		</div>
+  		
+   		<div ng-switch-when="month">
+  			<input type="month" class="form-control" id="{{f.id}}">
+  		</div>
+  		
+    	<div ng-switch-when="number">
+  			<input type="number" class="form-control" id="{{f.id}}">
+  		</div>		 		 		
+
+  		<div ng-switch-when="radio"> 
+  			<input type="radio" class="form-control" id="{{f.id}}">			
+  		</div>
+
+   		<div ng-switch-when="range"> 
+  			<input type="range" class="form-control" id="{{f.id}}">		
+  		</div>
+  		
+    	<div ng-switch-when="time"> 
+  			<input type="time" class="form-control" id="{{f.id}}">			
+  		</div>
+  		
+   		<div ng-switch-when="url"> 
+  			<input type="url" class="form-control" id="{{f.id}}">			
+  		</div>
+  		
+    	<div ng-switch-when="week"> 
+  			<input type="week" class="form-control" id="{{f.id}}">	
+  		</div>	
+
+  		<div ng-default>
+  		</div>
+	</div>
+  </div>
+  
+ <button type="submit" class="btn btn-primary">Submit</button>
+</form>

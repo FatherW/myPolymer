@@ -1,0 +1,117 @@
+<div id="tab_area" class="homepage_tab">
+                    <ul>
+                        <li class="borderRightWhite" style="border-left: 1px solid #ccc;"><a href="#tab-1">櫃貨價格</a></li>
+                        <li class="borderRightWhite"><a href="#tab-2">散貨價格</a></li>
+                        <li class="borderRightWhite"><a href="#tab-3">人民幣價格</a></li>
+                        <li class=""><a href="#tab-4">工程塑料價格</a></li>
+                    </ul>
+                    <div id="tab-1">
+            <table class="priceTable" st-table="displayedCollection1" st-safe-src="rowdate0">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">Qty (Ctnr)</th>
+                    <th class="column hidden-xs">ETA HK</th>
+                    <th>HKD/LB</th>
+                    <th class="column hidden-xs">USD/MT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr myangular-repeat="row in displayedCollection1">
+                    <td class="column hidden-xs"><div myangular-bind-html="row.category | trust"></div></td>
+                    <td myangular-bind="row.producer"></td>
+                    <td myangular-bind="row.model_no"></td>
+                    <td class="column hidden-md hidden-xs" myangular-bind="row.origin"></td>
+                    <td class="column hidden-xs" myangular-bind="row.qty"></td>
+                    <td class="column hidden-xs" myangular-bind="row.eta_hk"></td>
+                    <td myangular-bind="row.hkd_lb"></td>
+                    <td class="column hidden-xs" myangular-bind="row.usd_mt"></td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+
+          <div id="tab-2">
+            <table class="priceTable" st-table="displayedCollection2" st-safe-src="rowdate1">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">Warehouse</th>
+                    <th>HKD/LB</th>
+                    <th class="column hidden-xs">HKD/KG</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr myangular-repeat="row in displayedCollection2">
+                    <td class="column hidden-xs"><div myangular-bind-html="row.category | trust"></div></td>
+                    <td myangular-bind="row.producer"></td>
+                    <td myangular-bind="row.model_no"></td>
+                    <td class="column hidden-md hidden-xs" myangular-bind="row.origin"></td>
+                    <td class="column hidden-xs" myangular-bind="row.warehouse"></td>
+                    <td myangular-bind="row.hkd_lb"></td>
+                    <td class="column hidden-xs" myangular-bind="row.hkd_kg"></td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+          
+          <div id="tab-3">
+            <table class="priceTable" st-table="displayedCollection3" st-safe-src="rowdate2">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">ETA HK</th>
+                    <th class="column hidden-xs">Tariff</th>
+                    <th>VAT RMB/MT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr myangular-repeat="row in displayedCollection3">
+                    <td class="column hidden-xs"><div myangular-bind-html="row.category | trust"></div></td>
+                    <td myangular-bind="row.producer"></td>
+                    <td myangular-bind="row.model_no"></td>
+                    <td class="column hidden-md hidden-xs" myangular-bind="row.origin"></td>
+                    <td class="column hidden-xs" myangular-bind="row.eta_hk"></td>
+                    <td class="column hidden-xs" myangular-bind="row.tariff"></td>
+                    <td myangular-bind="row.vat_rmb"></td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+          
+          <div id="tab-4">
+            <table class="priceTable" st-table="displayedCollection4" st-safe-src="rowdate3">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">Warehouse</th>
+                    <th>HKD/LB</th>
+                    <th class="column hidden-xs">HKD/KG</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr myangular-repeat="row in displayedCollection4">
+                    <td class="column hidden-xs"><div myangular-bind-html="row.category | trust"></div></td>
+                    <td myangular-bind="row.producer"></td>
+                    <td myangular-bind="row.model_no"></td>
+                    <td class="column hidden-md hidden-xs" myangular-bind="row.origin"></td>
+                    <td class="column hidden-xs" myangular-bind="row.warehouse"></td>
+                    <td myangular-bind="row.hkd_lb"></td>
+                    <td class="column hidden-xs" myangular-bind="row.hkd_kg"></td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+                </div>

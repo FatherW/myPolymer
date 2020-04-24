@@ -1,0 +1,93 @@
+<div class="home_row home_category">
+		<h2 class="gradient_yellow">產品分類－－請點擊下列拼圖選擇產品分類</h2>
+		<div class="cat_wrapper">
+			<div class="cat_inner_wrapper"  ng-mouseover="showPanel()" ng-mouseleave="hidePanel()">
+			<ul class="categories">
+			<li ng-mouseenter="mouseenter(1)" ng-mouseleave="mouseleave()"><a href="/product_category?tid=1" rel="1"><span>五金工具</span></a></li>
+			<li ng-mouseenter="mouseenter(2)" ng-mouseleave="mouseleave()"><a href="/product_category?tid=2" rel="2"><span>五金製品</span></a></li>
+			<li ng-mouseenter="mouseenter(4)" ng-mouseleave="mouseleave()"><a href="/product_category?tid=4" rel="4"><span>建築與安全設備</span></a></li>
+			<li ng-mouseenter="mouseenter(5)" ng-mouseleave="mouseleave()"><a href="/product_category?tid=5" rel="5"><span>金屬原料</span></a></li>
+			<li ng-mouseenter="mouseenter(8)" ng-mouseleave="mouseleave()"><a href="/product_category?tid=8" rel="8"><span>電子及光學用品</span></a></li>
+			<li ng-mouseenter="mouseenter(7)" ng-mouseleave="mouseleave()"><a href="/product_category?tid=7" rel="7"><span>環保回收</span></a></li>
+			<li ng-mouseenter="mouseenter(6)" ng-mouseleave="mouseleave()"><a href="/product_category?tid=6" rel="6"><span>五金工業機械</span></a></li>
+			<li ng-mouseenter="mouseenter(3)" ng-mouseleave="mouseleave()"><a href="/product_category?tid=3" rel="3"><span>五金設備工程</span></a></li>
+			</ul>
+			<div class="clearfix"></div>
+
+			<div class="sub_categories" style="top: 156px; display:none;">
+				<div class="arrow_up" style="left: 218px;"></div>
+	<ul class="sub_category" id="sub_category_1" style="" ng-show="subCatStatus==1" ng-init="getCategoryChildren(1)">
+	    <div class="cat_title">五金工具</div>				
+	                <li ng-repeat="item in catChildren[1]">
+	                    <a ng-href="/product_category?tid={{item['tid']}}" rel="{{item['tid']}}" class="">{{item['name']}}</a>
+	                 </li>
+	</ul>
+	<div class="clearfix"></div>
+	   
+	   <ul class="sub_category" id="sub_category_2" style=""  ng-show="subCatStatus==2" ng-init="getCategoryChildren(2)">
+	    <div class="cat_title">五金製品</div>				
+	                
+   	                <li ng-repeat="item in catChildren[2]">
+	                    <a ng-href="/product_category?tid={{item['tid']}}" rel="{{item['tid']}}" class="">{{item['name']}}</a>
+	                 </li>
+
+	    </ul>
+	<div class="clearfix"></div>
+	
+	    <ul class="sub_category" id="sub_category_4" style=""  ng-show="subCatStatus==4" ng-init="getCategoryChildren(4)">
+	        <div class="cat_title">建築與安全設備</div>				
+	                <li ng-repeat="item in catChildren[4]">
+	                    <a ng-href="/product_category?tid={{item['tid']}}" rel="{{item['tid']}}" class="">{{item['name']}}</a>
+	                 </li>
+        </ul>
+	<div class="clearfix"></div>
+	
+	
+	    <ul class="sub_category" id="sub_category_5" style=""  ng-show="subCatStatus==5" ng-init="getCategoryChildren(5)">
+	        
+	        <div class="cat_title">金屬原料</div>		    		
+	                 <li ng-repeat="item in catChildren[5]">
+	                    <a ng-href="/product_category?tid={{item['tid']}}" rel="{{item['tid']}}" class="">{{item['name']}}</a>
+	                 </li>
+    	</ul>
+	<div class="clearfix"></div>
+	
+	        <ul class="sub_category" id="sub_category_8" style=""  ng-show="subCatStatus==8" ng-init="getCategoryChildren(8)">
+	            
+	           <div class="cat_title">電子及光學用品</div>
+	                <li ng-repeat="item in catChildren[8]">
+	                    <a ng-href="/product_category?tid={{item['tid']}}" rel="{{item['tid']}}" class="">{{item['name']}}</a>
+	                 </li>
+	           </ul>
+    <div class="clearfix"></div>
+	
+	<ul class="sub_category" id="sub_category_7" style="" ng-init="getCategoryChildren(7)" ng-show="subCatStatus==7" >
+	    
+	    <div class="cat_title">環保回收</div>				
+	                <li ng-repeat="item in catChildren[7]">
+	                    <a ng-href="/product_category?tid={{item['tid']}}" rel="{{item['tid']}}" class="">{{item['name']}}</a>
+	                 </li>
+
+	</ul><div class="clearfix"></div>
+	
+	<ul class="sub_category" id="sub_category_6" style="" ng-init="getCategoryChildren(6)" ng-show="subCatStatus==6" >
+	    <div class="cat_title">五金工業機械</div>			
+	                <li ng-repeat="item in catChildren[6]">
+	                    <a ng-href="/product_category?tid={{item['tid']}}" rel="{{item['tid']}}" class="">{{item['name']}}</a>
+	                 </li>
+	                 
+	</ul><div class="clearfix"></div>
+	
+	
+	<ul class="sub_category" id="sub_category_3" style="" ng-init="getCategoryChildren(3)" ng-show="subCatStatus==3" >
+	    <div class="cat_title">五金設備工程</div>				
+	    
+            	     <li ng-repeat="item in catChildren[3]">
+	                    <a ng-href="/product_category?tid={{item['tid']}}" rel="{{item['tid']}}" class="">{{item['name']}}</a>
+	                 </li>
+	</ul><div class="clearfix"></div>			</div>
+			</div>
+		</div>
+
+		
+	</div>

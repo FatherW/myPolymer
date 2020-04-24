@@ -1,0 +1,33 @@
+<div class="hotworkshoplist" style="min-height:300px">
+                        
+
+    <div class="ahotworkshop " ng-repeat="item in model.data">
+            <a ng-href="http://www.hot-yeah.com/{{item['ID']}}.html" class="link">
+                <img ng-src="{{item['首圖']}}" width="258" height="128" alt="{{item['名稱']}}" title="{{item['名稱']}}"></a>
+            <div style="position:relative">
+            <div style="position:absolute;top:-134px;left:169px">
+            <div class="days">
+                        <div class="day">尚餘26日</div>
+                    </div>
+            </div>
+            </div>
+            <div class="clear"></div>
+            <div class="title"><a ng-href="http://www.hot-yeah.com/{{item['ID']}}.html" class="link">{{item['名稱']}}</a></div>
+            <div class="bylike">
+                <div class="by">by <a href="http://www.hot-yeah.com/{{schoolID}}.html" class="link">{{schoolName}}</a></div>
+                <div class="clear"></div>
+            </div>
+            <div class="desc" style="height:98px">
+                <a ng-href="http://www.hot-yeah.com/{{item['ID']}}.html" class="link">
+                            <div ng-bind-html="item['描述'] | to_trusted"></div>
+                        </a>
+            </div>
+            <div class="tagsbox">
+                                  {{myTags(item['標籤'])}}          </div>
+            <div class="applynow">
+                        <a ng-href="http://www.hot-yeah.com/{{item['ID']}}.html">
+                            <img src="http://www.classes.com.hk/images/brand/join.png" border="0"></a>
+                    </div>
+            <div class="clear"></div>
+    </div>
+</div>

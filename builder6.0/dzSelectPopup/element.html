@@ -1,0 +1,57 @@
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>資料表管理</h2>
+            <span flex="" class="flex"></span>
+             <md-button ng-click="cancel()">
+                取消
+            </md-button>
+           
+            <md-button ng-click="save()">
+                儲存
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-content>
+         <md-tabs md-dynamic-height md-border-bottom>
+             <md-tab label="選擇">
+                <md-content class="md-padding">
+                    <h2>選擇資料表</h2>
+                    <div class="md-dialog-content" style="min-height: 400px;">
+                            <md-select ng-model="select" aria-label="selectTable">
+                                <md-option ng-value="item"
+                                           ng-repeat="item in options"
+                                           ng-click="choose(item.id)">
+                                    {{item.label}}
+                                </md-option>
+                            </md-select>
+                          
+                    </div>                
+                </md-content>
+            </md-tab>
+             <md-tab label="新增">
+                <md-content class="md-padding">
+                    <h2>新增資料表</h2>
+                    <div>
+                          <md-input-container>
+                            <label>ID</label>
+                            <input ng-model="table.id">
+                          </md-input-container>
+                    
+                          <md-input-container>
+                            <label>標籤</label>
+                            <input ng-model="table.label">
+                          </md-input-container>
+                        <md-input-container>
+                            <label>Key</label>
+                            <input ng-model="table.data.key" value="ID">
+                          </md-input-container>
+                        <md-button ng-click="add()">
+                            新增
+                        </md-button>
+                    </div>      
+                </md-content>
+            </md-tab>
+      </md-tabs>    
+        
+    </md-content>

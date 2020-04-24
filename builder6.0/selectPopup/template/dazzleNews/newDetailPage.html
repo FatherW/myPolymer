@@ -1,0 +1,19 @@
+<div id="node-{{$index}}" ng-repeat="item in model.data" class="node">
+  <h2 class="title"><a ng-href="{{item['標題']}}.html" title="">
+  {{item['標題']}}</a></h2>
+
+
+
+  <div class="content clear-block">
+    <div ng-bind-html="{{item['內容']}}"></div>
+    </div>
+
+
+</div>
+
+
+<ul class="" ng-repeat="item in model.news | limitTo:2">
+    <li class="">
+         <a class="" ng-href="{{item['標題']}}.html">{{item['標題']}}</a>
+       </li>
+</ul>

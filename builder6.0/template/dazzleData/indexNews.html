@@ -1,0 +1,8 @@
+<ul class="ng-scope" ng-init="loadData()">
+                 <li ng-repeat="item in model.data | limitTo: 4" class="ng-scope">
+
+                 <a class="ng-binding" ng-href="{{item['標題']}}.html">{{item['標題']}}</a>
+         <span class="featurebox_date">[{{item['publishDate'] | date}}]</span>
+         <div class="clearboth"></div>
+       </li>    
+  </ul>

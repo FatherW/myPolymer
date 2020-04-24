@@ -1,0 +1,10 @@
+<ol id="menu1" class="ng-scope">
+    <li ng-repeat="item in model.menu">
+            <a ng-href="{{item.link}}">{{item.title}}</a>
+            <ul ng-if="item.list.length>0">
+                <li ng-repeat="subitem in item.list">
+                    <a ng-href="{{subitem.link}}">{{subitem.title}}</a>
+                </li>
+            </ul>
+    </li>
+</ol>

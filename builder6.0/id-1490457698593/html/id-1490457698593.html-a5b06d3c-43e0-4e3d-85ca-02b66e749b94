@@ -1,0 +1,3 @@
+<div bind-html-compile="model.html">	
+	                                      
+</div>

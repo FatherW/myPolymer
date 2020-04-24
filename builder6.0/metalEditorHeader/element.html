@@ -1,0 +1,60 @@
+
+				<div class="company_detail">
+
+
+                        <div class="field field-name-field-company-type field-type-taxonomy-term-reference field-label-inline clearfix">
+                            <div class="field-label"><span  ng-if="isAdmin()" class="ctrlIcon" ng-click="edit('body')"><i class="fa fa-edit fa-x" role="button" aria-hidden="true"></i></span>行業類別:&nbsp;</div>
+                            <div class="field-items">
+                                <div ng-class="{$index%2? 'even':'odd'}" class="field-item" ng-repeat="item in company['company_type']">{{item}}</div>
+                            </div>
+                        </div>
+                        <div class="field field-name-field-contact-person field-type-text field-label-inline clearfix">
+                            <div class="field-label">
+                                 <span  ng-if="isAdmin()" class="ctrlIcon" ng-click="edit('body')"><i class="fa fa-edit fa-x" role="button" aria-hidden="true"></i></span>
+                            聯絡人:&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['contact_person']}}</div>
+                            </div>
+                        </div>
+
+                        <div class="field field-name-field-email field-type-text field-label-inline clearfix">
+                            <div class="field-label">
+                                 <span  ng-if="isAdmin()" class="ctrlIcon" ng-click="edit('body')"><i class="fa fa-edit fa-x" role="button" aria-hidden="true"></i></span>
+                            電郵:&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['email']}}</div>
+                            </div>
+                        </div>
+                        <div class="field field-name-field-company-tel field-type-text field-label-inline clearfix">
+                            <div class="field-label">
+                                 <span  ng-if="isAdmin()" class="ctrlIcon" ng-click="edit('body')"><i class="fa fa-edit fa-x" role="button" aria-hidden="true"></i></span>
+                            電話(公司):&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['company_tel']}}</div>
+                            </div>
+                        </div>
+                        <div class="field field-name-field-distirct field-type-taxonomy-term-reference field-label-inline clearfix">
+                            <div class="field-label">
+                                 <span  ng-if="isAdmin()" class="ctrlIcon" ng-click="edit('body')"><i class="fa fa-edit fa-x" role="button" aria-hidden="true"></i></span>
+                            地區:&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['distirct']}}</div>
+                            </div>
+                        </div>
+                        <div class="field field-name-field-company-address field-type-text field-label-inline clearfix">
+                            <div class="field-label">
+                             <span  ng-if="isAdmin()" class="ctrlIcon" ng-click="edit('body')"><i class="fa fa-edit fa-x" role="button" aria-hidden="true"></i></span>
+                             地址:&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['company_address']}}</div>
+
+                            </div>
+                        </div>
+
+                        <div class="field field-name-field-company-views field-type-number-integer field-label-inline clearfix">
+                            <div class="field-label">瀏覽次數:&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['company_views']}}</div>
+                            </div>
+                        </div>
+				</div>

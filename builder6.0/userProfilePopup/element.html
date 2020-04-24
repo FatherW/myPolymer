@@ -1,0 +1,213 @@
+<style>
+    dz-login-popup md-input-container {
+        margin:10px auto;
+    }
+
+
+    .layout-row md-select {
+        margin:0px;
+    }
+    .layout-row > div {
+        padding:5px;
+    }
+   md-icon#av_domain {
+        color: grey;
+        opacity: 0.2;
+    }
+    #av_undomain {
+        color:red;
+        opacity:0;
+    }
+    user-profile-popup ul,    user-profile-popup ol {
+        margin-left:20px;
+        line-height:20px;
+        
+    }
+
+    user-profile-popup md-content {
+        padding:20px;
+    }
+</style>
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>用戶資料</h2>
+            <span flex></span>
+            <md-button ng-click="addCredit()">增值</md-button>
+            <md-button ng-click="cancel()">取消</md-button>
+            <md-button ng-click="save()">儲存</md-button>
+        </div>
+    </md-toolbar>
+     <md-dialog-content class="model" style="min-height:70%;" >
+            <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="帳戶資料">
+                        <md-content class="md-padding">
+ <form name="userForm">
+        <div layout-gt-xs="row">
+          <md-input-container class="md-block" flex-gt-xs>
+            <label>公司 (不能改動)</label>
+            <input ng-model="user.company" disabled>
+          </md-input-container>
+
+          <md-input-container>
+            <label>註冊日期</label>
+            <md-datepicker ng-model="user.submissionDate"></md-datepicker>
+          </md-input-container>
+        </div>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>姓名</label>
+            <input ng-model="user['exportBucket']">
+          </md-input-container>
+
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>別名</label>
+            <input ng-model="theMax">
+          </md-input-container>
+        </div>
+
+        <md-input-container class="md-block">
+          <label>地址</label>
+          <input ng-model="user.address">
+        </md-input-container>
+
+        <md-input-container md-no-float class="md-block">
+          <input ng-model="user.address2" placeholder="Address 2">
+        </md-input-container>
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>城市</label>
+            <input ng-model="user.city">
+          </md-input-container>
+
+
+
+
+        </div>
+
+        <md-input-container class="md-block">
+          <label>介紹</label>
+          <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+
+      </form>
+
+
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="域名資料">
+                        <md-content class="md-padding">
+                        
+
+                        <div layout-gt-xs="row">
+                        <div flex="50">
+                          <md-input-container class="md-block" >
+                            <label>網站域名(請勿加入www等subdomain)</label>
+                            <input ng-model="website.domain" ng-blur="checkDomain()">
+
+                          </md-input-container>                        
+                        </div>
+                        <div flex="50">
+                        
+                            <div layout-gt-xs="row">
+                                <div flex="20">
+                                  <md-input-container>
+                                   <md-progress-circular id="dz-pregress" class="md-hue-2" md-diameter="12px"></md-progress-circular>
+                                    <md-icon id="av_domain" md-svg-src = '//d27btag9kamoke.cloudfront.net/file6.0/images/icon/check.svg'></md-icon>
+                                    <md-icon id="av_undomain" md-svg-src = '//d27btag9kamoke.cloudfront.net/file6.0/images/icon/cancel.svg'></md-icon>
+                                
+                                    </md-input-container>
+                                
+                                
+                                </div>
+                                
+                                <div flex="80">
+                                    <md-input-container class="md-block">
+                                            <md-button ng-click="checkDomain()">檢查域名</md-button>
+                                            <md-button ng-click="buyDomain()">購買域名</md-button>
+                                        </md-input-container>                                
+                                </div>
+                            </div>
+                            
+    
+                        </div>
+                        </div>
+                        <div layout-gt-xs="row">
+                            <div flex="100">
+                                <h3>購買域名須知</h3>
+                                <ol>
+                                    <li>每個域名每年會扣除120積分，約為港幣$120 (其他地區會以增值時的匯率作換算)</li>
+                                    <li>新張期內，若已購買Dazzle年費服務，會免費連接域名乙個。域名與寄存續期日會同步處理</li>
+                                    <li>每個賬號只能連接一個域名，敬希注意。</li>
+                                    <li>購買後，可點擊「連接域名」轉移整個網站檔案名資料。舊網站資料，將會完全刪除。故請作好所有備份工作。</li>
+                                    <li>域名每年需續期。新張期內到期時，會於賬戶自動扣除，若過期，會致使網站不能應用。</li>
+                                    <li>若貴公司已經購買域名，請作以下改動以連接網站</li>
+                                    <ul>
+                                        <li>若已有DNS，請在DNS內加入「www IN CNAME s3-website-ap-northeast-1.amazonaws.com.」</li>
+                                        <li>若未有DNS，請點擊「查詢DNS」（購買後方能顯示)，把以下DNS設為你域名的DNS。<md-button ng-click="checkDNS()">查詢DNS</md-button></li>
+                                        
+                                        <div ng-if="myDNS">
+                                            <h4>{{myDNS}}</h4>
+                                        </div>
+                                        <div ng-if="!myDNS">
+                                            <h4>暫未適用</h4>
+                                        </div>
+                                    <ul>
+                                </ol>
+                            </div>
+                        </div>
+
+                            
+                            
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="網站檔案管理">
+                        <md-content class="md-padding">
+                          <div layout-gt-xs="row">
+                            <div flex="100">
+                                <h3>網站設計上載須知</h3>
+                                <ol>
+                                    <li><span style="color:red;">警告! 上載網站設計會覆寫原來網站內所有檔案及資料！！並無法回復. 請確定此覆寫不影響閣下運作. </span></li>
+                                    <li>網站設計格式為html, js, css 及相關圖像檔案的壓縮zip檔. 若設計內有php, asp, jsp 等均不適用. 如有需要, 請聯絡客戶服務. </li>
+                                    <li>部份網站所使用的插件, 如jQuery, bootstrap, angular等. 或與本後台相衝突, 會影響網站功能及效果. 如有相衝, 請聯絡設計師或使用其他設計.</li>
+                                    <li>請檢查站內頁面連結.儘量使用相對連結.  </li>
+                                    
+                                    <li>請確保用戶擁有上載的設計版權. 若有侵權發生, 本公司蓋不負責. 如查明屬實, 本公司保留終止用戶賬戶及以法處理.</li>
+                                    <li>建議購買本平台提供的設計, 以確保功能及效果. 亦確保版權及使用權</li>
+                                    <li>上載功能暫只供付費及測試用戶開放.</li>
+                                    <li>若網站設計不是原創, 未經其他創作人授意下, 貴公司只能使用設計, 而不能出售或制作其他網站</li>
+                                    <li>若貴公司上載設計有困難, 請聯絡本公司作支援. 貴公司亦可委托本公司進行設計及上載工作 (另行收費) </li>
+                                    <li>本公司的支援電郵為support@01power.net , 及電話35926298 (辦公時間: 星期一至五 9:30 - 18:00)
+
+                                </ol>
+                            </div>
+                        </div>
+                          <md-input-container class="md-block">
+                            <md-button ng-click="siteFile()">編輯檔案</md-button>
+                            <md-button ng-click="uploadSite()">上載網站設計</md-button>
+                        </md-input-container>
+                        </md-content>
+                    </md-tab>
+                    
+                    <md-tab label="媒體管理">
+                        <md-content class="md-padding">
+                            <md-button ng-click="editFactory5()">編輯6.5.5</md-button>
+                            <md-button ng-click="editFactory2()">編輯6.5.2</md-button>
+                            
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="資料庫管理">
+                        <md-content class="md-padding">
+                            
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="交易記錄">
+                        <md-content class="md-padding">
+                            
+                        </md-content>
+                    </md-tab>
+                </md-tabs>
+        
+     </md-dialog-content>

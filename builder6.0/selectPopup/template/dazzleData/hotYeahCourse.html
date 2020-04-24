@@ -1,0 +1,28 @@
+<div class="row12" layout="row" layout-wrap layout-gt-sm="row">
+    <div ng-repeat="item in model.data | orderBy:  '-ID' | limitTo: 4 " class="col12-3" flex='50' flex-gt-sm="25" flex-xs="100" layout-padding>
+      <div class="panel12">
+       <div class="head">
+            {{item['類型']}}
+       </div>
+        <div class="head-photo">
+            
+            <img ng-if="!item['Head Photo']" src="https://cdn.shopify.com/s/files/1/0906/9390/t/3/assets/no-image.jpg?2553334609767072647" width="100%" />
+            <img ng-if="item['Head Photo']" ng-src="{{item['Head Photo']}}" width="100%" />
+        </div>
+        <div class="detail">
+            <a ng-href="{{item['名稱']}}.html"><h6>{{item['名稱']}}</h6></a>
+            <div class="detail-text">
+                
+                HK ${{item['價錢']}}&nbsp;&nbsp;{{item['時間']}}
+            </div>
+            
+            <div class="more">
+               <a href="course-detail.html">詳細資料</a>
+            </div>
+        </div>
+        
+        
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,8 @@
+<li ng-repeat="item in model.news|orderBy:'id'" ng-if="item['類型']=='服務小組'&& item.type=='haveupdate'" >
+<h2>
+			<a ng-href="http://hkswgu.dazzle.website/{{item['標題']}}.html">{{item['標題']}}</a>&nbsp;({{item.update}})</h2>
+</li>
+<li ng-repeat="item in model.news|orderBy:'id'" ng-if="item['類型']=='服務小組'&& item.type=='nosquare'" >
+<h2>
+			<a ng-href="http://hkswgu.dazzle.website/{{item['標題']}}.html">{{item['標題']}}</a>&nbsp;</h2>
+</li>

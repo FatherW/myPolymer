@@ -1,0 +1,44 @@
+.course_list_item {
+    padding: 20px 20px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    color: black;
+    min-height: 50px;
+    display: block;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.course_list_item:focus,.course_list_item:active,.course_list_item:hover,.course_list_item.active {
+    background-color:#168ECA;
+    color:white;   
+    text-decoration:none;
+}
+
+ul.course_tab li {
+    width: 200px;
+    float: left;
+    background-color: #4FB4D5;
+    font-size: 13px;
+    height: 50px;
+    border-radius: 25px 90px 0 0;
+    padding: 17px;
+    color: white;
+}
+h2{
+    color:#168ECA;
+}
+
+dazzle-tab .tab-content {
+    background: rgba(242,242,242,1);
+    background: -moz-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(224,224,224,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(242,242,242,1)), color-stop(100%, rgba(224,224,224,1)));
+    background: -webkit-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(224,224,224,1) 100%);
+    background: -o-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(224,224,224,1) 100%);
+    background: -ms-linear-gradient(top, rgba(242,242,242,1) 0%, rgba(224,224,224,1) 100%);
+    background: linear-gradient(to bottom, rgba(242,242,242,1) 0%, rgba(224,224,224,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f2f2', endColorstr='#e0e0e0', GradientType=0 );
+    position: relative;
+    float: left;
+    width: 100%;
+}

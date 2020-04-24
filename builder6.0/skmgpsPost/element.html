@@ -1,0 +1,120 @@
+   <section class="container row" id="page-body-content">
+
+        <ul class="action-links"></ul>
+        <h1>「時光隧道」版規</h1>
+
+        <p>			「時光隧道」提供給各同學刊登舊照片、分享舊事，如同學描述當年吃早餐、小食部的情況。</p><p>為減少網站負載，每個留言最多分享3張舊照片，而每張照片最大為500K。如同學有大量舊照分享，建議可放於Dropbox 或自己的雲端硬碟內再分享連結網址。</p>
+        <p>為免造成混亂，如非分享舊事請到留言版留言，而我們亦會在清理非相關項目，望各同學見諒。</p>
+        <hr>
+
+        <h1>我的留言</h1>
+        <div>
+
+            <md-input-container class="md-block">
+                <label>我的留言</label>
+                <input ng-model="post">
+                <div class="buttonGroup">
+                    <md-button class="md-raised" ng-click="uploadPhoto(1)">圖片一</md-button>
+                    <md-button  class="md-raised" ng-click="uploadPhoto(2)">圖片二</md-button>
+                    <md-button class="md-raised"  ng-click="uploadPhoto(3)">圖片三</md-button>
+                </div>
+                <md-button class="md-raised" ng-click="submitMessage()">發送</md-button>
+
+            </md-input-container>
+
+        </div>
+        <h1>預覽</h1>
+        <div class="view view-activity view-id-activity view-display-id-page view-dom-id-53df70b8ef91c38f05b72c6898e116fa">
+
+
+
+            <div class="view-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first">
+
+                    <div class="views-field views-field-nothing"> <span class="field-content"><div class="row">
+					<span class="date-display-single">{{myDate(now())}}</span>
+                <a href="#">{{user['name']}}</a>
+						<p>{{ post }}</p>
+
+                <div class="item-list">
+                    <ul>
+                        <li class="first"><a class="fancy" colorbox="{{image1}}"><img ng-src="{{image1}}" width="100" height="100" alt=""></a></li>
+                        <li><a class="fancy" colorbox="{{image2}}"><img ng-src="{{image2}}" width="100" height="100" alt=""></a></li>
+                        <li class="last"><a class="fancy" colorbox="{{image3}}"><img ng-src="{{image3}}" width="100" height="100" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <h1>時光隧道</h1>
+
+        <div class="view view-activity view-id-activity view-display-id-page view-dom-id-53df70b8ef91c38f05b72c6898e116fa">
+
+
+
+            <div class="view-content">
+                <div class="views-row views-row-1 views-row-odd views-row-first" class="post-{{item['id']}}" ng-repeat="item in posts" >
+
+                    <div class="views-field views-field-nothing"> <span class="field-content"><div class="row">
+					<span class="date-display-single">{{myDate(item['timestamp'])}}</span>
+                <a href="#">{{item['user']}}</a>
+						<p>{{ item['message'] }}</p>
+										<md-button ng-if="isMyPost(item['user'])" class="md-raised" ng-click="deletePost(item['id'])">刪除</md-button>
+
+                <div class="item-list">
+                    <ul>
+						<li class="first"><a  class="fancy" colorbox="{{item['image1']}}"><img ng-src="{{item['image1']}}" width="100" height="100" alt=""></a></li>
+                        <li><a class="fancy"  colorbox="{{item['image1']}}"><img ng-src="{{item['image2']}}" width="100" height="100" alt=""></a></li>
+                        <li class="last"><a  class="fancy" colorbox="{{item['image1']}}"><img ng-src="{{item['image3']}}" width="100" height="100" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+            </span>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+
+
+
+        </div>
+
+
+        <div class="clearfix"></div>
+        <div class="region region-content">
+            <div id="block-system-main" class="block block-system clearfix">
+
+
+                <div class="content">
+
+                    <div id="node-43" class="node node-page">
+
+
+
+
+                        <div class="content clearfix">
+                        </div>
+
+                        <div class="clearfix">
+                            <div class="links"></div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>

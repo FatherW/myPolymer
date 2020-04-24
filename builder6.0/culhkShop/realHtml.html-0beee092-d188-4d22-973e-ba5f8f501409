@@ -1,0 +1,35 @@
+                    <div>
+                        <div class="column col-lg-3 col-md-12 col-xs-12" id="col1481623628258-0">
+                            <div>
+                                <div class="element" id="ele1482979418128">
+                                    <div class="leftBartitle">購物專區</div>
+                                    <hr>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <li role="presentation" ng-class="{'active':t == currentType}" ng-repeat="t in productTypes">
+                                            <a href="" ng-click="setCurrentType(t)">{{t}}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="column col-lg-9 col-md-12 col-xs-12" id="col1481623628258-1">
+                            <div>
+                                <div class="element" id="ele1482920593116">
+                                    <div id="productController" class="row" ng-controller="productController" ng-init="init()">
+                                        <div class="col-lg-4 col-md-5 col-xs-11 item" ng-repeat="p in product | filter: {type:currentType}">
+                                            <a ng-href="{{p.photo}}" target="_blank"><img class="img-responsive photo" ng-src="{{p.photo}}">
+                                            </a>
+                                            <div class="title">{{p.title}}</div>
+                                            <div class="detail">{{p.detail}}</div>
+                                            <div class="col col-md-12 price">
+                                                <div class="pull-right">{{p.price | currency:"$"}}</div>
+                                            </div>
+                                            <button class="buttons" type="button" ng-click="addToCart(p)">加入購物車</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>

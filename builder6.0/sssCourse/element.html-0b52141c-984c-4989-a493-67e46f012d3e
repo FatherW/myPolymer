@@ -1,0 +1,28 @@
+<div class="join_course_wrapper" ng-init="loadCourse()">
+				<br><div class="header_title" id="course_tab">My Course</div>
+				<div class="clear"></div>
+				<div class="course_tab_content tab_content" id="enrolled_course">
+    				<div class="header_wrapper">
+    					<div class="header_label">Course Code</div>
+    				
+    					<div class="header_label label_name">Course Name</div>
+    					<div class="header_label header_label_center">Date</div>
+    					<div class="header_label header_label_center">Course Resources</div>
+    					<div class="header_label header_label_center">Assignment</div>
+    				</div>
+    				<div class="header_wrapper" ng-repeat="item in model.course">
+    					<div class="header_label">{{item['Course Code']}}</div>
+    				
+    					<div class="header_label label_name">{{item['Course Name']}}</div>
+    					<div class="header_label header_label_center">{{item['Date'] | date}}</div>
+    					<div class="header_label header_label_center"><a ng-if="item['Course Resource']" ng-href="{{item['Course Resource']}}"><img src="https://rocketdock.com/images/screenshots/floppy.png" /></a></div>
+    					<div class="header_label header_label_center">
+                            <a ng-href="{{ass['Assignment']}}" ng-repeat="ass in item['Assignment']">{{ass['Assignment Name']}}</a>
+    					    
+					    </div>
+    				    
+    				</div>
+
+				</div>
+				
+			</div>

@@ -1,0 +1,351 @@
+var app = angular.module('demoApp');
+
+
+
+      var newsletterSchema = [
+
+              {
+                "id": "id",
+                "label": "id",
+                "width": "10%",
+                "type": "key",
+                "show": false
+            }, {
+                "id": "date",
+                "label": "發送日期",
+                "width": "10%",
+                "type": "datetime2",
+                "show": true
+            }, {
+                "id": "title",
+                "label": "標題",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }, {
+                "id": "content",
+                "label": "內容",
+                "width": "10%",
+                "type": "textarea",
+                "show": true
+            },{
+                "id": "status",
+                "label": "狀態",
+                "width": "10%",
+                "type": "select",
+                "select":["草稿","測試","已發出"],
+                "show": true
+            } 
+
+            ];
+
+
+            var memberSchema = [{
+                "id": "id",
+                "label": "會員號碼",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }, {
+                "id": "name",
+                "label": "會員名稱",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }, {
+                "id": "mobile",
+                "label": "會員電話",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }, {
+                "id": "email",
+                "label": "會員電郵",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }, {
+                "id": "group",
+                "label": "分類",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }
+
+
+            ];
+
+            var newsletterTable =   {
+                    "id": "newsletter",
+                    "label": "電子報",
+                    "type": "S3"
+                  };
+
+            var memberTable =   {
+                    "id": "member",
+                    "label": "會員",
+                    "type": "S3"
+            };
+
+            var empty = [];
+
+app.controller('newsletterPopupController', function ($scope, $uibModalInstance) {
+
+    $scope.info = {
+        "from":"",
+        "to":"",
+        "subject":""
+    };
+
+    $scope.ok = function() {
+        $uibModalInstance.close($scope.info);
+    }
+    
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss();
+    }
+});
+
+
+app.directive('dazzleNewsletter', function ($compile, $templateRequest,$mdDialog,$timeout,$http,$uibModal) {
+    var dazzleNewsletter = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            scope.http = "http://d27btag9kamoke.cloudfront.net/";
+            scope.directiveId = "dazzleNewsletter";
+            scope.type = "dazzleNewsletter";
+            scope.templateDir =  scope.http + "builder6.0/"+scope.directiveId+"/";
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+            scope.editorCustomInit(scope, element, attrs).then(function () {
+                if (angular.isUndefined(scope.model.table)) {
+                    scope.model.table=JSON.parse(angular.toJson(newsletterTable));
+                    scope.updateHtml();
+
+                    scope.getJson(scope.userBucket, 'website/' + scope.website.website + '/content/newsletter-schema.json').then(function (newsletter) {
+                                
+                            }, function () {
+                                scope.createTable(newsletterTable);
+                                scope.createSchema(newsletterTable,newsletterSchema);
+                                scope.createData(newsletterTable);
+                            });
+                            
+                    scope.getJson(scope.userBucket, 'website/' + scope.website.website + '/content/memberTable-schema.json').then(function (member) {
+                                
+                            }, function () {
+                                // Create Member
+                                scope.createTable(memberTable);
+                                scope.createSchema(memberTable,memberSchema);
+                                scope.createData(memberTable);
+                            });
+                }
+                
+                var template = angular.element('<div bind-html-compile="model.html" context-menu="menuOptions"></div>');
+                element.html(template);
+                scope.$apply(function () {
+                    $compile(template)(scope);
+                });
+            });
+        },
+        controller: function ($scope, $element, $attrs) {
+
+            $scope.schema = newsletterSchema;
+            $scope.empty = [];
+
+            $scope.menuOptions = [
+                    ["數據管理", function () {
+
+                             $mdDialog.show({
+                                controller: "dataPopupController",
+                                templateUrl: 'models/dataPopup/popup.html' + '?id=' + new Date().getTime(),
+                                clickOutsideToClose: fasle,
+                                locals: {
+                                    rootScope: $scope
+                                }
+                            });
+                            // $mdDialog.show({
+                            //     controller: 'contentPopupController',
+                            //     templateUrl: 'models/contentPopup/popup.html' + "?id=" + new Date().getTime(),
+                            //     locals: {
+                            //         rootScope: $scope,
+                            //         table: "member"
+                            //     }
+                            // }).then(function () {
+                            //     $scope.updateHtml();
+                            // });
+                    }],
+                  ["發送電子報", function () {
+
+                        $mdDialog.show({
+                          controller: DialogController,
+                          templateUrl: $scope.templateDir +'newsletterSetting.html?id=' + new Date().getTime(),
+                            locals: {
+                                rootScope: $scope,
+
+                            },
+                          clickOutsideToClose:true
+                        })
+                            .then(function(answer) {
+                                console.log(answer);
+                                var to = [];
+                                var html = $element.html();
+
+                                if (answer.test){
+                                    to.push(answer.receiver);
+                                    $http({
+                                        url: 'https://9hhtm40jpe.execute-api.ap-northeast-1.amazonaws.com/sendemail',
+                                        method: "POST",
+                                        data: {
+                                            "from": answer.sender,
+                                            "to": to,
+                                            "subject": answer.title,
+                                            "html": html
+                                        }
+                                    }).then(function (result) {
+                                        $scope.saveNewsletter("測試");
+                                       alert('電郵已發. 接收時間有長有短，請耐心等候.');
+                                    });
+                                }
+                                else {
+                                    $scope.getJson($scope.userBucket, $scope.websiteKey + 'content/member-data.json').then(function (data) {
+                                        angular.forEach(data,function(item,index){
+                                            to.push(item['email']);
+                                            console.log(item);
+                                        });
+                                        to.push(answer.receiver);
+                                        $http({
+                                            url: 'https://9hhtm40jpe.execute-api.ap-northeast-1.amazonaws.com/sendemail',
+                                            method: "POST",
+                                            data: {
+                                                "from": answer.sender,
+                                                "to": to,
+                                                "subject": answer.title,
+                                                "html": html
+                                            }
+                                        }).then(function (result) {
+                                            $scope.saveNewsletter("已發出");
+                                           alert('電郵已發. 大概需要半日至一日時間，請耐心等候。 ');
+                                        });
+                                    });
+
+                                }
+
+                            }, function() {
+                                    
+                            });
+            }],          
+                ["更換模版", function () {
+                    $mdDialog.show({
+                        controller: 'templatePopupController',
+                        templateUrl: 'models/templatePopup/popup.html' + "?id=" + new Date().getTime(),
+                        locals: {
+                            rootScope: $scope
+                        }
+                    }).then(function (template) {
+                        $scope.useTemplate();
+                    });
+                }]
+            ];
+            $scope.beforeAtomSaved = function () {
+                $scope.createData(newsletterTable);
+                $scope.createData(memberTable);
+
+            }
+            $scope.afterAtomSaved = function () {
+
+            }
+
+                        //init start
+            $scope.createTable = function (table) {
+
+                var tableCollection = $scope.tableJson;
+                if (tableCollection.length)
+                    for (var i = 0; i < tableCollection.length; i++) {
+                        if (tableCollection[i].id == table.id) {
+                            return;
+                        }
+                        if (i + 1 == tableCollection.length) {
+                            tableCollection.push(table);
+                            $scope.saveJson($scope.userBucket,  $scope.websiteKey + 'json/tableCollection.json', JSON.parse(angular.toJson(tableCollection)));
+                            return;
+                        }
+                    }
+                else{
+                    tableCollection.push(table);
+                    $scope.saveJson($scope.userBucket,  $scope.websiteKey + 'json/tableCollection.json',JSON.parse(angular.toJson(tableCollection) ));
+                }
+            };
+
+            $scope.createSchema = function (table,schema) {
+                schema=$scope.saveJson($scope.userBucket,$scope.websiteKey+'content/'+table.id +'-schema.json', JSON.parse(angular.toJson(schema) ) );
+
+            };
+            $scope.createData = function (table) {
+
+                $scope.saveJson($scope.userBucket,$scope.websiteKey+'content/'+table.id+'-data.json',JSON.parse(angular.toJson(empty)));
+            }
+
+
+                $scope.saveNewsletter = function (str) {
+
+
+                            var data = {
+                                "id": $scope.model.id,
+                                "date":Math.floor(Date.now()),
+                                "title": $scope.model.title,
+                                "content": $scope.model.html,
+                                "status":str
+                            };
+                            return new Promise(function (resolve, reject) {
+                                $scope.getJson($scope.userBucket, $scope.websiteKey + 'content/newsletter-data.json').then(function (json) {
+                                    $scope.$apply(function () {
+                                        for (i=0;i < json.length; i++){
+                                            if (json[i].id == $scope.model.id) {
+                                                json[i] = data;
+                                                break;                                                
+                                            }
+                                             if (i + 1 == json.length) 
+                                                json.push(data);
+                                        }
+                                        $scope.saveJson($scope.userBucket,$scope.websiteKey+'content/newsletter-data.json',JSON.parse(angular.toJson(json)));
+                                        alert('已儲存電子報');
+                                    });
+                                    resolve();
+                                });
+                            });
+                };
+
+
+
+
+                
+
+
+        }
+    };
+    return dazzleNewsletter;
+});
+
+function DialogController($scope, $mdDialog,rootScope) {
+
+                $scope.model = rootScope.model;
+
+                $scope.hide = function() {
+                  $mdDialog.hide();
+                };
+
+                $scope.cancel = function() {
+                  $mdDialog.cancel();
+                };
+
+                $scope.test = function() {
+                    $scope.model.test= true;
+                  $mdDialog.hide($scope.model);
+                };
+                $scope.send = function() {
+                    $scope.model.test= false;
+                  $mdDialog.hide($scope.model);
+                };
+}

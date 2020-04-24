@@ -1,0 +1,69 @@
+<style>
+  .label-required {
+    color:red;
+  } 
+  legend {
+    margin-bottom: 10px;
+  }
+  label {
+      display:none;
+  }
+  img.image-thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+  }
+  .fileinputbox {
+    position: absolute;
+    opacity: 0;
+    width: 0px;
+ }
+ .myForm{
+ 	margin:2em;
+    width:100%;
+ }
+ 
+ .form-group {
+    margin-bottom: 15px;
+    width: 49%;
+    float: left;
+    display: inline-block;
+    margin: 0 2px;
+}
+.fullWidth {
+    width:98.5%;   
+}
+.label-required {
+    display:none;
+}
+
+textarea {
+    height:150px;
+}
+</style>
+
+
+<div class="myformWrapper">
+<div class="row well2" myangular-controller="AppController">
+<form id="{{data}}" class="myForm" name="myForm" myangular-init="formdata={};hostname='{{userBucket}}';formname='{{data}}';receiveemail='{{receiveemail}}';websiteKey='{{websiteKey}}'">
+    <div class="form-group" ng-repeat="f in model.form" ng-class="f.headerName=='Subject' || f.headerName=='Message'? 'fullWidth' : '' ">
+        <div ng-switch="f.directiveName">
+            <div ng-switch-when="電郵">
+                <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+                <input type="email" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="abc@example.com">
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="text-center">
+    <button type="submit" class="battn" myangular-click="submitMyForm()">提交</button>
+        
+    </div>
+</form>
+
+
+
+</div>
+</div>

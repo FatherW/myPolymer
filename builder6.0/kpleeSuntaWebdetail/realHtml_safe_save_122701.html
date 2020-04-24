@@ -1,0 +1,24 @@
+
+            <div id="breadcrumb">&#x9996;&#x9801; &gt; &#x65B0;&#x9054;&#x76F8;&#x7C3F;&#x53CA;&#x5206;&#x4EAB; &gt; {{items.album_tag}}</div>
+            <h1 class="">{{items.album_name}}</h1>
+            <div class="contentWrapper" infinite-scroll="loadMore()" infinite-scroll-distance="2" infinite-scroll-disabled="isDisabled" infinite-scroll-immediate-check="false">
+                <!--<div ng-repeat="item in items | orderBy:'-add_time'" class="galleryRow">
+                    <img ng-repeat='image in item.image' ng-src='https://sunta.hk/uploadPhoto/{{image}}'>https://sunta.hk/uploadPhoto/{{image}}
+                </div>-->
+                
+                    <!--<img ng-src='http://sunta520.dazzle.website/image/{{image}}'>-->
+                    <div masonry="">
+                		<!-- ngRepeat: image in items.image -->
+                        <!-- ngRepeat: image in items.album_data -->
+                        <!-- ngRepeat: image in items.album_data -->
+                        <div class="masonry-brick" ng-repeat="image in items.album_data">
+            				<a fancyboxable="example1" rel="example_group" ng-href="https://designerrrr-output.s3-ap-northeast-1.amazonaws.com/images/original/{{image}}.jpg" data-lightbox="roadtrip">
+        						<img ng-src="https://designerrrr-output.s3-ap-northeast-1.amazonaws.com/images/original/{{image}}.jpg" alt="image">
+        					</a>
+    					</div>
+    					<fancybox box-for="[rel=example_group]" options="examplegroup"></fancybox>
+					</div>
+					
+            </div>
+        	<div ng-bind-html="items.album_desc | trust" id="id14865409279122" class="ng-scope"></div>
+        

@@ -1,0 +1,24 @@
+<div myangular-controller="DataController">
+
+    搜尋: <input type="text" myangular-model="search">
+
+<table class="table">
+    
+
+<thead>
+<tr>
+  <th>標題</th>
+  <th>檔案</th>
+
+</tr>
+</thead>
+<tbody>
+<tr myangular-repeat="item in model.data | filter:{'刊物分類':'顧問牧師著作', '標題': search}  | orderBy:'-nid'">
+  <td>[[item['標題'] ]]</td>
+  <td><a myangular-href="[[item['檔案'] ]]"><img style="height:60px;" src="http://taipo520.dazzle.website/sites/all/themes/rainbow/images/down1.png"></a></td>
+  
+</tr>
+</tbody>
+</table>
+
+</div>

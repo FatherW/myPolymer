@@ -1,0 +1,48 @@
+<div class="element" id="ele1483084528649" ng-init="getMyShare()">
+    <h3>股金記錄表</h3>
+    <p>
+        <br>
+    </p>
+    
+    <md-input-container>
+          <label>股金類型</label>
+          <md-select ng-model="selected">
+            <md-option value="null" selected ng-click="findShare(null)">所有</md-option>
+            <md-option ng-repeat="item in type" ng-value="item"  ng-click="findShare(item)">
+              {{item}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+     
+    <dz-dataset data-table="share2" data-filter="" data-sort="applyDate" data-order="desc">
+        
+        <div class="lgmdshow" dz-template>
+            <div class="row">
+                <div class="col col-lg-4 col-md-4"><label>社員編號：</label><span dz-field data-field="社員編號" data-type="text"></span></div>
+                <div class="col col-lg-4 col-md-4"><label>社員名稱：</label><span dz-field data-field="社員名稱" data-type="text"></span></div>
+                <div class="col col-lg-4 col-md-4"><label>日期：</label><span dz-field data-field="applyDate" data-type="date"></span></div>
+
+                <div class="col col-lg-4 col-md-4"><label>類別：</label><span dz-field data-field="類別" data-type="text"></span></div>
+                <div class="col col-lg-4 col-md-4"><label>起息日：</label><span dz-field data-field="起息日" data-type="date"></span></div>
+                <div class="col col-lg-4 col-md-4"><label>到期日：</label><span dz-field data-field="到期日" data-type="date"></span></div>
+                <div class="col col-lg-4 col-md-4"><label>年息率：</label><span dz-field data-field="年息率" data-type="text"></span></div>
+
+                <div class="col col-lg-4 col-md-4"><label>本金：</label><span dz-field data-field="本金" data-type="text"></span></div>
+                <div class="col col-lg-4 col-md-4"><label>每年利息：</label><span dz-field data-field="每年利息" data-type="text"></span></div>
+
+                <div class="col col-lg-4 col-md-4"><label>到期日本息總數：</label><span dz-field data-field="到期日本息總數" data-type="text"></span></div>
+
+
+
+                <div class="col col-lg-4 col-md-4">
+                    <a dz-field data-field="PDF" data-type="dlink">下載</a>
+                </div>
+                <div class="clear"></div>
+                <br>
+                <hr>
+            </div>
+        </div>
+
+    </dz-dataset>
+    <hr>
+</div>

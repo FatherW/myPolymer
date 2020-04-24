@@ -1,0 +1,35 @@
+<div class="slider">
+              <div class="controls hidden-sm hidden-xs">
+                <span class="prev"></span>
+                <span class="next"></span>
+              </div>
+              <ul class="ul-slider">
+                <li class="flip-container" ng-repeat="item in model.data">
+                  <div class="flipper">
+                    <div class="front">
+                      <div class="events__event-item" style="background-image: url('{{item.image}}');">
+                        <div class="date">{{item.date}}</div>
+                        <div class="content same-height">
+                          <h4>{{item.name}}</h4>
+                          <p>{{item.description}}</p>
+                          <a href="#" class="btn btn-primary btn-small-rounded visible-sm-inline-block visible-xs-inline-block js-event-open">Read more</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="back text-white" style="background-image: url('{{item.image2}}');">
+                      <h4>{{item.name}}</h4>
+                      <p>{{item.description2}} </p>
+                      <p>{{item.description3}}</p>
+                      <a href="#" class="btn btn-primary btn-small-rounded visible-sm-inline-block visible-xs-inline-block js-event-close">Back</a>
+                    </div>
+                  </div>
+                </li>
+
+
+
+
+
+
+
+              </ul>
+            </div>

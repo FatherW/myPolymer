@@ -1,0 +1,31 @@
+<div class="row12" layout="row" layout-wrap layout-gt-sm="row" ng-init="loadData()">
+    <div ng-repeat="item in model.data | limitTo:3" class="col12-3 paddingLeft0" flex='100' flex-gt-sm="33" flex-xs="100" layout-padding>
+      <div class="panel12 paddingLeft0">
+        <div class="head-photo">
+            <img ng-src="{{item['Head Photo']}}" width="100%" />
+            <div class="smallRedHeadCoursePriceWrapper">
+                <div layout="row" layout-wrap="" class="layout-wrap layout-align-center-center layout-row" layout-align="center center">
+                    <div flex="" class="flex">
+                        <div layout="" class="layout-row">
+                            <div flex="none" class="font21 flex-none">${{item['Price']}}</div>
+                            <div flex="" class="flex">
+                                <div class="xsmallCurrency">HKD</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="detail">
+            <div class="detail-text">
+                {{item['Title']}}
+            </div>
+            
+        </div>
+        
+        
+        </div>
+    </div>
+
+</div>

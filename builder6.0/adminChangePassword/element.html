@@ -1,0 +1,49 @@
+<div layout="column" layout-padding>
+    <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools">修改密碼</div>
+    </md-toolbar>
+
+    <md-content flex layout-padding>
+        <form name="changePasswordForm" ng-submit="submitForm(newPassword)">
+            <md-input-container class="md-block">
+                <label>舊密碼</label>
+                <input type="password" name="oldPassword" required
+                       ng-model="oldPassword" password-verify="{{user.password}}">
+                <div ng-messages="changePasswordForm.oldPassword.$error" role="alert">
+                    <p ng-message="required">請輸入舊密碼</p>
+                    <p ng-message="passwordVerify">密碼錯誤</p>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>新的密碼</label>
+                <input type="password" name="newPassword" required
+                       ng-model="newPassword" password-verify="{{conPassword}}">
+                <div ng-messages="changePasswordForm.newPassword.$error" role="alert">
+                    <p ng-message="required">請輸入新密碼</p>
+                    <p ng-message="passwordVerify">兩次密碼不一</p>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block">
+                <label>密碼確認</label>
+                <input type="password" name="conPassword" required
+                       ng-model="conPassword" password-verify="{{newPassword}}">
+                <div ng-messages="changePasswordForm.conPassword.$error" role="alert">
+                    <p ng-message="required">請再輸入新密碼</p>
+                    <p ng-message="passwordVerify">兩次密碼不一</p>
+                </div>
+            </md-input-container>
+
+            <div layout="row">
+                <span flex></span>
+                <md-button class="md-accent md-raised md-primary" type="submit"
+                           ng-disabled="changePasswordForm.$invalid">
+                    提交
+                </md-button>
+            </div>
+
+
+        </form>
+    </md-content>
+</div>

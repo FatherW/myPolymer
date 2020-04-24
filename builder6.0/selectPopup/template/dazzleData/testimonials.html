@@ -1,0 +1,22 @@
+<div class="hiddenText">
+<h1>請右click 以更改資料</h1>
+
+</div>
+
+
+<section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						
+						<li ng-repeat="item in model.data">
+							<div class="testimonials-grid">
+								<img src="{{item.image}}" alt=" " class="img-responsive" />
+								<p>{{item.body}}</p>
+								<h5>{{item.name}}</h5>
+							</div>
+						</li>
+						
+						
+					</ul>
+				</div>
+			</section>

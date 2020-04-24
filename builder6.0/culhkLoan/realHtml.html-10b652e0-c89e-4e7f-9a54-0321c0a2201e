@@ -1,0 +1,59 @@
+                                                   <h3>貨款記錄表</h3>
+                                                    <p>
+                                                        <br>
+                                                    </p>
+
+                                                    <div id="myLoadController" ng-controller="myLoanController" ng-init="init()">
+                                                        <div class="lgmdshow hidden-xs">
+                                                            <div class="row">
+                                                                <div class="col col-lg-2 col-md-2">貸款編號</div>
+                                                                <div class="col col-lg-2 col-md-2">貸款日期</div>
+                                                                <div class="col col-lg-2 col-md-2">貸款金額</div>
+                                                                <div class="col col-lg-2 col-md-2">貸款利息</div>
+                                                                <div class="col col-lg-2 col-md-2">償還貸款</div>
+                                                                <div class="col col-lg-2 col-md-2">貸款結餘</div>
+                                                            </div>
+                                                            <div class="row" ng-repeat="l in loan">
+                                                                <div class="col col-lg-2 col-md-2">{{l.id}}</div>
+                                                                <div class="col col-lg-2 col-md-2">{{l.date}}</div>
+                                                                <div class="col col-lg-2 col-md-2">{{l.loan | currency:"$"}}</div>
+                                                                <div class="col col-lg-2 col-md-2">{{l.interest}}</div>
+                                                                <div class="col col-lg-2 col-md-2">{{l.return}}</div>
+                                                                <div class="col col-lg-2 col-md-2">{{l.balance | currency:"$"}}</div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="xsshow hidden-lg hidden-md">
+                                                            <div class="col col-xs-12 thumbnail" ng-repeat="l in loan">
+                                                                <div class="row">
+                                                                    <div class="col col-xs-4 text-right">貸款編號</div>
+                                                                    <div class="col col-xs-7 text-left">{{l.id}}</div>
+                                                                    <div class="col col-xs-1"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col col-xs-4 text-right">貸款日期</div>
+                                                                    <div class="col col-xs-7 text-left">{{l.date}}</div>
+                                                                    <div class="col col-xs-1"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col col-xs-4 text-right">貸款金額</div>
+                                                                    <div class="col col-xs-7 text-left">{{l.loan | currency:"$"}}</div>
+                                                                    <div class="col col-xs-1"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col col-xs-4 text-right">貸款利息</div>
+                                                                    <div class="col col-xs-7 text-left">{{l.interest}}</div>
+                                                                    <div class="col col-xs-1"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col col-xs-4 text-right">償還貸款</div>
+                                                                    <div class="col col-xs-7 text-left">{{l.return | currency:"$"}}</div>
+                                                                    <div class="col col-xs-1"></div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col col-xs-4 text-right">貸款結餘</div>
+                                                                    <div class="col col-xs-7 text-left">{{l.balance | currency:"$"}}</div>
+                                                                    <div class="col col-xs-1"></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>

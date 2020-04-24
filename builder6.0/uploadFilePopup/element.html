@@ -1,0 +1,66 @@
+<!-- <md-toolbar>-->
+<!--        <div class="md-toolbar-tools">-->
+<!--            <h2>上載檔案</h2>-->
+<!--            <span flex></span>-->
+<!--            <md-button ng-click="upload()"  ng-show="files.length > 0">上載</md-button>-->
+<!--            <md-button ng-click="close()">關閉</md-button>-->
+<!--        </div>-->
+<!--    </md-toolbar>-->
+
+<!--<md-dialog-content class="md-has-header" style="overflow: scroll; max-height: 100%; height: auto;">-->
+
+<!--    <lf-ng-md-file-input lf-files="files" ng-show="!uploading" multiple drag preview></lf-ng-md-file-input>-->
+
+
+<!--    <div layout="row" ng-show="uploading && uploaded == files.length">-->
+<!--        <span flex></span>-->
+<!--        <md-button class="pull-right md-raised md-primary" ng-click="uploadAgain()">再上傳</md-button>-->
+<!--        <md-button class="pull-right md-raised md-warn" ng-click="close()">關閉</md-button>-->
+<!--    </div>-->
+<!--    <md-content ng-show="uploading">-->
+<!--        <md-list flex>-->
+<!--            <md-subheader class="md-no-sticky">上傳成功：{{uploaded}}/{{files.length}}</md-subheader>-->
+<!--            <md-list-item class="md-2-line" ng-repeat="file in files">-->
+<!--                <img src="{{file.lfDataUrl}}" class="md-avatar"/>-->
+<!--                <div class="md-list-item-text">-->
+<!--                    {{file.lfFileName}}-->
+<!--                    <md-progress-linear md-mode="determinate" value="{{file.uploadProgress}}"></md-progress-linear>-->
+<!--                </div>-->
+<!--                <md-button class="md-secondary md-icon-button" aria-label="remove"-->
+<!--                           ng-click="remove($index)" ng-hide="file.uploadProgress == 100">-->
+<!--                    <i class="fa fa-times" aria-hidden="true"></i>-->
+<!--                </md-button>-->
+<!--            </md-list-item>-->
+<!--        </md-list>-->
+<!--    </md-content>-->
+<!--</md-dialog-content>-->
+
+  <div layout="row" ng-show="!uploading">
+        <span flex></span>
+        <md-button class="pull-right md-raised md-primary" ng-click="upload()" ng-show="files.length > 0">上傳</md-button>
+        <md-button class="pull-right md-raised md-warn" ng-click="close()">關閉</md-button>
+    </div>
+    <lf-ng-md-file-input lf-files="files" ng-show="!uploading" multiple drag preview></lf-ng-md-file-input>
+
+
+    <div layout="row" ng-show="uploading && uploaded == files.length">
+        <span flex></span>
+        <md-button class="pull-right md-raised md-primary" ng-click="uploadAgain()">再上傳</md-button>
+        <md-button class="pull-right md-raised md-warn" ng-click="close()">關閉</md-button>
+    </div>
+    <md-content ng-show="uploading">
+        <md-list flex>
+            <md-subheader class="md-no-sticky">上傳成功：{{uploaded}}/{{files.length}}</md-subheader>
+            <md-list-item class="md-2-line" ng-repeat="file in files">
+                <img src="{{file.lfDataUrl}}" class="md-avatar"/>
+                <div class="md-list-item-text">
+                    {{file.lfFileName}}
+                    <md-progress-linear md-mode="determinate" value="{{file.uploadProgress}}"></md-progress-linear>
+                </div>
+                <md-button class="md-secondary md-icon-button" aria-label="remove"
+                           ng-click="remove($index)" ng-hide="file.uploadProgress == 100">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-content>

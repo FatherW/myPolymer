@@ -1,0 +1,23 @@
+                            <div class="counter_circle">
+                                <div class="circle view_time">
+                                    <span class="title title_time">瀏覽次數</span>
+                                    <span class="num">{{company['company_views']}}</span>
+                                </div>
+                                <div class="circle bid_time">
+                                    <span class="title title_bid_time">中標(投標)次數</span>
+                                    <span class="num">{{company['bid_times']}}</span>
+                                </div>
+                                <div class="circle rate_score">
+                                    <span class="title title_rate_score">客戶評分</span>
+                                    <span class="num">{{company['voting']}}</span>
+                                </div>
+                                <div class="circle product_total">
+                                    <span class="num">{{noOnShelf}}</span>
+                                    <span class="title title_product_total">產品數目</span>
+                                </div>
+                                <div class="circle age">
+
+                                    <span class="num">{{companyAge(company['nid'])}}</span>
+                                    <span class="title title_age">會員年資</span>
+                                </div>
+                            </div>

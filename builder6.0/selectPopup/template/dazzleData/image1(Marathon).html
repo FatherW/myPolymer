@@ -1,0 +1,12 @@
+
+<div ng-repeat="item in model.data" class="view">
+    
+	<div class="view-back">
+		<span data-icon="" class="fa fa-eye"><span>{{item.eye}}</span></span>
+		<span data-icon="" class="fa fa-heart-o"><span>{{item.heart}}</span></span>
+		<a href="{{item.link}}">&rarr;</a>
+	</div>
+	
+	<img src="{{item.image}}" />
+</div>
+<div class="clear"></div>

@@ -1,0 +1,9 @@
+<div ng-init="loadData()">
+<div ng-repeat="item in model.data | filter:{ category: '專業及認證課程' }">
+<h2>{{item['Course Name']}} </h2>
+<p style="margin: 0px;">{{item['學院']}}</p>
+<p>{{item['College']}}</p>
+<hr class="ng-scope">
+
+</div>
+

@@ -1,0 +1,19 @@
+ 
+
+<ul class="nav menu" context-menu="menuOptions">
+				<li class="item-66 actm active parent" ng-repeat="m in model.menu">
+						<a style="display:inline;" ng-href="{{m.link}}">{{m.title}}</a>			
+								<ul class="" style="display: block;">
+
+									<li class="item-72" ng-repeat="sm in m.list">
+																	
+															<a ng-href="{{sm.link}}">
+														
+									{{sm.title}}									</a>
+								
+														
+											</li>
+							</ul>
+					</li>
+
+			</ul>

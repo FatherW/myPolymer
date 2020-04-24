@@ -1,0 +1,23 @@
+<md-tabs md-dynamic-height md-border-bottom>
+      <md-tab ng-repeat="a in ans" label="{{a.title}}">
+        <md-content class="md-padding">
+
+                <table class="table table-h" id="_table_table-h">
+                    <thead>
+                        <th>「個人良藥」</th>
+                        <th>積極效用(它幫助我達到.....)</th>
+                        <th>新增/刪除
+                    </thead>
+                
+                    <tbody>
+                        <tr><td></td><td></td> <td><button ng-click="addMed()">新增</button><button ng-click="delMed()">刪除</button></tr>
+                        
+                                        
+                    </tbody>
+                    
+                </table>   
+        </md-content>
+      </md-tab>
+
+  
+    </md-tabs>

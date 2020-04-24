@@ -1,0 +1,14 @@
+<div class="menu_block">
+								<nav class="horizontal-nav full-width horizontalNav-notprocessed">
+									<ul class="sf-menu">
+									    <li ng-repeat="item in model.menu"><a ng-href="{{item.link}}">{{item.title}}</a>
+									</ul><select class="select-menu sf-menu" style="display: inline-block;">
+<option value="#">Navigate to...</option>
+<option ng-repeat="item in model.menu"> value="{{item.link}}">&nbsp;{{item.title}}</option>
+</select>
+								</nav>
+								<div class="clear"></div>
+							</div>
+							
+							
+					

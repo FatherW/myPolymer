@@ -1,0 +1,55 @@
+var app = angular.module('demoApp');
+app.directive('editorHtmlDirective', function ($compile, $templateRequest) {
+    var path = "https://d27btag9kamoke.cloudfront.net/builder6.0/editorHtmlDirective/";
+    var editorHtmlDirective = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element) {
+            console.log('editorHtmlDirective template start');
+            $templateRequest(path + '/directive.html' + "?id=" + new Date().getTime()).then(function (html) {
+                var template = angular.element(html);
+                element.append(template);
+                $compile(template)(scope);
+            });
+        },
+        controller: function ($scope, $http, $element) {
+            console.log('editorHtmlDirective controller start');
+            $scope.initRootHtml = function () {
+                if (angular.isUndefined($scope.rootHtml) || $scope.rootHtml == null) {
+                    $scope.getFile($scope.userBucket, $scope.websiteKey + 'page/' + $scope.thisPage + '/page.html').then(function (html) {
+                        $scope.$apply(function () {
+                            if (html.length < 5) {
+                                $scope.rootHtml = "<br><br><br><p style='text-align: center;'>hello world - " + new Date().getTime() + "</p><br><br><br>";
+                            } else {
+                                $scope.rootHtml = html;
+                            }
+                        });
+                    }, function (err) {
+                        $scope.$apply(function () {
+                            $scope.saveFile($scope.userBucket, $scope.websiteKey + 'page/' + $scope.thisPage + '/page.html', $scope.rootHtml);
+                            $scope.rootHtml = "<br><br><br><p style='text-align: center;'>hello world - " + new Date().getTime() + "</p><br><br><br>";
+                        });
+                    });
+                }
+            }();
+            $scope.menuOptions = [
+                ['編緝HTML', function () {
+                    $scope.openCodePopup($scope.rootHtml, 'html').then(function (newCode) {
+                        $scope.$apply(function () {
+                            $scope.rootHtml = newCode;
+                        });
+                    });
+                }],
+                ['JS/Css 管理', function () {
+                    $scope.openPageJsCssPopup($scope.thisPageJson).then(function (newThisPageJson) {
+                        $scope.thisPageJson = newThisPageJson;
+                        $scope.saveJson($scope.userBucket, $scope.websiteKey + 'json/' + $scope.thisPage + '.json', newThisPageJson);
+                    });
+                }]
+            ];
+            console.log('editorHtmlDirective controller end');
+        }
+    };
+    return editorHtmlDirective;
+});

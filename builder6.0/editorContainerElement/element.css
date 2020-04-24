@@ -1,0 +1,41 @@
+editor-container-element {
+    min-height:50px;
+    height:auto;
+}
+editor-container-element .wrapper {
+	width:1280px;
+	margin:0 auto;
+	padding:0 10px;
+	clear:both;
+	display:block;
+	height:auto;
+}
+
+editor-container-element .row {
+	margin:0px !important;
+	padding:0px;
+	min-height:50px;
+	width:100%;
+}
+
+editor-container-element .col {
+	padding:0 5px;
+	min-height:50px;
+}
+editor-container-element .col-6 {
+	width:50%;
+	float:left;
+}
+.clear {
+    clear:both;
+
+}
+
+
+editor-container-element .col {
+	padding:0 5px;
+}
+editor-container-element .col-4 {
+	width:33%;
+	float:left;
+}

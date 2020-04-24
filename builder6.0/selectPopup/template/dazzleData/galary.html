@@ -1,0 +1,13 @@
+<div class="content"><div class="ic"></div>
+			<div class="container_12">
+				<div class="gallery">
+					<div ng-repeat="item in model.data" class="grid_3" ng-init="loadData()">
+                        <h2>{{item.header}}</h2>
+                        <a ng-href="{{item.bigimage}}" class="gal"><img ng-src="{{item.smallimage}}" alt=""></a>
+                        {{item.text}}<br>
+                        <a href="#" class="btn">Learn More</a>
+                    
+					</div>
+				</div>
+			</div>
+		</div>

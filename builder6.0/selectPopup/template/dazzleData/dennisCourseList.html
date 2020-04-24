@@ -1,0 +1,44 @@
+                        <div class="row cc-class ng-scope" ng-repeat="pdt in model.data">
+                                    <div class="col-xs-12 col-md-3 cc-date">
+
+
+
+
+                                        <span class="ng-binding">
+                                            <img src="http://www.shunhingcookingcentre.hk/layout/img/icon_calendar.png" alt="">
+                                            {{pdt['課程日期'] | date :  "yyyy-MM-dd"}}</span>
+
+
+
+
+
+
+
+
+
+                                    </div>
+                                    <div class="col-xs-12 col-md-9">
+                                        <a ng-href="{{pdt['課程名稱']}}.html">
+                                            <h3 class="cc-class-title ng-binding" style="">{{pdt['課程名稱']}}</h3>
+                                        </a>
+                                        
+
+
+                                        <span class="tags">
+                                            <span class="price-tag"><a href="javascript:void()" style="cursor: default;" class="ng-binding">HK${{pdt['價錢']}}</a></span>
+                                        </span>
+
+
+
+
+                                        <!-- ngIf: pdt.Tutor --><span class="cc-tutor ng-scope" ng-if="pdt['導師']">導師: <a ng-href="#" class="ng-binding" href="#">{{pdt['導師']}}</a></span><!-- end ngIf: pdt.Tutor -->
+
+                                        <span class="ng-scope">
+                                            <a data-note="application button" class="btn btn-link" ng-href="{{pdt['課程名稱']}}.html">
+                                                <span>{{pdt['狀況']}}</span>
+                                            </a>
+                                        </span><!-- end ngIf: pdt.AvailabilityState == 'expired' -->
+
+
+                                    </div>
+                                </div>

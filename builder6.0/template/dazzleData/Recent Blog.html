@@ -1,0 +1,18 @@
+可右Click修改Data
+
+<div ng-init="loadData()">
+<div ng-repeat="item in model.data" class="tyche-recent-post-widget">
+        <div class="tyche-image">
+            <a ng-href="{{item.title}}.html">
+                <img width="65" height="65" ng-src="{{item.thumbnail}}" class="attachment-tyche-recent-post-list-image size-tyche-recent-post-list-image wp-post-image" alt="">            </a>
+        </div>
+        <div class="tyche-post-content">
+            <div class="tyche-title">
+                <p>
+                    <a href="{{item.title}}.html">{{item.title}}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    </div>

@@ -1,0 +1,18 @@
+<div style="margin: 10px;">
+    <ul class="nav nav-tabs">
+        <li ng-repeat="item in model.menu" ng-class="{active:$index == 0}">
+            <a ng-href="#tab{{$index}}" data-toggle="tab">{{item.title}}</a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div id="tab{{$index}}" class="tab-pane fade in"
+             ng-repeat="item in model.menu" ng-class="{active:$index == 0}">
+            <h3>{{item.title}}</h3>
+            <editor-container-element custom id="{{item.id}}">
+                container start~~
+                <div text></div>
+                container end~~~~
+            </editor-container-element>
+        </div>
+    </div>
+</div>

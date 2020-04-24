@@ -1,0 +1,71 @@
+<style>
+label {
+    font-size: 17px;
+    color: black !important;
+    /* font-weight: bolder; */
+}
+</style>
+<md-dialog aria-label="電子報設定">
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>電子報設定</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content style="width:800px;max-height:810px; ">
+
+
+<div layout="column" ng-cloak class="md-inline-form">
+
+  <md-content layout-padding>
+    <div>
+      <form name="userForm">
+
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>發送者</label>
+            <input placeholder="abc@example.com" ng-model="model.sender">
+          </md-input-container>
+
+        </div>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>測試電郵</label>
+            <input ng-model="model.receiver" placeholder="cde@example.com">
+          </md-input-container>
+
+        </div>
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>電郵標題</label>
+            <input ng-model="model.subject" placeholder="請輸入標題">
+          </md-input-container>
+
+        </div>
+
+
+      </form>
+    </div>
+  </md-content>
+
+</div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="cancel()" >
+        取消
+      </md-button>
+        <md-button ng-click="test()" style="margin-right:20px;" >
+        發送測試
+      </md-button>
+      <md-button ng-click="send()" style="margin-right:20px;" >
+        發送
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

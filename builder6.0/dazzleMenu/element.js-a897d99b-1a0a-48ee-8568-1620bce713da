@@ -1,0 +1,153 @@
+var app = angular.module('demoApp');
+app.directive('dazzleMenu', function ($compile, $templateRequest,$uibModal,$mdDialog) {
+    var http = "https://d27btag9kamoke.cloudfront.net/";
+    var path = "builder6.0/dazzleMenu/";
+    var directiveName = "dazzleMenu";
+    var dazzleMenu = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element) {
+            //console.log('dazzleMenu loading start');
+            $templateRequest(http + path + "html/element.html?id=" + new Date().getTime()).then(function (html) {
+                var template = angular.element(html);
+                element.html(template);
+                $compile(template)(scope);
+            });
+            //console.log('dazzleMenu loading end');
+        },
+        controller: function ($scope, $element, $attrs) {
+
+
+            $scope.id = $element.attr('id') || "ele" + new Date().getTime() + "-" + Object.keys($scope.atom).length;
+            $element.attr('id', $scope.id);
+
+
+           $scope.getRealHtml = function () {
+                $templateRequest(http+path+"html/template.html" + "?id" + new Date().getTime()).then(function (html) {
+                    var template = angular.element(html);
+                    $compile(template)($scope);
+                    setTimeout(function () {
+                        $scope.$apply(function () {
+                            $scope.model.html = template[0].outerHTML
+                                .replace(/(ng-\w+-\w+="(.|\n)*?"|ng-\w+="(.|\n)*?"|ng-(\w+-\w+)|ng-(\w+))/g, "")
+                                .replace(/<!--(.*?)-->/gm, "");
+                            $scope.atom[$scope.id].html = $scope.model.html;
+                        });
+                    }, 500);
+                });
+            };
+
+           $scope.getTemplateHtml = function () {
+
+                var url;
+                var name = $scope.model.template;
+                url = http+"builder6.0/template/"+name+"/template.html";
+                console.log('Get Template',url);
+                $templateRequest(url + "?id" + new Date().getTime()).then(function (html) {
+                    var template = angular.element(html);
+                    $compile(template)($scope);
+                    setTimeout(function () {
+                        $scope.$apply(function () {
+                            // $scope.model.html = template[0].outerHTML
+                            //     .replace(/(ng-\w+-\w+="(.|\n)*?"|ng-\w+="(.|\n)*?"|ng-(\w+-\w+)|ng-(\w+))/g, "")
+                            //     .replace(/<!--(.*?)-->/gm, "");
+
+                            $scope.model.html = html;
+                            $scope.atom[$scope.id].html = $scope.model.html;
+                            console.log($scope.model);
+                            console.log(html);
+                        });
+                    }, 500);
+                });
+            };
+
+            if (angular.isUndefined($scope.atom[$scope.id])) {
+                $scope.atom[$scope.id] = {
+                    "id": $scope.id,
+                    "type": "editor-dazzleMenu-element",
+                    "menu":[
+                    {
+                        "title":"Item 1",
+                        "link":"#",
+                        "list":[]
+                    },
+                    {
+                        "title":"Item 2",
+                        "link":"#",
+                        "list":[]
+                    },
+                    {
+                        "title":"Item 3",
+                        "link":"#",
+                        "list":[]
+                    }],
+                    "template":""
+                };
+                if (!$.trim($element.html())) {
+                    $scope.atom[$scope.id].html = "Hello Dazzle";
+                    $scope.getRealHtml();
+                } else {
+                    $scope.atom[$scope.id].html = $element.html();
+                }
+            }
+            $scope.model = $scope.atom[$scope.id];
+            $scope.editorCustomInit($scope, $element);
+            //console.log('dazzleMenu init end');
+            $scope.getTemplateHtml();
+
+            $scope.menuOptions = [
+                ["編緝Menu", function ($itemScope) {
+                    var modalInstance = $uibModal.open({
+                        animation: true,
+                        templateUrl: 'models/menuPopup/popup.html' + '?id=' + new Date().getTime(),
+                        controller: 'menuPopupCtrl',
+                        size: 'lg',
+                        resolve: {
+                            rootScope: function () {
+                                return $scope
+                            },
+                            menu: function () {
+                                return $scope.model.menu
+                            }
+                        }
+                    });
+                    modalInstance.result.then(function (menu) {
+                        $scope.model.menu = menu;
+                        $scope.getRealHtml();
+                    });
+                }], 
+
+               ["更換樣辦", function ($itemScope) {
+                    $mdDialog.show({
+                        templateUrl: 'models/templatePopup/popup.html' + '?id=' + new Date().getTime(),
+                        controller: 'templatePopupController',
+                        clickOutsideToClose: true,
+                        locals: {
+                            rootScope: $scope
+                        }
+                    });
+                }]
+
+
+            ];
+
+
+            $scope.updateHtml = function () {
+                //call this function if your html compiled by data and template
+                $templateRequest(http + path + "html/template.html?id=" + new Date().getTime()).then(function (html) {
+                    var template = angular.element(html);
+                    $compile(template)($scope);
+                    setTimeout(function () {
+                        $scope.$apply(function () {
+                            $scope.model.html = template[0].outerHTML
+                                .replace(/(ng-\w+-\w+="(.|\n)*?"|ng-\w+="(.|\n)*?"|ng-(\w+-\w+)|ng-(\w+))/g, "")
+                                .replace(/<!--(.*?)-->/gm, "");
+                        });
+                    }, 500);
+                });
+            }
+        }
+    };
+    return dazzleMenu;
+});

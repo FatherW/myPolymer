@@ -1,0 +1,18 @@
+
+<div id="login">
+    <div class="column col-lg-4 col-md-4 col-xs-12"><label>電話</label><input id="login-text" type="text" style=""></div>
+    <div class="column col-lg-4 col-md-4 col-xs-12"><label>密碼</label><input type="password" id="password-text" style=""></div>
+    <div class="column col-lg-4 col-md-4 col-xs-12"><button  style="float:right; margin-top:20px; margin-bottom:5px;" type="button" ng-click="login()">登入</button></div>
+</div>
+
+
+<div id="logined" style="display:none;">
+    <div class="column col-lg-4 col-md-4 col-xs-6"><label>社員: {{user['中文姓名']}}</label>
+        <button ng-click="orderRecord()">購買記錄</button>
+    </div>
+    <div class="column col-lg-4 col-md-4 col-xs-6"><label>普優積分:{{showValue(user['普優積分'])}}</label>   
+    <button ng-click="cart()">購物籃 ({{user['購物籃'].length}})</button>
+</div>
+    <div class="column col-lg-4 col-md-4 col-xs-6"><label>特優積分:{{showValue(user['特優積分'])}}</label>
+    <button ng-click="logout()">登出</button></div>
+</div>

@@ -1,0 +1,204 @@
+<style>
+    .logo {
+        position:relative;
+    }
+    .logo .editButton {
+        position:absolute;
+        top:0px;
+        right:0px;
+    }
+           .handle {
+            height: 30px;
+            padding: 5px;
+            max-height:30px;
+            text-align: right;
+        }
+        i.fa.fa-arrows {
+            position: absolute;
+            left: 0px;
+            top: 10px;
+        }
+        md-toolbar{
+
+            min-height:30px !important;
+        }
+        i.fa {
+            margin: 3px 2px;
+        }
+        
+        i.fa.fa-arrows {
+            position: absolute;
+            right: 0px;
+            top: 0px;
+        }
+
+</style>
+	<div class="right_content">
+			<div class="company_left">
+				<div class="logo">
+ 					<img ng-src="{{loadImage(company['company_logo'])}}" />
+                    <div class="editButton">
+                        <metal-edit-button item="company['company_logo']" popup="image" field="company_logo"></metal-edit-button>
+                    </div>
+				</div>
+
+
+                <metal-company-ball></metal-company-ball>
+
+			</div>
+
+			<div class="company_right">
+				<div class="node_title">
+					{{company['title']}}
+					<metal-edit-button item="company['title']"  popup="text" field="title"></metal-edit-button>
+				</div>
+
+
+
+
+	 				<div class="company_detail">
+
+
+                        <div class="field field-name-field-company-type field-type-taxonomy-term-reference field-label-inline clearfix">
+                            <div class="field-label">
+                            行業類別:&nbsp;
+                            <metal-edit-button item="company['company_type']" popup="category" field="company_type"></metal-edit-button>
+                            </div>
+                            <div class="field-items">
+                                <div  class="field-item" ng-repeat="item in company['company_type']">{{item}}</div>
+                                
+                            </div>
+
+                        </div>
+                        <div class="field field-name-field-contact-person field-type-text field-label-inline clearfix">
+                            <div class="field-label">
+                            聯絡人:&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['contact_person']}}
+                                    <metal-edit-button item="company['contact_person']" popup="text" field="contact_person"></metal-edit-button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="field field-name-field-email field-type-text field-label-inline clearfix">
+                            <div class="field-label">
+                            電郵:&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['email']}}
+                                    <metal-edit-button item="company['email']" popup="text" field="email"></metal-edit-button>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="field field-name-field-company-tel field-type-text field-label-inline clearfix">
+                            <div class="field-label">
+                            電話(公司):&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['company_tel']}}
+                                    <metal-edit-button item="company['company_tel']" popup="text" field="company_tel"></metal-edit-button>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="field field-name-field-distirct field-type-taxonomy-term-reference field-label-inline clearfix">
+                            <div class="field-label">
+                            地區:&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['distirct']}}
+                                    <metal-edit-button item="company['distirct']" popup="text" field="distirct"></metal-edit-button>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+                        <div class="field field-name-field-company-address field-type-text field-label-inline clearfix">
+                            <div class="field-label">
+                             地址:&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['company_address']}}
+                                    <metal-edit-button item="company['company_address']" popup="text" field="company_address"></metal-edit-button>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="field field-name-field-company-views field-type-number-integer field-label-inline clearfix">
+                            <div class="field-label">瀏覽次數:&nbsp;</div>
+                            <div class="field-items">
+                                <div class="field-item even">{{company['company_views']}}</div>
+                            </div>
+                        </div>
+
+				</div>
+
+
+
+				<div class="company_rating">
+
+				</div>
+
+				<div class="company_act">
+
+				</div>
+			</div>
+				
+			<div class="clearfix"></div>
+
+
+              <div id="map" style="width:100%; height:300px;"></div>
+
+
+			<div class="disclaimer">
+                    
+			</div>
+
+			<div class="company_product">
+				<h2 class="gradient_yellow">公司產品</h2>
+				<div class="related_product_content company_products" ng-init="findMyProducts()">
+					    <div class="view-content">
+					        <div class="views-row views-row-1 views-row-odd" ng-repeat="item in myProducts">
+					                  <div class="views-field views-field-nothing">        <span class="field-content"><div class="product" id="desktop">
+					        <div class="product_c">
+                           <!--  <md-toolbar ng-if="isAdmin()" class="handle _md _md-toolbar-transitions">
+                                                         <div class="md-toolbar-tools-dazzle-field-edit">
+                                                              <i class="fa fa-arrows fa-x"  role="button" aria-hidden="true"></i>
+                                                             <i class="fa fa-power-off fa-x" ng-click="shelfOnOff(item['nid'])" role="button" aria-hidden="true"></i>
+                                                             <i class="fa fa-times-circle fa-x" ng-click="deleteProduct(item['nid'])" role="button" aria-hidden="true"></i>
+                                                             <i class="fa fa-edit fa-x" ng-click="edit(model)" role="button" aria-hidden="true"></i>
+                                                         </div>
+                              </md-toolbar>
+-->
+					        <div class="over_tips"><a href="/node/{{item['nid']}}">按入產品詳情</a></div>
+					        <div class="product_thumb"><a class="" target="_blank" ng-href="/node/{{item['nid']}}"><img ng-src="{{loadImage(item['images'])}}" width="383" height="215" alt=""></a></div>
+					        <div class="product_title"><a target="_blank" ng-href="/node/{{item['nid']}}">{{item['title']}}</a></div>
+					        <div class="views">點擊︰{{item['product_views']}} </div>
+					        <div class="price">$ <a target="_blank" ng-href="/node/{{item['nid']}}/comment">按此查詢</a> </div>
+					        <div class="date">刊登日期：{{item['created']}} </div>
+					        <div class="date">更新日期：{{item['changed']}} </div>
+					        <div class="provider"><a target="_blank" ng-href="/node/{{item['nid']}}">{{item['product_company']}}</a></div>
+					        </div>
+					        <div class="pfoot"></div>
+					        </div></span>  </div>
+					                  <div class="views-field views-field-nothing-1">        <span class="field-content"><div class="product" id="mobile">
+					        <div class="product_c">
+					        <div class="over_tips"><a ng-href="/node/{{item['nid']}}">按入產品詳情</a></div>
+					        <div class="product_thumb"><a class="" ng-href="/node/{{item['nid']}}"><img ng-src="{{loadImage(item['images'])}}" width="383" height="215" alt=""></a></div>
+					        <div class="product_title"><a ng-href="/node/{{item['nid']}}">{{item['title']}}</a></div>
+					        <div class="views">點擊︰{{item['product_views']}} </div>
+					        <div class="provider">產品型號：{{item['product_model']}} </div>
+					        <div class="provider">刊登日期：{{item['created']}} </div>
+					        <div class="provider"><a target="_blank" ng-href="/node/{{item['nid']}}">{{item['product_company']}}</a></div>
+					        <div class="price">$ <a target="_blank" ng-href="/node/{{item['nid']}}">按此查詢</a> </div>
+					        </div>
+					        <div class="pfoot"></div>
+					        </div></span>  </div>
+
+					        </div>
+					    </div>
+
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div><!-- right_content -->

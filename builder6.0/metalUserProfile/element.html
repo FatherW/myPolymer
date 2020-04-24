@@ -1,0 +1,68 @@
+<div class="profile_info">
+    <div class="field field-name-field-user-company field-type-node-reference field-label-inline clearfix">
+        <div class="field-label">相關公司:&nbsp;</div>
+        <div class="field-items">
+            <div class="field-item even"><a ng-href="/content/{{user['user_company']}}">{{user['user_company']}}</a></div>
+        </div>
+    </div>
+    <div class="field field-name-field-address field-type-text field-label-inline clearfix">
+        <div class="field-label">地址:&nbsp;</div>
+        <div class="field-items">
+            <div class="field-item even">{{user['address']}}</div>
+        </div>
+    </div>
+    <div class="field field-name-field-fax field-type-text field-label-inline clearfix">
+        <div class="field-label">傳真:&nbsp;</div>
+        <div class="field-items">
+            <div class="field-item even">{{user['fax']}}</div>
+        </div>
+    </div>
+    <div class="field field-name-field-tel field-type-text field-label-inline clearfix">
+        <div class="field-label">公司電話:&nbsp;</div>
+        <div class="field-items">
+            <div class="field-item even">{{user['exportBucket']}}</div>
+        </div>
+    </div>
+    <div class="field field-name-field-br-no field-type-text field-label-inline clearfix">
+        <div class="field-label">商業登記號碼:&nbsp;</div>
+        <div class="field-items">
+            <div class="field-item even">{{user['br_no']}}</div>
+        </div>
+    </div>
+    <div class="field field-name-field-category field-type-taxonomy-term-reference field-label-inline clearfix">
+        <div class="field-label">類別:&nbsp;</div>
+        <div class="field-items">
+			<div class="field-item" ng-class="evenOdd($index)" ng-repeat="item in user['category']">{{item}}</div>
+        </div>
+    </div>
+    <div class="field field-name-field-contact-person field-type-text field-label-inline clearfix">
+        <div class="field-label">聯絡人:&nbsp;</div>
+        <div class="field-items">
+            <div class="field-item even">{{user['contact_person']}}</div>
+        </div>
+    </div>
+    <div class="field field-name-field-logo field-type-image field-label-inline clearfix">
+        <div class="field-label">公司Logo:&nbsp;</div>
+        <div class="field-items">
+            <div class="field-item even"><img ng-src="{{loadImage(user['logo'])}}" width="152" height="140" alt=""></div>
+        </div>
+    </div>
+    <div class="field field-name-field-join-via field-type-list-text field-label-inline clearfix">
+        <div class="field-label">入會途徑:&nbsp;</div>
+        <div class="field-items">
+            <div class="field-item even">{{user['join_via']}}</div>
+        </div>
+    </div>
+    <div class="field field-name-field-payment-method field-type-list-text field-label-inline clearfix">
+        <div class="field-label">付款方法:&nbsp;</div>
+        <div class="field-items">
+            <div class="field-item even">{{user['payment_method']}}</div>
+        </div>
+    </div>
+    <div class="field-collection-container clearfix">
+        <div class="field field-name-field-branch field-type-field-collection field-label-inline clearfix">
+            <div class="field-label">公司資料:&nbsp;</div>
+            <div class="field-items"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<!--<div context-menu="slideMenuOptions">
+<flex-slider slide3="item in model.list track by $index" animation="slide">
+	  	<li ng-repeat="item in model.list track by $index"><img ng-src="{{item.link}}"/></li>
+</flex-slider>
+</div>-->
+
+
+<div context-menu="slideMenuOptions" class="image_slider">
+            <div class="flexslider">
+                        <ul class="slides">
+                            <li>
+                                <li ng-repeat="item in model.list track by $index"><img ng-src="{{item.link}}"/></li>
+                            </li>
+                            
+                        </ul>
+                    </div>
+            </div>

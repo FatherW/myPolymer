@@ -1,0 +1,49 @@
+<table class="newTable" st-table="displayedCollection" st-safe-src="rowdate">
+    <thead>
+    <tr class="filterWrapper">
+        <th>
+            <div class="filter_search1">
+                <div class="dateInput">
+                    <span>&#x5E74;&#x4EFD;&#xFF1A;</span>
+                    <p class="input-group select-group">
+                        <select id="yearSelect" class="form-control" ng-model="year" ng-change="changeYear(year)">
+                            <option ng-repeat="yearOption in yearOptions">{{yearOption}}</option>
+                        </select>
+                    </p>
+                    <input st-search="" type="text" class="inputBox form-control ng-pristine ng-untouched ng-valid ng-empty" placeholder="&#x95DC;&#x9375;&#x5B57;" ng-model="keyWrod" aria-invalid="false">
+                </div>
+                <!--<div class="icon-search" ng-click="goSearch()"></div>-->
+            </div>
+            <!--<input st-search="" class="form-control" placeholder="關鍵字" ng-model="keyWrod" type="text">-->
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <!--<tr ng-repeat="row in displayedCollection">
+		<td>
+        
+            <div class="column col-lg-12 col-md-12 col-xs-12"><div class="newsTitle colorOrg"><a target="_blank" ng-href="familydetail.html?fid={{row.family_id}}">{{row.title2}}</a></div><div class="newsDate">&#x65E5;&#x671F;&#xFF1A;{{row.date}}</div></div>
+    	    <div class="column col-lg-8 col-md-8 col-xs-8 newContent">{{row.content2 | htmlToPlaintext | limitTo: 150}}...</div>
+            <div class="column col-lg-4 col-md-4 col-xs-4 newImage"><img src="http://sunta520.dazzle.website/image/logo.jpg"></div>
+		</td>
+
+	</tr>-->
+    <tr>
+        <td class="column col-lg-12 col-md-12 col-xs-12">
+            <div ng-repeat="row in displayedCollection" class="familyRow column col-lg-3 col-md-4 col-xs-12">
+                <div class="column col-lg-12 col-md-12 col-xs-12 familyImage clearPadding"><a ng-href="familydetail.html?fid={{row.family_id}}"><img ng-src="{{row.picture | changeDefault}}"></a></div>
+                <div class="column col-lg-12 col-md-12 col-xs-12 familyTitle clearPadding"><a ng-href="familydetail.html?fid={{row.family_id}}">{{row.title2}}</a></div>
+                <div class="column col-lg-12 col-md-12 col-xs-12 familyDate clearPadding">{{row.date}}</div>
+                <div class="column col-lg-12 col-md-12 col-xs-12 familyContent clearPadding">{{row.content2 | htmlToPlaintext | limitTo: 50}}...</div>
+            </div>
+        </td>
+    </tr>
+	</tbody>
+    <tfoot>
+    		<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="12"></div>
+				</td>
+			</tr>
+		</tfoot>
+</table>

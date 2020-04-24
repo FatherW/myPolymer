@@ -1,0 +1,20 @@
+   <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Code編緝器</h2>
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="save()">
+                <md-tooltip>儲存</md-tooltip>
+                <i class="fa fa-floppy-o"></i>
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="cancel()">
+                <md-tooltip>取消</md-tooltip>
+                <i class="fa fa-window-close"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+
+            <div ui-ace="aceOption" ng-model="code" style="height: 100%;"></div>
+        </div>
+    </md-dialog-content>

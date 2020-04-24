@@ -1,0 +1,33 @@
+<div class="col-xs-12 col-sm-4 col-md-4" ng-repeat="item in model.data |  limitTo: 3">
+                            <div class="cc-ItemBody">
+                                <div class="cc-ItemDateWrap">
+                                    <div class="cc-ItemDateBlock">
+                                        <div class="cc-ItemDate">
+                                            <span class="cc-ItemDateDay ng-scope medium-editor-element">
+                                                {{item['課程日期'] | date : "dd"}}
+
+                                            </span>
+                                            <span class="cc-ItemDateDayMonth ng-scope medium-editor-element">{{item['課程日期'] | date : "MM"}}月</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cc-ItemContent">
+                                    
+                                    <h3 class="cc-ItemTitle">
+                                        <a href="{{item['課程名稱']}}.html">{{item['課程名稱']}}</a>
+                                    </h3>
+
+
+                                    
+                                    <div class="cc-ItemIntroText">
+                                        {{item['課程時間']}}
+
+                                        
+                                    </div>
+
+                                    <div class="cc-lr"></div>
+                                </div>
+
+                                <div class="cc-lr"></div>
+                            </div>
+                        </div>

@@ -1,0 +1,24 @@
+<div class="" >
+<div layout="row" layout-wrap ng-init="loadData()">
+    <div ng-repeat="item in model.data" flex='50' flex-gt-sm="25" flex-xs="100" class="" layout-padding>
+        <div>
+        <div class="head-photo">
+            <img ng-src="{{item['Head Photo']}}" width="100%" />
+        </div>
+        <div class="detail">
+            <div class="detail-text" ng-bind-html="item['Description']">
+            
+            </div>
+            <div class="user-detail">
+                <img ng-src="{{item['Profile Pic']}}" />
+                <div class="user-name">
+                    {{item['User']}}
+                </div>
+                
+            </div>
+        </div>
+        </div>
+    </div>
+
+</div>
+</div>

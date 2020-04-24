@@ -1,0 +1,14 @@
+.round {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    overflow: hidden;
+    margin:20px;
+    float:left;
+}
+.round img {
+    width:100%;
+}
+.middle {
+   margin:5px auto;
+}

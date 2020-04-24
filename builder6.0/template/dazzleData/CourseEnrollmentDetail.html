@@ -1,0 +1,25 @@
+ <table class="views-table cols-3" ng-init="loadData()"style="
+    width: 100%;
+">
+         <thead>
+      <tr>
+                  <th class="views-field views-field-title">
+            課程名稱          </th>
+                  <th class="views-field views-field-field-stime">
+            課程時間開始          </th>
+                  <th class="views-field views-field-field-teacher">
+            導師          </th>
+              </tr>
+    </thead>
+    <tbody>
+     <tr ng-class="$index %2? 'even':'odd'" class="odd views-row-first views-row-last" ng-repeat="item in model.data | limitTo: 10">
+                  <td class="views-field views-field-title">
+            <a href="http://www.crc-taipo.org/node/12874">{{item['課程名稱']}}</a>       </td>
+                  <td class="views-field views-field-field-stime">
+            {{item['課程時間開始']}}          </td>
+                  <td class="views-field views-field-field-teacher">
+            {{item['導師']}}          </td>
+                 
+              </tr>
+      </tbody>
+</table>

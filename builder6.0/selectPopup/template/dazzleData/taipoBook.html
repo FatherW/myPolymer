@@ -1,0 +1,57 @@
+
+<div myangular-controller="DataController">
+搜尋: <input type="text" myangular-model="search['名稱']">
+
+<table class="views-table cols-5" myangular-init="loadData()">
+         <thead>
+<tr>
+                  <th class="views-field views-field-field-num" width="5%">
+            <a href="#" class="active">編號</a>          </th>
+                  <th class="views-field views-field-field-num" width="35%">
+            <a href="#" class="active">名稱</a>          </th>
+                  <th class="views-field views-field-field-num" width="35%">
+            <a href="#" class="active">作者</a>          </th>
+                  <th class="views-field views-field-field-num" width="10%">
+            <a href="#" class="active">出版社</a>          </th>
+                  <th class="views-field views-field-field-num" width="10%">
+            <a href="#" class="active">分類</a>          </th>
+
+
+              </tr>
+    </thead>
+    <tbody>
+          <tr class="odd views-row-first" myangular-repeat="item in model.data | filter: search" myangular-class="$index %2? 'odd':'even'">
+                  <td class="views-field views-field-field-num">
+            [[item['編號'] ]]         </td>
+                  <td class="views-field views-field-title active">
+            [[item['名稱'] ]]          </td>
+                  <td class="views-field views-field-field-author">
+            [[item['作者'] ]]          </td>
+                  <td class="views-field views-field-field-publishing">
+            [[item['出版社'] ]]          </td>
+                  <td class="views-field views-field-field-category">
+            [[item['分類'] ]]       </td>
+              </tr>
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+      </tbody>
+</table>
+
+</div>

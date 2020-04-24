@@ -1,0 +1,4 @@
+<ul>
+<li style="min-height:50px;" ng-repeat="item in model.data | filter: { Year: '2016', Type: 'News Report' } | orderBy:'PublishDate' " ><a ng-href="{{item['Report']}}">{{item['Title']}}</a><br>
+<em>Publisher: {{item['Publisher']}}</em></li><br><br>
+</ul>

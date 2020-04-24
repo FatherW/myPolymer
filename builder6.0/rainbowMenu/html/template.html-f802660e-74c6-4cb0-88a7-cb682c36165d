@@ -1,0 +1,59 @@
+
+<nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".example-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="display: none;">Dazzle</a>
+        </div>
+        <div class="collapse navbar-collapse example-navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="dropdown" ng-repeat="m in model.menu">
+                    <a draggable="false" class="page-scroll " ng-href="{{m.link}}">{{m.title}}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <style>
+
+    .navbar-inverse {
+            background: url(http://home.culhk.org/templates/protostar/images/web/menu_bg.png) repeat top left;
+            background-color:none;
+            border:none;
+    }
+.section #ele1478489748536 .navbar, .container #ele1478489748536 .navbar {
+    background: none;
+    border: none;
+}
+
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 0px;
+    border: 1px solid transparent;
+}
+
+.section #ele1478489748536 .navbar-nav > li, .container #ele1478489748536 .navbar-nav > li {
+    min-width: 120px;
+    width: calc(11.11111111%);
+    background: url(http://home.culhk.org/templates/protostar/images/web/menu_bg.png) repeat top left;
+    height: 40px;
+    padding: 0 5px;
+    font-size: 16px;
+}
+.section #ele1478489748536 .navbar-nav > li a, .container #ele1478489748536 .navbar-nav > li a {
+    color: white;
+    top: -7px;
+}
+
+
+.navbar-nav>li>a {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+    </style>

@@ -1,0 +1,152 @@
+var app = angular.module('demoApp');
+app.directive('metalGalleryPopup', function ($compile, $templateRequest, $mdDialog, $dazzlePopup) {
+    var name = 'metalGalleryPopup';
+    var link = {
+        restrict: 'E',
+        scope: true,
+        templateUrl: "https://d27btag9kamoke.cloudfront.net/builder6.0/metalGalleryPopup/element.html?id=" + new Date().getTime(),
+        link: function (scope, element, attrs) {
+            scope.http = "https://d27btag9kamoke.cloudfront.net/";
+            scope.directiveId = "metalGalleryPopup";
+            scope.type = "metalGalleryPopup";
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+            
+        },        
+        controller: function ($scope, $element, $attrs,$dazzleS3, $http, $mdDialog, $mdSidenav, $mdBottomSheet,$dazzleUser) {
+                // console.log('My Scope',$scope);
+                var params = $dazzleUser.getDazzleInfo('params');
+                var uid = store.get('uid');
+                console.log('dzGallery########Params',params);
+
+                if (!Array.isArray(params.images))
+                    $scope.images = [];
+                else
+                    $scope.images = params.images || [];
+//                $scope.images = JSON.parse(angular.toJson(images)) || [];
+
+                // $scope.pageJson=$dazzleUser.getDazzleInfo('pageJson');
+                // $scope.thisPageJson=$dazzleUser.getDazzleInfo('thisPageJson');
+                // $scope.userBucket=$dazzleUser.getDazzleInfo('userBucket');
+                // $scope.exportBucket=$dazzleUser.getDazzleInfo('exportBucket');
+
+                $scope.upload = function () {
+                    var url;
+                     var params = {
+                            name: "metalImageGalleryPopup",
+                            directive:"<metal-image-gallery-popup></metal-image-gallery-popup>",
+                            images:$scope.item,
+                            owner:"owner:"+uid,
+                            multiple:true
+                        };
+
+                    $dazzlePopup.callPopup(params).then(function(output){
+
+                            angular.forEach(output,function(item,index){
+                                // url = $dazzleFn.getFileUrl('large-web',item.gid);
+                                url = "//designerrrr-output.s3.amazonaws.com/images/5metal.dazzle.website/large-web/"+item.gid+".jpg";
+                                console.log('Metal Url',url);
+                                $scope.images.push(url);
+                            });
+                    });
+                
+                }
+            
+            
+            
+                $scope.addLink = function(index){
+
+                    console.log('dzGallery######index', index);
+                    console.log('dzGallery######oldLink', $scope.images[index]['link'] || '#');
+
+                    var params = {
+                        name: 'dzLinkPopup',
+                        element: $element,
+                        oldLink: $scope.images[index]['link'] || '#',
+                        directive:"<dz-link-popup></dz-link-popup>"
+                    };
+            
+                    $dazzlePopup.callPopup(params).then(function(result) {
+                        $scope.images[index]['link']=result.link;
+                        console.log('Result',result);
+                    });
+                }
+                $scope.remove = function (index) {
+                    $scope.images.splice(index, 1);
+                }
+                $scope.save = function () {
+                    $mdDialog.hide($scope.images);
+                }
+                $scope.cancel = function () {
+                    $mdDialog.cancel();
+                }
+        }
+    };
+    return link;
+});
+
+app.controller('uploadFileController', function ($scope, $element, $mdBottomSheet, rootScope, bucket, key) {
+    $scope.rootScope = rootScope;
+    $scope.bucket = bucket;
+    console.log(bucket);
+    $scope.key = key;
+    $scope.uploading = false;
+    $scope.uploadedFiles = [];
+
+    $scope.upload = function () {
+        $scope.uploading = true;
+        $scope.uploaded = 0;
+        for (var i = 0; i < $scope.files.length; i++) {
+            $scope.uploadThis($scope.files[i]);
+        }
+    }
+    $scope.uploadAgain = function () {
+        $scope.uploading = false;
+        $scope.uploaded = 0;
+        $scope.files = [];
+    }
+    $scope.uploadThis = function (file) {
+        var s3 = new AWS.S3();
+        var params = {
+            Bucket: $scope.bucket,
+            Key: $scope.key + file.lfFileName,
+            ContentType: file.lfFileType,
+            Body: file.lfFile
+        };
+        file.upload = s3.upload(params);
+
+        file.upload.on('httpUploadProgress', function (evt) {
+            file.uploadProgress = parseInt((evt.loaded * 100) / evt.total);
+        });
+
+        file.upload.send(function (err, data) {
+            $scope.uploadedFiles.push(file);
+            $scope.$apply(function () {
+                $scope.uploaded++;
+            });
+        });
+
+    }
+    $scope.remove = function (index) {
+        $scope.files[index].upload.abort();
+        $scope.files.splice(index, 1);
+        $scope.uploaded--;
+        if ($scope.files.length <= 0) {
+            $scope.uploading = false;
+            $scope.uploaded = 0;
+        }
+    }
+    $scope.close = function () {
+        var uploadedFiles = [];
+        for (var i = 0; i < $scope.uploadedFiles.length; i++) {
+            uploadedFiles.push({
+                "bucket": $scope.bucket,
+                "key": $scope.key,
+                "filename": $scope.uploadedFiles[i].lfFileName,
+                "path": $scope.key + $scope.uploadedFiles[i].lfFileName,
+                "type": $scope.uploadedFiles[i].lfFileType,
+            })
+        }
+        $mdBottomSheet.hide(uploadedFiles);
+    }
+});

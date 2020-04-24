@@ -1,0 +1,24 @@
+        <div class="submenu">  
+  <ul id="nav"> 
+<li><a ng-href="{{model.menu[0].link}}"><img src="http://farewell4u.org/img/icon_introduction.png" width="34" height="30">{{model.menu[0].title}}</a>
+
+</li> 
+<li><a ng-href="{{model.menu[1].link}}"><img src="http://farewell4u.org/img/icon_education.png" width="34" height="30">{{model.menu[1].title}}</a> 
+
+</li> 
+<li><a ng-href="{{model.menu[2].link}}"><img src="http://farewell4u.org/img/icon_plan.png" width="34" height="30">{{model.menu[2].title}}</a> 
+
+</li> 
+<li><a ng-href="{{model.menu[3].link}}"><img src="http://farewell4u.org/img/icon_care.png" width="34" height="30">{{model.menu[3].title}}</a> 
+</li> 
+<li><a ng-href="{{model.menu[4].link}}"><img src="http://farewell4u.org/img/icon_burial.png" width="34" height="30">{{model.menu[4].title}}</a> 
+</li><li><a href="#"><img src="http://farewell4u.org/img/icon_information.png" width="34" height="30">{{model.menu[5].title}}</a> 
+<ul> 
+<li ng-repeat="subitem in model.menu[5].list"><a ng-href="{{subitem.title}}.html">{{subitem.title}}</a></li> 
+</ul> 
+</li> 
+ 
+<li><a ng-href="{{model.menu[6].link}}"><img src="http://farewell4u.org/img/icon_us.png" width="34" height="30">{{model.menu[6].title}}</a> 
+</li></ul>   
+  </div>
+        

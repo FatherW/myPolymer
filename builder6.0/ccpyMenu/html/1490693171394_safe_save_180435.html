@@ -1,0 +1,32 @@
+<nav class="ng-scope">
+    <ul id="mainmenu">
+        <li ng-repeat="menu in model.menu">
+            <a ng-href="menu.link">{{menu.title}}</a>
+            <ul ng-repeat="submenu in menu">
+                <li>
+                    <a></a>
+                </li>
+            </ul>
+        </li>
+
+        <li><a href="index.html">Home</a>
+        </li>
+        <li><a href="project.html">Projects</a>
+            <ul>
+                <li><a href="project.html">Commercial Project</a>
+                </li>
+                <li><a href="project.html">Residential Project</a>
+                </li>
+                <li><a href="project.html">Furniture Project</a>
+                </li>
+
+            </ul>
+        </li>
+        <li><a href="services.html">Services</a>
+        </li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="recruitment.html">Recruitment</a>
+        </li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>

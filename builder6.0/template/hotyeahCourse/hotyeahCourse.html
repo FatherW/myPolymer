@@ -1,0 +1,32 @@
+<div class="course-panel">
+    <h4>相關課程</h4>
+    <p class="desc">
+        右click可編輯課程
+    </p>
+</div>
+
+<div class="course-item" ng-repeat="item in model.data" context-menu="menuOptions" item-row = "{{$index}}">
+        <div layout="row" class="course-list layout-row">
+            <div layout="column" flex="25" class="layout-column flex-25">
+                <a class="ng-scope" ng-href="{{item['名稱']}}.html">
+                    <img id="img-ele1510302361082-79" class="img-responsive" style="max-width:100%;max-height: 100%;" 
+                        ng-src="{{item['首圖']}}"> 
+                </a>
+            </div>
+            <div layout="column" flex="75" class="layout-column flex-75">
+                <div class="title">
+                    {{item['名稱']}}
+                </div>
+                <div ng-bind-html="item['描述']">
+                    
+                </div>
+                
+                    <div class="dazzle-button" style="margin:10px;">
+                        <i  ng-click="edit(item)" class="fa fa-pencil-square-o fa-2x" aria-hidden="true"></i>
+                        <i  ng-click="remove(item['ID'])" class="fa fa-times-circle-o fa-2x" aria-hidden="true"></i>
+                    </div>
+            </div>
+        </div>    
+    
+</div>
+

@@ -1,0 +1,20 @@
+<div ng-init="loadData()" class="hiddenText">
+	<div ng-repeat="dataitem in model.data | filter:{ category: datafilter }">
+	<h2><a ng-href="{{dataitem['Course Code']}}.html">{{dataitem['Course Name']}}</a></h2>
+	<p style="margin: 0px;">{{dataitem['學院']}}</p>
+	<p>{{dataitem['College']}}</p>
+	<hr>
+	</div>
+</div>
+
+
+<div class="realText">
+	<div myangular-repeat="dataitem in rowData | filter:{ category: '{{datafilter}}' }">
+	<h2><a myangular-href="[[dataitem['Course Code']]].html">[[dataitem['Course Name']]]</a></h2>
+	<p style="margin: 0px;">{{dataitem['學院']}}</p>
+	<p>[[dataitem['College']]]</p>
+	<hr >
+	</div>
+</div>
+
+

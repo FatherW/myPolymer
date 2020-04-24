@@ -1,0 +1,9 @@
+			<ul class="nav-list" context-menu="editorMenuOptions">
+			    <li ng-repeat = "item in model.list" class="nav-item"><a ng-href="{{item.link}}">{{item.title}}</a>
+			    	<ul class="dropdown-menu">
+			            <li ng-repeat="subitem in item.list"><a ng-href="{{subitem.link}}">{{subitem.title}}</a></li>
+			          
+			         </ul>	
+
+			    </li>
+			</ul>

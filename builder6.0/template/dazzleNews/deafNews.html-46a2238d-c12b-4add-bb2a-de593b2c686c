@@ -1,0 +1,39 @@
+<div class="view view--xiao-xi view-id-_xiao_xi view-display-id-page hiddenText">
+            
+  
+  
+  
+      <div class="view-content">
+      <div class="item-list">    <ul>          
+          <li class="views-row views-row-2 views-row-even"  ng-repeat="item in model.news | orderBy: '-nid' ">  
+  <div class="views-field views-field-created">        <span class="field-content">{{item['日期']*1000 | date:'yyyy-MM-dd'}}</span>  </div>  
+  <span class="views-field views-field-title">        <span class="field-content"><a ng-href="{{item['nid']}}.html">{{item['標題']}}</a></span>  </span></li>
+          
+      </ul></div>    </div>
+  
+
+</div>
+
+
+<table st-table="displayedCollection" st-safe-src="rowData" class="table table-striped realText">
+		<thead>
+		<tr>
+			<th>時間</th>
+			<th>標題</th>
+		</tr>
+
+		</thead>
+		<tbody>
+		<tr myangular-repeat="item in displayedCollection | orderBy: '-nid' ">
+			<td style="white-space: nowrap;color: #1978A6;font-size: 13px;">[[item['日期']*1000 | date:'yyyy-MM-dd']]</td>
+			<td><a myangular-href="[[item['nid'] ]].html"><span myangular-bind="item['標題']"></span></a></td>
+		</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="20" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>

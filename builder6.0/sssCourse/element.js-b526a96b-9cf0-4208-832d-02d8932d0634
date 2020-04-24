@@ -1,0 +1,114 @@
+var app = angular.module('demoApp');
+app.directive('sssCourse', function ($compile, $templateRequest, $mdDialog, $uibModal) {
+    var sssCourse = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            scope.http = "http://d27btag9kamoke.cloudfront.net/";
+            scope.directiveId = "sssCourse";
+            scope.type = "sssCourse";
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+
+            scope.editorCustomInit(scope, element, attrs).then(function () {
+                scope.updateHtml();
+
+                var template = angular.element('<div bind-html-compile="model.html" context-menu="menuOptions"></div>');
+                element.html(template);
+                $compile(template)(scope);
+            });
+        },
+        controller: function ($scope, $element, $attrs) {
+            $scope.loadCourse = function() {
+                return new Promise(function (resolve, reject) {
+                    $scope.getJson($scope.userBucket, $scope.websiteKey + "content/course-data.json").then(function (json) {
+                        
+                        $scope.assignment[item['Course Code']]=[];
+                        angular.forEach(json,function(item,index){
+                            $scope.loadAssignment(item['Course Code']).then(function(ass){
+                                $scope.assignment[item['Course Code']]=ass;
+                            });
+                        });
+
+
+                        $scope.$apply(function(){
+                            $scope.model.course = json;
+                        });
+                        
+
+                        $scope.updateHtml();
+
+                        console.log('Course',json);
+                        resolve(json);
+                    }, function () {
+                        $scope.saveJson($scope.userBucket, $scope.websiteKey + "content/course-data.json", []);
+                        resolve([]);
+                    });
+                });                
+            }
+            $scope.loadAssignment = function(id) {
+                return new Promise(function (resolve, reject) {
+                    $scope.getJson($scope.userBucket, $scope.websiteKey + "content/assignment-data.json").then(function (json) {
+
+                        var ass = [];
+                        angular.forEach(json, function(item,index){
+                            if (item['Course Code']==id)
+                                ass.push(item);
+                        });        
+                        resolve(ass);
+                    }, function () {
+                        $scope.saveJson($scope.userBucket, $scope.websiteKey + "content/assignment-data.json", []);
+                        resolve([]);
+                    });
+                });                
+            }            
+            $scope.menuOptions = [
+                ["課程管理", function () {
+                      $mdDialog.show({
+                                controller: "dataPopupController",
+                                templateUrl: 'models/dataPopup/popup.html' + '?id=' + new Date().getTime(),
+                                clickOutsideToClose: false,
+                                locals: {
+                                    rootScope: $scope,
+                                    table:"course"
+                                }
+                            }).then(function() {
+                                $scope.loadCourse();
+                            });
+                }],
+                ["功課管理", function () {
+                      $mdDialog.show({
+                                controller: "dataPopupController",
+                                templateUrl: 'models/dataPopup/popup.html' + '?id=' + new Date().getTime(),
+                                clickOutsideToClose: false,
+                                locals: {
+                                    rootScope: $scope,
+                                    table:"assignment"
+                                }
+                            }).then(function() {
+                                $scope.loadCourse();
+                            });
+                }],
+                 ["更換模版", function () {
+                 $mdDialog.show({
+                 controller: 'templatePopupController',
+                 templateUrl: 'models/templatePopup/popup.html' + "?id=" + new Date().getTime(),
+                 locals: {
+                 rootScope: $scope
+                 }
+                 }).then(function (template) {
+                 $scope.useTemplate();
+                 });
+                 }]
+            ];
+            $scope.beforeAtomSaved = function () {
+
+            }
+            $scope.afterAtomSaved = function () {
+
+            }
+        }
+    };
+    return sssCourse;
+});

@@ -1,0 +1,11 @@
+        .ag-cell-value div {
+            display: inline;
+        }
+
+        .ag-cell-inline-editing div {
+            display: inline;
+        }
+
+        .md-tab {
+            text-transform: none
+        }

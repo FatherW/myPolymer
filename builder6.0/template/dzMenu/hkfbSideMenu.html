@@ -1,0 +1,22 @@
+<ul class="nice-menu nice-menu-right nice-menu-main-menu nice-menus-processed sf-js-enabled sf-arrows" id="nice-menu-1">
+
+            <li ng-class="item.csss" ng-repeat="item in model.menu"><a ng-href="{{item.link}}" title="" class="sf-with-ul">{{item.title}}</a>
+
+            <ul ng-if="item.list.length>0" style="display: none;"><li class="menu-581 menu-path-view first odd last menu-views">
+                <div class="view view-sec-menu view-id-sec_menu view-display-id-block_1 view-dom-id-c62860cafa24693b470b71c8e39c766c">
+                <div class="view-content">
+                    <div ng-repeat="subitem in item.list" class="views-row views-row-1 views-row-odd views-row-first">
+
+                        <div>        <span><a class="" ng-href="{{subitem.link}}" name="sub1_{{subitem.title}}">{{subitem.title}}</a></span>  </div>  </div>
+
+                </div>
+
+
+
+
+
+
+            </div></li>
+            </ul></li>
+           
+        </ul>

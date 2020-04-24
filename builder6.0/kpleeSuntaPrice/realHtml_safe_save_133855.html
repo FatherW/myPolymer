@@ -1,0 +1,143 @@
+<div class="filter_search1">
+                
+                <div class="dateInput">
+                    <span>日期：</span>
+                    <p class="input-group">
+                        <input type="text" uib-datepicker-popup="{{format}}" class="form-control" ng-model="minD" is-open="popupMin.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close">
+                        <span class="input-group-btn dateicon">
+                        <button type="button" class="btn btn-default" ng-click="openMin()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    </p>
+                </div>
+                <div class="icon-search" ng-click="goSearch()"></div>
+                
+                <div class="updateDate"><span ng-click="printPrice()">Print</span>&#x66F4;&#x65B0;&#x65E5;&#x671F;&#xFF1A;{{updateDate*1000 | date:&apos;yyyy-MM-dd(h:mm a)&apos;}}</div>
+            </div>
+            <div class="clear"></div>
+
+        <div id="tab_area" class="homepage_tab price_tab">
+          <ul>
+            <li><a href="#tab-1">&#x6AC3;&#x8CA8;&#x50F9;&#x683C;</a></li>
+            <li><a href="#tab-2">&#x6563;&#x8CA8;&#x50F9;&#x683C;</a></li>
+            <li><a href="#tab-3">&#x4EBA;&#x6C11;&#x5E63;&#x50F9;&#x683C;</a></li>
+            <li><a href="#tab-4">&#x5DE5;&#x7A0B;&#x5851;&#x6599;&#x50F9;&#x683C;</a></li>
+          </ul>
+
+          <div id="tab-1">
+            <table class="priceTable" st-table="displayedCollection1" st-safe-src="rowdate[0]">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Remarks</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">Qty (Ctnr)</th>
+                    <th class="column hidden-xs">ETA HK</th>
+                    <th>HKD/LB</th>
+                    <th>USD/MT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in displayedCollection1">
+                    <td class="column hidden-xs"><div ng-bind-html="row.category | trust"></div></td>
+                    <td>{{row.producer}}</td>
+                    <td>{{row.model_no}}</td>
+                    <td class="column hidden-md hidden-xs"><div ng-bind-html="row.remarks | trust"></div></td>
+                    <td class="column hidden-md hidden-xs">{{row.origin}}</td>
+                    <td class="column hidden-xs">{{row.qty}}</td>
+                    <td class="column hidden-xs">{{row.eta_hk}}</td>
+                    <td>{{row.hkd_lb}}</td>
+                    <td>{{row.usd_mt}}</td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+
+          <div id="tab-2">
+            <table class="priceTable" st-table="displayedCollection2" st-safe-src="rowdate[1]">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">Warehouse</th>
+                    <th>HKD/LB</th>
+                    <th>HKD/KG</th>
+                    <th class="column hidden-md hidden-xs">Remarks</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in displayedCollection2">
+                    <td class="column hidden-xs"><div ng-bind-html="row.category | trust"></div></td>
+                    <td>{{row.producer}}</td>
+                    <td>{{row.model_no}}</td>
+                    <td class="column hidden-md hidden-xs">{{row.origin}}</td>
+                    <td class="column hidden-xs">{{row.warehouse}}</td>
+                    <td>{{row.hkd_lb}}</td>
+                    <td>{{row.hkd_kg}}</td>
+                    <td class="column hidden-md hidden-xs"><div ng-bind-html="row.remarks | trust"></div></td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+          
+          <div id="tab-3">
+            <table class="priceTable" st-table="displayedCollection3" st-safe-src="rowdate[2]">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Remarks</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">ETA HK</th>
+                    <th>Tariff</th>
+                    <th>VAT RMB/MT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in displayedCollection3">
+                    <td class="column hidden-xs"><div ng-bind-html="row.category | trust"></div></td>
+                    <td>{{row.producer}}</td>
+                    <td>{{row.model_no}}</td>
+                    <td class="column hidden-md hidden-xs"><div ng-bind-html="row.remarks | trust"></div></td>
+                    <td class="column hidden-md hidden-xs">{{row.origin}}</td>
+                    <td class="column hidden-xs">{{row.eta_hk}}</td>
+                    <td>{{row.tariff}}</td>
+                    <td>{{row.vat_rmb}}</td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+          
+          <div id="tab-4">
+            <table class="priceTable" st-table="displayedCollection4" st-safe-src="rowdate[3]">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">Warehouse</th>
+                    <th>HKD/LB</th>
+                    <th>HKD/KG</th>
+                    <th class="column hidden-md hidden-xs">Remarks</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in displayedCollection4">
+                    <td class="column hidden-xs"><div ng-bind-html="row.category | trust"></div></td>
+                    <td>{{row.producer}}</td>
+                    <td>{{row.model_no}}</td>
+                    <td class="column hidden-md hidden-xs">{{row.origin}}</td>
+                    <td class="column hidden-xs">{{row.warehouse}}</td>
+                    <td>{{row.hkd_lb}}</td>
+                    <td>{{row.hkd_kg}}</td>
+                    <td class="column hidden-md hidden-xs"><div ng-bind-html="row.remarks | trust"></div></td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+        </div>

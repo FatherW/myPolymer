@@ -1,0 +1,30 @@
+
+       <h1 class="md-display-2">我的個人良藥 Personal Medicine</h1>
+                <table class="table table-h" id="_table_table-h">
+                    <thead>
+                        <tr>
+                            <th width="50%" colspan=2>「個人良藥」</th>
+                            <th width="20%">積極效用<br>（它幫助我達到......)</th>
+                            <th width="20%">首3項我會對醫生說的事情</th>
+                            <th width="10%">新增/刪除</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody>
+                        <tr>
+                            <th width="25%">例子：一些我做了會感覺良好的事</th>
+                            <th width="25%">在公園散步</th>
+                            <th width="20%">讓我放鬆自己及改善我的情緒</th>
+                            <th width="20%"></th>
+                            <th width="10%"></th>
+                        </tr>
+                        <tr ng-repeat="(key,value) in data">
+                            <td width="25%">{{key}}</td>
+                            <td width="25%">  <md-chips ng-model="value['方法']" readonly="false" md-removable="true"></md-chips></td>
+                            <td width="20%">  <md-chips ng-model="value['效用']" readonly="false" md-removable="true"></md-chips></td>
+                            <td width="20%">  <md-chips ng-model="value['我會對醫生說的事情']" readonly="false" md-removable="true"></md-chips></td>
+                            <td width="10%"><md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="save(key)">更新</md-button> </td>
+                        </tr>
+
+                    
+                </tbody></table>   

@@ -1,0 +1,35 @@
+標題搜尋：<input type="text" value="" ng-model="search['標題']">
+
+<table class="table">
+<thead>
+<tr>
+  <th>日期/時段</th>
+  <th>講題</th>
+  <th>經文</th>
+  <th>講員</th>
+  <th>聲帶</th>     
+  <th>簡報</th>
+  <th>視像</th>
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="item in model.data | orderBy:'-nid' | filter: search">
+  <td>{{item['日期']}}<br>({{item['時段']}})</td>
+  <td>{{item['標題']}}</td>
+  <td>{{item['經文']}}</td>
+  <td>{{item['講員']}}</td>
+  <td> 
+    <audio controls>
+      <source src="{{item['錄音路徑']}}" type="audio/mpeg">
+  </audio>    
+  </td>
+  <th>
+    <a ng-if="item['簡報']!=''" ng-href="{{item['簡報']}}"> <img src="http://heart2heart.org.hk/new2/sites/all/themes/recycle/images/btn_download.png"></a>
+  </th>
+  <th>
+ <a ng-if="item['視像']!=''" class="youtube" ng-href="{{item['視像']}}"> <img src="https://is4-ssl.mzstatic.com/image/thumb/Purple117/v4/cc/d8/0c/ccd80ca1-a0fb-3328-afbf-f36edf41c793/source/1200x630bb.jpg"></a>  </th>-
+  
+</tr>
+</tbody>
+</table>
+

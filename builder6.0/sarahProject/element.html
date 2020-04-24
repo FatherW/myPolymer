@@ -1,0 +1,172 @@
+<style>
+.project {
+    display: block;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+#contextMenu {
+    min-height:300px;
+}
+.sarah-grid {
+    position: relative;
+    list-style: none;
+    background: #ffffff;
+    box-sizing: border-box;
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+    overflow: hidden;
+    border-radius: 3.5px;
+    padding: 15px;
+    border: none;
+    width:32%;
+    float:left;
+}
+    .sarah-grid-img {
+        width: 100%;
+        vertical-align: middle;
+        -webkit-transition: opacity 0.6s ease-out;
+        transition: opacity 0.6s ease-out;
+        background-color: #fff;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .sarah-grid-img:hover {
+        opacity: 0.6 !important;
+    }
+
+    .sarah-grid-img:hover,
+    .sarah-grid-img:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .sarah-grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .dynamic-grid {
+        position: relative;
+        display: block;
+    }
+
+    .dynamic-grid.angular-grid {
+        display: block;
+    }
+
+
+    .sarah-grid.ng-leave {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+    }
+
+    .sarah-grid.ng-leave.ng-leave-active {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .sarah-grid.ng-enter {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+        -webkit-transition-delay: 500ms;
+        transition-delay: 500ms;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .sarah-grid.ng-enter.ng-enter-active {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .sarah-grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+    .search-panel{
+        width:100%;
+        height:15%;
+        display:block;
+    }
+    .dazzle-gallery {
+        width:100%;
+        height:85%;
+        display:block;
+    }
+    
+    md-sidenav, 
+    md-sidenav.md-locked-open, 
+    md-sidenav.md-closed.md-locked-open-add-active {
+        min-width:100% !important;
+      width:100% !important;
+      max-width:100% !important;
+    } 
+    md-radio-button {
+        float:left;
+        padding-right:5px;
+    }
+    .delete {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .delete:hover {
+        color:orange;
+    }
+    .sarah-grid:hover .nk-portfolio-item-info {
+        opacity:1;
+    }
+    
+    .nk-portfolio-item-info {
+        position: absolute;
+        //display: -ms-flexbox;
+        display: block;
+        color: #fff;
+        background-color: rgba(255,255,255,.85);
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0;
+        padding: 50px;
+        transition: .5s opacity,.5s background-color;
+    }
+    .portfolio-item-category.ng-binding {
+    color: #0a0a0a;
+}
+    </style>
+        <div id="dzContextMenu">
+                <ul class="dynamic-grid" ng-if="inited"
+                    angular-grid="userGallery"
+                    ag-options="userGalleryAngularGridOptions"
+                    ag-infinite-scroll="loadMore()" style="height:232px">
+                    
+    <!--                <li data-ng-repeat="image in userGallery" class="sarah-grid ng-scope img-loaded angular-grid-item" style="position: absolute; top: 0px; left: 371px; width: 368px;">
+                        <img ng-src="{{image.src}}" class="sarah-grid-img img-loaded" >        
+                        <div class="nk-portfolio-item-info nk-portfolio-item-info-center text-xs-center">
+                            <div>
+                                <h2 class="portfolio-item-title h3 ng-binding">{{image.title}}/h2>
+                                <div class="portfolio-item-category ng-binding">{{image.subtitle}}</div>
+                            </div>
+                        </div>
+                    </li>
+        -->            
+                    <li data-ng-repeat="image in userGallery" class="sarah-grid">
+                        <img ng-src="{{image.src}}" class="sarah-grid-img"/>        
+                        <div class="nk-portfolio-item-info nk-portfolio-item-info-center text-xs-center">
+                            <div>
+                                <h2 class="portfolio-item-title h3">{{image.title}}</h2>
+                                <div class="portfolio-item-category">{{image.subtitle}}</div>
+                            </div>
+                        </div>
+                    </li> 
+
+                </ul>
+        </div>
+

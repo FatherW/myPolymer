@@ -1,0 +1,98 @@
+
+
+    <style>
+        .ag-cell-value div {
+            display: inline;
+        }
+
+        .ag-cell-inline-editing div {
+            display: inline;
+        }
+
+        .md-tab {
+            text-transform: none
+        }
+        .ag-body{
+            background: none !important;
+        }
+        .ag-bl-normal {
+            height: 100%;
+            position: absolute !important;
+            width:100%;
+        }
+    </style>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <!--<h2>內容管理:{{tableLabel}}</h2>-->
+            
+          <md-select ng-model="table">
+            <md-option ng-repeat="item in tableList" ng-value="item.id">
+              {{item.label}}
+            </md-option>
+          </md-select>
+            <!--<md-menu ng-show="tableList.length>0">-->
+            <!--    <i layout-padding class="fa fa-database" ng-click="$mdMenu.open()">-->
+            <!--        <md-tooltip md-direction="bottom">內容管理</md-tooltip>-->
+            <!--    </i>-->
+            <!--    <md-menu-content width="3">-->
+            <!--        <md-menu-item ng-repeat="table in tableList track by $index">-->
+            <!--            <md-button ng-click="dbManage(table.id)">-->
+            <!--                {{table.label}}-->
+            <!--            </md-button>-->
+            <!--        </md-menu-item>-->
+            <!--    </md-menu-content>-->
+            <!--</md-menu>-->
+
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="select()">
+                <md-tooltip>選擇</md-tooltip>
+                <i class="fa fa-check"></i>
+            </md-button>
+
+            <md-button class="md-primary md-raised" ng-click="save()">
+                <md-tooltip>儲存</md-tooltip>
+                <i class="fa fa-floppy-o"></i>
+            </md-button>
+            
+            <md-button class="md-primary md-raised" ng-click="editSchema()">
+                <md-tooltip>編輯資料格式</md-tooltip>
+                <i class="fa fa-edit"></i>
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="cancel()">
+                <md-tooltip>關閉</md-tooltip>
+                <i class="fa fa-window-close"></i>
+            </md-button>
+            <span flex="2"></span>
+        </div>
+    </md-toolbar>
+    <div ng-init="init()" style="height: 800px;">
+        <div style="height: 100%;" ng-show="!inited" layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <div style="max-height: 20%;" layout="row" layout-xs="column" ng-show="inited">
+            <div flex>
+                <md-button ng-click="add()">
+                    新增數據
+                </md-button>
+                <md-button ng-click="remove()">
+                    刪除數據
+                </md-button>
+                <md-button ng-click="import()">
+                    匯入Excel
+                    <input type="file" id="uploadXls" style="display:none;" custom-on-change="uploadXls">
+                </md-button>
+                <md-button ng-click="export()">
+                    匯出Excel
+                </md-button>
+                 <md-button ng-click="loadJsonData()">
+                    匯入數據
+                </md-button>
+                <md-button ng-click="refresh()">
+                    重新載入資料
+                </md-button>
+            </div>
+            <div flex id="customButtons" layout="row"></div>
+        </div>
+                    <!--<div style="height: 800px;" ng-show="inited" id="myGrid" class="ag-material"></div>-->
+            <div style="height: 800px;" ng-show="inited" id="myGrid" ag-grid="gridOptions" class="ag-material"></div>
+    </div>

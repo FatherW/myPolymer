@@ -1,0 +1,27 @@
+<div class="row12" layout="row" layout-wrap layout-gt-sm="row" layout-padding ng-init="loadData()">
+    <a ng-href="{{item['名稱']}}.html" ng-repeat="item in model.data"  class="col12-3" flex='50' flex-xs="100">
+        <div >
+          <div class="panel12">
+            <div class="head-photo">
+                <img ng-src="{{item['首圖']}}" width="100%" />
+            </div>
+            <div class="detail">
+                <h6>{{item['名稱']}}</h6>
+                <div class="detail-text">
+                    
+                    <br>
+                    HK ${{item['Price'].toString()}}&nbsp;&nbsp;{{item['上課時間']}}
+                </div>
+                
+                <div class="more">
+                   詳細資料
+                </div>
+            </div>
+            
+            
+            </div>
+        </div>        
+    </a>
+
+
+</div>

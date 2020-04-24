@@ -1,0 +1,114 @@
+var app = angular.module('demoApp');
+app.directive('custom', function ($compile) {
+    var custom = {
+        restrict: 'A',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            element.addClass('dazzle-custom');
+            // setTimeout(function () {
+            //     if (!angular.isUndefined(scope.model) && !angular.isUndefined(scope.model.masterId)) {
+            //         $(element).append('<i id="masterIcon" class="fa fa-maxcdn"></i>');
+            //     }
+            // }, 3000);
+            var startX,startY,start,stop,drag,container,x=0,y=0;
+            scope.screen = true;
+             element.bind("mouseenter", function(event) {
+                    var id = element.attr('id');
+                    var screen = '';
+                    if (element.attr('custom')!="editorTextElement"){
+                      screen = '<div class="dazzle-screen" context-menu="menuOptions"></div>';
+                       // screen = '';
+                    }
+                    var content = `
+                    <md-toolbar class="md-accent dazzle">
+                        <div class="md-toolbar-tools-dazzle">
+                            <i class="fa fa-x fa-arrows" aria-hidden="true"></i>
+                            <i class="fa fa-x fa-cog" aria-hidden="true"></i>
+                            <i class="fa fa-x fa-bank" aria-hidden="true"></i>
+                            <i class="fa fa-x fa-database" aria-hidden="true"></i>                            
+                            <i class="fa fa-x fa-info" aria-hidden="true"></i>                            
+                            <i class="fa fa-close right" ng-click="remove()"></i>
+                        </div>
+                      </md-toolbar>
+                    `;
+                    str = screen+content;
+                    var newElement = $compile(str)(scope);
+                    console.log(id+':mouse enter');
+                    console.log(scope.screen);
+                    element.prepend(newElement);    
+
+
+              });
+
+
+             element.bind("mouseleave", function(event) {
+                    var id = element.attr('id');
+                    //if (element.attr('custom')!="editorTextElement"){
+                      element.find('md-toolbar').remove();
+                      element.find('.dazzle-screen').remove();
+                    //}    
+                    console.log(id+':mouse leave');    
+              });
+
+             element.on("mousedown",function(e){
+//                e.preventDefault();
+                element.find('.dazzle-screen').remove();
+                element.find('md-toolbar').remove();
+                startX = e.clientX - element[0].offsetLeft;
+                startY = e.clientY - element[0].offsetTop;
+//                if (start) start(e);
+//                element.on('mousemove', mousemove);
+//                element.on('mouseup', mouseup);
+                scope.screen = false;
+                console.log('mousedown');
+                console.log(scope.screen);
+
+             });
+
+//               function mousemove(e) {
+//                 y = e.clientY - startY;
+//                 x = e.clientX - startX;
+// //                setPosition();
+//                 console.log('Top: '+y+'Left: '+x);
+
+//                 //if (drag) drag(e);
+//               }
+
+//             function mouseup(e) {
+//                 element.unbind('mousemove', mousemove);
+//                 element.unbind('mouseup', mouseup);
+// //                if (stop) stop(e);
+//               }
+
+              // Move element, within container if provided
+            //   function setPosition() {
+            //     if (container) {
+            //       if (x < container.left) {
+            //         x = container.left;
+            //       } else if (x > container.right - width) {
+            //         x = container.right - width;
+            //       }
+            //       if (y < container.top) {
+            //         y = container.top;
+            //       } else if (y > container.bottom - height) {
+            //         y = container.bottom - height;
+            //       }
+            //     }
+
+            //     console.log('Top: '+y+'Left: '+x);
+            // }
+
+
+      },
+      
+      
+      controller: function ($scope, $http, $element, $attrs) {
+        $scope.remove= function(){
+            console.log('Remove');
+            $element.remove();
+        }
+      }
+    };
+    return custom;
+});

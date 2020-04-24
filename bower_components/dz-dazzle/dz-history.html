@@ -1,81 +1,115 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../vaadin-accordion/vaadin-accordion.html">
-<link rel="import" href="../vaadin-text-field/vaadin-text-field.html">
-<link rel="import" href="../vaadin-button/vaadin-button.html">
-<link rel="import" href="../vaadin-date-picker/vaadin-date-picker.html" >
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../iron-pages/iron-pages.html">
+<link rel="import" href="dz-vaadin.html">
+<link rel="import" href="dz-sms.html">
+<link rel="import" href="dz-email.html">
+<link rel="import" href="dz-increment.html">
+<link rel="import" href="../dz-file-management/css/style.html">
+<link rel="import" href="../dz-file-management/dz-file-management.html">
+<script src="../webcomponentsjs/webcomponents-lite.js"></script>
 
-<link rel="import" href="../vaadin-text-field/vaadin-email-field.html">
 <dom-module id="dz-history">
-
-<template>
-
-
-    <style>
-        /* .flex-container {
+    <template>
+        <style>
+            .flex-padding {
                 display: flex;
-                flex-wrap: nowrap;
-
+                padding-left: 30px;
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
             }
 
-            .flex-container>div {
+            .col-3 {
+                flex: 0 0 auto;
+                width: 25%;
+            }
+        </style>
+        <container>
+            <div>
+                <style include="main-styles"></style>
+                <style include="labs-styles"></style>
+                <style include="masonry-styles"></style>
+                <h1 class="mat-dialog-title" mat-dialog-title="" id="mat-dialog-title-1">
+                    <mat-toolbar class="mat-toolbar mat-primary mat-toolbar-multiple-rows" color="primary">
+                        <mat-toolbar-row class="mat-toolbar-row">
+                            <span>用戶管理</span>
+                        </mat-toolbar-row>
+                    </mat-toolbar>
+                </h1>
+            </div>
+        </container>
+        <content>
+            <vaadin-tabs selected="{{page}}">
+                <vaadin-tab>用戶信息</vaadin-tab>
+                <vaadin-tab>域名绑定</vaadin-tab>
+                <vaadin-tab>Payment</vaadin-tab>
+            </vaadin-tabs>
+            <iron-pages selected="[[page]]">
+                <page class="flex-padding">
+                    <vaadin-vertical-layout>
+                        <!-- 第一行 -->
+                        <vaadin-horizontal-layout theme="spacing-s">
+                            <vaadin-text-field label="用戶ID" theme="small" value="Example" readonly></vaadin-text-field>
+                            <vaadin-text-field label="公司名稱" theme="small" value="Example"></vaadin-text-field>
+                            <vaadin-button id="br" style="top: 31px" theme="small">上載公司BR</vaadin-button>
+                            <vaadin-password-field label="密碼" value="secret1" theme="small" reveal-button-hidden>
+                            </vaadin-password-field>
+                            <br>
+                        </vaadin-horizontal-layout>
+                        <!-- 第一行 -->
 
-                width: 100px;
-                margin: 10px;
-                text-align: center;
-                line-height: 75px;
-                font-size: 30px;
-            } */
-    </style>
-    helloWorld
-    <vaadin-accordion>
-        <vaadin-accordion-panel>
-            <div slot="summary">Account Information</div>
-            <vaadin-vertical-layout>
+                        <!-- 第二行 -->
+                        <vaadin-horizontal-layout theme="spacing-s">
+                            <vaadin-text-field label="電話" theme="small"></vaadin-text-field>
+                            <vaadin-button id="popSms" style="top: 31px" theme="small">發送短訊驗證碼</vaadin-button>
+                            <vaadin-email-field label="電郵" name="email" error-message="請輸入正確的郵箱地址" theme="small"
+                                clear-button-visible></vaadin-email-field>
+                            <vaadin-button id="email" style="top: 31px" theme="small">發送郵箱驗證碼</vaadin-button>
+                        </vaadin-horizontal-layout>
+                        <!-- 第二行 -->
 
-                <vaadin-text-field label="用戶ID" theme="small">用戶ID</vaadin-text-field>
-                <vaadin-text-field label="密碼" theme="small">密碼</vaadin-text-field>
+                        <!-- 第三行 -->
+                        <vaadin-horizontal-layout theme="spacing-s">
+                            <vaadin-text-field label="Credit" theme="small" value="HK$Value" readonly>
+                            </vaadin-text-field>
+                            <vaadin-button id="increment" theme="small" style="top: 31px">增值</vaadin-button>
+                            <vaadin-vertical-layout theme="spacing-s">
+                            </vaadin-vertical-layout>
+                        </vaadin-horizontal-layout>
+                        <!-- 第三行 -->
+                        <vaadin-text-field label="類型" theme="small">类型</vaadin-text-field>
+                        <br>
+                        <vaadin-horizontal-layout theme="spacing-s">
+                            <vaadin-date-picker readonly label="註冊日期" value="1990-01-28"></vaadin-date-picker>
+                            <vaadin-date-picker readonly label="到期日期" value="1990-01-28"></vaadin-date-picker>
+                        </vaadin-horizontal-layout>
+                        <br>
+                        <vaadin-text-field label="每月扣除" theme="small">每月扣除</vaadin-text-field>
+                        </vaadin-horizontal-layout>
+                    </vaadin-vertical-layout>
+                </page>
+                <page class="flex-padding">
+                    <vaadin-vertical-layout>
+                        <vaadin-text-field label="域名註冊" theme="small"></vaadin-text-field>
+                        <vaadin-text-field label="域名轉入" theme="small"></vaadin-text-field>
+                        <vaadin-text-field label="購買二手域名" theme="small"></vaadin-text-field>
+                        <vaadin-text-field label="域名續費" theme="small"></vaadin-text-field>
+                    </vaadin-vertical-layout>
+                </page>
+                <page class="flex-padding">
 
-                <vaadin-text-field label="公司名稱" theme="small">公司名稱</vaadin-text-field>
-                <br>
-                <vaadin-text-field label="電話" theme="small">电话</vaadin-text-field>
-                <vaadin-button>驗證</vaadin-button>
-                <br>
-                <vaadin-email-field label="電郵" name="email" error-message="請輸入正確的郵箱地址" clear-button-visible></vaadin-email-field>
-                
-                <vaadin-button>驗證</vaadin-button>
-                <br>
-                <vaadin-text-field label="credit" theme="small">付款方式</vaadin-text-field>
-                <br>
-                <vaadin-text-field label="BR上載" theme="small"></vaadin-text-field>
-                <vaadin-button>上載</vaadin-button>
-                <br>
-                <vaadin-text-field label="類型" theme="small">类型</vaadin-text-field>
-                <br>
-                <vaadin-date-picker readonly label="註冊日期" value="1990-01-28"></vaadin-date-picker>
-                <vaadin-date-picker readonly label="到期日期" value="1990-01-28"></vaadin-date-picker>
-
-                <br>
-                <vaadin-text-field label="每月扣除" theme="small">每月扣除</vaadin-text-field>
-
-            </vaadin-vertical-layout>
-        </vaadin-accordion-panel>
-        <vaadin-accordion-panel>
-            <div slot="summary">域名绑定</div>
-            <vaadin-vertical-layout>
-                <vaadin-text-field label="域名註冊" theme="small"></vaadin-text-field>
-                <vaadin-text-field label="域名轉入" theme="small"></vaadin-text-field>
-                <vaadin-text-field label="購買二手域名" theme="small"></vaadin-text-field>
-                <vaadin-text-field label="域名續費" theme="small"></vaadin-text-field>
-            </vaadin-vertical-layout>
-        </vaadin-accordion-panel>
-        <vaadin-accordion-panel disabled>
-            <div slot="summary">Payment</div>
-            <span>Not yet implemented</span>
-        </vaadin-accordion-panel>
-    </vaadin-accordion>
+                    <vaadin-dialog aria-label="simple" id="dialog"></vaadin-dialog>
 
 
-</template>
+                </page>
+            </iron-pages>
+        </content>
+
+
+
+
+    </template>
 
 </dom-module>
 
@@ -92,6 +126,67 @@
             },
 
             created: function () {
+                // 用来点按钮出dialog的
+                let that = this;
+                customElements.whenDefined('vaadin-dialog').then(function () {
+                    const shadow = that.shadowRoot;
+                    const dialog = shadow.querySelector('vaadin-dialog#dialog');
+                    document.addEventListener('dz-popup', e => {
+                        let detail = e.detail;
+                        let comId = detail.component;
+                        let width = detail.width;
+                        let height = detail.height;
+                        console.log('Target', e);
+                        dialog.renderer = function (root, dialog) {
+                            root.innerHTML = '<' + comId + '></' + comId + '>';
+                        };
+                        dialog.resizable = true;
+                        dialog.resize(width, height);
+                        dialog.opened = true;
+                    });
+
+                });
+
+
+
+
+
+            },
+
+            ready() {
+                let shadow = this.shadowRoot;
+
+                // 上載BR的button
+                let button1 = shadow.querySelector('#br');
+                let json1 = { 'component': 'dz-file-management', 'width': '90%', 'height': '90%' };
+                button1.addEventListener('click', e => {
+                    document.dispatchEvent(new CustomEvent('dz-popup', { 'detail': json1 }));
+                });
+
+                // 發短信button
+                let button2 = shadow.querySelector('#popSms');
+                let json2 = { 'component': 'dz-sms', 'width': '45%', 'height': '25%' };
+                button2.addEventListener('click', e => {
+                    Polymer.apiLibrary.sendSMS('91764463','Hello, 王國全');
+                    document.dispatchEvent(new CustomEvent('dz-popup', { 'detail': json2 }));
+                });
+
+                // 發email的button
+                let button3 = shadow.querySelector('#email');
+                let json3 = { 'component': 'dz-email', 'width': '45%', 'height': '25%' };
+                button3.addEventListener('click', e => {
+                    Polymer.apiLibrary.sendEmail('673051389@qq.com','666','66666')
+                    document.dispatchEvent(new CustomEvent('dz-popup', { 'detail': json3 }));
+                });
+
+                // 充錢的button
+                let button4 = shadow.querySelector('#increment');
+                let json4 = { 'component': 'dz-increment', 'width': '45%', 'height': '25%' };
+                button4.addEventListener('click', e => {
+                    document.dispatchEvent(new CustomEvent('dz-popup', { 'detail': json4 }));
+                });
+
+
             },
             _login: function () {
 
@@ -100,6 +195,7 @@
         });
 
     })();
+
 
 
 </script>

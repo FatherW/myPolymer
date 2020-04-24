@@ -1,0 +1,170 @@
+    <form ng-cloak>
+        <!-- <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>連結管理員</h2>
+            </div>
+        </md-toolbar>  -->
+        
+        <md-toolbar class="_md _md-toolbar-transitions">
+        <div class="md-toolbar-tools">
+            <h2>連結管理員</h2>
+            <span flex="" class="flex"></span>
+             <span flex></span>
+            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="addPage()" aria-label="新增">
+                <i class="fa fa-plus ng-scope"></i>
+            </md-button>
+
+            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="removePage()" aria-label="刪除">
+                <i class="fa fa-minus ng-scope"></i>
+            </md-button>
+            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="save()" aria-label="儲存">
+                <i class="fa fa-floppy-o ng-scope"></i>
+            </md-button>
+            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="cancel()" aria-label="取消">
+                <i class="fa fa-times ng-scope"></i>
+            </md-button>
+            
+            <md-button ng-click="openUploadFileBottom()">
+                上傳檔案
+            </md-button>
+
+
+        </div>
+    </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" style="min-height: 400px;" ng-init="init()">
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="自定連結">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container md-no-float flex="50">
+                                    <input type="text" ng-model="setLink"
+                                           placeholder="http://dazzle.website/index.html#id">
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="內部連結">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container flex="50">
+                                    <dz-my-page></dz-my-page>
+
+                                   <md-button ng-click="cancelLink()">
+                                           取消連結
+                                   </md-button>
+                                  
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="本頁元素">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container flex="50">
+                                    <md-select ng-model="setLink" aria-label="selectAnchor">
+                                        <md-option ng-value="'#'+anchor"
+                                                   ng-click="setLink = '#'+anchor"
+                                                   ng-repeat="anchor in thisPageJson.anchor track by $index">
+                                            {{$parent.anchor}}
+                                        </md-option>
+                                    </md-select>
+                                </md-input-container>
+                                <md-button ng-if="element" ng-click="openRight()">新增Anchor</md-button>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="外部連結" md-on-select="needAddHttp = true" md-on-deselect="needAddHttp = false">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container md-no-float flex="50">
+                                    <div layout="row" layout-xs="column">
+                                        <div flex="10">
+                                            http://
+                                        </div>
+                                        <div flex="90">
+                                            <input type="text" ng-model="setLink" placeholder="dazzle.website">
+                                        </div>
+                                    </div>
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </md-tab>
+
+                    <md-tab label="檔案連結" md-on-select="initFiles()"
+                            md-on-deselect="showUploadFileBottom = false">
+                        <table id="listFilesTable" st-table="displayedCollection" st-safe-src="filesCollection"
+                               class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th st-sort="Key">檔案名稱</th>
+                                <th class="centerText" st-sort="Size">檔案大小</th>
+                                <th class="centerText" st-sort="LastModified">上載時間</th>
+                                <th></th>
+                            </tr>
+                            <!--<tr>
+                                <th>
+                                    <input st-search="Key" placeholder="搜索檔案名稱" class="input-sm form-control"
+                                           type="search"/>
+                                </th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>-->
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="row in filesCollection" class="fileRow">
+                                <td ng-click="chooseFile(row.Key)" class="h" >{{row.Key | to_FileName}}</td>
+                                <td class="centerText h">{{row.Size | to_fileSize}}</td>
+                                <td class="centerText h">{{row.LastModified | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                                <td  class="centerText">
+                                    <i style="margin-right: 10px;" ng-click="downloadFile(row.Key)"
+                                       class="fa fa-download fa-2 cursorP" aria-hidden="true"></i>
+                                </td>
+                            </tr>
+                            </tbody>
+                            <tfoot>
+                            <tr>
+                                <td class="text-center" st-pagination="" st-items-by-page="10" colspan="4">
+                                </td>
+                            </tr>
+                            </tfoot>
+                        </table>
+                    </md-tab>
+                </md-tabs>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancelLink()">
+                取消鏈結
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="cancel()">
+                取消
+            </md-button>
+            <md-button ng-click="openUploadFileBottom()" ng-show="showUploadFileBottom">
+                上傳檔案
+            </md-button>
+            <md-button ng-click="save()" ng-hide="showUploadFileBottom">
+                儲存
+            </md-button>
+        </md-dialog-actions>
+<!--
+        <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="rightAddAnchor">
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">新Anchor</h1>
+            </md-toolbar>
+            <md-content ng-controller="rightAddAnchorController" layout-padding>
+                <form>
+                    <md-input-container>
+                        <label>Anchor名稱</label>
+                        <input type="text" ng-model="name" md-autofocus>
+                    </md-input-container>
+                </form>
+                <span flex></span>
+                <md-button ng-click="add()" class="md-primary">新增</md-button>
+            </md-content>
+        </md-sidenav>
+-->
+    </form>

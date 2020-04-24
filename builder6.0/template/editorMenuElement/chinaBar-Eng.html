@@ -1,0 +1,12 @@
+<div id="menu_01">
+	<div ng-repeat="item in model.menu" class="text">
+		<a ng-href="{{item.title}}.html" >{{item.title}}</a>
+		<ul ng-if="item.list.length" class="b_radius5" style="display: none;">
+			<li ng-repeat="subitem in item.list"><a ng-href="{{item.title}}.html">{{subitem.title}}</a></li>
+			<ul >
+    			<li ng-repeat="subsubitem in subitem.list" class="sub"><a ng-href="{{subsubitem.title}}.html"> &nbsp;- {{subsubitem.title}}</a></li>			    
+			</ul> 
+
+		</ul>
+	</div>
+</div>

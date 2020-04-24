@@ -1,0 +1,156 @@
+<style>
+.dazzle-schema md-input-container {
+    margin: 5px 0;
+}
+.md-select-menu-container.md-active {
+    z-index:10000;
+}
+</style>    
+    
+    <form name="myForm" ng-cloak ng-init="init()">
+     <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>表單設定</h2>
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="addItem(-1)">
+                <md-tooltip>新增</md-tooltip>
+                <i class="fa fa-plus"></i>
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="save()">
+                <md-tooltip>儲存</md-tooltip>
+                <i class="fa fa-floppy-o"></i>
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="close()">
+                <md-tooltip>取消</md-tooltip>
+                <i class="fa fa-window-close"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+        <md-dialog-content>
+            
+                                                 
+
+            <div class="md-dialog-content" style="min-height: 400px;">
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="欄位設定">
+					
+					
+                        <md-content class="md-padding" >
+							<div ui-tree>
+								<div  ui-tree-nodes ng-model="list">
+                             
+                                
+                                <!-- <div layout="row">-->
+                                    
+                                    
+                                <!--    <md-input-container flex="33">-->
+                                        
+                                <!--          <label>表格ID </label>-->
+                                <!--          <input ng-model="model.tableid" disabled>-->
+                                <!--    </md-input-container>-->
+                                <!--    <md-input-container flex="33">-->
+                                        
+                                <!--          <label>資料表名稱 </label>-->
+                                <!--          <input name="label" ng-model="model.name" placeholder="請輸入名稱" required>-->
+                                          
+                                <!--           <div ng-messages="myForm.label.$error" ng-show="myForm.label.$dirty">-->
+                                <!--              <div ng-message="required">必須填寫!</div>-->
+                                <!--            </div>-->
+                                <!--    </md-input-container>-->
+                                <!--    <md-input-container flex="33">-->
+                                        
+                                <!--          <label>使用資料庫類型 </label>-->
+                                <!--           <md-select ng-model="model.tableType" id="direct-{{$index}}" md-z-index="10000">-->
+                                <!--              <md-option  value="s3">s3</md-option>-->
+                                <!--              <md-option value="dynamodb">Elastic Search</md-option>-->
+                                <!--            </md-select>-->
+                                <!--    </md-input-container>-->
+    
+                                <!--</div>-->
+    
+                                
+                                <div layout="row" ng-repeat="sm in schemas  track by $index" class="dazzle-schema" ui-tree-node>
+									<div class="pull-left tree-handle" ui-tree-handle>
+										<span class="glyphicon glyphicon-list"></span>
+									</div>
+                                    <md-input-container flex="10">
+                                      <label>是否ID </label>
+                                      <md-switch ng-model="sm.isKey" aria-label="是否ID" ng-true-value="true" ng-false-value="false" class="md-warn">
+                                         {{ sm.isKey }}
+                                      </md-switch>
+                                    </md-input-container>
+                                    <md-input-container flex="40">
+                                          <input name="title-{{$index}}" ng-model="sm.fieldName" placeholder="請輸入欄位名稱" required>
+                                           <div ng-messages="myForm['title-'+$index].$error" ng-show="myForm['title-'+$index].$dirty">
+                                              <div ng-message="required">必須填寫!</div>
+                                            </div>
+                                    </md-input-container>
+                                    <md-input-container flex="30">
+                                            <!--<md-button style="margin:0 20px;">選擇欄位類型</md-button>-->
+
+                                            <md-select ng-model="sm.directive" ng-change="choose(sm)">
+                                                <md-option><em>*請選擇</em></md-option>
+                                                <md-option ng-repeat="type in types" ng-value="type.id">
+                                                  {{type.label}}
+                                                </md-option>
+                                              </md-select>
+                                            <md-button style="margin:0 20px;" ng-click="choose(sm)">欄位設定</md-button>
+                                            
+                                    </md-input-container>
+                                    
+                                    <md-input-container flex="20">
+                                          <md-button class="md-icon-button" ng-click="addItem($index)" aria-label="Add Item">
+                                            <i class="fa fa-plus"></i>
+                                          </md-button>
+                                          <md-button class="md-icon-button" aria-label="Minus Item" ng-click="removeItem($index)">
+                                            <i class="fa fa-minus"></i>
+                                          </md-button>
+                                    </md-input-container>
+                                </div>                                
+                               
+								</div>
+							</div>
+                            <div layout="row">
+                                <md-input-container flex="100">
+                                        <span flex></span>
+                                        <md-button class="md-primary md-raised" ng-click="setOrder(0)">
+                                            上一步
+                                        </md-button>
+
+                                         <md-button class="md-primary md-raised" ng-click="finish()">
+                                            生成
+                                        </md-button>
+                                        
+                                        
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                        
+                        
+                        
+                    </md-tab>
+
+
+                </md-tabs>
+            </div>
+        </md-dialog-content>
+
+
+
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="right">
+
+          <md-toolbar class="md-theme-light">
+            <h1 class="md-toolbar-tools">項目設定</h1>
+          </md-toolbar>
+          <md-content layout-padding>
+
+            <div id="popupDialog"></div>
+            <md-button ng-click="closeSidebar()" class="md-primary">
+              關閉
+            </md-button>
+          </md-content>
+
+    </md-sidenav>
+
+    </form>

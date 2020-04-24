@@ -1,0 +1,34 @@
+<table class="views-table cols-7">
+    <thead>
+    <tr>
+        <th class="views-field views-field-field-notime">
+            日期
+        </th>
+        <th class="views-field views-field-title">
+            講題
+        </th>
+        <th class="views-field views-field-field-essay">
+            經文
+        </th>
+        <th class="views-field views-field-field-speaker2">
+            講員
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in model.data | orderBy:'publishDate':true | limitTo:2">
+        <td class="views-field views-field-field-notime">
+            <span class="date-display-single">{{item['publishDate']}}</span> ({{item['時段']}})
+        </td>
+        <td class="views-field views-field-title">
+            {{item['標題']}}
+        </td>
+        <td class="views-field views-field-field-essay">
+            {{item['經文']}}
+        </td>
+        <td class="views-field views-field-field-speaker2">
+            {{item['講員']}}
+        </td>
+    </tr>
+    </tbody>
+</table>

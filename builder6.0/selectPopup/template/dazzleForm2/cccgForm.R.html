@@ -1,0 +1,20 @@
+<form ng-submit="submit()" ng-controller="formCtrl" accept-charset="UTF-8" method="post" id="contact-mail-page" class="ng-pristine ng-valid">
+<div><div class="form-item" id="edit-name-wrapper">
+ <label for="edit-name">你的名字: <span class="form-required" title="此欄位不可空白。">*</span></label>
+ <input ng-model="json['名字']" type="text" maxlength="255" name="name" id="edit-name" size="60" value="" class="form-text required">
+</div>
+<div class="form-item" id="edit-mail-wrapper">
+ <label for="edit-mail">你的電子郵件位址: <span class="form-required" title="此欄位不可空白。">*</span></label>
+ <input ng-model="json['電郵']" type="text" maxlength="255" name="mail" id="edit-mail" size="60" value="" class="form-text required">
+</div>
+<div class="form-item" id="edit-subject-wrapper">
+ <label for="edit-subject">主旨: <span class="form-required" title="此欄位不可空白。">*</span></label>
+ <input ng-model="json['主旨']" type="text" maxlength="255" name="subject" id="edit-subject" size="60" value="" class="form-text required">
+</div>
+<div class="form-item" id="edit-message-wrapper">
+ <label for="edit-message">訊息: <span class="form-required" title="此欄位不可空白。">*</span></label>
+ <div class="resizable-textarea"><span><textarea ng-model="json['訊息']" cols="60" rows="5" name="message" id="edit-message" class="form-textarea resizable required textarea-processed"></textarea><div class="grippie" style="margin-right: -2px;"></div></span></div>
+</div>
+<input type="submit" name="op" id="edit-submit" value="傳送電子郵件" class="form-submit">
+
+</div></form>

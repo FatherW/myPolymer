@@ -1,0 +1,13 @@
+<div ng-repeat="item in model.data | orderBy: 'id' | limitTo: 5">
+<section class="av_textblock_section" itemscope="itemscope" itemtype="https://schema.org/CreativeWork"><div class="avia_textblock " itemprop="text"><p>{{item['Publish Date'] | date: "dd MM yyyy"}}</p>
+<p><strong>{{item['Title']}}</strong></p>
+<p style="text-align: justify;"><img class="alignnone size-full wp-image-1935" ng-src="{{item['Photo']}}" alt="" width="632"></p>
+<p align="justify" ng-bind-html="item['Summary'] | to_trusted">
+</p>
+</div></section>
+
+<div style=" margin-top:-10px; margin-bottom:30px; height:50px"></div>
+
+<!--<div style=" margin-top:-10px; margin-bottom:30px;" class="hr hr-custom hr-center hr-icon-yes  avia-builder-el-5  el_after_av_textblock  el_before_av_textblock "><span class="hr-inner   inner-border-av-border-thin" style=" width:100%;"><span class="hr-inner-style"></span></span><span class="av-seperator-icon" aria-hidden="true" data-av_icon="" data-av_iconfont="entypo-fontello"></span><span class="hr-inner   inner-border-av-border-thin" style=" width:100%;"><span class="hr-inner-style"></span></span></div>-->
+
+</div>

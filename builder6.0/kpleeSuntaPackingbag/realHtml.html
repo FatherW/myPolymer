@@ -1,0 +1,59 @@
+<table class="newTable packingTable" st-table="displayedCollection" st-safe-src="rowdate">
+        <thead>
+            <tr class="filterWrapper">
+                <th colspan="5">
+                    <div class="filter_search1">
+                        <div class="dateInput">
+                            <span>&#x5206;&#x985E;&#xFF1A;</span>
+                            <p class="input-group select-categroup">
+                                <!--<input type="text" ng-model="year">-->
+                                <select id="Select1" class="form-control" ng-model="packingCate" ng-change="changeCate()">
+                                    <option value="">All</option>
+                                    <option ng-repeat="packingcateItem in packingcateItems" ng-selected="packingcateItem.cate_id==packingCate" value="{{packingcateItem.cate_id}}">{{packingcateItem.name2}}</option>
+                                </select>
+                            </p>
+                            <span>Producer&#xFF1A;</span>
+                            <p class="input-group select-categroup">
+                                <!--<input type="text" ng-model="year">-->
+                                <select id="Select2" class="form-control" ng-model="producerCate" ng-change="changeCate()">
+                                    <option value="">All</option>
+                                    <option ng-repeat="producerCateItem in producerCateItems" ng-selected="producerCateItem.producer_id==producerCate" value="{{producerCateItem.producer_id}}">{{producerCateItem.name2}}</option>
+                                </select>
+                            </p>
+                            <input st-search="" type="text" class="inputBox form-control column hidden-xs" placeholder="&#x95DC;&#x9375;&#x5B57;" ng-model="keyWrod">
+                        </div>
+                        <!--<div class="icon-search" ng-click="goSearch()"></div>-->
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th class="column hidden-xs">Category</th>
+                <th class="column hidden-md hidden-xs">Origin</th>
+                <th>Producer</th>
+                <th>Model No.</th>
+                <th class="column hidden-md hidden-xs">Weight</th>
+                <th>Packing(Click to enlarge)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in displayedCollection">
+                <td class="column hidden-xs">{{row.Cname2}}</td>
+                <td class="column hidden-md hidden-xs">{{row.origin}}</td>
+                <td>{{row.Pname2}}</td>
+                <td>{{row.model_no}}</td>
+                <td class="column hidden-md hidden-xs">{{row.weight}}</td>
+                <td class="textCenter">
+                    <a id="example{{$index}}" ng-href="{{row.path2}}" fancyboxable="example{{$index}}">
+                    	<img class="small-img" alt="example{{$index}}" ng-src="{{row.path2}}">
+            		</a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>

@@ -1,0 +1,52 @@
+<br>
+<br>
+
+
+
+<dz-new-dataset id="q2"></dz-new-dataset>
+<md-tabs md-dynamic-height md-border-bottom>
+      <md-tab ng-repeat="(key,value) in ans" label="{{value['title']}}">
+        <md-content class="md-padding">
+       <h1 class="md-display-2">{{value['title']}}</h1>
+       <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="save(key)">更新</md-button> 
+       <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="delete(key)">刪除</md-button> 
+                <table class="table table-h" id="_table_table-h">
+                                        <tbody><tr>
+                                            <th width="60%"><h2>我的目標 Personal Recovery Goal</h2></th>
+                                            <th colspan="4">答案</th>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;">目標</td>
+                                            <td colspan="4">    <md-chips ng-model="value['目標']" readonly="false" md-removable="true"></md-chips></td>
+                                            
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: left;">以上目標對我的意義</td>
+                                            <td colspan="4">    <md-chips ng-model="value['意義']" readonly="false" md-removable="true"></md-chips></td>
+                                            
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td colspan="5">
+                                            <jitpo-q21 target="value['ID']"></jitpo-q21>
+                                            
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th width="60%">達成目標後，怎樣慶祝？</th>
+                                            <td colspan="4"><md-chips ng-model="value['怎樣慶祝']" readonly="false" md-removable="true"></md-chips></td>
+                                        </tr>
+                                        
+                                    </tbody></table>   
+        </md-content>
+      </md-tab>
+
+      <md-tab label="新增目標(+)" ng-click="addTab()">
+        <md-content class="md-padding">
+        
+            </md-content>
+      </md-tab>
+  
+    </md-tabs>

@@ -1,0 +1,15 @@
+
+        
+	        <div class="tab-content content content_main">
+	            <div id="tab-{{item.id}}" ng-repeat="item in model.menu" class="tab-pane fade in"
+	                 ng-class="$index==0? 'active': '' ">
+	                <h1>{{item.title}}</h1>
+	                <hr>
+
+   	                <editor-container-element id="con-{{item.id}}">
+                        填一點東西吧. 
+   	                    
+   	                </editor-container-element>
+	            </div>	                
+
+	        </div>

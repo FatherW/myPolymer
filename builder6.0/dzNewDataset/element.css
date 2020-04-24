@@ -1,0 +1,10 @@
+dz-new-dataset{
+    position: relative;
+    display: block;
+}
+
+dazzle-data-toolbar{
+    position:absolute;
+    top:-20px;
+    right:0px;
+}

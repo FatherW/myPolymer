@@ -1,0 +1,128 @@
+<div context-menu="menuOptions" id="formModule-{{formId}}">
+<md-content layout-padding="" class="layout-padding _md">
+    <div>
+      <!--<form name="form{{formId}}" style="">-->
+      <form name="myForm" style="">
+		<div yourangular-repeat="formElement in model.schema" class="fromElementRowWrapper">
+			<dazzle-form-text-element default-obj="formElement" yourangular-if='formElement.directive=="text"'></dazzle-form-text-element>
+			<div class="removeThis" yourangular-click="removeThis($index)"><i class="fa fa-trash fa-2" aria-hidden="true"></i></div>
+		</div>
+		<!--<div ng-repeat="formElement in model.schema" context-menu="elementMenuOptions(formElement)">
+			<md-input-container class="md-block">
+				<label>{{formElement.label}}</label>
+				<input type=text name="{{formElement.label}}" myangular-model="form['{{formElement.id}}']">
+			</md-input-container>
+		</div>-->
+
+          <md-input-container class="md-block">
+            <label>姓名（中文）</label>
+			<input type=text name="description" myangular-model="project.description">
+          </md-input-container>
+
+          <md-input-container class="md-block">
+            <label>性別</label>
+            <input type=text name="description" myangular-model="project.sex">
+          </md-input-container>
+          
+          <md-input-container class="md-block">
+        	<label>電郵</label>
+        	<input required type="email" name="clientEmail" myangular-model="project.clientEmail" myangular-pattern="/^.+@.+\..+$/" />
+        	<!--<div myangular-messages="form{{formId}}.clientEmail.$error" role="alert">-->
+        		<div myangular-messages="myForm.clientEmail.$error" role="alert">
+        		<div myangular-message="required">Please input an Email.</div>
+          		<div myangular-message="pattern" class="my-message">Please input correct Email.</div>
+        	</div>
+      </md-input-container> 
+
+
+
+      </form>
+    </div>
+  </md-content>
+  </div><!--
+<div context-menu="menuOptions" ng-id="formModule-{{model.id}}">
+    <pre ng-if="!model.schema.schema">表格模組</pre>
+    <form ng-if="model.schema.schema">
+        <div class="form-group row" ng-repeat="s in model.schema.schema">
+            <div ng-if="s.type=='text' && !s.hideAble" ng-include="'form-text.html'"></div>
+            <div ng-if="s.type=='select' && !s.hideAble" ng-include="'form-select.html'"></div>
+            <div ng-if="s.type=='password' && !s.hideAble" ng-include="'form-password.html'"></div>
+            <div ng-if="s.type=='email' && !s.hideAble" ng-include="'form-email.html'"></div>
+            <div ng-if="s.type=='number' && !s.hideAble" ng-include="'form-number.html'"></div>
+            <div ng-if="s.type=='textarea' && !s.hideAble" ng-include="'form-textarea.html'"></div>
+        </div>
+        <button type="submit" class="btn btn-primary pull-right submitButton">提交</button>
+    </form>
+</div>
+
+<script type="text/ng-template" id="form-textarea.html">
+    <div class="col-lg-3 col-md-5 col-xs-12 formLabel">
+        <labelclass="pull-right col-form-label">{{s.label}}</label>
+    </div>
+    <div class="col-lg-7 col-md-7 col-xs-12 formContent">
+        <textarea class="form-control" row="3" myngtmp-init="form['{{s.id}}'] = {{s.defaultValue}} "
+                  ng-disabled="!s.editAble"
+                  myngtmp-model="form['{{s.id}}']"></textarea>
+    </div>
+    <div class="col-lg-2 hidden-md hidden-xs"></div>
+</script>
+<script type="text/ng-template" id="form-text.html">
+    <div class="col-lg-3 col-md-5 col-xs-12 formLabel">
+        <labelclass="pull-right col-form-label">{{s.label}}</label>
+    </div>
+    <div class="col-lg-7 col-md-7 col-xs-12 formContent">
+        <input class="form-control" type="text" myngtmp-init="form['{{s.id}}'] = {{s.defaultValue}} "
+               ng-disabled="!s.editAble"
+               ng-required="s.required"
+               myngtmp-model="form['{{s.id}}']">
+    </div>
+    <div class="col-lg-2 hidden-md hidden-xs"></div>
+</script>
+<script type="text/ng-template" id="form-password.html">
+    <div class="col-lg-3 col-md-5 col-xs-12 formLabel">
+        <labelclass="pull-right col-form-label">{{s.label}}</label>
+    </div>
+    <div class="col-lg-7 col-md-7 col-xs-12 formContent">
+        <input type="password" class="form-control" myngtmp-init="form['{{s.id}}'] = {{s.defaultValue}} "
+               ng-disabled="!s.editAble"
+               ng-required="s.required"
+               myngtmp-model="form['{{s.id}}']">
+    </div>
+    <div class="col-lg-2 hidden-md hidden-xs"></div>
+</script>
+<script type="text/ng-template" id="form-email.html">
+    <div class="col-lg-3 col-md-5 col-xs-12 formLabel">
+        <labelclass="pull-right col-form-label">{{s.label}}</label>
+    </div>
+    <div class="col-lg-7 col-md-7 col-xs-12 formContent">
+        <input type="email" class="form-control" myngtmp-init="form['{{s.id}}'] = {{s.defaultValue}} "
+               ng-disabled="!s.editAble"
+               ng-required="s.required"
+               myngtmp-model="form['{{s.id}}']">
+    </div>
+    <div class="col-lg-2 hidden-md hidden-xs"></div>
+</script>
+<script type="text/ng-template" id="form-number.html">
+    <div class="col-lg-3 col-md-5 col-xs-12 formLabel">
+        <labelclass="pull-right col-form-label">{{s.label}}</label>
+    </div>
+    <div class="col-lg-7 col-md-7 col-xs-12 formContent">
+        <input type="number" class="form-control" myngtmp-init="form['{{s.id}}'] = {{s.defaultValue}} "
+               ng-disabled="!s.editAble"
+               ng-required="s.required"
+               myngtmp-model="form['{{s.id}}']">
+    </div>
+    <div class="col-lg-2 hidden-md hidden-xs"></div>
+</script>
+<script type="text/ng-template" id="form-select.html">
+    <div class="col-lg-3 col-md-5 col-xs-12 formLabel">
+        <labelclass="pull-right col-form-label">{{s.label}}</label>
+    </div>
+    <div class="col-lg-7 col-md-7 col-xs-12 formContent">
+        <select class="form-control" myngtmp-init="form['{{s.id}}'] = {{s.defaultValue}} "
+                myngtmp-model="form['{{s.id}}']">
+            <option ng-repeat="o in s.select track by $index" value="{{o}}">{{o}}</option>
+        </select>
+    </div>
+    <div class="col-lg-2 hidden-md hidden-xs"></div>
+</script>-->

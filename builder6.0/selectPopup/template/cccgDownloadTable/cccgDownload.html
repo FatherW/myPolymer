@@ -1,0 +1,23 @@
+<table class="views-table cols-4">
+    <thead>
+    <tr>
+              <th class="views-field views-field-title">
+          標題/Title        </th>
+              <th class="views-field views-field-upload-fid">
+                  </th>
+              <th class="views-field views-field-created">
+                  </th>
+              
+          </tr>
+  </thead>
+  <tbody>
+          <tr class="views-row-first" ng-class-odd="'odd'" ng-class-even="'even'" ng-repeat="item in model.data">
+                  <td class="views-field views-field-title">{{item['標題']}}</td>
+                  <td class="views-field views-field-upload-fid">
+            <a ng-href="{{item['檔案']}}"><img src="http://www.cccg.org.hk/sites/default/themes/cccg/images/icon_save.gif"></a>          </td>
+                  <td class="views-field views-field-created">{{item['日期'] | date:yyyy-MM-dd}}</td>
+                  
+              </tr>
+          
+      </tbody>
+</table>

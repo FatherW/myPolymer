@@ -1,0 +1,5 @@
+
+            <div id="breadcrumb">&#x9996;&#x9801; &gt; &#x95DC;&#x65BC;&#x65B0;&#x9054; &gt; <a href="awards.html">&#x65B0;&#x9054;&#x734E;&#x9805;</a> &gt; {{rowdata.title2}}</div>
+            <h1>{{rowdata.title2}}</h1>
+            <div class="column col-lg-3 col-md-3 col-xs-2 awardsImage" ng-repeat="imgSrc in rowdata.images track by $index"><a target="_blank" ng-href="{{imgSrc}}"><img ng-src="{{imgSrc}}"></a></div>
+            <div class="column col-lg-12 col-md-12 col-xs-12" ng-bind-html="rowdata.content2 | trust"></div>

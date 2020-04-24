@@ -1,0 +1,170 @@
+<div class="content">
+    
+<script>
+$(document).ready(function(){
+	var video_code = $(".video_list .video .video_player").first().html();
+	$(".videos .video_play").html(video_code);
+
+	$(".video_list .video").click(function(){
+		var player_code = $(this).find(".video_player").html();
+		$(".videos .video_play").html(player_code);
+	});
+	/*
+	$(".terms_tab a.tab active").each(function(){
+		var rel = $(this).attr("rel");
+		if($(this).hasClass("active")) return false;
+		$(".terms_tab a.tab").removeClass("active");
+		$(this).addClass("active");
+		$(".terms_content .cat_terms").removeClass("active");
+		$("#terms_"+rel).addClass("active");
+		return false;
+	});
+	*/
+	
+
+	$(".terms_tab a.tab").click(function(){
+		var rel = $(this).attr("rel");
+		if($(this).hasClass("active")) return false;
+		$(".terms_tab a.tab").removeClass("active");
+		$(this).addClass("active");
+		$(".terms_content .cat_terms").removeClass("active");
+		$("#terms_"+rel).addClass("active");
+		return false;
+	});
+	var curr_term='';
+	$(".wiki_term_" + curr_term).css("background","#FFD518");
+	$(".parent_yes").css("background","#FFD518");
+});
+</script>
+
+<div class="wiki_page wiki_term_page">
+	
+	<h2 class="gradient_yellow">五金維基頁</h2>
+
+	<div class="wiki_content">
+		<div class="videos">
+			<div class="video_play">
+    <iframe id="youtube-field-player" width="420" height="280" src="https://www.youtube.com/embed/P0Pj9zzPN0s?wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+			<div class="video_list">
+				<div class="view view-metal-video view-id-metal_video view-display-id-block view-dom-id-83d411ace89c9c8248f34dcc00e61eff">
+        
+  
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="video">
+  <div class="thumb">
+    <img src="https://www.5metal.com.hk/sites/default/files/styles/video_thumb/public/youtube/P0Pj9zzPN0s.png?itok=5RvUknpW" width="120" height="80" alt="">
+  </div>
+  <div class="title">
+    How to use a diamond core drill
+  </div>
+  <div class="clearfix"></div>
+  <div class="video_player">
+    <iframe id="youtube-field-player" width="420" height="280" src="https://www.youtube.com/embed/P0Pj9zzPN0s?wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+</div></span>  </div>  </div>
+  <div class="views-row views-row-2 views-row-even">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="video">
+  <div class="thumb">
+    <img src="https://www.5metal.com.hk/sites/default/files/styles/video_thumb/public/youtube/Iaer11AyXl8.png?itok=4YD-YC09" width="120" height="80" alt="">
+  </div>
+  <div class="title">
+    KNUTH Topturn2580
+  </div>
+  <div class="clearfix"></div>
+  <div class="video_player">
+    <iframe id="youtube-field-player" width="420" height="280" src="https://www.youtube.com/embed/Iaer11AyXl8?wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+</div></span>  </div>  </div>
+  <div class="views-row views-row-3 views-row-odd views-row-last">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content"><div class="video">
+  <div class="thumb">
+    <img src="https://www.5metal.com.hk/sites/default/files/styles/video_thumb/public/youtube/7qZw-rBGHoI.png?itok=JtwR-igD" width="120" height="80" alt="">
+  </div>
+  <div class="title">
+    PDP PD162 Wet/Dry Diamond Core Drill
+  </div>
+  <div class="clearfix"></div>
+  <div class="video_player">
+    <iframe id="youtube-field-player" width="420" height="280" src="https://www.youtube.com/embed/7qZw-rBGHoI?wmode=opaque" frameborder="0" allowfullscreen=""></iframe>
+  </div>
+</div></span>  </div>  </div>
+    </div>
+  
+  
+  
+  
+  
+  
+</div>				<a class="more" href="/video">更多影片</a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		
+		<div class="wiki_terms">
+			<h2 class="gradient_yellow">五金詞典</h2>
+			<div class="terms_tab">
+				<a href="#" class="tab active" rel="789">産品</a>
+				<a href="#" class="tab " rel="790">品牌</a>
+				<a href="#" class="tab " rel="791">技術</a>
+				<a href="#" class="tab " rel="805">商會</a>
+				<a href="#" class="tab " rel="864">綜合</a>
+			</div>
+
+			<div class="terms_content">
+				<div class="cat_terms active" id="terms_789">
+					<a href="/wiki?term_id=792" class="wiki_term wiki_term_792 parent_">五金工具</a>
+					<a href="/wiki?term_id=793" class="wiki_term wiki_term_793 parent_">五金製品</a>
+					<a href="/wiki?term_id=794" class="wiki_term wiki_term_794 parent_">建築與安全設備</a>
+					<a href="/wiki?term_id=795" class="wiki_term wiki_term_795 parent_">金屬原料</a>
+					<a href="/wiki?term_id=796" class="wiki_term wiki_term_796 parent_">電子及光學用品</a>
+					<a href="/wiki?term_id=797" class="wiki_term wiki_term_797 parent_">環保回收</a>
+					<a href="/wiki?term_id=893" class="wiki_term wiki_term_893 parent_">五金工業機械</a>
+					<a href="/wiki?term_id=891" class="wiki_term wiki_term_891 parent_">五金設備工程</a>
+				</div>
+				<div class="cat_terms " id="terms_790">
+					<a href="/wiki?term_id=855" class="wiki_term wiki_term_855 parent_">國際著名商標</a>
+				</div>
+				<div class="cat_terms " id="terms_791">
+					<a href="/wiki?term_id=856" class="wiki_term wiki_term_856 parent_">模具設計與加工</a>
+					<a href="/wiki?term_id=857" class="wiki_term wiki_term_857 parent_">金屬加工</a>
+					<a href="/wiki?term_id=858" class="wiki_term wiki_term_858 parent_">表面處理</a>
+					<a href="/wiki?term_id=859" class="wiki_term wiki_term_859 parent_">生產工藝</a>
+					<a href="/wiki?term_id=860" class="wiki_term wiki_term_860 parent_">鑄造鍛壓及成型</a>
+					<a href="/wiki?term_id=861" class="wiki_term wiki_term_861 parent_">檢驗檢測</a>
+					<a href="/wiki?term_id=862" class="wiki_term wiki_term_862 parent_">其它五金技術</a>
+				</div>
+				<div class="cat_terms " id="terms_805">
+					<a href="/wiki?term_id=863" class="wiki_term wiki_term_863 parent_">國外行業協會</a>
+				</div>
+				<div class="cat_terms " id="terms_864">
+					<a href="/wiki?term_id=865" class="wiki_term wiki_term_865 parent_">綜合知識</a>
+				</div>
+
+<!--
+-->
+
+
+			</div>
+		</div>
+	</div>
+
+	<div class="wiki_ads">
+	<script async="" src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Long_adv -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-2838949182332847" data-ad-slot="2021535414" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent;"><ins id="aswift_0_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent;"><iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;border:0px;width:160px;height:600px;"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	</div>
+
+	<div class="clearfix"></div>
+</div>
+
+
+  </div>

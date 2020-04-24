@@ -1,0 +1,86 @@
+var app = angular.module('demoApp');
+app.directive('dazzleGrid', function ($compile, $templateRequest,$mdDialog) {
+    var dazzleGrid = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            scope.http = "http://d27btag9kamoke.cloudfront.net/";
+            scope.directiveId = "dazzleGrid";
+            scope.type = "dazzleGrid";
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+            scope.editorCustomInit(scope, element, attrs).then(function () {
+                /*if (angular.isUndefined(scope.model.field)) {
+                    scope.model.field = "xxx";
+                    scope.updateHtml();
+                }*/
+                var template = angular.element('<div bind-html-compile="model.html" context-menu="menuOptions"></div>');
+                element.html(template);
+                scope.$apply(function () {
+                    $compile(template)(scope);
+                });
+            });
+        },
+        controller: function ($scope, $element, $attrs) {
+
+                $scope.loadJssCsss('http://dazzle.gallery/css/animate.css');
+                $scope.loadJssCsss('http://dazzle.gallery/js/angulargrid.js');
+ 
+               var url="https://9g1gx9kfdc.execute-api.ap-northeast-1.amazonaws.com/dazzlegallery/getallimage";
+                var data = JSON.stringify({
+                    token:"9g1gx9kfdcRGsaBfDRTrBVX3ewdrWFtmCD",
+                    limit:100
+                });
+
+
+                console.log('my Query',data);
+                setTimeout(function () {
+                    $http.post(url, data).then(function (postResponse) {
+                        var gotObj = postResponse.data.Items;
+                        console.log(gotObj);
+                        if (!postResponse.data.LastEvaluatedKey) {
+                            $scope.end = true;
+                        }
+                        lastEvaluatedKey = postResponse.data.LastEvaluatedKey;
+                        if (again) {
+                            callback(gotObj);
+                        } else {
+                            $scope.gotObj = [];
+                            setTimeout(function () {
+                                $scope.$apply(function () {
+                                    $scope.gotObj = $scope.gotObj.concat(gotObj);
+                                });
+//                                $scope.loading = false;
+                            }, 1000);
+                        }
+                    });
+                }, 1);              
+
+
+            $scope.menuOptions = [
+                ["dazzleGrid", function () {
+                    console.log("Menu Clicked:dazzleGrid");
+                }],
+                ["更換模版", function () {
+                    $mdDialog.show({
+                        controller: 'templatePopupController',
+                        templateUrl: 'models/templatePopup/popup.html' + "?id=" + new Date().getTime(),
+                        locals: {
+                            rootScope: $scope
+                        }
+                    }).then(function (template) {
+                        $scope.useTemplate();
+                    });
+                }]
+            ];
+            $scope.beforeAtomSaved = function () {
+
+            }
+            $scope.afterAtomSaved = function () {
+
+            }
+        }
+    };
+    return dazzleGrid;
+});

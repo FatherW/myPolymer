@@ -1,0 +1,4 @@
+<div class="item" ng-repeat="item in model.data | filter: { '分類': 'Position Paper','語言':'!en'} | orderBy:'-nid' | limitTo:3 ">
+            <a ng-href="{{item['標題'] | replacetitle}}.html">{{item['標題']}}</a>
+            <span class="featurebox_date">{{item['文章日期']*1000 | date:'yyyy年MM月dd日'}}</span>
+</div>

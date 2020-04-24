@@ -1,0 +1,15 @@
+  <nav class="category-menus" data-module="Header Category Menu">
+<ul>
+                  <li ng-repeat="item in model.menu">
+              <div class="pull-down" >
+                  <a ng-href="{{item.link}}" class="pull-down-toggle">{{item.title}}</a>
+                  <div class="pull-down-content">
+                      <ul class="pull-down-menu arrow-top" ng-if="item.list.length > 0">
+                                                  <li ng-repeat="subitem in item.list" class="pull-down-item ">
+                              <a ng-href="{{subitem.link}}">{{subitem.title}}</a>
+                                                                                  </li>
+                      </ul>
+                  </div>
+              </div>
+          </li></ul>
+          </nav>

@@ -1,0 +1,127 @@
+.sarah-grid {
+    position: absolute;
+    list-style: none;
+    background: #ffffff;
+    box-sizing: border-box;
+    -webkit-transition: all 400ms ease;
+    transition: all 400ms ease;
+    overflow: hidden;
+    border-radius: 3.5px;
+    padding: 15px;
+    border: none;
+}
+    .sarah-grid-img {
+        width: 100%;
+        vertical-align: middle;
+        -webkit-transition: opacity 0.6s ease-out;
+        transition: opacity 0.6s ease-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .sarah-grid-img:hover {
+        opacity: 0.6 !important;
+    }
+
+    .sarah-grid-img:hover,
+    .sarah-grid-img:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .sarah-grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .dynamic-grid {
+        position: relative;
+        display: none;
+    }
+
+    .dynamic-grid.angular-grid {
+        display: block;
+    }
+
+    .sarah-grid {
+        position: absolute;
+        list-style: none;
+        background: #ffffff;;
+        box-sizing: border-box;
+        -webkit-transition: all 400ms ease;
+        transition: all 400ms ease;
+        overflow: hidden;
+        border-radius: 3.5px;
+    }
+
+    .sarah-grid.ng-leave {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+    }
+
+    .sarah-grid.ng-leave.ng-leave-active {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .sarah-grid.ng-enter {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+        -webkit-transition-delay: 500ms;
+        transition-delay: 500ms;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .sarah-grid.ng-enter.ng-enter-active {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .sarah-grid-img {
+        width: 100%;
+        vertical-align: middle;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .sarah-grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+    .search-panel{
+        width:100%;
+        height:15%;
+        display:block;
+    }
+    .dazzle-gallery {
+        width:100%;
+        height:85%;
+        display:block;
+    }
+    
+    md-sidenav, 
+    md-sidenav.md-locked-open, 
+    md-sidenav.md-closed.md-locked-open-add-active {
+        min-width:100% !important;
+      width:100% !important;
+      max-width:100% !important;
+    } 
+    md-radio-button {
+        float:left;
+        padding-right:5px;
+    }
+    .delete {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .delete:hover {
+        color:orange;
+    }

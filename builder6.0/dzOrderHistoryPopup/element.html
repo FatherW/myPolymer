@@ -1,0 +1,44 @@
+
+
+    <style>
+        .ag-cell-value div {
+            display: inline;
+        }
+
+        .ag-cell-inline-editing div {
+            display: inline;
+        }
+
+        .md-tab {
+            text-transform: none
+        }
+    </style>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h1>訂單記錄</h1>
+
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="cancel()">
+                <md-tooltip>關閉</md-tooltip>
+                <i class="fa fa-window-close"></i>
+            </md-button>
+            <span flex="2"></span>
+        </div>
+    </md-toolbar>
+    <div ng-init="init()" style="height: 800px;">
+        <div style="height: 100%;" ng-show="!inited" layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <div style="max-height: 20%;" layout="row" layout-xs="column" ng-show="inited">
+            <div flex>
+                <md-button ng-click="export()">
+                    匯出Excel
+                </md-button>
+                <md-button ng-click="refresh()">
+                    重新載入資料
+                </md-button>
+            </div>
+            <div flex id="customButtons" layout="row"></div>
+        </div>
+            <div style="height: 800px;" ng-show="inited" id="myGrid" ag-grid="$dazzleElastic.gridOptions" class="ag-material"></div>
+    </div>

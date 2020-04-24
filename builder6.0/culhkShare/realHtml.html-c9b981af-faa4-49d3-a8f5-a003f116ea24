@@ -1,0 +1,68 @@
+                                                <div class="element" id="ele1483084528649">
+                                                    <h3>股金記錄表</h3>
+                                                    <p>
+                                                        <br>
+                                                    </p>
+                                                    <div id="mySaveController" ng-controller="mySaveController" ng-init="init()">
+                                                        <ul class="nav nav-pills">
+                                                            <li role="presentation" ng-repeat="s in saveTypes" ng-class="{'active':s == currentSaveType}">
+                                                                <a ng-click="setCurrentSaveType(s)">{{s}}</a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="lgmdshow hidden-xs">
+                                                            <div class="row" ng-repeat="s in currentSaves">
+                                                                <div class="col col-lg-4 col-md-4"><label>社員編號</label>{{s['社員編號']}}</div>
+                                                                <div class="col col-lg-4 col-md-4"><label>社員名稱</label>{{s['社員名稱']}}</div>
+                                                                <div class="col col-lg-4 col-md-4"><label>日期</label>{{s['日期'] | date}}</div>
+                                                                
+                                                                <div class="col col-lg-4 col-md-4"><label>起息日</label>{{s['起息日'] | date}}</div>
+                                                                <div class="col col-lg-4 col-md-4"><label>到期日</label>{{s['到期日'] | date}}</div>
+                                                                <div class="col col-lg-4 col-md-4"><label>年息率</label>{{s['年息率'] }}</div>
+
+                                                                <div class="col col-lg-4 col-md-4"><label>本金</label>{{s['本金']}}</div>
+                                                                <div class="col col-lg-4 col-md-4"><label>每年利息</label>{{s['每年利息']}}</div>
+
+                                                                <div class="col col-lg-4 col-md-4"><label>到期日本息總數</label>{{s['到期日本息總數']}}</div>
+
+
+
+                                                                <div class="col col-lg-4 col-md-4">
+                                                                    <div ng-if="s['PDF'] == '-'">{{s['PDF']}}</div>
+                                                                    <a ng-if="s['PDF'] != '-'" target="_blank" ng-href="{{s['PDF']}}">下載</a>
+                                                                </div>
+                                                                <hr>
+                                                            </div>
+                                                        </div>
+                                                        <div class="xsshow hidden-lg hidden-md">
+                                                            <div class="col col-xs-12 thumbnail" ng-repeat="s in currentSaves">
+
+                                                                  <div class="row" ng-repeat="s in currentSaves">
+                                                                        <div class="col col-lg-4 col-md-4"><label>社員編號</label>{{s['社員編號']}}</div>
+                                                                        <div class="col col-lg-4 col-md-4"><label>社員名稱</label>{{s['社員名稱']}}</div>
+                                                                        <div class="col col-lg-4 col-md-4"><label>日期</label>{{s['日期'] | date}}</div>
+                                                                        
+                                                                        <div class="col col-lg-4 col-md-4"><label>起息日</label>{{s['起息日'] | date}}</div>
+                                                                        <div class="col col-lg-4 col-md-4"><label>到期日</label>{{s['到期日'] | date}}</div>
+                                                                        <div class="col col-lg-4 col-md-4"><label>年息率</label>{{s['年息率'] }}</div>
+
+                                                                        <div class="col col-lg-4 col-md-4"><label>本金</label>{{s['本金']}}</div>
+                                                                        <div class="col col-lg-4 col-md-4"><label>每年利息</label>{{s['每年利息']}}</div>
+                                                                        <div class="col col-lg-4 col-md-4"><label>到期日本息總數</label>{{s['到期日本息總數']}}</div>
+
+
+
+
+
+                                                                        <div class="col col-lg-4 col-md-4">
+                                                                            <div ng-if="s['PDF'] == '-'">{{s['PDF']}}</div>
+                                                                            <a ng-if="s['PDF'] != '-'" target="_blank" ng-href="{{s['PDF']}}">下載</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <hr>
+
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                </div>

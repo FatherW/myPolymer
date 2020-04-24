@@ -1,0 +1,56 @@
+     
+<md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>新增頁面</h2>
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="addNewPage()">
+                新增
+            </md-button>
+            <md-button class="md-raised md-primary" ng-click="copyTemplate()">
+                複製樣版
+            </md-button>
+
+            <md-button class="md-raised md-warn" ng-click="cancel()">
+                取消
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content style="min-height:70%;">
+ <md-content class="md-padding" style="min-height:400px;">
+     
+             <h3>請不要在頁面名稱後面加上.html</h3>
+             <h3>注意新增之頁面或會對現有網站有所覆寫，建議先備份。</h3>
+             <h3>如使用連結源頭複製，請確保源頭設計的版權及使用權。如有侵犯版權，本公司蓋不負責。</h3>
+
+            <div layout="row">
+                <div flex="15"></div>
+                <div layout="row" flex="70">
+                    <div flex="50">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>頁面名稱</label>
+                            <input ng-model="newPageName">
+                        </md-input-container>
+                    </div>
+                    <div flex="10"></div>
+                    <div flex="40">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>由此連結進行網頁複製：</label>
+                            <input ng-model="url">
+                        </md-input-container>
+                        <h6>或選擇自己網站的其他頁面</h6>
+                        <dz-my-page></dz-my-page>
+                        
+                    </div>
+                </div>
+            </div>
+            <div layout="row">
+            <div flex="100">
+                <div id="success">
+                    <p>新頁在抓取中，請耐心等待. 所時由3-15分鐘. 完成後，請自行到<a ng-href="{{newUrl}}">http://{{thisSite}}/{{newPageName}}.html</a> 繼續編輯網頁</p>
+
+                </div>
+            
+            </div>
+
+</md-content>
+</md-dialog-content>

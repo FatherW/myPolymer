@@ -1,0 +1,10 @@
+<div myangular-if="!login">
+    <div class="column col-lg-4 col-md-4 col-xs-4"><label>電話</label><input type="text" style="" myangular-model="id"></div>
+    <div class="column col-lg-4 col-md-4 col-xs-4"><label>密碼</label><input type="password" style="" myangular-model="password"></div>
+    <div class="column col-lg-4 col-md-4 col-xs-4"><button class="md-button md-ink-ripple" type="button" myangular-click="login2()">登入</button></div>
+</div>
+<div myangular-if="login">
+    <div class="column col-lg-4 col-md-4 col-xs-4"><label>社員: [[user['中文名稱']]]</label></div>
+    <div class="column col-lg-4 col-md-4 col-xs-4"><label>普優積分:[[user['普優積分']]]</label></div>
+    <div class="column col-lg-4 col-md-4 col-xs-4"><label>特優積分:[[user['特優積分']]]</label><button myangular-click="logout()">登出</button></div>
+</div>

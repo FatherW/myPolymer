@@ -1,0 +1,11 @@
+<div class="websiteImage" ng-init="loadData()">
+<div ng-if="model.data.length > 0">
+    <a ng-href="{{w['網站鏈結']}}" ng-repeat="w in model.data">
+      <img class="img-responsive" ng-src="{{w['網站圖標']}}" />
+    </a>
+</div>
+<div ng-if="model.data.length==0">
+右click 更新資料
+
+</div>
+</div>

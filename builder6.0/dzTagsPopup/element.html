@@ -1,0 +1,28 @@
+
+
+
+ <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>標籤</h2>
+                <span flex></span>
+                <md-button class="md-primary md-raised" ng-click="save()">
+                    <md-tooltip>儲存</md-tooltip>
+                    <i class="fa fa-floppy-o"></i>
+                </md-button>
+                <md-button class="md-primary md-raised" ng-click="cancel()">
+                    <md-tooltip>取消</md-tooltip>
+                    <i class="fa fa-window-close"></i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <h2>請輸入標籤，每個輸入後按Enter</h2>
+        
+        
+              <md-chips ng-model="tags" md-removable="true"></md-chips>
+
+        </md-dialog-content>
+        
+        </form>

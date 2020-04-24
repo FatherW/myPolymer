@@ -1,0 +1,8 @@
+<div class="video-container" ng-if="model.value">
+    <div class="dazzle-button">請右click以更新資料</div>
+    <iframe ng-src="{{model.value}}" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="video-container" ng-if="!model.value">
+    請右click 新增youtube影片
+</div>

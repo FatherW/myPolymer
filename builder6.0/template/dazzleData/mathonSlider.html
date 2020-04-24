@@ -1,0 +1,15 @@
+<div class="hiddenText">
+    <div>Right Click for data editing.</div>
+</div>
+<div class="realText" style="display:none;" ng-init="loadData()">
+    <div class="slider_wrapper">
+				<div id="camera_wrap" class="">
+					<div ng-repeat="item in model.data" data-src="{{item.photo}}">
+						<div class="caption fadeIn">
+							{{item.title}}
+						</div>
+					</div>
+				</div>
+			</div>
+</div>
+

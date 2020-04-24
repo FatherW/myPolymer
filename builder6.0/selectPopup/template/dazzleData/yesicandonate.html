@@ -1,0 +1,104 @@
+<!--
+<div class="hiddenText row">
+    <div ng-repeat="item in model.data" class="col-lg-3  col-sm-3 col-md-4 col-xs-6 member">
+        <div class="cusmiddle">
+            <div class="cusround_wrapper">
+                <img class="cusround_img" ng-src="{{item['機構或捐款人相片']}}" />
+            </div>
+        </div>
+        <div class="clear"></div>
+        <div class="descc" style="text-align: left;" ng-bind-html="item['捐款人的話'] | to_trusted | limitTo:66"></div>
+        <p style="text-align: center;">{{item['獎學金名稱']}}</p>
+        <p style="text-align: center;">{{item['第幾界']}}</p>
+        <p style="text-align: center;">{{item['機構或捐款人名稱']}}</p>
+        <hr>
+    </div>
+</div>
+-->
+<!--
+<div class="realText row" myangular-controller="AppController2">
+    <div myangular-repeat="item in rowData | filter:searchText" class="col-lg-4 col-md-4 col-xs-6 member">
+        <div class="cusmiddle">
+            <div class="ng-scope">
+                <img class="cusround" myangular-src="[[item['相片']]]" />
+            </div>
+        </div>
+        <div class="clear"></div>
+        <p style="text-align: center;">註冊編號：[[item['註冊編號']]]</p>
+        <p style="text-align: center;">中文姓名：[[item['中文姓名']]]</p>
+        <p style="text-align: center;">英文姓名：[[item['英文姓名']]]</p>
+        <p style="text-align: center;">有效期：[[item['有效期']]]</p>
+        <hr>
+    </div>
+</div>
+-->
+
+<div class="row hiddenText" >
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<table st-table="displayedCollection" st-safe-src="model.data" class="newstable table table-striped">
+		<thead>
+		<tr>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr ng-repeat="item in model.data">
+			<td>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					<img class="cusround" ng-src="{{item['機構或捐款人相片']}}" />
+				</div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 descContent">
+					<h2 ng-bind="item['獎學金名稱']"></h2>
+					<p>{{item['機構或捐款人名稱']}}</p>
+					<p>{{item['第幾界']}}</p>
+					<div class="descc" style="text-align: left;" ng-bind-html="item['捐款人的話'] | to_trusted"></div>
+				</div>
+			</td>
+
+		</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="10" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	</div>
+</div>
+<div class="row realText" myangular-controller="AppController2">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		<table st-table="displayedCollection" st-safe-src="rowData" class="newstable table table-striped">
+		<thead>
+		<tr>
+			<th></th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr myangular-repeat="item in displayedCollection">
+			<td>
+				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+					<img class="cusround" myangular-src="[[item['機構或捐款人相片']]]" />
+					<!--<p style="text-align: center;">[[item['機構或捐款人名稱']]]</p>-->
+				</div>
+				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 descContent">
+					<h2 myangular-bind="item['獎學金名稱']"></h2>
+					<p>[[item['機構或捐款人名稱']]]</p>
+					<p>[[item['第幾界']]]</p>
+					<div class="descc" style="text-align: left;" myangular-bind-html="item['捐款人的話'] | to_trusted"></div>
+				</div>
+			</td>
+
+		</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="10" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	</div>
+</div>

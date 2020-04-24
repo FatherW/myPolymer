@@ -1,0 +1,6 @@
+<div ng-if="isNoData">
+    <img style="max-width: 100%; height: auto;" class="ng-scope" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/No_image_3x4.svg/1024px-No_image_3x4.svg.png">
+</div>
+<div ng-if="!isNoData">
+    <img style="max-width: 100%; height: auto;" class="ng-scope" ng-src="{{model.data}}">
+</div>

@@ -1,0 +1,240 @@
+    <style>
+        md-dialog-content {
+            height: 800px;
+        }
+
+        md-dialog-content md-tabs {
+            min-height: 800px !important;
+        }
+        button i.fa {
+            color:white;
+        }
+        .dz-source {
+            width:100%;
+            transition: all 0.45s cubic-bezier(0.35, 0, 0.25, 1);
+            min-height:0px;
+            background:red;
+        }
+        @keyframes slideOutDown {
+          from {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+          }
+        
+          to {
+            visibility: hidden;
+            -webkit-transform: translate3d(0, 100%, 0);
+            transform: translate3d(0, 100%, 0);
+          }
+        }
+        
+        .slideOutDown {
+          -webkit-animation-name: slideOutDown;
+          animation-name: slideOutDown;
+        }
+    </style>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>頁面設定</h2>
+            <span flex></span>
+            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="new()" aria-label="新增">
+                <i class="fa fa-plus ng-scope"></i>
+            </md-button>
+            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="removePage()" aria-label="刪除">
+                <i class="fa fa-minus ng-scope"></i>
+            </md-button>
+            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="save()" aria-label="儲存">
+                <i class="fa fa-floppy-o ng-scope"></i>
+            </md-button>
+            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="cancel()" aria-label="取消">
+                <i class="fa fa-times ng-scope"></i>
+            </md-button>
+
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <md-tabs>
+            <md-tab label="網站資料">
+                <div layout="column" layout-margin>
+                  <div layout-gt-xs="row">
+                       <md-input-container  class="md-block" flex-gt-xs>
+                        <label>標題</label>
+                        <input ng-model="model.title">
+                      </md-input-container>
+                </div>
+                <div layout-gt-xs="row">
+                        <label>網站資料</label>
+                </div>
+                <div id="meta-wrapper" layout-gt-xs="row"  ng-repeat="item in model.meta">
+                        <md-input-container class="md-block" flex-gt-xs>
+                              <label>{{item.name}}</label>
+                              <input ng-model="item.content" />
+                        </md-input-container>
+               </div>
+            </md-tab>
+            <md-tab label="網站連結">
+                <div layout-gt-xs="row">
+                    <label>網站連結</label>  <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="addMeta()" aria-label="新增">
+                                                  <i class="fa fa-plus ng-scope"></i>
+                                            </md-button>
+                </div>
+                <div id="meta-wrapper" layout-gt-xs="row"  ng-repeat="item in model.link">
+                        <md-input-container class="md-block" flex-gt-xs>
+                              <label>{{item.attrs.rel}}</label>
+                              <input ng-model="item.attrs.href" />
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs>
+<!--                              <label>是否Master</label>
+                              <md-switch ng-model="item.isMaster" aria-label="Switch 1">
+                              </md-switch>
+                              -->
+                            <md-button class="md-primary md-raised md-button md-ink-ripple" ng-class="{item.isMaster? 'md-warn': 'md-primary'}"  ng-click="addMaster(item)" aria-label="加入Master">
+                                  <i class="fa fa-file ng-scope"></i>
+                            </md-button>
+                            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="editType('link',item)" aria-label="編輯">
+                                  <i class="fa fa-edit ng-scope"></i>
+                            </md-button>
+                            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="addType('link',$index)" aria-label="新增">
+                                  <i class="fa fa-plus ng-scope"></i>
+                            </md-button>
+                            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="removeType('link',$index)" aria-label="刪除">
+                                  <i class="fa fa-minus ng-scope"></i>
+                            </md-button>
+                        </md-input-container>
+               </div>
+            </md-tab>
+            <md-tab label="JS">
+                <div id="js-wrapper" layout-gt-xs="row"  ng-repeat="item in model.script">
+                        <md-input-container class="md-block" flex-gt-xs>
+                              <label>來源網址</label>
+                              <input ng-model="item.attrs.src" />
+
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs>
+<!--                              <label>是否Master</label>
+                              <md-switch ng-model="item.isMaster" aria-label="Switch 1">
+                              </md-switch>
+                              -->
+                            <md-button class="md-primary md-raised md-button md-ink-ripple" ng-class="{item.isMaster? 'md-warn': 'md-primary'}"  ng-click="addMaster(item)" aria-label="加入Master">
+                                  <i class="fa fa-file ng-scope"></i>
+                            </md-button>
+                            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="editJS(item)" aria-label="編輯">
+                                  <i class="fa fa-edit ng-scope"></i>
+                            </md-button>
+                            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="addJS($index)" aria-label="新增">
+                                  <i class="fa fa-plus ng-scope"></i>
+                            </md-button>
+                            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="removeJS($index)" aria-label="刪除">
+                                  <i class="fa fa-minus ng-scope"></i>
+                            </md-button>
+                        </md-input-container>
+               </div>
+            </md-tab>
+            <md-tab label="CSS">
+                <div id="css-wrapper" layout-gt-xs="row"  ng-repeat="item in model.link">
+                        <md-input-container class="md-block" flex-gt-xs>
+                              <label>來源網址</label>
+                              <input ng-model="item.attrs.href" />
+                        </md-input-container>
+                        <md-input-container class="md-block" flex-gt-xs>
+                            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="editCSS(item)" aria-label="編輯">
+                                  <i class="fa fa-edit ng-scope"></i>
+                            </md-button>
+                            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="addCSS(item)" aria-label="新增">
+                                  <i class="fa fa-plus ng-scope"></i>
+                            </md-button>
+                            <md-button class="md-primary md-raised md-button md-ink-ripple"  ng-click="removeCSS(item)" aria-label="刪除">
+                                  <i class="fa fa-minus ng-scope"></i>
+                            </md-button>
+                        </md-input-container>
+               </div>
+            
+            </md-tab>
+            <md-tab label="JS/CSS in BODY">
+            
+            </md-tab>
+
+            <md-tab label="Master">
+
+                
+                <div layout="column" layout-margin>
+                    
+                    <div layout-gt-xs="row">
+                       <md-input-container  class="md-block" flex-gt-xs>
+                        <label>標題</label>
+                        <input ng-model="model.masterTitle">
+                      </md-input-container>
+                </div>
+                <div layout-gt-xs="row">
+                      <md-input-container  class="md-block" flex-gt-xs>
+                        <label>關鍵字</label>
+                        <input ng-model="model.masterMeta">
+                      </md-input-container>     
+               </div>
+                <div layout-gt-xs="row">
+                        <md-input-container class="md-block" flex-gt-xs>
+                              <label>描述</label>
+                              <textarea ng-model="model.masterDescription" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                        </md-input-container>
+                </div>
+                <div layout="row" layout-align="start center" layout-margin layout-padding>
+                    <md-button aria-label="cancel" class="md-raised"
+                               ng-click="codePopup('js','master')">
+                        <i class="fa fa-2x fa-code"></i> Master Js
+                    </md-button>
+                    <md-button aria-label="cancel" class="md-raised md-primary"
+                               ng-click="codePopup('css','master')">
+                        <i class="fa fa-2x fa-css3"></i> Master Css
+                    </md-button>
+                    <md-button aria-label="cancel" class="md-raised md-warn"
+                               ng-click="codePopup('html','master')">
+                        <i class="fa fa-2x fa-html5"></i> Master Html
+                    </md-button>
+				</div>
+                    <uib-accordion close-others="true">
+                        <div uib-accordion-group class="panel-default" heading="Js">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <div class="row" ng-repeat="j in model.masterJs track by $index">
+                                        <div class="col-md-11">
+                                            <input type="text" ng-model="model.masterJs[$index]"
+                                                   class="form-control">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <i class="fa fa-2x fa-minus-square"
+                                               ng-click="remove(model.masterJs,$index)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fa fa-2x fa-plus-square pull-right"
+                                       ng-click="add(model.masterJs,'js')"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div uib-accordion-group class="panel-default" heading="Css">
+                            <div class="row">
+                                <div class="col-md-11">
+                                    <div class="row" ng-repeat="c in model.masterCss track by $index">
+                                        <div class="col-md-11">
+                                            <input type="text" ng-model="model.masterCss[$index]"
+                                                   class="form-control">
+                                        </div>
+                                        <div class="col-md-1">
+                                            <i class="fa fa-2x fa-minus-square"
+                                               ng-click="remove(model.masterCss,$index)"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1">
+                                    <i class="fa fa-2x fa-plus-square pull-right"
+                                       ng-click="add(model.masterCss,'css')"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </uib-accordion>
+                </div>
+             
+            </md-tab>
+        </md-tabs>
+    </md-dialog-content>

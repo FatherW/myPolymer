@@ -1,0 +1,37 @@
+<ul ng-init="loadData()" class="listing destination-listings clearfix" style="position: relative; min-height: 400px;">
+							<li ng-repeat="item in model.data" class="col-md-3 col-sm-6 col-xs-12">
+								<div class="event-preview">
+									<a ng-href="{{item['Tutor'] }}.html">
+									<div class="image" style="background-image: url({{item['Banner']}}); background-image: -webkit-image-set(url({{item['Banner']}}) 1x, url({{item['Banner']}}) 2x)">
+										
+									</div>
+									<div class="avatar photo-80 circle"><img alt="{{item['Tutor']}}" class="circle" src="{{item['Head Photo']}}" title="{{item['Tutor']}}"></div>
+									<div class="event-head">
+										<strong class="event-title">{{item['Tutor']}}</strong>
+									</div>
+									<div class="event-description">
+										<div class="clearfix space-left">
+											<span ng-repeat="subitem in item['Tags']" class="label label-default space-right-sm space-top-sm pull-left">{{subitem}}</span>
+										</div>
+										<hr>
+										<div class="center">
+											<p>{{item['description']}}</p>
+											<div class="space-top row">
+												<div class="col-xs-6">
+													<div class="review-stars-container stars space-left">
+														<div class="review-stars" style="width: 98.08873720136519%;"></div>
+													</div>
+												</div>
+<!--												<div class="col-xs-6">
+													<span class="space-right pull-right light-text">{{item['Reviews']}} reviews</span>
+												</div>
+												
+												-->
+											</div>
+										</div>
+									</div>
+									<div class="space-bottom"></div></a>
+								</div>
+							</li>
+							
+</ul>

@@ -1,0 +1,26 @@
+   <h1 class="md-display-2">可用資源眾籌</h1>
+ 
+<md-tabs md-dynamic-height md-border-bottom>
+      <md-tab ng-repeat="a in ans" label="{{a.title}}">
+        <md-content class="md-padding">
+
+                <table class="table table-h" id="_table_table-h">
+                    <thead>
+                        <th>可用資源</th>
+                    </thead>
+                
+                    <tbody>
+                        <tr><td>
+                            <md-chips ng-model="a['ans']" readonly="false" md-removable="true"></md-chips>
+                        
+                        </td></tr>
+                        
+                                        
+                    </tbody>
+                    
+                </table>   
+        </md-content>
+      </md-tab>
+
+  
+    </md-tabs>

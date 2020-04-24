@@ -1,0 +1,88 @@
+<style>
+    .edit {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 10;
+    }
+
+    .myHandle {
+        margin-left: 2px;
+        display: inline-block;
+        border: 1px;
+        vertical-align: middle;
+        position: relative;
+        float: left;
+        cursor: move;
+    }
+
+    .myEdit {
+        margin-left: 2px;
+        display: inline-block;
+        border: 1px;
+        vertical-align: middle;
+        position: relative;
+        float: left;
+    }
+</style>
+<div class="modal-header">
+    <div class="row">
+        <div class="col-md-4"><h3 class="modal-title">設定Slider</h3></div>
+        <div class="col-md-8">
+            <button class="btn btn-primary" type="button" ng-click="addSlider()">新增</button>
+            <button class="btn btn-success" type="button" ng-click="updateSlider()">儲存</button> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="imageSearchRow">
+                            <label>相簿：</label>
+                            <input name="searchAlbum" ng-model="albumName" class="ng-pristine ng-untouched ng-valid ng-empty" aria-invalid="false">
+            </div>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-success" type="button" ng-click="searchAlbum()">使用相簿</button>
+        </div>
+    </div>
+</div>
+<div class="modal-body" ng-init="init()" ui-sortable="sortableOptions" ng-model="sliders">
+    <div class="row" ng-repeat="s in sliders" style="padding: 10px 10px 10px 20px;">
+        <div class="edit">
+            <div class="btn btn-warning myHandle">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </div>
+            <div class="btn btn-primary myEdit" ng-click="selectImage($index)">
+                <i class="fa fa-file-image-o" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class="col col-md-4">
+            <img class="img-responsive" ng-src="{{s.img}}">
+        </div>
+        <div class="col col-md-6">
+            <div class="col col-md-12">
+                <div class="form-group">
+                    <label>Title:</label>
+                    <input class="form-control" type="text" ng-model="s.title">
+                </div>
+            </div>
+            <div class="col col-md-12">
+                <div class="form-group">
+                    <label>Text:</label>
+                    <input class="form-control" type="text" ng-model="s.text">
+                </div>
+            </div>
+        </div>
+        <div class="col col-md-2">
+            <button type="button" class="btn btn-danger pull-right" ng-click="removeItem($index)">
+                <i class="fa fa-times" aria-hidden="true"></i>
+                刪除
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning" type="button" ng-click="addSlider()">新增</button>
+    <button class="btn btn-warning" type="button" ng-click="updateSlider()">儲存</button>
+</div>
+

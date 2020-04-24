@@ -1,0 +1,11 @@
+
+<h4>相簿</h4>
+
+<div id="album" ng-if="model.value.length">
+    <ul>
+        <li ng-repeat="i in model.value">
+            <img ng-src="http://{{i.bucket}}/{{i.path}}">
+        </li>
+    </ul>
+    
+</div>

@@ -1,0 +1,14 @@
+.wrapper {
+	width:1280px;
+	margin:0 auto;
+	padding:0 10px;
+	clear:both;
+}
+
+.col {
+	padding:0 5px;
+}
+.col-6 {
+	width:50%;
+	float:left;
+}

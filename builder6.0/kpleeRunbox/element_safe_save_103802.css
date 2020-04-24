@@ -1,0 +1,11 @@
+
+.flexslider .slides > li {
+    position: absolute;
+}
+.flexslider .slides > li:nth-child(1) {
+    display: block;
+}
+
+.image_slider {
+    overflow: initial;
+}

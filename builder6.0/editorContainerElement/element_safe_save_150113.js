@@ -1,0 +1,125 @@
+var app = angular.module('demoApp');
+app.directive('editorContainerElement', function ($compile, $templateRequest, $uibModal, $mdDialog,$dazzlePopup,$dazzleUser,$dazzleData,$dazzleInit,$dazzleFn) {
+    var editorContainerElement = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        transclude: true,
+        template: '<div context-menu="menuOptions" ng-transclude></div>',
+        link: function (scope, element, attrs) {
+            scope.http = "//d27btag9kamoke.cloudfront.net/";
+            scope.directiveId = "editorContainerElement";
+            scope.type = "editorContainerElement";
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+            scope.editorContainerInit(scope, element, attrs).then(function () {
+                            
+            });
+
+            if ('custom' in attrs) {
+                var id = attrs.id || "ele" + new Date().getTime() + "-" + Object.keys($dazzleUser.dazzleInfo['atom']).length;
+                if (angular.isUndefined($dazzleUser.dazzleInfo['atom'][id])) {
+                    $dazzleUser.dazzleInfo['atom'][id] = {
+                        "id": id,
+                        "type": "editor-container-model"
+                    };
+                    if (!$.trim(element.html())) {
+                        $dazzleUser.dazzleInfo['atom'][id].html = '<div>editor-container-model</div>'
+                    } else {
+                        var oldElement = angular.element("<div></div>").html(element.html());
+                        scope.unwrap(oldElement);
+                        $dazzleUser.dazzleInfo['atom'][id].html = oldElement.html();
+                    }
+                }
+                var tmpElement = angular.element("<div></div>").append($dazzleUser.dazzleInfo['atom'][id].html);
+                scope.unwrap(tmpElement);
+                element.children('[context-menu]').eq(0).html(tmpElement.html());
+                $compile(element.children('[context-menu]').eq(0).contents())(scope);
+            }
+        },
+        controller: function ($scope, $element, $attrs,$dazzlePopup) {
+            console.log('Container Scope Master Atom',$scope);
+            $scope.menuOptions = [
+                ['編緝Container', function () {
+                    var container = angular.element("<div></div>").append($element.html());
+                  
+                    
+                    $scope.openCodePopup(container.html(), 'html').then(function (newCode) {
+                        var newHtml = angular.element("<div></div>").append(newCode);
+                        $scope.unwrap(newHtml);
+                        newHtml.find("[custom]").each(function (index, element) {
+                            var id = $(element).attr('id');
+                            if (!angular.isUndefined($dazzleUser.dazzleInfo['atom'][id])) {
+                                $dazzleUser.dazzleInfo['atom'][id].html = $(element).html();
+                            }
+                        });
+
+                        var id = $element.attr('id');
+                        if ('master' in $attrs && !angular.isUndefined($scope.masterAtom[id])) {
+                            $scope.masterAtom[id].html = newHtml.html();
+                        }
+                        if ('custom' in $attrs && !angular.isUndefined($dazzleUser.dazzleInfo['atom'][id])) {
+                            $dazzleUser.dazzleInfo['atom'][id].html = newHtml.html();
+                        }
+                        $element.html(newHtml.html());
+                        $compile($element)($scope);
+                    });
+                    
+                }],
+                ['更換背景', function () {
+                    $mdDialog.show({
+                        controller: "userGalleryPopupController",
+                        templateUrl: 'models/userGalleryPopup/popup.html' + '?id=' + new Date().getTime(),
+                        locals: {
+                            rootScope: $scope
+                        }
+                    }).then(function (image) {
+                        console.log('http://' + $scope.exportBucket + '/' + image.key);
+                        $scope.copyFile($scope.userBucket + '/' + encodeURI(image.key), $scope.exportBucket, image.key).then(function () {
+                            //    $element.css('background', 'url(' + 'http://' + $scope.exportBucket + '/' + encodeURI(image.key) + ')');
+                            //    $element.css('display', 'block');
+                            //                 $scope.background='http://' + $scope.exportBucket + '/' + encodeURI(image.key);
+                            $element.find('.section-bg').css('background-image', 'url(' + 'http://' + $scope.exportBucket + '/' + encodeURI(image.key) + ')');
+                        });
+
+
+                    });
+                }],
+                ["取消背景", function () {
+                    $element.css('background', 'none');
+                    $element.css('display', 'block');
+                }],
+                ["新增結構", function () {
+                    $mdDialog.show({
+                        templateUrl: 'models/addStructurePopup/popup.html' + "?id=" + new Date().getTime(),
+                        controller: 'addStructurePopupController',
+                        clickOutsideToClose: true,
+                        locals: {
+                            rootScope: $scope
+                        }
+                    }).then(function (structure) {
+                        var html = angular.element(structure.code);
+                        $element.children('[context-menu]').eq(0).append(html);
+                        $compile(html)($scope);
+                        
+//                        var html = angular.element("<div class='row'></div>");
+//                        for (var i = 0; i < structure.length; i++) {
+ //                           html.append("<div class='col col-md-" + structure[i] + "'><editor-container-element>" + "<text></text>" + "</editor-container-element></div>")
+ //                       }
+ //                       $element.children('[context-menu]').eq(0).append(html);
+//                        $compile(html)($scope);
+                    });
+                }],
+                ["新增元素", function () {
+                    $dazzlePopup.addElement($scope).then(function (newCode) {
+                        var html = angular.element(newCode.code);
+                        $element.children('[context-menu]').eq(0).append(html);
+                        $compile(html)($scope);
+                    });
+
+                }]
+            ];
+        }
+    }
+    return editorContainerElement;
+});

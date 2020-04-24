@@ -1,0 +1,13 @@
+
+    <div class="row">
+<ul class="nav-list">
+				<li class="nav-item " ng-repeat="item in model.menu">
+				    <a class="" ng-href="{{item.link}}">{{item.title}}</a>
+				    <ul class="dropdown-menu">
+				        <li class="" ng-repeat="subitem in item.list"><a class="" ng-href="{{subitem.link}}">{{subitem.title}}</a></li>
+				    </ul>
+				
+				</li>
+			</ul>    
+</div>
+

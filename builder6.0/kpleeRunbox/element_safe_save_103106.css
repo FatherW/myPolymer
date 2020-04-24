@@ -1,0 +1,4 @@
+.flexslider .slides > li {
+    display: block;
+    position: absolute;
+}

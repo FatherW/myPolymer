@@ -1,0 +1,17 @@
+<div class="lSSlideOuter ">
+<div class="lSSlideWrapper usingCss" style="transition-duration: 600ms; transition-timing-function: ease;">
+        <ul class="ul-slider" >
+        <li class="our-specials__item zoom-hover" ng-repeat="item in model.data">
+                  <span class="image">
+                    <img src={{item.img}} alt={{item.name}}>
+                  </span>
+                  <h4 class="our-specials__item-name">{{item.name}}</h4>
+                  <hr>
+                  <p>{{item.description}}</p>
+                  <span class="price">
+                    <span class="currency">$</span> {{item.price}} <sup>95</sup>
+                  </span>
+        </li>
+   </ul>
+</div>
+</div>

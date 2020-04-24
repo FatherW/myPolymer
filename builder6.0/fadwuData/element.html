@@ -1,0 +1,82 @@
+hello
+
+<!-- <div class="column-tab" ng-init="loadYear()"> 
+<ul>
+    <li ng-repeat="item in years" class="ng-scope" ng-class="$index? '' : 'active'">
+        <div class="tab active_tab tab_counter_0" itemprop="headline">
+            <a data-toggle="pill" class="ng-binding" href="#tab-{{$index}}">{{item}}</a>
+        </div>
+    </li>
+</ul>
+                                    
+                                    
+</div>
+-->
+<!--
+<div class="row">
+    <div class="column col-lg-3 hidden-md hidden-xs" ng-init="loadYear()">
+        <ul class="nav nav-pills nav-stacked">
+            <li ng-repeat="item in model.years" ng-class="{active:$index == 0}">
+                <a ng-href="#tab-{{$index}}" data-toggle="pill">{{item}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="column col-lg-9">
+        <div class="tab-content">
+            <div id="tab-{{$index}}" class="tab-pane fade in"
+                 ng-repeat="item in model.years" ng-class="{active:$index == 0}">
+                <h3>{{item.title}}</h3>
+                <editor-container-element custom id="{{item.id}}">
+                    container start~~
+                    <div text></div>
+                    container end~~~~
+                </editor-container-element>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row ng-scope">
+                                <div class="column col-lg-3 hidden-md hidden-xs">
+                                    
+                                    <div class="column-tab"> <ul ng-init="loadYear()">
+                                        <li ng-repeat="item in years" class="ng-scope" ng-class="$index? '' : 'active'" >
+                                            <div class="tab active_tab tab_counter_0" itemprop="headline">
+                                                <a data-toggle="pill" class="ng-binding" href="#tab-{{$index}}">{{item}}</a>
+                                            </div>
+                                        </li>
+
+                                    </ul></div>
+                                </div>
+
+                                <div class="column col-lg-9">
+                                    <div class="tab-content" ng-init="loadYear()">
+                                        <div ng-repeat="year in years" id="tab-{{$index}}" class="tab-pane fade in"   ng-class="$index? '' : 'active'" style="">
+                                            <section class="av_tab_section">
+                                                <div id="tab-id-1-container" class="tab_content active_tab_content" style="min-height: 295px;">
+                                                    <div class="tab_inner_content invers-color" itemprop="text">
+                                                        <blockquote>
+                                                            <p>{{year}}</p>
+                                                        </blockquote>
+                                                            <div ng-init="loadDataByYear()">
+                                                                <ul class="ng-scope">
+                                                                <li style="min-height: 50px;" ng-repeat="item in model.report | filter: { Type: 'News Report' } | orderBy:'PublishDate' " class="ng-scope">
+                                                                    <a ng-href="{{item['Report']}}" class="ng-binding">{{item['Title']}}</a><br>
+                                                                <em class="ng-binding">Publisher: {{item['Publisher']}}</em></li>
+                                                                <br><br>
+                                                                </ul>
+                                                            </div>
+                                                            
+
+                                                    </div>
+                                                </div>
+                                            </section>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            -->
+                       

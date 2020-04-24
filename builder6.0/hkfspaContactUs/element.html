@@ -1,0 +1,165 @@
+<style class="ng-scope">
+  .label-required {
+    color:red;
+  } 
+  legend {
+    margin-bottom: 10px;
+  }
+  img.image-thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+  }
+  .fileinputbox {
+    position: absolute;
+    opacity: 0;
+    width: 0px;
+ }
+ .myForm{
+ 	margin:2em;
+ 	width:70%;
+ }
+</style>
+
+
+<div class="myformWrapper">
+<div class="row well2">
+<h2 class="formTtitle">聯絡我們</h2>
+<form id="聯絡我們" class="myForm form-horizontal label-left ng-pristine ng-invalid ng-invalid-required ng-valid-email" name="myForm" ng-init="formdata={};hostname='dazzle-user-design100.dazzle.website';formname='聯絡我們';receiveemail='';websiteKey='website/香港金融業協會/'" style="">
+    <div id="聯絡我們-0" class="form-group" style="">
+        <div>
+            <div class="ng-scope">
+                <label class="control-label col-sm-2" for="姓名">姓名<span class="label-required">*</span></label>
+                <div class="col-sm-10">
+                	<input type="text" ng-model="formdata['姓名']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="姓名" placeholder="" required="required" aria-invalid="true" style="">
+            	</div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> </span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div id="聯絡我們-1" class="form-group">
+        <div>
+            
+            
+            
+            
+            
+            
+            <div class="ng-scope">
+                <label class="control-label col-sm-2" for="電郵">電郵<span class="label-required">*</span></label> 
+                <div class="col-sm-10">
+                	<input type="text" ng-model="formdata['電郵']" class="form-control ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required" id="電郵" placeholder="" required="required" aria-invalid="true" style="">
+            	</div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> </span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div id="聯絡我們-2" class="form-group">
+        <div>
+            <div class="ng-scope">
+                <label class="control-label col-sm-2" for="聯絡電話">聯絡電話</label>
+                <div class="col-sm-10">
+                	<input type="text" ng-model="formdata['聯絡電話']" class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="聯絡電話" placeholder="" aria-invalid="false">
+            	</div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> </span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div id="聯絡我們-3" class="form-group">
+        <div>
+            
+            
+            
+            <div class="ng-scope">
+                <label class="control-label col-sm-2" for="內容">內容<span class="label-required">*</span></label> 
+                <div class="col-sm-10">
+                	<textarea ng-model="formdata['內容']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="內容" placeholder="" required="required" aria-invalid="true" style=""></textarea>
+            	</div>
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> </span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    <div class="label-required" style="margin-bottom: 10px;">(* 必需填寫)</div>
+    <div class="col-lg-12 col-md-12 col-xs-12" style="text-align: center;">
+        <button style="max-width: 300px;margin: 0 auto;" type="submit" class="btn btn-primary submitForm" ng-click="submitMyForm()">提交</button>
+    </div>
+    <!--<div class="col-lg-6 col-md-6 col-xs-6">
+        <button type="submit" class="btn btn-primary submitPay" ng-click="submitMyForm()">網上付款</button>
+    </div>-->
+    </div>
+</form>
+
+
+
+</div>
+</div>

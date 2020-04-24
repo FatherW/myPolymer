@@ -1,0 +1,16 @@
+<ul class="moto-widget-menu-list moto-widget-menu-list_horizontal">
+            <li class="moto-widget-menu-item moto-widget-menu-item-has-submenu" ng-repeat="item in model.menu">
+    <a ng-href="{{item.link}}" data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-1 moto-widget-menu-link-submenu moto-link">{{item.title}}<span class="fa moto-widget-menu-link-arrow"></span></a>
+                <ul class="moto-widget-menu-sublist" ng-if="item.list.length > 0">
+                    <li ng-repeat="subitem in item.list" class="moto-widget-menu-item">
+                        <a ng-href="{{subitem.link}}" data-action="page" class="moto-widget-menu-link moto-widget-menu-link-level-2 moto-link">{{subitem.title}}</a>
+                        <ul ng-if="subitem.list.length >0" class="moto-widget-menu-sublist">
+                            <li ng-repeat="subitem2 in subitem.list" class="moto-widget-menu-item">
+                                <a ng-href="{{subitem2.link}}" data-action="blog.index" class="moto-widget-menu-link moto-widget-menu-link-level-3 moto-link">{{subitem2.title}}</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+        </li>
+</ul>

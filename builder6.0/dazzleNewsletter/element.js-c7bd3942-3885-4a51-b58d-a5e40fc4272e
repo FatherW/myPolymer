@@ -1,0 +1,123 @@
+var app = angular.module('demoApp');
+
+
+app.controller('newsletterPopupController', function ($scope, $uibModalInstance) {
+
+    $scope.info = {
+        "from":"",
+        "to":"",
+        "subject":""
+    };
+
+    $scope.ok = function() {
+        $uibModalInstance.close($scope.info);
+    }
+    
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss();
+    }
+});
+
+
+app.directive('dazzleNewsletter', function ($compile, $templateRequest,$mdDialog) {
+    var dazzleNewsletter = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            scope.http = "http://d27btag9kamoke.cloudfront.net/";
+            scope.directiveId = "dazzleNewsletter";
+            scope.type = "dazzleNewsletter";
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+            scope.editorCustomInit(scope, element, attrs).then(function () {
+                /*if (angular.isUndefined(scope.model.field)) {
+                    scope.model.field = "xxx";
+                    scope.updateHtml();
+                }*/
+                var template = angular.element('<div bind-html-compile="model.html" context-menu="menuOptions"></div>');
+                element.html(template);
+                scope.$apply(function () {
+                    $compile(template)(scope);
+                });
+            });
+        },
+        controller: function ($scope, $element, $attrs) {
+            $scope.menuOptions = [
+                                  ["發送電子報", function () {
+
+                        $mdDialog.show({
+                          controller: DialogController,
+                          templateUrl: 'views/newsletterSetting.html?id=' + new Date().getTime(),
+                          parent: angular.element(document.body),
+                          clickOutsideToClose:true
+                        })
+                            .then(function(answer) {
+                                console.log(answer);
+                                var to = [];
+                                var html = $element.html();
+
+                                if (answer.test){
+                                    to.push(answer.receiver);
+                                    $http({
+                                        url: 'https://9hhtm40jpe.execute-api.ap-northeast-1.amazonaws.com/sendemail',
+                                        method: "POST",
+                                        data: {
+                                            "from": answer.sender,
+                                            "to": to,
+                                            "subject": answer.subject,
+                                            "html": html
+                                        }
+                                    }).then(function (result) {
+                                       alert('電郵已發. 接收時間有長有短，請耐心等候.');
+                                    });
+                                }
+                                else {
+                                    bengetJson(bucket, 'website/' + website.website + '/content/member-data.json').then(function (data) {
+                                        angular.forEach(data,function(item,index){
+                                            to.push(item['email']);
+                                            console.log(item);
+                                        });
+                                        to.push(answer.receiver);
+                                        $http({
+                                            url: 'https://9hhtm40jpe.execute-api.ap-northeast-1.amazonaws.com/sendemail',
+                                            method: "POST",
+                                            data: {
+                                                "from": answer.sender,
+                                                "to": to,
+                                                "subject": answer.subject,
+                                                "html": html
+                                            }
+                                        }).then(function (result) {
+                                           alert('電郵已發. 大概需要半日至一日時間，請耐心等候。 ');
+                                        });
+                                    });
+
+                                }
+
+                            }, function() {
+                                    
+                            });
+            }],          /*,
+                ["更換模版", function () {
+                    $mdDialog.show({
+                        controller: 'templatePopupController',
+                        templateUrl: 'models/templatePopup/popup.html' + "?id=" + new Date().getTime(),
+                        locals: {
+                            rootScope: $scope
+                        }
+                    }).then(function (template) {
+                        $scope.useTemplate();
+                    });
+                }]*/
+            ];
+            $scope.beforeAtomSaved = function () {
+
+            }
+            $scope.afterAtomSaved = function () {
+
+            }
+        }
+    };
+    return dazzleNewsletter;
+});

@@ -1,0 +1,13 @@
+        <div id="menu">
+          <ul>
+          <li class="item0{{$index+1}}" ng-repeat="item in model.menu">
+            <a ng-href="{{item.link}}">{{item.title}}</a>
+            <ul ng-if=item.list!=''>
+              <li ng-repeat="subitem in item.list">
+                <a ng-href="{{subitem.link}}">{{subitem.title}}</a>
+              </li>
+            </ul>
+          </li>    
+
+          </ul>
+          </div>  

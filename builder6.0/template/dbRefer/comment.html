@@ -1,0 +1,47 @@
+
+<h4>課程討論區</h4>
+<div class="question">
+    <md-button myangular-click="question()">發問</md-button>
+</div>
+<div class="comment-thread ng-scope" ng-repeat="item in model.value">
+
+<div ng-if="!model.value.length">
+    請右click 以更新資料。
+</div>
+<div layout="row" class="card layout-row" ng-if="model.value.length">
+    <div flex="10" class="flex-10">
+                  <img id="img-ele1507797245094-41" class="img-responsive ng-scope" style="max-width:100%;max-height: 100%;" src="http://www.hot-yeah.com/image/Course2.png"> 
+                  <span class="profile_name"> Naomi Chan</span>
+    </div>
+    <div flex="90" class="flex-90">
+
+            <div class="date ng-scope">{{item['發表日期'] | date :"yyyy-MM-DD"}}</div>
+            <div ng-bind-html="item['問題']">
+            </div>
+            <div class="notice ng-scope">(以上問題乃用戶個人意見 , 並不代表Hotyeah之觀點。)</div>
+    </div>
+
+  </div>
+  <div class="longMarginLine marginSpace20"></div>
+  <div ng-if="item['答案']" layout="row" class="ng-scope layout-row">
+
+    <div flex="10" class="flex-10">
+    </div>
+
+    <div flex="10" class="flex-10">
+                  <img id="img-ele1507797245094-41" class="img-responsive ng-scope" style="max-width:100%;max-height: 100%;" src="http://www.hot-yeah.com/image/Course2.png"> 
+                  <span class="profile_name"> Naomi Chan</span>
+    </div>
+    <div flex="80" class="flex-80">
+
+        <div class="date ng-scope">{{item['回答日期'] | date:"yyyy-MM-DD"}}</div>
+        <div ng-bind-html="item['答案']">
+
+        </div>    
+               
+        <div class="notice ng-scope">(以上答案乃用戶個人意見 , 並不代表Hotyeah之觀點。)</div>
+    </div>
+
+  </div>
+  <div class="longMarginLine marginSpace20"></div>
+</div>

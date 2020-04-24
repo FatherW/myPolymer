@@ -1,0 +1,22 @@
+<div layout="row" layout-padding layout-wrap>
+    <div flex>
+        <div class="panel">
+            <h5>每週最高評分</h5>
+            <div class="all">
+                查看全部&nbsp;&nbsp;>
+            </div>
+            <div ng-repeat="item in model.data | orderBy: 'Rating' | limitTo: 3" class="item row" layout="row" layout-padding layout-wrap>
+                <div class="head-photo" flex flex-sm="100">
+                    <div class="index">{{$index+1}}</div>
+                    <img ng-src="{{item['Head Photo']}}">
+                </div>
+                <div class="" flex flex-sm="100">
+                    <h6>{{item['School']}}</h6>
+                    <p>{{item['Title']}}</p>
+                    <jk-rating-stars max-rating="5" rating="item['Rating']" read-only="true">
+                    </jk-rating-stars>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

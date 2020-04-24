@@ -1,0 +1,706 @@
+<style>
+     #slider_container { }
+        .cp-products .views-row {
+            width: 25%;
+            float: left;
+            /* height: 300px; */
+        }
+.cp-header-left metal-edit-button {
+    position: absolute;
+}
+#cp-nav{
+    height:80px;
+    
+}
+
+        .cp-product-list .product {
+            width:25%;
+            float:left;
+            display:block;
+            padding:5px 15px;
+            height:300px;
+        }
+        .cp-product-list .over_tips {
+            opacity:0;
+            display:block;
+        }
+
+        .cp-product-list .product:hover .over_tips {
+            opacity:1;
+        }
+        h3.head{
+            margin-top:0px;
+        }
+
+        .slideshow {
+            width: 600px;
+            height: 300px;
+            background: #000;
+            position: relative;
+        }
+        .slideshow-slides {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .slideshow-slides li {
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            margin: 0;
+            padding: 0;
+            transition: .2s;
+            opacity: 0;
+        }
+        .slideshow-slides li.active {
+            opacity: 1;
+        }
+        figure {
+            margin: 0;
+            padding: 0;
+            width:100%;
+            height:100%;
+            overflow:hidden;
+        }
+        .slideshow img {
+            width:100%;
+            height:auto;
+        }
+        figcaption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .slideshow-dots {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            list-style: none;
+        }
+        .slideshow-dots li {
+            display: inline;
+            margin: 0;
+            padding: 0;
+        }
+        .slideshow-dots a {
+            cursor: pointer;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background: #fff;
+            border-radius: 10px;
+            text-indent: -9990px;
+            opacity: .5;
+            transition: .3s;
+        }
+        .slideshow-dots li.active a {
+            opacity: 1;
+        }
+        .tabcontent {
+            display: none;
+            padding:0px;
+            border:none;
+            margin:0px;
+            border-top: none;
+        }
+        .angular-ui-tree-placeholder {
+            display: none;
+        }
+        .handle {
+            height: 30px;
+            padding: 5px;
+            max-height:30px;
+            text-align: right;
+        }
+        i.fa.fa-arrows {
+            position: absolute;
+            left: 0px;
+            top: 10px;
+        }
+        md-toolbar{
+
+            min-height:30px !important;
+        }
+        .angular-ui-tree-handle {
+            cursor: move;
+            text-decoration: none;
+            font-weight: 700;
+            box-sizing: border-box;
+            min-height: 0px;
+            line-height: 15px;
+            background: none;
+            border:none;
+            padding: 0px 10px;
+        }
+        .angular-ui-tree-handle:hover {
+            color: #438eb9;
+            background: none;
+            border-color: none;
+        }
+    
+</style>
+<div id="wrapper">
+
+ 
+    <div id="cp-wrapper">
+
+
+        <div id="cp-sidebar">
+            <div id="cp-sidebar-nav"> </div>
+        </div>
+        <div id="cp-rightside">
+            <div id="cp-header">
+                <div class="cp-header-left">
+                    <!--<metal-edit-button popup="image" item="company['company_logo']" field="company_logo"></metal-edit-button>-->
+
+                    <div class="cp-logo">
+                        <img ng-src="{{loadImage(company['company_logo'])}}" alt="{{company['title']}}" title="{{company['title']}}">
+                    </div>
+                    <metal-edit-button popup="image" item="company['company_logo']" field="company_logo"></metal-edit-button>
+
+                    <div class="cp-name">{{company['title']}}</div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="cp-header-right">
+                    <div class="top-info">
+				<span class="info">
+					<a href="/">回香港五金網首頁</a>
+				</span>
+                        <span class="info">
+					<a href="/user">會員登入</a>
+				</span>
+                        <!-- <span class="info">
+                            成功交易 <span class="trade_amount">0</span> 次
+                        </span> -->
+                    </div>
+
+                    <div class="top-search">
+                        <input type="text" value="" placeholder="關鍵字" name="q" ng-model="searchText" class="cp-search-input"><input type="button" value="搜尋" class="cp-search-btn" ng-click="cp_search()">
+                        <div class="clearfix"></div>
+                    </div>
+                </div><!-- cp-header-right -->
+
+                <div class="clearfix"></div>
+
+            </div><!--end of cp-header -->
+
+
+
+
+            <div id="cp-nav">
+                <ul class="nav">
+                    <li><a href="#" ng-click="tab('Index')"><span>首頁</span></a></li>
+                    <li><a href="#" ng-click="tab('About')"><span>公司介紹</span></a></li>
+                    <li><a href="#" ng-click="tab('Product')"><span>產品介紹</span></a></li>
+                    <li><a href="#" ng-click="tab('Contact')"><span>聯絡我們</span></a></li>
+
+
+
+                </ul>
+
+                <!-- <div class="welcome">歡迎您</div> -->
+            </div><!-- cp-nav -->
+
+
+            <div id="Index" class="tabcontent">
+
+
+
+                <div id="cp-banner">
+                    <!--<metal-edit-button popup="images" item="company['slide_images']" field="slide_images"></metal-edit-button>-->
+                   <metal-edit-button popup="images" item="company['slide_images']" field="slide_images"></metal-edit-button>
+
+                    <div class="cp-slider" u="slides">
+                        <div id="slider_container" style="position: relative; top: 0px; left: 0px; width: 600px; height: 300px;">
+                            <slide-show slides="company['slide_images']"></slide-show>
+                        </div>
+                    </div>
+
+                    <div class="cp-desc">
+                        <h3 class="head">公司介紹</h3>
+                        <div class="desc">
+                            <metal-edit-button popup="body" item="company['body']" field="body"></metal-edit-button>
+
+                            <div ng-bind-html="company['body'] | to_trusted">
+                            </div>
+
+                        </div>
+
+                        <div class="icon">
+                            <ul class="item">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="more">
+                        <a ng-href="/c/{{company['nid']}}/about" class="more_btn">更多</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div><!-- cp-banner -->
+
+
+                <div id="cp-fea-pd" class="cp-box">
+                    <h3 class="head">精選產品</h3>
+                    <div class="cp-box-content">
+                        <a class="cp-arrow-l"></a>
+                        <div class="cp-pd-list">
+                            <div class="view view-product-company view-id-product_company view-display-id-block_1 view-dom-id-0170ace78d9b52916b9b7ec398a37e18">
+
+
+
+
+
+
+
+
+
+                            </div>				<div class="clearfix"></div>
+                        </div>
+                        <a class="cp-arrow-r"></a>
+                    </div>
+                </div><!-- cp-fea-pd -->
+
+                <div id="cp-content">
+
+                    <div class="cp-region-left">
+                        <div class="cp-box cp-contact">
+                            <h3 class="head">公司數據</h3>
+
+
+
+                            <div class="counter_circle">
+                                <div class="circle view_time">
+                                    <span class="title title_time">瀏覽次數</span>
+                                    <span class="num">{{company['company_views']}}</span>
+                                </div>
+                                <div class="circle bid_time">
+                                    <span class="title title_bid_time">中標(投標)次數</span>
+                                    <span class="num">{{company['bid_times']}}</span>
+                                </div>
+                                <div class="circle rate_score">
+                                    <span class="title title_rate_score">客戶評分</span>
+                                    <span class="num">{{company['voting']}}</span>
+                                </div>
+                                <div class="circle product_total">
+                                    <span class="num">{{noOnShelf}}</span>
+                                    <span class="title title_product_total">產品數目</span>
+                                </div>
+                                <div class="circle age">
+
+                                    <span class="num">{{companyAge(company['nid'])}}</span>
+                                    <span class="title title_age">會員年資</span>
+                                </div>
+                            </div>
+                        </div><!-- cp-contact -->
+
+                        <div id="hidecp" class="cp-box cp-contact">
+                            <h3 class="head">產品分類</h3>
+                            <div class="cp-box-content">
+
+
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </div><!-- cp-contact -->
+
+
+                        <div class="cp-box cp-advance-search">
+                            <a href="/product_category?cid=1" class="btn_advance colorbox">進階搜尋</a>
+                        </div>
+                        <div class="cat_wrapper" ng-init="getAllCategory()">
+                            <h3 class="head">產品目錄</h3>
+
+
+                            <div class="product_cat_sub_content">
+
+                                <div class="product_cat_sub" ng-repeat="cat in categorys">
+                                    <a class="cat_id_921" href="#" ng-click="catFilter(cat)">{{cat}}</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div><!-- cp-region-left -->
+
+                    <div class="cp-region-right cp-region-right-product">
+                        <div class="cp-box cp-products">
+                            <h3 class="head">產品供應</h3>
+                            <div class="cp-box-content">
+
+
+                        <!--
+                                <div id="admin_panel" ng-init="checkLogin('<?php $user->uid;?>','<?php $user->pass;?>')" ng-show="isAdmin">
+                                    <div class="cat_path">
+                                        <div class="cat_parents">
+                                    <a href="https://www.5metal.com.hk/product_category">產品列表</a> <span class="gt">&gt;</span> <a class="path_item" ng-href="https://www.5metal.com.hk/product_category?tid={{tid}}">{{category}}</a>    </div>
+
+                                        <div class="cat_parents" ng-show="keyword">
+                                    <a href="#">搜尋字</a> <span class="gt">&gt;</span> <a class="path_item" ng-href="https://www.5metal.com.hk/product_category?keyword={{keyword}}">{{keyword}}</a>    </div>
+
+                                        <div class="search_bar">
+                                            <input type="text" id="q" name="keyword" ng-model="keyword" placeholder="輸入產品關鍵字搜尋">
+                                            <input type="button"  placeholder="搜尋" id="search_btn" ng-click="keyword_search();">
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="cat_path" style="height:auto !important;" >
+
+                                        <div class="cat_order_list cat_ref_list">
+                                            <div class="list_box">
+                                                <label class="order">次分類</label>
+                                                <ul class="order_list">
+                                                    <li ng-repeat="cat in categorys"><a ng-click="filter(cat)" href="#" id="sort_view">{{cat}}</a></li>
+                                                </ul>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="cat_order_list cat_ref_list" style="display:block !important;">
+                                        <div class="list_box">
+                                            <label class="order">排序方式</label>
+                                            <ul class="order_list">
+                                     
+                                                <li><a ng-click="sort('view')" href="#" ng-class="sortClass('view')" id="sort_view">瀏覽次數(多-&gt;少)</a></li>
+                                     
+                                                <li><a href="#" ng-click="sort('price')" ng-class="sortClass('price')"  id="sort_price">產品價格(高-&gt;低)</a></li>
+                                     
+                                                <li><a href="#" ng-click="sort('update')" ng-class="sortClass('update')" id="sort_update">上架日期(近-&gt;遠)</a></li>
+                                            </ul>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="gap_div"></div>
+                                </div>
+                                
+                                
+                                -->
+                                
+                                
+                                <div class="cp-product-list">
+
+                                     <div ui-tree ng-if="isAdmin">	
+                                      <div ui-tree-nodes="" ng-model="company['myProducts']">
+                                              <div  ui-tree-node class="product" id="desktop"  ng-repeat="item in filteredProduct | filter: {status: '1'}" >
+                                                <div class="product_c">
+
+                                                  <!--   <md-toolbar ng-if="isAdmin()" class="handle _md _md-toolbar-transitions">-->
+                                                  <!--                           <div class="md-toolbar-tools-dazzle-field-edit">-->
+                                                  <!--                                <i class="fa fa-arrows fa-x" ui-tree-handle role="button" aria-hidden="true"></i>-->
+                                                  <!--                               <i class="fa fa-power-off fa-x" ng-click="shelfOnOff(item['nid'])" role="button" aria-hidden="true"></i>-->
+                                                  <!--                               <i class="fa fa-times-circle fa-x" ng-click="deleteProduct(item['nid'])" role="button" aria-hidden="true"></i>-->
+                                                  <!--                               <i class="fa fa-edit fa-x" ng-click="edit(model)" role="button" aria-hidden="true"></i>-->
+                                                  <!--                           </div>-->
+                                                  <!--</md-toolbar>-->
+
+                                                     <div class="product_thumb"><a class="" target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}"><img ng-src="{{loadImage(item['images'])}}"  alt=""></a>
+                                                     </div>
+                                                     <div class="product_title"><a target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}">{{item['title']}}</a></div>
+                                                     <div class="views">點擊︰{{item['product_views']}} </div>
+                                                     <div class="price">$ <a target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}/comment">按此查詢</a> </div>
+                                                     <div class="date">刊登日期：{{item['created']}} </div>
+                                                     <div class="date">更新日期：{{item['changed']}} </div>
+                                                 </div>
+                                                 <div class="pfoot"></div>
+
+                                              </div>
+                                            </div>
+                                       </div>
+                                  </div>
+
+                                    <!--<paging-->
+                                    <!--page="currentPage"-->
+                                    <!--page-size="pageSize"-->
+                                    <!--total="total"-->
+                                    <!--paging-action="pageClick(currentPage)">-->
+
+                                  <!-- </paging> -->
+
+                                    <div class="view-content" ng-if="!isAdmin">
+                                        <div class="views-row views-row-1 views-row-odd" ng-repeat="item in filteredProduct | filter: {status: '1'}">
+                                            <div class="views-field views-field-nothing">        <span class="field-content"><div class="product" id="desktop">
+					        <div class="product_c">
+					        <div class="over_tips"><a href="https://www.5metal.com.hk/node/{{item['nid']}}">按入產品詳情</a></div>
+                            <div class="admin_button" ng-if="isAdmin">
+                                <a href="#" ng-click="shelfOnOff(item['nid'])">上／下架</a>
+                                <a href="#" ng-click="deleteProduct(item['nid'])">刪除</a>
+                            </div>
+
+					        <div class="product_thumb"><a class="" target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}"><img ng-src="{{loadImage(item['images'])}}"  alt=""></a></div>
+					        <div class="product_title"><a target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}">{{item['title']}}</a></div>
+					        <div class="views">點擊︰{{item['product_views']}} </div>
+					        <div class="price">$ <a target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}/comment">按此查詢</a> </div>
+					        <div class="date">刊登日期：{{item['created']}} </div>
+					        <div class="date">更新日期：{{item['changed']}} </div>
+					        </div>
+					        <div class="pfoot"></div>
+					        </div></span>  </div>
+                                            <div class="views-field views-field-nothing-1">        <span class="field-content"><div class="product" id="mobile">
+					        <div class="product_c">
+					        <div class="over_tips" ng-show="!isAdmin"><a ng-href="https://www.5metal.com.hk/node/{{item['nid']}}">按入產品詳情</a></div>
+					        <div class="product_thumb"><a class="" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}"><img ng-src="{{loadImage(item['images'])}}" alt=""></a></div>
+					        <div class="product_title"><a ng-href="https://www.5metal.com.hk/node/{{item['nid']}}">{{item['title']}}</a></div>
+					        <div class="views">點擊︰{{item['product_views']}} </div>
+					        <div class="provider">產品型號：{{item['product_model']}} </div>
+					        <div class="provider">刊登日期：{{item['created']}} </div>
+					        <div class="price">$ <a target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}">按此查詢</a> </div>
+					        </div>
+					        <div class="pfoot"></div>
+					        </div></span>  </div>
+
+                                        </div>
+                                    </div>
+
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="more">
+                                    <a ng-href="/c/{{model['nid']}}/product" class="more_btn">更多</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- cp-region-right -->
+
+                    <div class="clearfix"></div>
+                </div>
+
+
+            </div>
+
+            <div id="About" class="tabcontent">
+                <h3 class="head">公司介紹</h3>
+                <!--<metal-edit-button popup="body" item="company['body']" field="body"></metal-edit-button>-->
+
+                <div ng-bind-html="company['body'] | to_trusted">
+                </div>
+
+            </div>
+
+            <div id="Product" class="tabcontent">
+                <div id="cp-content">
+                    <div class="cp-region-left">
+                        <div class="cat_wrapper" ng-init="getAllCategory()">
+                            <h3 class="head">產品目錄</h3>
+
+
+                            <div class="product_cat_sub_content">
+
+                                <div class="product_cat_sub" ng-repeat="cat in categorys">
+                                    <a class="cat_id_921" href="#" ng-click="catFilter(cat)">{{cat}}</a>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!--<div class="cp-box cp-category">-->
+                        <!--    <h3 class="head">產品分類</h3>-->
+                        <!--    <div class="cp-box-content">-->
+                        <!--        <ul class="category">-->
+                        <!--            <li class="cat_1 disable"><a title="五金工具">五金工具</a></li>-->
+                        <!--            <li class="cat_2 active"><a href="/c/24247/product?tid=2" title="五金製品">五金製品</a></li>-->
+                        <!--            <li class="cat_4 active"><a href="/c/24247/product?tid=4" title="建築與安全設備">建築與安全設備</a></li>-->
+                        <!--            <li class="cat_5 disable"><a title="金屬原料">金屬原料</a></li>-->
+                        <!--            <li class="cat_8 disable"><a title="電子及光學用品">電子及光學用品</a></li>-->
+                        <!--            <li class="cat_7 disable"><a title="環保回收">環保回收</a></li>-->
+                        <!--            <li class="cat_6 disable"><a title="五金工業機械">五金工業機械</a></li>-->
+                        <!--            <li class="cat_3 disable"><a title="五金設備工程">五金設備工程</a></li>-->
+                        <!--        </ul>-->
+                        <!--        <div class="clearfix"></div>-->
+                        <!--    </div>-->
+                        <!--</div>-->
+
+                        <!--<div class="cp-box cp-advance-search">-->
+                        <!--    <a href="/product_category?cid=24247" class="btn_advance colorbox cboxElement">進階搜尋</a>-->
+                        <!--</div>-->
+                        <!--<div class="cat_wrapper" ng-init="getAllCategory()">-->
+                        <!--    <h3 class="head">產品目錄</h3>-->
+
+
+                        <!--    <div class="product_cat_sub_content">-->
+
+                        <!--        <div class="product_cat_sub" ng-repeat="cat in categorys">-->
+                        <!--            <a class="cat_id_921" href="#" ng-click="catFilter(cat)">{{cat}}</a>-->
+
+                        <!--        </div>-->
+
+                        <!--    </div>-->
+                        <!--</div>-->
+
+
+                    </div><!-- cp-region-left -->
+                    <div class="cp-region-right">
+                        <div class="adv_filert">
+                            <div class="main_product_cat">
+                                <div class="term_attributes">
+
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                        <div id="cp-products" class="cp-box">
+                            <div class="cat_order_list cat_ref_list">
+                                <div class="list_box">
+                                    <label class="order">排序方式</label>
+                                    <ul class="order_list">
+
+                                        <li><a href="/c/24247/product?sort_by=field_product_views_value&amp;sort_order=DESC" class="desc">點擊</a></li>
+
+                                        <li><a href="/c/24247/product?sort_by=changed&amp;sort_order=DESC" class="desc">上架日期</a></li>
+
+                                        <li><a href="/c/24247/product?sort_by=field_product_price_value&amp;sort_order=DESC" class="desc">價格</a></li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <h3 class="head">產品供應</h3>
+                            <div class="cp-box-content cp-product-list">
+                                <a class="cp-arrow-l"></a>
+                                <div class="cp-pd-list">
+                                    <div class="view-content">
+                                        <div class="views-row views-row-1 views-row-odd" ng-repeat="item in company['myProducts'] | filter: {status: '1'}">
+                                            <div class="views-field views-field-nothing">        <span class="field-content"><div class="product" id="desktop">
+					        <div class="product_c">
+					        <div class="over_tips"><a href="https://www.5metal.com.hk/node/{{item['nid']}}">按入產品詳情</a></div>
+					        <div class="product_thumb"><a class="" target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}"><img ng-src="{{loadImage(item['images'])}}"  alt=""></a></div>
+					        <div class="product_title"><a target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}">{{item['title']}}</a></div>
+					        <div class="views">點擊︰{{item['product_views']}} </div>
+					        <div class="price">$ <a target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}/comment">按此查詢</a> </div>
+					        <div class="date">刊登日期：{{item['created']}} </div>
+					        <div class="date">更新日期：{{item['changed']}} </div>
+					        </div>
+					        <div class="pfoot"></div>
+					        </div></span>  </div>
+                                            <div class="views-field views-field-nothing-1">        <span class="field-content"><div class="product" id="mobile">
+					        <div class="product_c">
+					        <div class="over_tips"><a ng-href="https://www.5metal.com.hk/node/{{item['nid']}}">按入產品詳情</a></div>
+					        <div class="product_thumb"><a class="" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}"><img ng-src="{{loadImage(item['images'])}}" alt=""></a></div>
+					        <div class="product_title"><a ng-href="https://www.5metal.com.hk/node/{{item['nid']}}">{{item['title']}}</a></div>
+					        <div class="views">點擊︰{{item['product_views']}} </div>
+					        <div class="provider">產品型號：{{item['product_model']}} </div>
+					        <div class="provider">刊登日期：{{item['created']}} </div>
+					        <div class="price">$ <a target="_blank" ng-href="https://www.5metal.com.hk/node/{{item['nid']}}">按此查詢</a> </div>
+					        </div>
+					        <div class="pfoot"></div>
+					        </div></span>  </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <a class="cp-arrow-r"></a>
+                            </div>
+                        </div><!-- cp-products -->
+                    </div><!-- cp-region-right -->
+
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div id="Contact" class="tabcontent">
+
+                <script>
+                /*
+                    function initialize() {
+                        var myLatlng = new google.maps.LatLng(22.3384409,114.1502065);
+                        var mapOptions = {
+                            zoom: 18,
+                            center: myLatlng
+                        }
+                        var map = new google.maps.Map(document.getElementById('google_map'), mapOptions);
+
+                        var marker = new google.maps.Marker({
+                            position: myLatlng,
+                            map: map,
+                            title: 'Hello World!'
+                        });
+                    }
+
+                    google.maps.event.addDomListener(window, 'load', initialize);
+*/
+                </script>
+
+                <div id="cp-content">
+                    <div class="cp-box cp-contact">
+                        <h3 class="head">聯絡我們</h3>
+                        <div class="cp-box-content">
+                            <div class="row company_name">
+                                <h3 class="val">{{company['title']}}</h3> 
+                                <metal-edit-button popup="text" item="company['title']" field="title"></metal-edit-button>
+
+                            </div>
+
+                            <div class="row">
+                                <label>地址：</label>
+                                <span class="val">{{company['company_address']}}</span>
+                                <metal-edit-button popup="text" item="company['company_address']" field="company_address"></metal-edit-button>
+
+                            </div>
+                            <div class="row">
+                                <label>聯絡人：</label>
+                                <span class="val">{{company['contact_person']}}</span>
+                                <metal-edit-button popup="text" item="company['contact_person']" field="contact_person"></metal-edit-button>
+
+                            </div>
+                            <div class="row">
+                                <label>電話(公司)：</label>
+                                <span class="val">{{company['company_tel']}}</span>
+                                <metal-edit-button popup="text" item="company['company_tel']" field="company_tel"></metal-edit-button>
+
+                            </div>
+                            <div class="row">
+                                <label>電話(手提)：</label>
+                                <span class="val">{{company['mobile']}}</span>
+                                <metal-edit-button popup="text" item="company['mobile']" field="mobile"></metal-edit-button>
+
+                            </div>
+
+                            <div class="row">
+                                <label>傳真：</label>
+                                <span class="val">{{company['company_fax']}}</span>
+                                <metal-edit-button popup="text" item="company['company_fax']" field="company_fax"></metal-edit-button>
+
+                            </div>
+
+                            <div class="row">
+                                <label>電郵：</label>
+                                <span class="val"><a ng-href="mailto:{{company['email']}}">{{company['email']}}</a></span>
+                                <metal-edit-button popup="text" item="company['email']" field="email"></metal-edit-button>
+
+                            </div>
+                            <div class="row">
+                                <label>網址：</label>
+                                <span class="val"><a ng-href="{{company['company_url']}}" target="_blank">{{company['company_url']}}</a></span>
+                                <metal-edit-button popup="text" item="company['company_url']" field="company_url"></metal-edit-button>
+
+                            </div>
+                        </div>
+                    </div><!-- cp-contact -->
+                          <div id="map" style="width:100%; height:300px;"></div>
+                </div>
+
+            </div>
+
+            <!--end-->
+        </div><!-- END OF RIGHTSIDE-->
+
+        <div class="clearfix"></div>
+    </div>

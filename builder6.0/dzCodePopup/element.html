@@ -1,0 +1,56 @@
+<style type="text/css" media="screen">
+    #editor { 
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        font-family:12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace !important;
+    }
+    * {
+        font-family: inherit;
+    }
+    
+
+    .ace_text-layer {
+    	transform:translate(0px,0px) !important;
+    	top:0px !important;
+    }
+    
+    
+    .ace_gutter-layer{
+    	transform:translate(0px,0px) !important;
+    	top:0px !important;
+    }
+
+</style>
+
+<md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>選擇分類</h2>
+            <md-button class="md-raised md-primary" ng-click="shiftScreen()">
+                放大視窗
+            </md-button>
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="save()">
+                儲存
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="cancel()">
+                取消
+            </md-button>
+            <md-button class="md-raised md-primary" ng-click="recovery()">
+                回復
+            </md-button>
+            
+        </div>
+    </md-toolbar>
+    <md-dialog-content style="min-height:100%;" ng-init="init()">
+ <md-content class="md-padding" style="min-height:1024px; position:relative;">
+     
+     
+    <div id="editor" class="editor">
+            
+        
+    </div>
+    </md-content>
+</md-dialog-content>

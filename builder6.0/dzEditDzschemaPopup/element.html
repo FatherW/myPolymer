@@ -1,0 +1,75 @@
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Schema編緝器</h2>
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="addSchema()">
+                <md-tooltip>新增Schema</md-tooltip>
+                <i class="fa fa-plus"></i>
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="removeSchema(selectedIndex)">
+                <md-tooltip>移除Schema</md-tooltip>
+                <i class="fa fa-minus"></i>
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="saveSchema()">
+                <md-tooltip>儲存Schema</md-tooltip>
+                <i class="fa fa-floppy-o"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <div ng-init="init()">
+        <md-tabs md-selected="selectedIndex" md-border-bottom md-autoselect style="min-height: 400px;">
+            <md-tab label="{{s.headerName}}" ng-repeat="s in schema track by $index">
+                <md-content layout="row" layout-padding>
+                    <div flex="50" layout="row" layout-align="start" layout-wrap>
+                        <md-input-container class="md-block" flex="50">
+                            <label>標題</label>
+                            <input ng-model="s.headerName" ng-init="s.field = s.headerName"
+                                   ng-change="s.field = s.headerName">
+                        </md-input-container>
+                        <!--<md-input-container class="md-block" flex="50">
+                            <label>類別{{s.directive}}</label>
+                            <md-select ng-model="s.directive" ng-change="directiveChanged(s)">
+                                <md-option ng-repeat="d in directives" ng-value="d.directive">
+                                    {{d.directiveName}}
+                                </md-option>
+                            </md-select>
+                        </md-input-container>-->
+                        <select flex="50" ng-model="s.directive" ng-change="directiveChanged(s)">
+                            <option ng-repeat="d in directives" ng-value="d.directive">{{d.directiveName}}</option>
+                        </select>
+                        <md-input-container class="md-block" flex="50">
+                            <md-checkbox ng-model="s.key" ng-init="s.key = s.key || false"
+                                         ng-change="isKeyChanged(s)">
+                                是否唯一
+                            </md-checkbox>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex="50">
+                            <md-checkbox ng-model="s.required" ng-init="s.required = s.required || false"
+                                         ng-disabled="s.key">
+                                是否必填
+                            </md-checkbox>
+                        </md-input-container>
+                        <md-input-container class="md-block" flex="50">
+                            <label>預設</label>
+                            <input ng-model="s.default"
+                                   ng-init="s.default = s.default || ''"
+                                   ng-disabled="s.key || s.defaultByTimestamp">
+                        </md-input-container>
+                        <md-input-container class="md-block" flex="50">
+                            <md-checkbox ng-model="s.defaultByTimestamp"
+                                         ng-init="s.defaultByTimestamp = s.defaultByTimestamp || false">
+                                按時間預設
+                            </md-checkbox>
+                        </md-input-container>
+
+                        <md-input-container class="md-block" flex="50" ng-if="isForm">
+                            <label>描述</label>
+                            <input ng-model="s.description"
+                                   ng-init="s.description = s.description || ''">
+                        </md-input-container>
+                    </div>
+                        <div flex="50" style="padding-left: 20px;" ng-init="initSetting(s)" ng-include='s.setting'></div>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </div>

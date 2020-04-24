@@ -1,0 +1,16 @@
+<div class="row" ng-init="loadData()">
+						<div class="grid_11">
+							<div class="blog" ng-repeat="item in model.data">
+								<time datetime="2014-01-01">{{item['date'] | date:'MMM'}}</time>
+								<img ng-src="{{item['photo']}}" alt="" class="img_inner fleft">
+								<div class="extra_wrapper">
+									<h3 class="blog_head color1"><a ng-href="{{item['標題']}}.html">{{item['標題']}}</a></h3>
+									<div ng-bind-html="item['content']">
+									</div>
+									<br>
+									<a href="#" class="btn bt__2">Read More</a>
+								</div>
+							</div>
+                            {{today | date :  "dd.MM.y" }}
+						</div>
+					</div>

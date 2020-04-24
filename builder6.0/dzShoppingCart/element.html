@@ -1,0 +1,68 @@
+<div id="shppingCartController" ng-init="init()">
+        <div class="row hidden-xs">
+            <div class="col col-md-7">產品</div>
+            <div class="col col-md-2">數量</div>
+            <div class="col col-md-2">價錢</div>
+            <div class="col col-md-1"></div>
+        </div>
+        <div class="row activity-row" ng-repeat="p in products track by $index ">
+            <div class="col col-md-6 col-xs-12">
+                <div class="row">
+                    <div class="col col-md-5 col-xs-12">
+                            <img class="thumbnail img-responsive" src="{{p['截圖']}}">
+                    </div>
+                    <div class="col col-md-7 col-xs-12">
+                        <div class="col col-md-12 itemtitle">{{p['標題']}}</div>
+                        <div class="col col-md-12 hidden-xs">{{p['介紹']}}</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-md-2 col-xs-5">
+                <input type="number" class="col-lg-12 col-md-12 col-xs-12" ng-model="p.volume" min="1" ng-change="volumeChanged(p)">
+            </div>
+            <div class="col col-md-3 col-xs-6">
+     <md-radio-group>
+
+      <md-radio-button ng-click="updateTotal($index,'1')" class="md-primary" value="1">原價： {{myPrice(p) | currency:"$"}}</md-radio-button>
+      <md-radio-button ng-click="updateTotal($index,'2')" value="2"> 普優積分：{{p['普優折扣']}} +${{myPrice(p) / 2}} </md-radio-button>
+      <md-radio-button ng-click="updateTotal($index,'3')" value="3">特優積分：{{p['特優折扣']}} +${{myPrice(p) / 2}}</md-radio-button>
+
+    </md-radio-group>
+
+
+
+</div>
+            <div class="col col-md-1 col-xs-12" ng-click="remove(p,$index)">
+                <div class="pull-right">X</div>
+            </div>
+    <div class="clear"></div>
+    <hr>
+        </div>
+        <div class="margin-block row" ng-show="(numberOfProduct > 0)"> 
+            <hr>
+            <div class="col col-md-7 itemtitle">
+            	<!--
+            	<div class="confirm-btn w-button" ng-show="!usingPoint" ng-click="usePoint()">使用積分</div>
+            	<div class="confirm-btn w-button" ng-show="usingPoint" ng-click="cancelPoint()">取消積分</div>
+                <div class="pull-right" ng-show="!usingPoint">{{allTotalPrice | currency:"HKD$"}}</div>
+                <div class="pull-right" ng-show="usingPoint">{{showTotalPrice | currency:"HKD$"}} - {{pointUse | currency:"HKD$"}} = {{allTotalPrice | currency:"HKD$"}}</div>
+            	-->
+            </div>
+            <div class="col col-md-5">
+            	<div class="row">
+            		<div class="col col-md-6">價格：</div>
+            		<div class="col col-md-6">{{originalPrice | currency:"HKD$"}}</div>
+            		<div class="col col-md-6">普優積分使用：</div>
+            		<div class="col col-md-6">{{generalCreditUsed}}
+
+</div>
+            		<div class="col col-md-6">特優積分使用：</div><div class="col col-md-6">{{specialCreditUsed}}
+
+</div><div class="col col-md-6">總價：</div>
+            		<div class="col col-md-6">{{showTotalPrice | currency:"HKD$"}}</div>
+            	</div>
+                <div class="confirm-btn confirm-btn-buy w-button" ng-click="confirmPay()">確認付款</div>
+            </div>
+            <hr>
+        </div>
+    </div>

@@ -1,0 +1,12 @@
+<style>
+.video-container{
+    width:100% !important;
+}
+</style>
+<div class="video-container" ng-if="model.src" context-menu="menuOptions">
+    <iframe width="100%" height="100%" ng-src="{{model.src | trustUrl}}" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<div class="video-container" ng-if="!model.src" context-menu="menuOptions">
+    請右click 新增youtube影片
+</div>

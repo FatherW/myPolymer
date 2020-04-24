@@ -1,0 +1,46 @@
+<div > 
+<div class="filter_search1">
+                <div class="dateInput">
+                    <span>年份：</span>
+                    <p class="input-group">
+                        <!--<input type="text" ng-model="year">-->
+                        <select id="yearSelect" class="form-control" ng-model="year" ng-change="changeYear(year)">
+                            <option ng-repeat="yearOption in yearOptions">{{yearOption}}</option>
+                        </select>
+                    </p>
+                    
+                </div>
+                <!--<div class="icon-search" ng-click="goSearch()"></div>-->
+            </div>
+            <div class="clear"></div>
+
+
+<table class="newTable" st-table="displayedCollection" st-safe-src="rowdate">
+    <thead>
+    <!--<tr>
+        <th>date</th>
+    	<th>title2</th>
+		<th>year</th>
+		<th>row.score</th>
+	</tr>
+	</thead>-->
+	</thead>
+    <tbody>
+    	<tr>
+        	<div ng-repeat="row in displayedCollection" class="pdfRowWrapper column col-lg-3 col-md-3 col-xs-4">
+                <div class="pdfIcon"><a target="_blank" ng-href="image/{{row.pdf_link2}}"><i class="fa fa-file-pdf-o fa-4" aria-hidden="true"></i></a></div>
+                <div class="pdfTitle"><a target="_blank" ng-href="image/{{row.pdf_link2}}">{{row.title2}}</a></div>
+                <div class="pdfDate">{{row.date}}</div>
+        	</div>
+    	</tr>
+	
+	</tbody>
+    <tfoot>
+    		<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
+</table>
+</div>

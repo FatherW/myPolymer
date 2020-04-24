@@ -1,0 +1,61 @@
+<div class="leftSideWrapper">
+
+    <div id="SchoolIntro">
+        學校簡介
+    </div>
+    <div class="SchoolLogo">
+                <a ng-href="{{model.data['學校名稱']}}.html" class="ng-scope"><img id="img-ele1508209428996-50" class="img-responsive" style="max-width:100%;max-height: 100%;" ng-src="{{model.data['頭像']}}"> </a>
+    </div>
+    <div id="SchoolName">
+        {{model.data['學校名稱']}}
+
+    </div>
+    <div class="searchWrapper">
+        <div class="bigRedTitle"><img class="likeIcon smallIcon" src="http://www.hot-yeah.com.s3.amazonaws.com/image/svg/Red Place Icon.svg">地址</div>
+        {{model.data['地址']}}
+
+        <div class="marginLine marginSpace20"></div>
+        <div class="bigRedTitle"><img class="likeIcon smallIcon" src="http://www.hot-yeah.com.s3.amazonaws.com/image/svg/Red Phone Icon.svg">電話號碼</div>
+        <div class="filterWrapper">
+            {{model.data['電話號碼']}}
+        </div>
+        <div class="marginLine marginSpace20"></div>
+        <div class="bigRedTitle"><img class="likeIcon smallIcon" src="http://www.hot-yeah.com.s3.amazonaws.com/image/svg/Red Mail Icon.svg">電郵地址</div>
+        <div class="filterWrapper">
+            {{model.data['電郵']}}
+        </div>
+        <div class="marginLine marginSpace20"></div>
+
+
+        <div class="bigRedTitle"><img class="likeIcon smallIcon" src="http://www.hot-yeah.com.s3.amazonaws.com/image/svg/Red Clock Icon.svg">營業時間</div>
+        <div class="filterWrapper" ng-bind-html="model.data['營業時間']">
+        </div>
+        <div class="marginLine marginSpace20"></div>
+        <div class="bigRedTitle"><img class="likeIcon smallIcon" src="http://www.hot-yeah.com.s3.amazonaws.com/image/svg/Red Payment Icon.svg">付款方式</div>
+        <div class="filterWrapper">
+            <p class="ng-scope">
+                <span ng-repeat="item in model.data['付款方式']">
+                    {{item}}&nbsp;&nbsp;
+                </span>
+            </p>
+            <div class="apply ng-scope" ng-click="applyCourse(thisPageJson.myID)">
+                立即報名
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="fb_slide">
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/zh_HK/sdk.js#xfbml=1&version=v2.11&appId=515361655194477';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+<div ng-if="model.data['Facebook Page']" class="fb-page" data-href="{{model.data['Facebook Page']}}" data-tabs="timeline" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="{{model.data['Facebook Page']}}" class="fb-xfbml-parse-ignore"><a ng-href="{{model.data['Facebook Page']}}">訊通網絡</a></blockquote></div>
+
+    </div>
+</div>

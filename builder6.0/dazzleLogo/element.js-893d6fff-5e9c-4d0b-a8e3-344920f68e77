@@ -1,0 +1,63 @@
+var app = angular.module('demoApp');
+app.directive('dazzleLogo', function ($compile, $templateRequest) {
+    var dazzleLogo = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            scope.http = "http://d27btag9kamoke.cloudfront.net/";
+            scope.directiveId = "dazzleLogo";
+            scope.type = "dazzleLogo";
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+            scope.editorCustomInit(scope, element, attrs).then(function () {
+                if (angular.isUndefined(scope.model.logos)) {
+                $scope.logos = [{
+                    "img": "http://mdbootstrap.com/images/slides/slide%20(9).jpg",
+                    "title": "title1",
+                    "text": "text1"
+                }, {
+                    "img": "http://mdbootstrap.com/images/slides/slide%20(8).jpg",
+                    "title": "title2",
+                    "text": "text2"
+                }, {
+                    "img": "http://mdbootstrap.com/images/slides/slide%20(7).jpg",
+                    "title": "title4",
+                    "text": "text3"
+                }];
+                    scope.updateHtml();
+                }
+                var template = angular.element('<div bind-html-compile="model.html" context-menu="menuOptions"></div>');
+                element.html(template);
+                scope.$apply(function () {
+                    $compile(template)(scope);
+                });
+            });
+        },
+        controller: function ($scope, $element, $attrs) {
+            $scope.menuOptions = [
+                ["dazzleLogo", function () {
+                    console.log("Menu Clicked:dazzleLogo");
+                }],
+                ["更換模版", function () {
+                    $mdDialog.show({
+                        controller: 'templatePopupController',
+                        templateUrl: 'models/templatePopup/popup.html' + "?id=" + new Date().getTime(),
+                        locals: {
+                            rootScope: $scope
+                        }
+                    }).then(function (template) {
+                        $scope.useTemplate();
+                    });
+                }]
+            ];
+            $scope.beforeAtomSaved = function () {
+
+            }
+            $scope.afterAtomSaved = function () {
+
+            }
+        }
+    };
+    return dazzleLogo;
+});

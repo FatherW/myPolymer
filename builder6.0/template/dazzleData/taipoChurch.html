@@ -1,0 +1,16 @@
+<table class="table">
+<thead>
+<tr>
+  <th>標題</th>
+  <th>檔案</th>
+
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="item in model.data | filter:{'刊物分類':'堂刊'}  | orderBy:'-nid'">
+  <td>{{item['標題']}}</td>
+  <td><a href="{{item['檔案']}}"><img style="height:60px;" src="http://taipo520.dazzle.website/sites/all/themes/rainbow/images/down1.png"></a></td>
+  
+</tr>
+</tbody>
+</table>

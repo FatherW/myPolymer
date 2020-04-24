@@ -11,6 +11,7 @@
     "@vaadin/vaadin": "^15.0.5",
     "@vaadin/vaadin-accordion": "^1.1.0-alpha1",
     "@vaadin/vaadin-date-picker": "^4.0.8",
+    "@vaadin/vaadin-upload": "^4.2.2",
     "@webcomponents/webcomponentsjs": "latest",
     "aws-cli": "0.0.2"
   }

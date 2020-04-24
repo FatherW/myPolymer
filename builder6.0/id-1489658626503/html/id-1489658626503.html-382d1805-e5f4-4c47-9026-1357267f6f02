@@ -1,0 +1,32 @@
+			<ul class="nav-list" context-menu="editorMenuOptions">
+			    <li ng-repeat = "item in model.list" class="nav-item"><a ng-href="{{item.link}}">{{item.title}}</a>
+			    	<ul class="dropdown-menu">
+			            <li ng-repeat="subitem in item.list"><a ng-href="{{subitem.link}}">{{subitem.title}}</a></li>
+			          
+			         </ul>	
+
+			    </li>
+			</ul>
+
+			<style>
+
+
+.dropdown-menu {
+    background-color: #006eb9;
+}
+
+.dropdown-menu {
+    position: relative !important;
+    top: 100% !important;
+    left: 0 !important;
+    z-index: 1000 !important;
+    float: left;
+    min-width: 0px  !important;
+    padding: 0  !important;
+    width: 100%  !important;
+}
+
+.nav-item:hover .dropdown-menu{
+	display:block;
+}
+</style>

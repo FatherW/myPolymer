@@ -1,0 +1,6 @@
+ 
+
+ <ul context-menu="id="editorMenuOptions">
+<li class="item" ng-repeat = "item in model.list"> <a ng-href="{{item.link}}">{{item.title}}</a></li>
+
+</ul>

@@ -1,0 +1,58 @@
+<div class="modal-header">
+    <div class="row">
+        <div class="col col-md-6">
+            <h1 class="modal-title">選單管理員</h1></div>
+        <div class="col col-md-6">
+            <button type="button" ng-click="newRootItem()" class="btn btn-primary pull-right">新增選單</button>
+        </div>
+    </div>
+</div>
+<div class="modal-body modal-menu">
+    <div ui-tree id="tree-root">
+        <ol ui-tree-nodes ng-model="list">
+            <li type="Menu" class="menus" ng-repeat="node in list" ui-tree-node
+                ng-include="'nodes_renderer.html'"></li>
+        </ol>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" ng-click="cancel()" class="btn btn-primary">取消</button>
+    <button type="button" ng-click="saveMenu()" class="btn btn-success">儲存</button>
+</div>
+
+<script type="text/ng-template" id="nodes_renderer.html">
+    <div type="List" class="tree-node">
+        <div class="pull-left tree-handle" ui-tree-handle>
+            <span class="glyphicon glyphicon-list"></span>
+        </div>
+        <div class="tree-node-content">
+            <a class="btn btn-success btn-xs" data-nodrag ng-click="toggle(node)">
+                    <span class="glyphicon" ng-class="{
+                      'glyphicon-chevron-right': collapsed,
+                      'glyphicon-chevron-down': !collapsed
+                      }">
+                    </span>
+            </a>
+
+            <input type="text" ng-model="node.title">
+            <input id="link-{{node.id}}" class="hidLink" type="hidden" ng-model="node.link">
+            <a class="pull-right btn btn-danger btn-xs" data-nodrag ng-click="remove(node)"><span
+                    class="glyphicon glyphicon-remove"></span>
+            </a>
+            <a class="pull-right btn btn-success btn-xs" data-nodrag ng-controller="linkPopupCtrl"
+               ng-click="open(node,data)"><span
+                    class="glyphicon glyphicon-pencil"></span>
+
+            </a>
+            <a class="pull-right btn btn-primary btn-xs" data-nodrag ng-click="newSubItem(node)"
+               style="margin-right: 8px;"><span class="glyphicon glyphicon-plus"></span></a>
+        </div>
+    </div>
+    <ol ui-tree-nodes="" ng-model="node.list" ng-class="{hidden: collapsed}">
+        <li type="Submenu" ng-repeat="node in node.list" class="submenus" ui-tree-node
+            ng-include="'nodes_renderer.html'">
+        </li>
+    </ol>
+</script>
+
+

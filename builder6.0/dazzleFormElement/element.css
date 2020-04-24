@@ -1,0 +1,24 @@
+dazzle-form-element md-input-container:hover {
+    outline: 1px dashed #ccc;
+}
+
+.fromElementRowWrapper {
+    position: relative;
+}
+
+.removeThis {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.fa-2 {
+    font-size: 2em;
+}
+
+i.fa.fa-trash {
+    cursor: pointer;
+}
+i.fa.fa-trash:hover {
+    color:#337ab7;
+}

@@ -1,0 +1,11 @@
+md-toolbar.dazzle-container {
+    right: 10px;
+    background-color: blue !important;
+    display:none;
+}
+dazzle-container{
+    position:relative;
+}
+.container-border{
+    border:0.5px grey dashed;
+}

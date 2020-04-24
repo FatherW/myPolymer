@@ -1,0 +1,22 @@
+<div class="menu-main-navigation-container" ng-init="count='hidden'">
+<ul id="menu-main-navigation" class="sf-menu sf-vertical sf-js-enabled" >
+            <li ng-repeat="item in model.menu" class="menu-item current-menu-item" >
+              <a href="{{item.link}}" class="sf-with-ul" >{{item.title}}<span class="sf-sub-indicator"><i class="fa fa-angle-down"></i></span></a>
+              <ul  class="sub-menu" style="display: none; float: none; width: 15.4667em;"  >
+                <li   ng-repeat="subitem in item.list" class="menu-item" style="white-space: normal; float: none; width: 100%; z-index:500;" >
+                  <a href="{{subitem.link}}" style="float: none; width: auto;">{{subitem.title}}</a>
+                </li>
+              </ul>
+             </li>
+             <li class="menu-item">
+              <a href="about.html">About me</a>
+            </li>
+            <li class="menu-item">
+              <a href="blog.html">Journal</a>
+            </li>
+            <li class="menu-item">
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+            
+</div>

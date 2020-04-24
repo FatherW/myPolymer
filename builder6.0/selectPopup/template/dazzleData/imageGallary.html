@@ -1,0 +1,12 @@
+
+<div id="instafeed" class="instafeed text-center">
+    <div class="item" ng-repeat="item in model.data">
+        <a target="_blank">
+            <editor-image-element src="{{item.img}}" alt="Instagram Photo" class="ng-scope" id="ele1498635827597-{{$index+1}}" custom="editorImageElement">
+                <div bind-html-compile="model.html" context-menu="menuOptions" class="ng-scope"><img id="img-ele1498635827597-17" class="img-responsive ng-scope" style="max-width:100%;max-height: 100%;" src="{{item.img}}"></div>
+            </editor-image-element>
+        </a>
+    </div>
+  
+
+</div>

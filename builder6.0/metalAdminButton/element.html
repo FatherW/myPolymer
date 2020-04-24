@@ -1,0 +1,18 @@
+<style>
+md-toolbar.dazzle {
+  width:88px;
+}
+dz-i{
+    cursor:pointer;
+}
+</style>
+           
+            <md-toolbar ng-if="isAdmin" class="md-accent dazzle">
+                    <tb-div class="md-toolbar-tools-dazzle">
+                        <dz-i class="fa fa-x fa-plus" aria-hidden="true" ng-click="add()"></dz-i>
+                        <dz-i class="fa fa-x fa-edit" aria-hidden="true"></dz-i>
+                        <dz-i class="fa fa-x fa-info" aria-hidden="true"></dz-i>         
+                        <dz-i class="fa fa-x fa-save" ng-click="changeBackground()" aria-hidden="true"></dz-i>
+                        <dz-i class="fa fa-x fa-paper-plane" ng-click="changeBackground()" aria-hidden="true"></dz-i>    
+                    </tb-div>
+                  </md-toolbar>

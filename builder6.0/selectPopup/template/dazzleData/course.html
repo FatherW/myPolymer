@@ -1,0 +1,24 @@
+
+<div ng-init="loadData()">
+
+
+    <div class="col-md-4">
+       <div class="event-menu-sidebar">
+          <div class="list-group nav-pills js-stick" data-parent=".event-menu" role="tablist">
+             <a ng-repeat="item in model.data"  class="list-group-item" data-toggle="pill" href="#dmenu{{$index}}" role="presentation">
+                <div class="media">
+                   <div class="media-body">
+                      <h4 class="list-group-item-heading">{{item['Course Name']}}</h4>
+                      <p class="list-group-item-text">{{item['Price']}}</p>
+                   </div>
+                   <div class="media-right media-middle">
+                      <div class="icon icon-arrow visible-xs"></div>
+                   </div>
+                </div>
+             </a>
+          </div>
+       </div>
+    </div>
+
+</div>
+<div class="clear"></div>

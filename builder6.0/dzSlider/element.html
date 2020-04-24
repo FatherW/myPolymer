@@ -1,0 +1,14 @@
+   <div class="slideshow" context-menu="menuOptions">
+        <ul class="slideshow-slides">
+        <li ng-repeat="slide in model.slides" ng-class="{ active: $index == activeIndex }">
+          <figure>
+            <a ng-href="{{slide.link}}"><img ng-src="{{ slide.src}}" /></a>
+          </figure>
+        </li>
+        </ul>
+        <ul class="slideshow-dots">
+          <li ng-repeat="slide in slides" ng-class="{ active: $index == activeIndex }">
+            <a ng-click="jumpToSlide($index)">{{ $index + 1 }}</a>
+          </li>
+        </ul>
+      </div>

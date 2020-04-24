@@ -1,0 +1,19 @@
+<!--<div id="news_detail" ng-init="loadNews()">
+    	<div id="row0" class="row" ng-repeat="item in model.news">
+            <div id="news0" class="new0 element wysiwyg-editor">
+                <a ng-href="{{item['連結']}}">{{item['標題']}}</a>
+            </div>
+        </div>
+
+</div>-->
+
+<div ng-init="loadNews()">
+    <div class="row"  ng-repeat="item in model.news">
+<div id="news0" class="new0 element wysiwyg-editor">
+    <a ng-href="{{item['連結']}}">{{item['標題']}}</a>
+        
+</div>
+        
+    </div>
+
+</div>

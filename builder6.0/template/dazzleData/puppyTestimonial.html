@@ -1,0 +1,39 @@
+<div class="row text-center" ng-init="loadData()">
+                <div id="clientCarousel" class="carousel carousel-fade slide" data-ride="carousel">
+                    <div class="col-xs-12 col-sm-10">
+                        
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item" ng-repeat="item in model.data" ng-class="$index? '':'active'">
+                                <div class="single-client">
+                                    <div class="client-photo">
+                                        <img ng-src="{{item.photo}}" alt="pet">
+                                    </div>
+                                    <h4>{{item.Name}}</h4>
+                                    <h5>{{item.smallName}}</h5>
+                                    <div class="client-text">
+                                        <p>{{item.testimonial}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                        </div>
+                        
+                        <div class="client-slide-control">
+                            <a class="left client-carousel-control" href="#clientCarousel" role="button" data-slide="prev">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a class="right client-carousel-control" href="#clientCarousel" role="button" data-slide="next">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-2">
+                        <ol class="carousel-indicators">
+                            <li ng-repeat="item in model.data" data-target="#clientCarousel" data-slide-to="0" class="">
+                                <img ng-src="{{item.photo}}" alt="">
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </div>

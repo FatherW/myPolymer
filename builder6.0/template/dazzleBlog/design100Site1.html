@@ -1,0 +1,15 @@
+<div class="row" ng-init="loadData()">
+						<div class="grid_11">
+							<div class="blog">
+								<time datetime="2014-01-01">{{item.date | date}}</time>
+								<img ng-src="{{item.photo}}" alt="" class="img_inner fleft">
+								<div class="extra_wrapper">
+									<h3 class="blog_head color1"><a ng-href="{{item['標題']}}">{{item['標題']}}</a></h3>
+									<div ng-bind-html="item['content']">
+									</div>
+									<br>
+									<a ng-href="{{item['標題']}}" class="btn bt__2">Read More</a>
+								</div>
+							</div>
+						</div>
+					</div>

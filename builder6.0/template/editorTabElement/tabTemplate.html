@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="column col-lg-3 col-md-3 col-xs-12">
+        <ul class="nav nav-pills nav-stacked">
+            <li ng-repeat="item in model.menu" ng-class="{active:$index == 0}">
+                <a ng-href="#tab{{$index}}" data-toggle="pill">{{item.title}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="column col-lg-9 col-md-9 col-xs-12">
+        <div class="tab-content" myangular-controller="AppController2">
+            <div id="tab{{$index}}" class="tab-pane fade in"
+                 ng-repeat="item in model.menu" ng-class="{active:$index == 0}">
+
+                <dazzle-data data="course" datafilter='{{item.title}}' ng-init="thisTitle=item.title" id="data-{{item.id}}">
+                        <div ng-init="loadData()">
+                        <div ng-repeat="dataitem in model.data | filter:{ category: thisTitle }">
+                        <h2>{{dataitem['Course Name']}} </h2>
+                        <p>{{dataitem['學院']}}</p>
+                        <p>{{dataitem['College']}}</p>
+                        <hr class="ng-scope">
+                </div>
+                </dazzle-data>
+                <editor-container-element custom id="{{item.id}}">
+                
+    
+
+
+                </editor-container-element>
+            </div>
+        </div>
+    </div>
+</div>

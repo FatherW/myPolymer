@@ -1,0 +1,8 @@
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav navbar-right">
+        <li ng-repeat="item in model.menu">
+            <a ng-class="{'active':item.title=='Home' , 'scroll':item.title!='Home'}">{{item.title}}</a>
+        </li>
+    </ul>
+    <div class="clearfix"> </div>
+</div>

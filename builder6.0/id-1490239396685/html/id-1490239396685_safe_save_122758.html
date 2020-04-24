@@ -1,0 +1,24 @@
+<style>
+.marqueeContent.ng-scope {
+    position: relative;
+    float: left;
+    width: 100%;
+    display: block;
+}
+.angular-marquee img {
+    height: 100px;
+}
+.award_logo {
+    width: 300px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+</style>
+<div context-menu="marqueeMenuOptions" class="marqueeContent">
+            <div angular-marquee=""  scroll="true" class="award_logo" duration="3000">
+                <span ng-repeat = "item in model.list">
+                	<img ng-src="{{item.link}}">
+          		</span>
+            </div>
+</div>
+

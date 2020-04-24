@@ -1,0 +1,16 @@
+  <div class="view view-latest-video view-id-latest_video view-display-id-page_1 view-dom-id-a3f3d5bee14afa29428c908fc5d148a3">
+           
+  
+  
+  
+      <div class="view-content">
+  
+ <div ng-repeat="item in model.data" class="views-row views-row-5 views-row-odd">
+      
+  <div class="views-field views-field-title">        <span class="field-content">{{item['標題']}}</span>  </div>  
+  <div class="views-field views-field-created">        <span class="field-content">{{item['日期']}}</span>  </div>  
+  <div class="views-field views-field-field-youtube-link">        <div class="field-content"><editor-youtube-element src="{{item['影片連結'] | utrusted}}">
+  </editor-youtube-element></div>  </div>  </div>
+    
+    </div>
+    </div>

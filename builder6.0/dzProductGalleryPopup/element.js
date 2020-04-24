@@ -1,0 +1,294 @@
+var app = angular.module('demoApp');
+var name = 'dzProductGalleryPopup';
+
+app.directive(name, function ($compile, $templateRequest, $mdDialog, $uibModal,$dazzleUser,$dazzleS3,$dazzlePopup,$dazzleFn,$dazzleData) {
+    var link = {
+        restrict: 'E',
+        scope: true,
+        templateUrl: "https://d25k6mzsu7mq5l.cloudfront.net/builder6.0/dzProductGalleryPopup/element.html?id=" + new Date().getTime(),
+        link: function (scope, element, attrs) {
+            scope.http = "https://d25k6mzsu7mq5l.cloudfront.net/";
+            scope.directiveId = name;
+            scope.type = name;
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+        },        
+        controller: function ($scope, $element, $attrs,$dazzleS3, $http,$mdSidenav, $mdBottomSheet,$log) {
+                console.log('My Scope',$scope);
+                var params = $dazzleUser.getDazzleInfo('params');
+                var userBucket = $dazzleUser.getDazzleInfo('userBucket');
+                
+                //$scope.rootScope = params['rootScope'];
+                $scope.myTags = [];
+                $scope.owner = params.owner || '';
+//                $scope.searchTags = params.searchTags || [];
+                
+                $scope.mySize = 'medium';
+
+                $scope.toggleRight = buildToggler('right');
+
+                $scope.isOpenRight = function(){
+                  return $mdSidenav('right').isOpen();
+                };
+            
+
+                $scope.inited = false;
+                $scope.userGallery = [];
+                $scope.allList = [];
+                $scope.tags =params.tags || [];
+                                                    $scope.tags.push("產品圖片");
+
+                $scope.multiple = params.multiple || false;
+                $scope.myElements =[]; 
+//                $scope.tags = $scope.tags.push($scope.owner);
+                
+                $scope.userGalleryAngularGridOptions = {
+                    gridWidth: 100,
+                    gutterSize: 10,
+                    infiniteScrollDelay: 1000,
+                    infiniteScrollDistance: 95,
+                    scrollContainer: '#dialogContent_gallery'
+                };
+
+                $scope.getImages = function() {
+                    
+                }
+
+
+                $scope.init = function () {
+                    $scope.inited = false;
+                    var params = {};
+                    
+                    if ($scope.owner)
+                        params = {
+                                "action": "listMyGalleryByOwner",
+                                "uid": $dazzleUser.getUser().uid,
+                                'subowner': $scope.owner,
+                                "tags": $scope.tags                            
+                            }                
+                    else 
+                            params = {
+                                "action": "listMyGalleryByTags",
+                                "uid": $dazzleUser.getUser().uid,
+                                "tags": $scope.tags
+                            };
+                            
+                        $http({
+                            "method": "post",
+                            "url": "https://41khtanrje.execute-api.ap-northeast-1.amazonaws.com/prod/dazzleEditorMiscFunction",
+                            "data": params
+                        }).then(function (result) {
+                            if (result.data.code > 0) {
+                                $scope.allList = result.data.resolve;
+                        //    $scope.$apply(function () {
+                                console.log('User Gallery****************************',$scope.allList);
+    
+                            //    $scope.userGallery = $scope.userGallery.concat($scope.allList.slice($scope.userGallery.length, $scope.userGallery.length + 50));
+                                $scope.userGallery = result.data.resolve;
+                                // console.log('User Gallery',$scope.userGallery);
+                                $scope.inited = true;
+                                                        //  });
+                            }
+
+                            // http://designerrrr-output.s3.amazonaws.com/images/taipo520.dazzle.website/thumbnail-web/id1510718102945.jpg
+                            console.log(result);
+                        });
+                }
+
+                $scope.buildTags=function(tags){
+                    // console.log(tags);
+                    if (!angular.isUndefined(tags))
+                        return tags.join();
+                    else
+                        return '';
+                }
+                $scope.getFileUrl = function (size, id) {
+                    // return '';
+                   return $dazzleFn.getFileUrl(size,id);
+                }
+                $scope.getSrc = function (image) {
+                    $dazzleS3.getFileUrl(userBucket, image.key).then(function (url) {
+                        image.url = url;
+                    });
+                }
+
+                $scope.loadMore = function () {
+                    $scope.$apply(function () {
+                        $scope.userGallery = $scope.userGallery.concat($scope.allList.slice($scope.userGallery.length, $scope.userGallery.length + 20));
+                    });
+                };
+                $scope.choose = function (element) {
+                    // image = $scope.getFileUrl('large-web',element.gid);
+                    // var output = {
+                    //     'image':image
+                    // };
+                    // $dazzleUser.setDazzleInfo('output',output);
+                    // $mdDialog.hide(image);
+                    var index;
+                    if (!$scope.multiple) {
+                        console.log('My Element',element);
+                        $scope.myElement = element;
+                        $scope.myGid = element.gid;
+                        $scope.myTags = element.tags;
+                        $scope.mySize = "medium-web";
+                        $scope.toggleRight();
+                    }  else {
+                        if (angular.isUndefined(element.selected) || !element.selected){
+                            element.selected = true;
+                            $scope.myElements.push(element);                            
+                        }
+
+                        else {
+                            element.selected = false;                            
+                            $scope.myElements.indexOf(element);
+                            if (index > -1) {
+                              $scope.myElements.splice(index, 1);
+                            }
+                        }
+
+                        
+
+
+                    }
+                    
+//                    $mdDialog.hide(element);
+                }
+                $scope.cancel = function() {
+                   $scope.toggleRight(); 
+                }
+
+                $scope.select = function() {
+                    $dazzleUser.dazzleInfo['imageSize'] = $scope.mySize;
+                    if (!$scope.multiple)
+                        $mdDialog.hide($scope.myElement);
+                    else 
+                        $mdDialog.hide($scope.myElements);
+                }
+
+                $scope.deleteChoice = function() {
+                    angular.forEach($scope.userGallery,function(item,index){
+                       if (item.selected) {
+                           console.log('Delete Item',item);
+                           $scope.delete(item,index);                           
+                       }
+
+                    });
+                    
+                }
+                
+                
+                $scope.delete = function(element,index){                    
+                    $scope.userGallery.splice(index,1);
+
+                     $http({
+                            "method": "post",
+                            "url": "https://41khtanrje.execute-api.ap-northeast-1.amazonaws.com/prod/dazzleEditorMiscFunction",
+                            "data": {
+
+                                "action": "deleteByGid",
+                                "gid": element.gid
+
+                            }
+                        }).then(function (result) {
+                            if (result.data.code > 0) {
+
+                            }
+                            console.log('Delete',result);
+                        });
+                }
+
+                $scope.newUpload = function() {
+
+                    // $dazzlePopup.uploadImage($dazzleUser.getUser().uid).then(function (images) {
+
+                    //     console.log(images);
+                    //     setTimeout(function(){
+                    //         $scope.init();
+                    //     },2000);
+                    // });
+                    
+
+                    var params = {
+                        'name': 'dzUploadImagePopup',
+                        'directive':'<dz-upload-image-popup></dz-upload-image-popup>',
+                        'uid':$dazzleUser.getUser().uid,
+                        'owner':$scope.owner
+                    }
+                    $dazzlePopup.callPopup(params).then(function(images){
+                        console.log(images);
+                        setTimeout(function(){
+                            $scope.init();
+                        },2000);
+                    });
+                    
+
+                }
+
+                $scope.upload = function () {
+                    var params = {
+                        'name':'uploadFilePopup',
+                        'rootScope':$scope,
+                        'bucket': userBucket,
+                        'key': 'image/',
+                        'owner': $scope.owner,
+                        'directive':'<upload-file-popup></upload-file-popup>'
+                    }
+                    $dazzlePopup.callPopup(params).then(function(){
+                      $scope.inited= false;
+                      $scope.userGallery = [];
+                        $scope.allList = [];
+
+                        setTimeout(function () {
+                            $scope.init();
+                        }, 1000);
+                    });
+
+                };
+                $scope.closePopup = function () {
+                    $mdDialog.cancel();
+                }
+
+                $scope.saveTag = function(element) {
+                    $http({
+                            "method": "post",
+                            "url": "https://41khtanrje.execute-api.ap-northeast-1.amazonaws.com/prod/dazzleEditorMiscFunction",
+                            "data": {
+
+                                "action": "updateByGid",
+                                "gid": $scope.myGid,
+                                "tags": $scope.myTags
+
+                            }
+                        }).then(function (result) {
+                            if (result.data.code > 0) {
+
+                            }
+                            console.log('Delete',result);
+                        });
+                }
+                
+                  function buildToggler(navID) {
+                      return function() {
+                        // Component lookup should always be available since we are not using `ng-if`
+                        $mdSidenav(navID)
+                          .toggle()
+                          .then(function () {
+                            $log.debug("toggle " + navID + " is done");
+                          });
+                      };
+                    }
+        }
+    };
+    return link;
+});
+
+ app.controller('RightCtrl', function ($scope, $timeout, $mdSidenav, $log) {
+    $scope.close = function () {
+      // Component lookup should always be available since we are not using `ng-if`
+      $mdSidenav('right').close()
+        .then(function () {
+          $log.debug("close RIGHT is done");
+        });
+    };
+  });
+

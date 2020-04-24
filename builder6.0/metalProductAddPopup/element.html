@@ -1,0 +1,131 @@
+
+    <style>
+.col2 .form-group {
+    width: 100%;
+    height: 100%;
+    border: #ccc 1px dotted;
+}
+.btn {
+    float:right;
+}
+    </style>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>刊登產品</h2>
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="save()">
+                儲存
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="cancel()">
+                取消
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content style="min-height:70%;">
+          
+      <md-content class="md-padding">
+            <div class="product-add">
+	<h2 class="gradient_yellow">加入產品</h2>
+<form class="form-horizontal" ng-init="init()">
+
+
+<fieldset>
+<div layout="row">
+  <div flex>
+      
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="產品名">產品名</label>  
+  <div class="col-md-4">
+  <input id="產品名" ng-model="model['title']" name="產品名" type="text" placeholder="輸入產品" class="form-control input-md" required>
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="產品圖片">產品圖片</label>
+  <div class="col-md-4">
+    <button  ng-click="uploadPhoto()" id="產品圖片" name="產品圖片" class="btn btn-primary">上載</button>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="類別">類別</label>
+  <div class="col-md-4">
+    <button id="類別" name="類別" ng-click="selectCategory()" class="btn btn-primary">選擇</button>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="產品型號">產品型號</label>  
+  <div class="col-md-4">
+  <input id="產品型號" ng-model="product_model" name="產品型號" type="text" placeholder="輸入型號" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="相關字">相關字</label>  
+  <div class="col-md-4">
+  <input id="相關字" ng-model="product_model_real" name="相關字" type="text" placeholder="輸入相關字" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="價格">價格</label>  
+  <div class="col-md-4">
+  <input id="價格" name="價格" type="text" ng-model="product_price" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="價格單位">價格單位</label>  
+  <div class="col-md-4">
+  <input id="價格單位" name="價格單位" ng-model="product_unit" type="text" placeholder="" class="form-control input-md">
+    
+  </div>
+</div>      
+      </div>
+  <div flex class="col2">
+        <h2>產品說明</h2>  
+        <button  ng-click="viewSource()"  class="btn btn-primary">HTML</button>
+
+      <div class="form-group">
+      <div>                     
+            <metal-text class="editor">
+                
+            </metal-text>
+      </div>
+    </div>
+
+      
+  </div>
+</div>
+<!-- Form Name -->
+
+
+</fieldset>
+</form>
+
+
+	</div>
+      </md-content>
+    </md-dialog-content>
+    
+    <script src="https://ace.c9.io/build/src/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/monokai");
+    editor.session.setMode("ace/mode/javascript");
+</script>

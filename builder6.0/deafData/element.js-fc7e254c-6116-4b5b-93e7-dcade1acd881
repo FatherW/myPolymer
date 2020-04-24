@@ -1,0 +1,90 @@
+var app = angular.module('demoApp');
+app.directive('deafData', function ($compile, $templateRequest, $mdDialog, $uibModal) {
+    var deafData = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            scope.http = "http://d27btag9kamoke.cloudfront.net/";
+            scope.directiveId = "deafData";
+            scope.type = "deafData";
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+            scope.editorCustomInit(scope, element, attrs).then(function () {
+                var template = angular.element('<div bind-html-compile="model.html" context-menu="menuOptions"></div>');
+                element.html(template);
+                $compile(template)(scope);
+            });
+        },
+        controller: function ($scope, $element, $attrs) {
+            $scope.loadPhoto = function () {
+                var title;
+                angular.forEach($scope.model.data,function(item,index){
+                    item['gallery']=[];
+                    title = item['標題'];
+
+                    $scope.rootScope.listObject($scope.rootScope.exportBucket, 'slider/'+title+'/').then(function (data) {
+                        angular.forEach(data, function (value, key) {
+                            if (value.Key.match(/\.(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)$/)) {
+     //                           fileName = value.Key.replace('slider/'+title+'/', '');
+                                item['gallery'].push("http://deaf520.dazzle.website/"+value.Key);
+                            }
+                        });
+                    });
+
+                });
+                console.log('Data',$model.data);
+            }
+        
+            $scope.menuOptions = [
+                ["更換模版", function () {
+                    $mdDialog.show({
+                        controller: 'templatePopupController',
+                        templateUrl: 'models/templatePopup/popup.html' + "?id=" + new Date().getTime(),
+                        locals: {
+                            rootScope: $scope
+                        }
+                    }).then(function (template) {
+                        $scope.useTemplate();
+                    });
+                }]
+            ];
+            $attrs.$observe('data', function (value) {
+                $scope.tableName = value;
+            })
+            $scope.loadData = function () {
+                return new Promise(function (resolve, reject) {
+                    $scope.getJson($scope.userBucket, $scope.websiteKey + "content/" + $scope.tableName + "-data.json").then(function (json) {
+                        //var json2 = orderBy(json,"日期",true);
+                        resolve(json);
+                    }, function () {
+                        $scope.saveJson($scope.userBucket, $scope.websiteKey + "content/" + $scope.tableName + "-data.json", []);
+                        resolve([]);
+                    });
+                });
+            }
+            $scope.updateData = function () {
+                return new Promise(function (resolve, reject) {
+                    $scope.loadData().then(function (data) {
+                        $scope.model.data = data;
+                        $scope.updateHtml();
+                        resolve();
+                    })
+                });
+            }
+            
+            $scope.getYouTubeLink = function (url) {
+                var ID = '';
+                url = url.replace(/(>|<)/gi, '').split(/(vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+                if (url[2] !== undefined) {
+                    ID = url[2].split(/[^0-9a-z_\-]/i);
+                    ID = ID[0];
+                } else {
+                    ID = url;
+                }
+                return "https://www.youtube.com/embed/"+ID;
+            }
+        }
+    };
+    return deafData;
+});

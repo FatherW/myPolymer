@@ -1,0 +1,16 @@
+<ol id="list1">
+    <li ng-repeat="m in model.form">{{m.title}}
+        <ul>
+            <li ng-repeat="item in m.list">{{item.title}}</li>
+        </ul>
+    </li>
+</ol>
+
+<form id="form1" style="margin:2em; width:50%;">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  
+ <button type="submit" class="btn btn-primary">Submit</button>
+</form>

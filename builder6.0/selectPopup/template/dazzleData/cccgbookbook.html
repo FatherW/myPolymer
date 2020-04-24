@@ -1,0 +1,13 @@
+<!--<ul>
+                   <li ng-repeat="item in model.news | limitTo:2">
+         <a ng-href="{{item['檔案']}}">{{item['標題']}}</a>
+       </li>       
+       </a>          </ul>-->
+<div class="bookWrapper">
+    <div class="bookRow" ng-repeat="item in model.data | orderBy:'-nid'" ng-if="item['類別']=='書籍'">
+        <div class="bookRowTitle">{{item['標題']}}</div>
+        <div class="bookRowImage"><a ng-href="{{item['檔案']}}"><img ng-src="{{item['封面圖片']}}"></a></div>
+    </div>
+    
+</div>
+       

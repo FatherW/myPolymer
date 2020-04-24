@@ -1,0 +1,4 @@
+<div style="height:50px; width:auto;" ng-repeat="item in model.gallery">
+    <img ng-src="https://{{item['bucket']}}.s3.amazonaws.com/{{item['path']}}" class="album-item"/>
+    
+</div>

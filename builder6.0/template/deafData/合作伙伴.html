@@ -1,0 +1,42 @@
+<div>
+    <div class="views-row views-row-1 views-row-odd views-row-first" ng-repeat="item in model.data | orderBy: '-nid' | limitTo:2">
+        <div class="views-field views-field-field-events-picture">
+            <a ng-href="{{item['標題']}}.html">
+                <img class="img-responsive" style="max-width:100%;max-height: 100%;" ng-src="{{item['截圖']}}">
+            </a>
+        </div>
+        <div class="views-field views-field-title">
+            <span class="field-content">
+                <a ng-href="{{item['標題']}}.html">{{item['標題']}}</a>
+            </span>
+        </div>
+        
+        <div class="views-field views-field-nothing">
+            <span class="field-content">
+                <div class="grid_s"></div>
+            </span>
+        </div>
+    </div>
+</div>
+<!--
+<div class="views-row views-row-1 views-row-odd views-row-first">
+        <div class="views-field views-field-field-events-picture">
+            <a ng-href="{{item['標題']}}.html">
+                <img class="img-responsive" style="max-width:100%;max-height: 100%;" ng-src="{{item['截圖']}}">
+            </a>
+        </div>
+        <span class="field-content">2016-11-04</span>
+        <div class="views-field views-field-title">
+            <span class="field-content">
+                <a class="ng-binding" href="2016-11-04 Hear Me 聽真D Charity Concert 慈善音樂會 2017.html">2016-11-04 Hear Me 聽真D Charity Concert 慈善音樂會 2017</a>
+            </span>
+        </div>
+        <div class="views-field views-field-view-node">
+            <span class="field-content"><a href="2016-11-04 Hear Me 聽真D Charity Concert 慈善音樂會 2017.html">全文</a></span>
+        </div>
+        <div class="views-field views-field-nothing">
+            <span class="field-content">
+                <div class="grid_s"></div>
+            </span>
+        </div>
+    </div>-->

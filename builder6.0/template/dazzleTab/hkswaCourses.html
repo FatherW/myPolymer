@@ -1,0 +1,49 @@
+<div class="row">
+    <ul class="course_tab">
+        <a  class="course_tab_item" ng-repeat="item in model.menu" ng-href="#tab{{$index}}" data-toggle="pill">
+            <li>{{item.title}}</li>
+        </a>
+
+    </ul>
+    <div class="clear"></div>
+    <div class="tab-content">
+        <div id="tab{{$index}}" ng-repeat="item in model.menu" class="tab-pane fade in"
+             ng-class="$index==0? 'active': '' ">
+            <hr>
+            <div ng-if="item.list.length > 0">
+                <div class="row">
+                    <div class="column col-lg-3">
+                        <ul>
+
+                                <a  class="course_list_item " ng-repeat="subitem in item.list" ng-href="#subtab-{{subitem.id}}" data-toggle="pill">
+                            <li>
+                                {{subitem.title}}
+                                
+                                </li> 
+                                </a>
+
+                        </ul>
+                    </div>
+                    <div class="column col-lg-9">
+                        <div class="tab-content">
+                            <div id="subtab-{{subitem.id}}" ng-repeat="subitem in item.list" class="tab-pane fade in">
+                                <editor-container-element id="con-{{subitem.id}}"></editor-container-element>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="item.list.length == 0">
+                <editor-container-element id="con-{{item.id}}">
+                    <hr>
+                    <div text id="tab-{{item.id}}"></div>
+                
+                </editor-container-element>
+                
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

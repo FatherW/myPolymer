@@ -1,0 +1,12 @@
+<nav class="ng-scope" context-menu="menuOptions">
+    <ul id="mainmenu">
+        <li ng-repeat="m in model.menu">
+            <a ng-href="{{m.link}}">{{m.title}}</a>
+            <ul>
+                <li ng-repeat="sm in m.list">
+                    <a ng-href="{{sm.link}}">{{sm.title}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>

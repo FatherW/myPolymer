@@ -1,0 +1,64 @@
+
+<div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+</div>  
+<div class="dzMyDepth">
+    {{depth}}
+</div>
+
+<md-fab-speed-dial id="head-dial" ng-hide="hidden" md-direction="left" md-open="isOpen"
+                   class="md-scale md-fab-top-right" ng-init="init()">
+    <md-fab-trigger ng-hide="dataManagement">
+        <md-button aria-label="menu" class="md-fab md-warn">
+            <i class="fa fa-2x fa-bars" aria-hidden="true"></i>
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <label style="background:white; line-height:60px;">{{thisPage}}</label>
+        <md-button aria-label="export" class="md-fab md-primary" ng-click="logout()">
+            <md-tooltip md-direction="down">登出</md-tooltip>
+            <i class="fa fa-arrow-right fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="export()">
+            <md-tooltip md-direction="down">匯出</md-tooltip>
+            <i class="fa fa-bolt fa-2x"></i>
+        </md-button>
+        <md-button aria-label="export" class="md-fab md-primary" ng-click="save()">
+            <md-tooltip md-direction="down">儲存</md-tooltip>
+            <i class="fa fa-save fa-2x"></i>
+        </md-button>
+        <md-button aria-label="recovery" class="md-fab md-primary" ng-click="recovery()">
+            <md-tooltip md-direction="down">還原</md-tooltip>
+            <i class="fa fa-refresh fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="thisPageManager()">
+            <md-tooltip md-direction="down">本頁設定</md-tooltip>
+            <i class="fa fa-file fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="dataManager()">
+            <md-tooltip md-direction="down">資料管理</md-tooltip>
+            <i class="fa fa-database fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="changeBackground()">
+            <md-tooltip md-direction="down">更換背景圖片</md-tooltip>
+            <i class="fa fa-image fa-2x"></i>
+        </md-button>
+
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="profile()">
+            <md-tooltip md-direction="down">個人設定</md-tooltip>
+            <i class="fa fa-user fa-2x"></i>
+        </md-button>
+
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="dataSettings()">
+            <md-tooltip md-direction="down">資料庫設定</md-tooltip>
+            <i class="fa fa-cog fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="reload()">
+            <md-tooltip md-direction="down">重新載入</md-tooltip>
+            <i class="fa fa-refresh fa-2x"></i>
+        </md-button>
+
+    </md-fab-actions>
+    
+</md-fab-speed-dial>
+

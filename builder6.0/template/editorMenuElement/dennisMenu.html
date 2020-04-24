@@ -1,0 +1,7 @@
+<div class="col-xs-6 col-sm-3" ng-repeat="item in model.menu">
+    <ul class="list-unstyled worksList">
+        <li ng-repeat="subitem in item.list">
+            <a ng-href="{{subitem.link}}">{{subitem.title}}</a>
+        </li>
+    </ul>
+</div>

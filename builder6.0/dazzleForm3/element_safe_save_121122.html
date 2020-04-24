@@ -1,0 +1,8 @@
+<form id="form1" style="margin:2em; width:50%;">
+  <div class="form-group" ng-repeat="f in model.form">
+    <label for="label{{f.id}}">{{f.title}}</label>
+    <input type="{{f.type}}" class="form-control" id="{{f.type}}{{f.id}}">
+  </div>
+  
+ <button type="submit" class="btn btn-primary">Submit</button>
+</form>

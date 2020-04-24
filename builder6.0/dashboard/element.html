@@ -1,0 +1,150 @@
+<div id="dashboard" layout="column">
+    <md-toolbar layout="row">
+        <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="menu" ng-click="toggleLeftMenu()" hide-gt-md>
+                <i class="material-icons">menu</i>
+            </md-button>
+            <h2 flex md-truncate>Dazzle Dashboard</h2>
+            <md-button aria-label="logout" ng-click="logout()">
+                回到主頁
+            </md-button>
+        </div>
+    </md-toolbar>
+    <section layout="row" flex="">
+        <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-whiteframe="4"
+                    md-is-locked-open="$mdMedia('gt-md')">
+            <md-toolbar id="userCard">
+                <md-card>
+                    <md-card-title>
+                        <md-card-title-media>
+                            <div class="md-media-sm card-media" layout>
+                                <img ng-init="user.userIcon = user.userIcon || 'https://image.flaticon.com/teams/slug/freepik.jpg'"
+                                     ng-src="{{user.userIcon}}" layout-padding class="img-responsive">
+                            </div>
+                        </md-card-title-media>
+                        <md-card-title-text>
+                            <span class="md-headline">{{user.userName || user.uid}}</span>
+                            <span class="md-subhead description">{{user.userEmail || ''}}</span>
+                            <span class="md-subhead description" md-colors="{color:'Pink'}"
+                                  ng-init="user.credit = user.credit || 0">
+                                餘額：{{(user.credit | currency:"HKD$") || "-"}}
+                                <md-button class="md-icon-button" aria-label="recharge" ng-click="recharge()">
+                                    <md-tooltip md-direction="down">馬上增值</md-tooltip>
+                                    <i class="material-icons">add</i>
+                                </md-button>
+                            </span>
+                        </md-card-title-text>
+                    </md-card-title>
+                </md-card>
+            </md-toolbar>
+            <md-content layout-padding>
+                <md-sidemenu>
+                    <md-sidemenu-group>
+                        <md-sidemenu-content md-icon="home" md-heading="帳戶資料" md-arrow="true">
+                            <md-sidemenu-button href="#!/detail">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">account_box</i>
+                                    <div>個人資料</div>
+                                </div>
+                            </md-sidemenu-button>
+                            <md-sidemenu-button href="#!/changePassword">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">enhanced_encryption</i>
+                                    <div>修改密碼</div>
+                                </div>
+                            </md-sidemenu-button>
+                            <md-sidemenu-button href="#!/rechargeRecord">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">monetization_on</i>
+                                    <div>增值記錄</div>
+                                </div>
+                            </md-sidemenu-button>
+                            <md-sidemenu-button href="#!/buyRecord">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">shopping_cart</i>
+                                    <div>購買記錄</div>
+                                </div>
+                            </md-sidemenu-button>
+                            <md-sidemenu-button href="#!/sellRecord" ng-show="user.type!='user'">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">list</i>
+                                    <div>鎖售記錄</div>
+                                </div>
+                            </md-sidemenu-button>
+                        </md-sidemenu-content>
+                        <md-sidemenu-content md-icon="web_asset" md-heading="網站管理" md-arrow="true">
+                            <md-sidemenu-button ng-click="edit652()">編輯6.5.2</md-sidemenu-button>
+
+                            <md-sidemenu-button href="#!/listWebsite">建立網站</md-sidemenu-button>
+                            <md-sidemenu-button ng-click="grabWebsite()">建立Template</md-sidemenu-button>
+                            <md-sidemenu-button href="#!/myWebsite">我的網站</md-sidemenu-button>
+                        </md-sidemenu-content>
+                        <md-sidemenu-content md-icon="web_asset" md-heading="資料管理" md-arrow="true" ng-if="isAdmin">
+                            <md-sidemenu-button href="#!/listElastic">管理員資料</md-sidemenu-button>
+                        </md-sidemenu-content>
+
+                        <md-sidemenu-content md-icon="cloud" md-heading="文件管理" md-arrow="true">
+                            <md-sidemenu-button href="#!/myDoc">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">insert_drive_file</i>
+                                    <div>我的文件</div>
+                                </div>
+                            </md-sidemenu-button>
+                            <md-sidemenu-button href="?type=相片#!/myPhotos">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">insert_photo</i>
+                                    <div>我的圖片</div>
+                                </div>
+                            </md-sidemenu-button>
+                            <md-sidemenu-button href="?type=插畫#!/myPhotos">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">photo_album</i>
+                                    <div>我的插畫</div>
+                                </div>
+                            </md-sidemenu-button>
+                            <md-sidemenu-button href="#!/myVideos">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">videocam</i>
+                                    <div>我的影片</div>
+                                </div>
+                            </md-sidemenu-button>
+                            <md-sidemenu-button href="#!/myFiles">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">attach_file</i>
+                                    <div>其他</div>
+                                </div>
+                            </md-sidemenu-button>
+                        </md-sidemenu-content>
+                        <md-sidemenu-content md-icon="attach_money" md-heading="交易項目管理" md-arrow="true">
+                            <md-sidemenu-button href="#!/boughtImage">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">shopping_cart</i>
+                                    <div>已購買圖片</div>
+                                </div>
+                            </md-sidemenu-button>
+                            <md-sidemenu-button href="#!/soldImage" ng-show="user.type!='user'">
+                                <div layout="row" layout-padding layout-align="center center">
+                                    <i class="material-icons">remove_shopping_cart</i>
+                                    <div>已銷售圖片</div>
+                                </div>
+                            </md-sidemenu-button>
+                        </md-sidemenu-content>
+                        <md-sidemenu-content md-icon="web_asset" md-heading="資料庫管理" md-arrow="true">
+                            <md-sidemenu-button ng-click="listElastic('_table')">顯示Table表格</md-sidemenu-button>
+                            <md-sidemenu-button ng-click="listElastic('_schema')">顯示Schema表格</md-sidemenu-button>
+                            <md-sidemenu-button ng-click="listElastic('_page')">顯示Page表格</md-sidemenu-button>
+                            <md-sidemenu-button ng-click="listElastic('_atom')">顯示Atom表格</md-sidemenu-button>
+                        </md-sidemenu-content>
+                        <md-sidemenu-content md-icon="web_asset" md-heading="我的資料庫" md-arrow="true" ng-init="loadMyTables()">
+                            <md-sidemenu-button ng-repeat="item in myTables" ng-click="listElastic(item.id)">{{item.label}}</md-sidemenu-button>
+                        </md-sidemenu-content>
+
+                    </md-sidemenu-group>
+                </md-sidemenu>
+            </md-content>
+        </md-sidenav>
+        <md-content flex layout-padding id="sidecontent">
+            <div ng-view id="sideview"></div>
+        </md-content>
+    </section>
+</div>

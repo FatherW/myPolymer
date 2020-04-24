@@ -1,0 +1,57 @@
+var app = angular.module('demoApp');
+app.directive('custom', function ($compile) {
+    var custom = {
+        restrict: 'A',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            element.addClass('dazzle-custom');
+            // setTimeout(function () {
+            //     if (!angular.isUndefined(scope.model) && !angular.isUndefined(scope.model.masterId)) {
+            //         $(element).append('<i id="masterIcon" class="fa fa-maxcdn"></i>');
+            //     }
+            // }, 3000);
+
+             element.bind("mouseenter", function(event) {
+                    var id = element.attr('id');
+                    var str = `
+                    <div class="dazzle-screen" context-menu="menuOptions"></div>
+                    <md-toolbar class="md-accent dazzle">
+                        <div class="md-toolbar-tools-dazzle">
+                            <i class="fa fa-x fa-bars" aria-hidden="true"></i>
+                            <i class="fa fa-close right" ng-click="remove()"></i>
+
+<!--                          <md-button class="md-icon-button" aria-label="Menu" ng-click="ctrl.showToolbarMenu($event, ctrl.settings)">\
+                          </md-button>      
+                          <span flex=""></span>
+                          <md-button class="md-icon-button" aria-label="Close" ng-click="ctrl.showToolbarMenu($event, ctrl.favorite)">\
+                          </md-button>      
+-->
+                        </div>
+                      </md-toolbar>
+
+                    `;
+                    var newElement = $compile(str)(scope);
+                    console.log(id+':mouse enter');
+                    element.prepend(newElement);    
+              });
+
+             element.bind("mouseleave", function(event) {
+                    var id = element.attr('id');
+                    element.find('md-toolbar').remove();
+                    element.find('.dazzle-screen').remove();
+                    console.log(id+':mouse leave');    
+              });
+
+      },
+      
+      
+      controller: function ($scope, $http, $element, $attrs) {
+        $scope.remove= function(){
+            console.log('Remove');
+            $element.remove();
+        }
+      }
+    };
+    return custom;
+});

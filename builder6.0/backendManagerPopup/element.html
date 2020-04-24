@@ -1,0 +1,45 @@
+ <style>
+        md-dialog-content {
+            height: 400px;
+        }
+
+        md-dialog-content md-tabs {
+            min-height: 400px !important;
+        }
+    </style>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>資料類型管理器</h2>
+            <span flex></span>
+            <md-button aria-label="cancel" class="md-icon-button" ng-click="cancel()">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <md-tabs>
+            <md-tab label="資料類型相關檔案編輯">
+                <div layout="row" layout-align="start center" layout-margin layout-padding>
+                    <md-button aria-label="cancel" class="md-raised"
+                               ng-click="rendererPopup()">
+                        <i class="fa fa-2x fa-code"></i>顯示方式
+                    </md-button>
+                    <md-button aria-label="cancel" class="md-raised md-primary"
+                               ng-click="editorPopup()">
+                        <i class="fa fa-2x fa-css3"></i> 編輯方式
+                    </md-button>
+                    <md-button aria-label="cancel" class="md-raised md-warn"
+                               ng-click="settingsJsPopup()">
+                        <i class="fa fa-2x fa-html5"></i> 設定方式
+                    </md-button>
+
+					<md-button aria-label="cancel" class="md-raised md-success"
+                               ng-click="settingsHtmlPopup()">
+                        <i class="fa fa-2x fa-html5"></i> 設定HTML
+                    </md-button>
+
+                </div>
+            </md-tab>
+
+        </md-tabs>
+    </md-dialog-content>

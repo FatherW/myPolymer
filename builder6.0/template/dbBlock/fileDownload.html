@@ -1,0 +1,15 @@
+
+<p>請點擊下載相關課程資料</p>
+
+<div id="download" ng-if="model.value.length">
+    <ul>
+        <li ng-repeat="i in model.value">
+            <a ng-href="http://{{i.bucket}}/{{i.path}}">
+                <div class="thumbnail">
+                    <div class="title">{{i.description}}</div>                
+                </div>
+             </a>
+        </li>
+    </ul>
+    
+</div>

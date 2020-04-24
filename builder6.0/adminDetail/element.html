@@ -1,0 +1,89 @@
+<md-content flex="" layout-padding="" id="sidecontent" class="layout-padding _md flex">
+   <div layout="column" layout-padding>
+    <md-toolbar md-scroll-shrink>
+        <div class="md-toolbar-tools">個人資料</div>
+    </md-toolbar>
+
+    <md-content flex layout-padding style="padding-bottom: 40px;">
+        <div layout="row">
+            <div flex layout="column">
+                <div layout="row">
+                    <md-input-container class="md-block" flex>
+                        <label>登入名稱</label>
+                        <input ng-model="user.uid" ng-disabled="true">
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                        <label>登入密碼</label>
+                        <input ng-model="user.password" type="password" ng-disabled="true">
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container class="md-block" flex>
+                        <label>類型</label>
+                        <md-select ng-model="user.type" ng-disabled="true">
+                            <md-option value="admin">admin</md-option>
+                            <md-option value="developer">developer</md-option>
+                            <md-option value="designer">designer</md-option>
+                            <md-option value="user">user</md-option>
+                        </md-select>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                        <label>餘額 $HKD </label>
+                        <input type="number" ng-model="user.balance" ng-disabled="true"/>
+                    </md-input-container>
+                </div>
+                <div layout="row">
+                    <md-input-container class="md-block" flex>
+                        <label>註冊日期</label>
+                // user.registerDate
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                        <label>到期日期</label>
+                        // user.expiryDate
+                    </md-input-container>
+                </div>
+            </div>
+            <label flex="25" for="image">
+                <input type="file" name="image" id="image" class="ng-hide"
+                       onchange="angular.element(this).scope().uploadIcon(this.files[0])"/>
+                <img style="max-width: 250px; max-height: 250px; cursor: pointer;"
+                     ng-src="{{user.userIcon}}" class="md-card-image"
+                     ng-init="user.userIcon = user.userIcon || 'https://image.flaticon.com/teams/slug/freepik.jpg'">
+            </label>
+        </div>
+        <div layout="row">
+            <md-input-container class="md-block" flex>
+                <label>名稱</label>
+                <input ng-model="user.userName" type="text">
+            </md-input-container>
+            <md-input-container class="md-block" flex>
+                <label>手提電話</label>
+                <input ng-model="user.userPhone" type="number">
+            </md-input-container>
+            <md-input-container class="md-block" flex>
+                <label>電郵</label>
+                <input ng-model="user.userEmail" type="email">
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-input-container class="md-block" flex>
+                <label>公司名稱</label>
+                <input ng-model="user.companyName" type="text">
+            </md-input-container>
+            <md-input-container class="md-block" flex>
+                <label>公司電話</label>
+                <input ng-model="user.companyPhone" type="number">
+            </md-input-container>
+            <md-input-container class="md-block" flex>
+                <label>公司地址</label>
+                <input ng-model="user.companyAddress" type="text">
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <div flex></div>
+            <md-button class="md-accent md-raised md-primary" ng-click="save()">儲存</md-button>
+        </div>
+        <span flex></span>
+    </md-content>
+    </div>
+</md-content>

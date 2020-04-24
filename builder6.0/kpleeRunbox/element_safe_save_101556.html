@@ -1,0 +1,68 @@
+<style>
+/*.marqueeContent,.marqueeContentWrapper {
+    position: relative;
+    float: left;
+    width: 100%;
+    display: block;
+    
+}
+.marqueeContent {
+    overflow: hidden;
+    min-height: 100px;
+}
+.award_logo img {
+    width: auto;
+    height:100px;
+    margin-right: 20px;
+    position: relative;
+    vertical-align: middle;
+}
+.award_logo {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid #ccc;
+}
+.angular-marquee {
+	float: left;
+    display: table;
+}
+.award_logo {
+    width: 100%;
+    overflow: hidden;
+    height: auto !important;
+}*/
+.marqueeContentWrapper {
+    margin: 10px 0px;
+}
+
+.marqueeContent {
+    overflow: hidden;
+    min-height: auto;
+}
+.award_logo {
+    overflow: hidden;
+    height: auto !important;
+}
+.angular-marquee {
+    display: table;
+}
+.award_logo img {
+    width: 100px;
+    /* height: 100px; */
+    max-width: 100%;
+    margin-right: 20px;
+    position: relative;
+    /* float: left; */
+    vertical-align: middle;
+}
+</style>
+<div class="marqueeContentWrapper hidden-md hidden-xs">
+<div context-menu="marqueeMenuOptions" class="marqueeContent">
+            <div angular-marquee="" duplicated=true  scroll="true" class="award_logo" duration="17000">
+                <span>
+                	<img ng-repeat = "item in model.list" ng-src="{{item.link}}">
+          		</span>
+            </div>
+</div>
+</div>
+

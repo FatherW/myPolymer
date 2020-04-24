@@ -1,0 +1,36 @@
+    
+    
+    
+
+<md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>新增資料</h2>
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="addNewData()">
+                新增
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="cancel()">
+                取消
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content style="min-height:70%;">
+ <md-content class="md-padding" style="min-height:400px;">
+     
+             <h3>輸入你要加的資料名稱(注意不能重覆)</h3>
+            <div layout="row">
+                <div flex="15"></div>
+                <div layout="row" flex="70">
+                    <div flex="50">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>資料名稱</label>
+                            <input ng-model="newPageName">
+                        </md-input-container>
+                    </div>
+                    <div flex="10"></div>
+                </div>
+                <div flex="15"></div>
+            </div>
+
+</md-content>
+</md-dialog-content>

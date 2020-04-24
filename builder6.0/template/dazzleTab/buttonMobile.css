@@ -1,0 +1,9 @@
+
+#mobile-tab .nav li {
+    width:25%;
+    float:left;
+}
+#mobile-tab .nav li a{
+  font-size:12px;
+  text-align:center;
+}

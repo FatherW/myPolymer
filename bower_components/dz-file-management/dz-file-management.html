@@ -101,7 +101,8 @@
 
 					<div id="fileList">
 										 
-				</div></page>
+					</div>
+				</page>
 			  </iron-pages>
 
 
@@ -139,7 +140,7 @@
 
 		created:function() {
 			this.user = store.get('user') || null;
-			this.fileManager = document.querySelector('dz-page').fileManager;
+			this.fileManager = Polymer.fileManager;
 
 		},
 		ready:function() {

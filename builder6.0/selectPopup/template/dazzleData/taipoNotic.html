@@ -1,0 +1,16 @@
+<table class="table">
+<thead>
+<tr>
+  <th>日期</th>
+  <th>標題</th>
+
+</tr>
+</thead>
+<tbody>
+<tr ng-repeat="item in model.data | orderBy:'-nid'">
+  <td>{{item['日期']}}</td>
+  <td><a ng-href="http://taipo520.dazzle.website/{{item['標題']}}.html">{{item['標題']}}</td>
+  
+</tr>
+</tbody>
+</table>

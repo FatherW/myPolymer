@@ -1,0 +1,288 @@
+<style>
+    .node_photo .editButton {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+</style>
+
+
+<div id="node" class="node node-product node-promoted product_page">
+
+	<h2 class="gradient_yellow main_h2">產品說明</h2>
+
+	<div class="content clearfix">
+		<div class="left_content">
+
+		
+        
+			
+			<div class="node_photo">
+				<div class="node_big_photo">
+				    <img ng-src="{{currentImg}}"/>
+                    <!--<a ng-repeat="item in model['images']" data-lightbox="product" data-title="{{model['title']}}" class="product_img_large product_img_large_{{$index}} active" ng-href="{{item}}">-->
+                    <!--    <img ng-src="{{loadBigImage(item)}}">-->
+                    <!--</a>-->
+				</div>
+
+				<div class="node_small_photo">
+                    <a ng-repeat="item in model['images']" ng-click="loadBigImage(item)"  ng-href="#" class="thumb_img active" rel="product_img_large_{{$index}}">
+                        <img ng-src="{{loadThumbnailImage(item)}}">
+                    </a>
+                </div>
+                <div class="editButton">
+                    <metal-edit-button item="model['images']" popup="images" field="images"></metal-edit-button>                    
+                </div>
+
+			</div>
+
+			
+			<div class="node_detail">
+				<div class="node_title">
+					{{model['title']}}
+				</div>
+				
+				<div class="row">
+					<div class="tit">產品名稱：</div>
+					<div class="val">{{model['title']}}
+					<metal-edit-button item="model['title']" popup="text" field="title"></metal-edit-button>
+
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="row">
+                                        <div class="tit">產品型號：</div>
+                                        <div class="val">{{model['product_model_real']}}
+                                        
+                        					<metal-edit-button item="model['product_model_real']" popup="text" field="product_model_real"></metal-edit-button>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                </div>
+				<div class="row">
+					<div class="tit">相關字：</div>
+					<div class="val">
+						{{model['product_model']}}
+						
+						<metal-edit-button item="model['product_model']" popup="text" field="product_model"></metal-edit-button>
+					</div> 
+					<div class="clearfix"></div>
+				</div>
+				<div class="row">
+					<div class="tit">產品價格：</div>
+					<div class="val" id="product_price">$ {{model['product_price']}}  
+						<metal-edit-button item="model['product_price']" popup="text" field="product_price"></metal-edit-button>
+						{{model['product_unit']}}
+						<metal-edit-button item="model['product_unit']" popup="text" field="product_unit"></metal-edit-button>
+					<a href='#' class='comment_href'>按此查詢</a>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="row">
+					<div class="tit">點擊次數：</div>
+					<div class="val">{{model['product_views']}}
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="row">
+					<div class="tit">刊登日期：</div>
+					<div class="val"> {{myDate(model['created'])}}
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				<div class="row">
+					<div class="tit">更新日期：</div>
+					<div class="val"> {{myDate(model['changed'])}}
+					</div>
+					<div class="clearfix"></div>
+				</div>
+				
+				<div class="row">
+					<div class="tit">產品類別：</div>
+					<div class="val">
+					<a ng-repeat="item in model['category']" class="category_link" href="/product_category?cat={{item}}">{{item}} &nbsp;</a>
+
+					</div>
+						<metal-edit-button item="model['category']" popup="category" field="category"></metal-edit-button>
+					<div class="clearfix"></div>
+				</div>
+
+				<div class="row">
+					<div class="tit">刊登公司：</div>
+					<div class="val"><a ng-href="/node/{{model['company_id']}}">{{model['product_company']}}</a>
+
+					</div>
+											<metal-edit-button item="model" popup="company" field="company"></metal-edit-button>
+					<div class="clearfix"></div>
+				</div>
+				
+				
+				<div class="row rating">
+					<div class="tit">客戶評分：</div>
+					<div class="val">   建設中
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				
+				<div class="row quote_act">
+					<a  ng-if="isUser()" ng-click="save()" ng-href="#" class="action_btn btn_del gradient_yellow">儲存產品</a> &nbsp; 
+					<a ng-if="isUser()" ng-href="#" class="action_btn btn_del gradient_yellow" ng-click="delete(model['nid'])">刪除產品</a> &nbsp; 
+				</div>
+			</div>
+			
+		
+			<div class="clearfix"></div>
+
+			<div class="detail_tab">
+			     <md-tabs md-dynamic-height md-border-bottom>
+                  <md-tab label="產品詳情">
+                    <md-content class="md-padding">
+                      <div class="detail_box" id="detail_detail" style="display:block;">
+						<div class="detail_attributes">
+
+							<div class="clearfix"></div>
+						</div>
+						<div class="detail_desc">
+        					<metal-edit-button item="model['body']" popup="body" field="body"></metal-edit-button>
+                            <div compile-template class="detail_body" ng-bind-html="model['body'] | to_trusted">
+							</div>
+						</div>
+					    </div>
+					
+					</md-content>
+                  </md-tab>
+                  <md-tab label="客戶評分">
+                    <md-content class="md-padding">
+          					<div class="detail_box" id="detail_rating" style="display:block;">
+
+					        </div>
+                    </md-content>
+                  </md-tab>
+                  <md-tab label="聯絡我們">
+                    <md-content class="md-padding">
+                        
+                      <div class="detail_box" id="detail_contact" style="display:block;">
+    
+                            <div class="contact_row">
+                                <label>聯絡人：</label>
+                                <span class="val">{{company['contact_person']}}</span>
+                            </div>
+
+                            <div class="contact_row">
+                                <label>電話(公司)：</label>
+                                <span class="val">{{company['company_tel']}}
+                                </span>
+                            </div>
+
+                            <div class="contact_row">
+                                <label>電話(手提)：</label>
+                                <span class="val">{{company['mobile']}}</span>
+                            </div>
+
+                            <div class="contact_row">
+                                <label>傳真：</label>
+                                <span class="val">{{company['company_fax']}}</span>
+                            </div>
+
+                            <div class="contact_row">
+                                <label>電郵：</label>
+                                <span class="val">{{company['email']}}
+                                </span>
+                            </div>
+
+					    </div>
+					</md-content>
+                  </md-tab>
+                <md-tab label="問與答">
+                    <md-content class="md-padding">
+                      <div class="detail_box" id="detail_comment" style="display:block;">
+
+						我是五金網會員？ <a href="/user">立即登錄查看</a><br><br>
+						
+						還不是會員？ <a href="/signup">免費註冊</a>
+
+					</div>
+					
+					</md-content>
+                  </md-tab>
+                </md-tabs>
+		
+			</div>
+
+			<div class="disclaimer">
+				<!--
+				$block = module_invoke('block', 'block_view', '22');
+				print render($block['content']);
+				-->
+			</div>
+	
+			<div class="related_product">
+				<h2 class="gradient_yellow">相關產品</h2>
+				<div class="related_product_content">
+				
+					<!-- 相關產品-->
+					
+					<div class="views-row views-row-1 views-row-odd views-row-first" ng-repeat="item in relatedProducts | limitTo:4">
+      
+              <div class="views-field views-field-nothing">     
+              
+            <span class="field-content"><div class="product">
+            <div class="product_c">
+            <div class="over_tips"><a ng-href="/node/{{item['nid']}}">按入產品詳情</a></div>
+            <div class="product_thumb"><a target="_blank" ng-href="/node/{{item['nid']}}">
+                
+                <img ng-src="{{loadImage(item['images'])}}" width="383" height="382" alt=""></a></div>
+            <div class="product_title"><a target="_blank" ng-href="/node/{{item['nid']}}">{{item['title']}}</a></div>
+            <div class="views">點擊︰{{item['product_views']}} </div>
+            <div class="price">{{returnPrice(item)}}</div>
+            <div class="date">刊登日期：2015-11-23 12:52</div>
+            <div class="date">更新日期：2018-07-30 17:49</div>
+            <div class="provider"><a target="_blank" ng-href="/node/{{item['company_id']}}">{{item['product_company']}}</a></div>
+            </div>
+            <div class="pfoot"></div>
+            </div></span>  </div>  </div>
+					
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div><!-- left_content -->
+  
+		<div class="right_content">
+					<h2 class="gradient_yellow">特色產品</h2>
+			<div class="fea_products">
+			    
+			    <div class="view view-product-inner view-id-product_inner view-display-id-block_1 view-dom-id-ee756f0538dfe954981dee785fe0d4de">
+        
+  
+  
+          <div class="view-content">
+            <div class="views-row views-row-1 views-row-odd views-row-first" ng-repeat="item in featureProducts | limitTo:10">
+      
+              <div class="views-field views-field-nothing">     
+              
+            <span class="field-content"><div class="product">
+            <div class="product_c">
+            <div class="over_tips"><a ng-href="/node/{{item['nid']}}">按入產品詳情</a></div>
+            <div class="product_thumb"><a target="_blank" ng-href="/node/{{item['nid']}}">
+                
+                <img ng-src="{{loadImage(item['images'])}}" width="383" height="382" alt=""></a></div>
+            <div class="product_title"><a target="_blank" ng-href="/node/{{item['nid']}}">{{item['title']}}</a></div>
+            <div class="views">點擊︰{{item['product_views']}} </div>
+            <div class="price">$ {{item['product_price']}}<a target="_blank" ng-href="/node/{{item['nid']}}/comment">按此查詢</a></div>
+            <div class="date">刊登日期：2015-11-23 12:52</div>
+            <div class="date">更新日期：2018-07-30 17:49</div>
+            <div class="provider"><a target="_blank" ng-href="/node/{{item['company_id']}}">{{item['product_company']}}</a></div>
+            </div>
+            <div class="pfoot"></div>
+            </div></span>  </div>  </div>
+              
+                </div>
+              
+            </div>
+
+			</div>
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
+	</div>

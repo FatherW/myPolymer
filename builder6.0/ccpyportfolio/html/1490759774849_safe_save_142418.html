@@ -1,0 +1,45 @@
+<div>
+    <div class="container">
+        <div class="spacer-single" style="text-align: justify;"></div>
+        <!-- portfolio filter begin -->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul id="filters" class="wow fadeInUp animated" data-wow-delay="0s"
+                    style="visibility: visible; animation-delay: 0s; animation-name: fadeInUp;">
+                    <li>
+                        <a href="#" data-filter="*" class="selected">All Projects</a>
+                    </li>
+                    <li ng-repeat="c in category">
+                        <a href="#" data-filter=".{{c}}">{{c}}</a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- portfolio filter close -->
+    </div>
+
+    <div id="gallery" class="gallery full-gallery de-gallery pf_full_width wow fadeInUp animated" data-wow-delay=".3s"
+         style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+
+        <!-- gallery item -->
+        <div class="item" ng-class="p.category" ng-repeat="p in portfolio">
+            <div class="picframe" style="height: 286px;">
+                <a class="simple-ajax-popup-align-top" ng-href="project-details.html?param={{JSON.stringify(p)}}">
+                    <span class="overlay" style="opacity: 0; width: 307px; height: 204px;">
+                        <span class="pf_text">
+                            <span class="project-name">{{p.title}}</span>
+                        </span>
+                    </span>
+                </a>
+                <img ng-src="{{p.icon}}" alt="" style="width: 100%; height: auto;">
+            </div>
+        </div>
+        <!-- close gallery item -->
+
+    </div>
+
+    <div id="loader-area">
+        <div class="project-load"></div>
+    </div>
+</div>

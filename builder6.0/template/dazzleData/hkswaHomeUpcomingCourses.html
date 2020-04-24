@@ -1,0 +1,5 @@
+<ul>
+    <li ng-repeat="item in model.data"><a ng-href="{{item['標題']}}.html">{{item['標題']}}</a>
+        <br> <span class="featurebox_date">{{item['文章日期']*1000 | date:'yyyy年MM月dd日'}}</span>
+    </li>
+</ul>

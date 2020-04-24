@@ -1,0 +1,23 @@
+<div class="row">
+    <div class="member-search right">
+        <label>會員搜索</label>
+            <input type="text" myangular-model="searchText" placeholder="請輸入會員名稱">
+        </div>
+</div>
+<div class="hiddenText" ng-init="loadData()">
+<div ng-repeat="item in model.data" class="col-lg-4 col-md-4 col-xs-6 member">
+<div class="cusmiddle"><div class="ng-scope">
+    <img class="cusround" ng-src="{{item['相片']}}" />
+</div></div>
+<div class="clear"></div><p style="text-align: center;">註冊編號：{{item['註冊編號']}}</p><p style="text-align: center;">中文姓名：{{item['中文姓名']}}</p><p style="text-align: center;">英文姓名：{{item['英文姓名']}}</p><p style="text-align: center;">有效期：{{item['有效期']}}</p>
+<hr></div>
+</div>
+
+<div class="realText" myangular-controller="AppController2">
+<div myangular-repeat="item in rowData | filter:searchText" class="col-lg-4 col-md-4 col-xs-6 member">
+<div class="cusmiddle"><div class="ng-scope">
+    <img class="cusround" myangular-src="[[item['相片']]]" />
+</div></div>
+<div class="clear"></div><p style="text-align: center;">註冊編號：[[item['註冊編號']]]</p><p style="text-align: center;">中文姓名：[[item['中文姓名']]]</p><p style="text-align: center;">英文姓名：[[item['英文姓名']]]</p><p style="text-align: center;">有效期：[[item['有效期']]]</p>
+<hr></div>
+</div>

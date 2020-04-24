@@ -1,0 +1,310 @@
+
+    <style>
+        .login-wrap .closeButton {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 20;
+            color: white;
+        }
+
+        .loginDialog {
+            width: 425px;
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+        *, :after, :before {
+            box-sizing: border-box
+        }
+
+        .clearfix:after, .clearfix:before {
+            content: '';
+            display: table
+        }
+
+        .clearfix:after {
+            clear: both;
+            display: block
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .login-wrap {
+            width: 100%;
+            margin: auto;
+            min-width: 100%;
+            max-width: 100%;
+            min-height: 680px;
+            position: relative;
+            background: url(https://d27btag9kamoke.cloudfront.net/cdn6.0/images/dazzleLoginBg.jpg) no-repeat center;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+        }
+		.login-form .group .label {
+			display:inline-block;
+		}
+
+        .login-html {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding: 90px 70px 25px 70px;
+            background: rgba(40, 57, 101, .9);
+        }
+
+        .login-html .sign-in-htm,
+        .login-html .sign-up-htm {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all .4s linear;
+        }
+
+        .login-html .sign-in,
+        .login-html .sign-up,
+        .login-form .group .check {
+            display: none;
+        }
+
+        .login-html .tab,
+        .login-form .group .label,
+        .login-form .group .button,md-button {
+            text-transform: uppercase;
+        }
+
+        .login-html .tab {
+            font-size: 22px;
+            margin-right: 15px;
+            padding-bottom: 5px;
+            margin: 0 15px 10px 0;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+        }
+
+        .login-html .sign-in:checked + .tab,
+        .login-html .sign-up:checked + .tab {
+            color: #fff;
+            border-color: #1161ee;
+        }
+
+        .login-form {
+            min-height: 345px;
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .login-form .group {
+            margin-bottom: 15px;
+        }
+
+        .login-form .group .label,
+        .login-form .group .input,
+        .login-form .group .button,md-button {
+            width: 100%;
+            color: #fff;
+            display: block;
+        }
+
+        .login-form .group .input,
+        .login-form .group .button,md-button {
+            border: none;
+            padding: 15px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form .group input[data-type="password"] {
+            text-security: circle;
+            -webkit-text-security: circle;
+        }
+
+        .login-form .group .label {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        .login-form .group .button,md-button {
+            background: #1161ee;
+        }
+
+        .login-form .group .button:hover:enabled {
+            background: #496dff;
+        }
+
+        .login-form .group .button:disabled {
+            background: rgba(198, 203, 200, 0.64);
+        }
+
+        .login-form .group label .icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form .group label .icon:before,
+        .login-form .group label .icon:after {
+            content: '';
+            width: 10px;
+            height: 2px;
+            background: #fff;
+            position: absolute;
+            transition: all .2s ease-in-out 0s;
+        }
+
+        .login-form .group label .icon:before {
+            left: 3px;
+            width: 5px;
+            bottom: 6px;
+            transform: scale(0) rotate(0);
+        }
+
+        .login-form .group label .icon:after {
+            top: 6px;
+            right: 0;
+            transform: scale(0) rotate(0);
+        }
+
+        .login-form .group .check:checked + label {
+            color: #fff;
+        }
+
+        .login-form .group .check:checked + label .icon {
+            background: #1161ee;
+        }
+
+        .login-form .group .check:checked + label .icon:before {
+            transform: scale(1) rotate(45deg);
+        }
+
+        .login-form .group .check:checked + label .icon:after {
+            transform: scale(1) rotate(-45deg);
+        }
+
+        .login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm {
+            transform: rotate(0);
+        }
+
+        .login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
+            transform: rotate(0);
+        }
+
+        .hr {
+            height: 2px;
+            margin: 60px 0 50px 0;
+            background: rgba(255, 255, 255, .2);
+        }
+
+        .foot-lnk {
+            text-align: center;
+        }
+		.subdomain {
+			color: white;
+			font-size: 24px;
+			padding: 5px 20px;
+		}
+		.do-status {
+			color:green;
+			font-size:30px;
+		}
+    </style>
+    <div class="login-wrap loginDialog">
+        <md-button class="closeButton md-icon-button" ng-click="cancel()" aria-label="cancel">
+            <i class="fa fa-times"></i>
+        </md-button>
+        <div class="login-html">
+            <img ng-src="loadLogo()" />
+            <input id="login" type="radio" name="tab" class="sign-in" checked><label for="login" class="tab">登入</label>
+            <input id="register" type="radio" name="tab" class="sign-up"><label for="register" class="tab">註冊</label>
+            <div class="login-form">
+                <div class="sign-in-htm">
+                    <form ng-submit="login()">
+                        <div class="group">
+                            <label for="loginUsername" class="label">用戶名</label>
+                            <input id="loginUsername" type="text" class="input"
+                                   ng-model="loginJson.username">
+                        </div>
+                        <div class="group">
+                            <label for="loginPassword" class="label">密碼</label>
+                            <input id="loginPassword" type="password" class="input" data-type="password"
+                                   ng-model="loginJson.password">
+                        </div>
+                        <div class="group layout-row">
+							<div class="flex-50">
+								<md-button type="submit" ng-disabled="loginJson.logining">
+									登入
+								</md-button>
+							</div>
+							<div class="flex-50">
+								<md-button ng-click="forgetPW()">
+									忘記密碼
+								</md-button>
+							</div>
+                        </div>
+                    </form>
+                </div>
+                <div class="sign-up-htm">
+                    <form ng-show="!registerJson.registering">
+						<div class="group">
+                            <label for="registerPhone" class="label">註冊域名</label>
+							  <div class="ng-scope layout-row">
+									<input type="checkbox"> 請先閱讀相關介紹及條款, 同意請點擊checkbox. 
+							  </div>
+								<div class="ng-scope layout-row">
+								<div class="flex-40"> <input id="registerPhone" type="text" class="input"
+                                   ng-model="registerJson.domain"></div>
+								<div class="flex-50 subdomain">.dazzle.website</div>
+								<div class="flex-10"><i ng-if="domainExist" class="do-status fa fa-check-circle"></i><i ng-if="!domainExist" class="do-status fa fa-times-circle"></i></div>
+							  </div>
+							  <div class="ng-scope layout-row">
+								<div class="flex-100"> <button type="button" class="button" ng-click="checkExist()">檢查</button></div>
+							  </div>
+							  
+							  								<div class="flex-10"></div>
+                        </div>
+                        <div class="group">
+                            <label for="registerPhone" class="label">電話</label>
+                            <input id="registerPhone" type="text" class="input"
+                                   ng-model="registerJson.registerPhone" ng-change="registerPhoneChanged()">
+                        </div>
+                        <div class="group"
+                             ng-if="!registerJson.registerCodeSent || registerJson.registerCode != registerJson.theRegisterCode">
+                            <button type="button" class="button"
+                                    ng-click="sendRegisterCode()" ng-disabled="registerJson.registerCodeSent">
+                                驗証手機{{registerJson.sendAgainRemain}}
+                            </button>
+                        </div>
+                        <div class="group"
+                             ng-if="registerJson.registerCodeSent && registerJson.registerCode != registerJson.theRegisterCode">
+                            <label for="registerCode" class="label">驗証碼</label>
+                            <input id="registerCode" type="text" class="input"
+                                   ng-model="registerJson.registerCode">
+                        </div>
+                        <div class="group">
+                            <button type="submit" class="button" ng-click="register()"
+                                    ng-if="registerJson.registerCodeSent"
+                                    ng-disabled="registerJson.registerCode != registerJson.theRegisterCode || registerJson.registering">
+                                註冊
+                            </button>
+                        </div>
+                    </form>
+                    <div layout="row" layout-sm="column" layout-align="space-around"
+                         ng-show="registerJson.registering">
+                        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

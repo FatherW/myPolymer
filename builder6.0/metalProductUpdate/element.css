@@ -1,0 +1,7 @@
+span.ctrlIcon {
+    margin-left: 5px;
+}
+
+span.ctrlIcon:hover {
+    color:orange;
+}

@@ -1,0 +1,19 @@
+<table class="views-table cols-2" ng-init="loadData()">
+         <thead>
+      <tr>
+                  <th class="views-field views-field-field-ddtime active">
+            <a href="#" title="按  排序" class="active"><img src="http://www.crc-taipo.org/misc/arrow-asc.png" width="13" height="13" alt="正向排序" title="正向排序"></a>          </th>
+                  <th class="views-field views-field-title">
+            <a href="#" title="按  排序" class="active"></a>          </th>
+              </tr>
+    </thead>
+    <tbody>
+          <tr ng-repeat="item in model.data" class="views-row-first" ng-class="$index %2 ? 'odd':'even'">
+                  <td class="views-field views-field-field-ddtime active">
+            <span class="date-display-single">{{item['日期'] | date}}</span>          </td>
+                  <td class="views-field views-field-title">
+            <a href="#">{{item['標題]}}</a>          </td>
+              </tr>
+
+      </tbody>
+</table>

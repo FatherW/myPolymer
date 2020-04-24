@@ -1,0 +1,25 @@
+<div class="view view-home-product-new view-id-home_product_new view-display-id-block" ng-init="getHotData()">
+        
+    <div id="overlay">
+     
+
+  <div class="marquee abc">
+  
+      <div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first" ng-repeat="item in newProducts">
+      
+  <div class="views-field views-field-nothing">        
+    <span class="field-content"><div class="product">
+        <div class="thumb"><a ng-href="/node/{{item['nid']}}"></a>
+            <a ng-href="/node/{{item['nid']}}"><img ng-src="{{loadImage(item['images'])}}" width="100" height="71"></a>
+        </div>
+  <div class="title"><a ng-href="/node/{{item['nid']}}">{{item['title']}}</a></div>
+  <div class="price">{{returnPrice(item)}}</div>
+  <div class="clearfix"></div>
+  <div class="company"><a ng-href="/node/{{item['company_id']}}">{{item['product_company']}}</a></div>
+</div></span>  </div>  </div>
+  
+    </div>
+  </div>
+  </div>
+</div>

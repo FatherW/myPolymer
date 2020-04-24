@@ -1,0 +1,8 @@
+<ul ng-init="loadNews()">
+                 <li ng-repeat="item in model.news | orderBy : '-nid' | limitTo: 4">
+
+                 <a ng-href="{{item['title']}}.html">{{item['title']}}</a>
+         <span class="featurebox_date">[{{item['publishDate'] | date}}]</span>
+         <div class="clearboth"></div>
+       </li>     
+  </ul>

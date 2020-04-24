@@ -1,0 +1,56 @@
+<table class="newTable" st-table="displayedCollection" st-safe-src="rowdate">
+        <thead>
+            <tr class="filterWrapper">
+                <th colspan="2">
+                    <div class="filter_search1">
+                        <div class="dateInput">
+                            <!--<span>年份：</span>
+                    <p class="input-group select-group">
+                        <select id="yearSelect" class="form-control" ng-model="year" ng-change="changeYear(year)">
+                            <option ng-repeat="yearOption in yearOptions">{{yearOption}}</option>
+                        </select>
+                    </p>--><span>&#x641C;&#x7D22;&#xFF1A;</span>
+                            <input st-search="" type="text" class="inputBox form-control" placeholder="&#x95DC;&#x9375;&#x5B57;" ng-model="keyWrod">
+                        </div>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            	<td width="20%">&#x65E5;&#x671F;</td>
+        		<td>&#x6A19;&#x984C;</td>
+        	</tr>
+            <tr ng-repeat="row in displayedCollection" ng-class-odd="&apos;odd&apos;" ng-class-even="&apos;even&apos;">
+                <!--<td>
+                    <div ng-if="row.content2">
+                        <div class="column col-lg-12 col-md-12 col-xs-12">
+                            <div class="newsTitle colorOrg"><a target="_blank" ng-href="knowledge-detail.html?knowid={{row.know_id}}">{{row.title2}}</a></div>
+                            <div class="newsDate">日期：{{row.date}}</div>
+                        </div>
+                        <div class="column col-lg-8 col-md-8 col-xs-12 newContent">{{row.content2 | htmlToPlaintext | limitTo: 150}}...</div>
+                        <div class="column col-lg-4 col-md-4 hidden-xs newImage"><img src="http://sunta520.dazzle.website/image/logo.jpg"></div>
+                    </div>
+                    <div ng-if="row.pdf_link2">
+                        <div class="column col-lg-8 col-md-8 col-xs-112">
+                            <div class="newsTitle colorOrg"><a target="_blank" ng-href="{{row.pdf_link2}}">{{row.title2}}</a></div>
+                            <div class="newsDate">日期：{{row.date}}</div>
+                        </div>
+                        <div class="column col-lg-4 col-md-4 hidden-xs textCenter"><a target="_blank" download="{{row.title2}}" ng-href="{{row.pdf_link2}}"><i class="fa fa-file-pdf-o fa-2x" aria-hidden="true"></i></a></div>
+                    </div>
+                </td>-->
+                <td>
+                	{{row.date}}
+                </td>
+                <td ng-if="row.content2"><a target="_blank" ng-href="knowledge-detail.html?knowid={{row.know_id}}">{{row.title2}}</a></td>
+                <td ng-if="row.pdf_link2"><a target="_blank" ng-href="{{row.pdf_link2}}">{{row.title2}}</a></td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>

@@ -1,0 +1,11 @@
+
+		<div class="main" id="grid">
+			<div ng-repeat="item in model.data" class="view col-md-4">
+			<div class="view-back">
+				<span class="fa fa-eye" data-icon=""><span>{{item.eye}}</span></span>
+				 <span class="fa fa-heart-o" data-icon=""><span>{{item.heart}}</span></span>
+				  <a href="{{item.link}}">→</a>
+			</div>
+			<img src="{{item.image}}">
+			</div>
+		</div>

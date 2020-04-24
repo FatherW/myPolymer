@@ -1,0 +1,27 @@
+<div class="row12" layout="row" layout-wrap layout-gt-sm="row" layout-padding ng-init="loadData()">
+    <div ng-repeat="item in model.data"  class="col12-3" flex="50" flex-xs="100">
+        
+          <div class="panel12">
+            <div class="head-photo">
+                <img ng-src="{{item['頭像']}}" width="100%" />
+            </div>
+            <div class="detail">
+                <a  ng-href="{{item['學校名稱']}}.html"><h6>{{item['學校名稱']}}</h6></a>
+                <div class="detail-text">
+                    
+                    <br>
+                    {{item['地址']}}
+                </div>
+                
+                <div class="more">
+                   <a  ng-href="{{item['學校名稱']}}.html">詳細資料</a>
+                </div>
+            </div>
+            
+            
+        </div>
+           
+    </div>
+
+
+</div>

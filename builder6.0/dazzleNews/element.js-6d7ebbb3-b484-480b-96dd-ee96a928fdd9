@@ -1,0 +1,93 @@
+var app = angular.module('demoApp');
+app.directive('dazzleNews', function ($compile, $templateRequest, $mdDialog, $uibModal) {
+    var dazzleNews = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        transclude: true,
+        template: '<div context-menu="menuOptions" ng-transclude></div>',
+        link: function (scope, element, attrs) {
+            scope.http = "http://d27btag9kamoke.cloudfront.net/";
+            scope.directiveId = "dazzleMenu2";
+            scope.type = "dazzleNews";
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+            scope.editorCustomInit(scope, element, attrs).then(function () {
+            
+            
+            });
+        },
+        controller: function ($scope, $element, $attrs) {
+            $scope.menuOptions = [
+            
+                ["初始化", function () {
+                
+                 if (angular.isUndefined($scope.model.menu)) {
+                     $scope.model.menu=[
+                        {
+                            "title":"Item 1",
+                            "id":"item18023",
+                            "html":""
+                        },
+                        {
+                            "title":"Item 2",
+                            "id":"item0988093",
+                            "html":""
+                        },
+                        {
+                            "title":"Item 3",
+                            "id":"item8083802",
+                            "html":""
+                    }];
+                }                    
+                    
+                     var html="";
+                     angular.forEach($scope.model.menu,function(item,index) {
+                            html = html +"<dazzle-item id=\""+item.id+"\ list=\""+$scope.model.id.trim()+"\"></dazzle-item>";
+                     });
+                     $element.children().html(html);
+
+
+                }],
+                ["編輯新聞", function () {
+                   var modalInstance = $uibModal.open({
+                        animation: true,
+                        templateUrl: 'models/menuPopup/popup.html' + '?id=' + new Date().getTime(),
+                        controller: 'menuPopupCtrl',
+                        size: 'lg',
+                        resolve: {
+                            rootScope: function () {
+                                return $scope
+                            },
+                            menu: function () {
+                                return $scope.model.menu
+                            }
+                        }
+                    });
+                    modalInstance.result.then(function (menu) {
+                        $scope.model.menu = menu;
+//                        $scope.updateHtml();
+                    });
+                }],
+                 ["更換模版", function () {
+                 $mdDialog.show({
+                 controller: 'templatePopupController',
+                 templateUrl: 'models/templatePopup/popup.html' + "?id=" + new Date().getTime(),
+                 locals: {
+                 rootScope: $scope
+                 }
+                 }).then(function (template) {
+                 $scope.useTemplate();
+                 });
+                 }]
+            ];
+            $scope.beforeAtomSaved = function () {
+
+            }
+            $scope.afterAtomSaved = function () {
+
+            }
+        }
+    };
+    return dazzleNews;
+});

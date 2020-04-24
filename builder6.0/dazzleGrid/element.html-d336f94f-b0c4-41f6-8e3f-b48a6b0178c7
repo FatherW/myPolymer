@@ -1,0 +1,30 @@
+<div class="gallery">
+    <ul class="dynamic-grid" ag-id="shots" angular-grid="gotObj" ag-options="options" ag-grid-width="gridWidth"
+        ag-infinite-scroll="loadMore()">
+        <li data-ng-repeat="pic in gotObj track by $index" class="grid">
+            <div class="details category">{{pic.category}}</div>
+            <div class="cover">
+                <div class="allTags">
+                    <div class="details" ng-click="openProfile(pic.owner_id)">
+                        <img class="circleLogo" src="img/testIcon.png">
+                        <p>{{pic.owner_id}}</p>
+                    </div>
+                    <div class="showClickRate">
+                        <i class="fa fa-eye" aria-hidden="true"></i> {{pic.clickRate}}
+                    </div>
+                </div>
+                <div class="downButt"></div>
+            </div>
+
+            <a href="#" ng-click="open(pic.gid)" class="ng-scope">
+                <img src="http://dazzle.gallery/img/logo.svg"
+                     ng-src="https://designerrrr-output.s3-ap-northeast-1.amazonaws.com/images/medium/{{pic.gid}}.jpg"
+                     on-error-src="http://dazzle.gallery/img/logo.svg"
+                     class="grid-img"/></a>
+        </li>
+    </ul>
+</div>
+</div>
+    
+
+

@@ -1,0 +1,22 @@
+var app = angular.module('demoApp');
+app.directive('imgElement', function ($ocLazyLoad) {
+    var path = "https://d27btag9kamoke.cloudfront.net/builder6.0/imgElement/";
+    var imgElement = {
+        restrict: 'AE',
+        priority: 1000,
+        scope: true,
+        templateUrl: path + 'element.html' + '?id=' + new Date().getTime(),
+        compile: function ($element) {
+            console.log('imgElement compile', $element);
+            if (angular.isUndefined($element[0].id) || $element[0].id == null || $element[0].id.length < 1) {
+                $element[0].id = "ele" + new Date().getTime();
+                $element.attr('id', $element[0].id);
+            }
+        },
+        controller: function ($scope, $element, $attr) {
+            $scope.id = $element.attr('id');
+            console.log('imgElement controller', $element);
+        }
+    }
+    return imgElement;
+});

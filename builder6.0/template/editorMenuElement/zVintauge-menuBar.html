@@ -1,0 +1,9 @@
+<div id="cssmenu" class="align-center">
+    <ul>
+        <!--model.menu.length-1 == $index?'last':''-->
+        <li ng-repeat="item in model.menu" ng-class="{'last':model.menu.length-1 == $index}">
+            <a ng-if="$index==0" href="index.html"><span>{{item.title}}</span></a>
+            <a ng-if="$index!=0" href="{{item.title}}.html"><span>{{item.title}}</span></a>
+        </li>
+    </ul>
+</div>

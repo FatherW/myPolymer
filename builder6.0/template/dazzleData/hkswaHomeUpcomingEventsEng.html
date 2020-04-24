@@ -1,0 +1,6 @@
+<ul>
+    <li ng-repeat="item in model.data | filter: { '分類': 'Upcoming Events','語言':'!zh-hant'} | orderBy:'-nid' | limitTo:2 "><a ng-href="{{item['標題'] | replacetitle}}.html">{{item['標題']}}</a>
+        <br> <span class="featurebox_date">{{item['文章日期']*1000 | date:'yyyy年MM月dd日'}}</span>
+    </li>
+                                                            
+</ul>

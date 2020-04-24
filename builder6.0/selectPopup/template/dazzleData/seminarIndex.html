@@ -1,0 +1,29 @@
+<table class="views-table cols-3" ng-init="loadData()">
+    <thead>
+    <tr>
+        <th class="views-field views-field-field-stime">
+            日期
+        </th>
+        <th class="views-field views-field-title-1">
+            主題
+        </th>
+        <th class="views-field views-field-field-speaker">
+            講員/分享者
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-class="$index %2? 'odd':'even'" class="views-row-first"
+        ng-repeat="item in model.data | orderBy:'publishDate':true | limitTo:4">
+        <td class="views-field views-field-field-stime">
+            <span class="date-display-single">{{item['publishDate']}}</span></td>
+        <td class="views-field views-field-title-1">
+            {{item['title']}}
+        </td>
+        <td class="views-field views-field-field-speaker">
+            {{item['speaker']}}
+        </td>
+    </tr>
+
+    </tbody>
+</table>

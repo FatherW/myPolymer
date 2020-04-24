@@ -1,0 +1,20 @@
+   <h1 class="md-display-2">我的可用資源 Natural Occurring Resources</h1>
+    <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="save()">更新</md-button> 
+    <dz-new-dataset id="question-5">
+    </dz-new-dataset>
+   <table class="table table-h" id="_table_table-h">
+                    <thead>
+                        <th width="50%">類別
+                        </th>
+                        
+                        <th width="50%">可用資源</th>
+
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="(key,value) in ans"><td>{{key}}</td>
+                        <td><md-chips ng-model="value" readonly="false" md-removable="true"></md-chips></td> </tr>
+                        
+                                        
+                    </tbody>
+                    
+                </table>   

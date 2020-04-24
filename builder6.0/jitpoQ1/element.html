@@ -1,0 +1,54 @@
+
+	
+		
+<md-tabs md-dynamic-height md-border-bottom>
+      <md-tab ng-repeat="(key, value) in ans" label="{{key}}">
+        <md-content class="md-padding">
+
+          <h1 class="md-display-2">{{key}}</h1> <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="save(key)">更新</md-button> 
+<table class="table table-h" id="_table_table-h">
+                <tbody><tr>
+                    <th width="60%"><h2>我的優勢</h2></th>
+                    <th>答案</th>
+                    
+                </tr>
+                <tr>
+                    <td style="text-align: left;"><b>現有的優勢</b>(例如技能、才幹、個人或外在環境資源等？</td>
+                    <td>   <md-input-container class="md-block">
+                          <label>答案</label>
+
+                        <textarea ng-model="value['ans1']" md-maxlength="500" rows="5" md-select-on-focus></textarea>        </md-input-container>
+                 </td>  
+                    
+
+                    
+                </tr>
+                <tr>
+                    <td style="text-align: left;"><b>個人的願望、志向或抱負&nbsp; </b>我現在要什麼? (請在右面方格填上首4 位的優先次序)</td>
+                    <td>   <md-input-container class="md-block">
+                          <label>答案</label>
+
+                        <textarea ng-model="value['ans2']" md-maxlength="500" rows="5" md-select-on-focus></textarea>        </md-input-container></td>
+                    
+                </tr>
+                <tr>
+                    <td style="text-align: left; "><b>過去的資源</b>(個人、社會及外在環境的資源)過去我運用過的優勢和資源?<br></td>
+                    <td>  <md-input-container class="md-block">
+                          <label>答案</label>
+
+                        <textarea ng-model="value['ans3']" md-maxlength="500" rows="5" md-select-on-focus></textarea>        </md-input-container></td>
+                    
+                </tr>
+                
+                
+            </tbody></table>
+        </md-content>
+      </md-tab>
+
+  
+    </md-tabs>
+
+
+
+    
+    

@@ -1,0 +1,17 @@
+<div class="panel-pane pane-views pane-staff">
+    <h2 class="pane-title">傳道同工</h2>
+    <div class="pane-content">
+        <div class="view view-staff view-id-staff view-display-id-block view-dom-id-b6a10794c02a247704701c04e41d7e16">
+            <div class="view-content">
+                <table class="views-table cols-0">
+                    <tbody>
+                        <tr ng-repeat="item in model.data | filter: { '職位' :'傳道同工' } | orderBy: '-Order' " class="odd views-row-first">
+                            <td class="views-field views-field-title"> <a href="{{item['同工名稱']}}.html" rel="lightframe[|width:900px; height:400px; scrolling: auto;]">{{item['同工名稱']}}</a> </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>資料連結設定</h2>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content" style="min-height: 400px;">
+                <md-tabs md-dynamic-height md-border-bottom>
+                    <md-tab label="資料所屬組別">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container flex="50">
+                                    {{currentTable}}
+                                    <md-select ng-model="currentTable" aria-label="selectTable">
+                                        
+                                        <md-option ng-value="table"
+                                                   ng-repeat="table in tables | filter:tableSelectSearchPage"
+                                                   ng-click="currentTable = table">
+                                            {{table}}
+                                        </md-option>
+                                    </md-select>
+                                    <md-button ng-click="editTable(currentTable)">
+                                           編輯 
+                                    </md-button>
+                                    <md-button ng-click="addTable()">
+                                           新增 
+                                    </md-button>
+                                    <md-button ng-click="delTable(currentTable)">
+                                           刪除 
+                                    </md-button>
+
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="資料對應欄位">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container flex="50">
+                                    {{currentField}}
+                                    <md-select ng-model="currentField" aria-label="selectField">
+                                        <md-option ng-value="field"
+                                                   ng-repeat="field in fields | filter:fieldSelectSearchPage"
+                                                   ng-click="currentField = field">
+                                            {{field}}
+                                        </md-option>
+                                    </md-select>
+                                    <md-button ng-click="editTable(currentTable)">
+                                           編輯 
+                                    </md-button>
+                                    <md-button  ng-click="addTable()">
+                                           新增 
+                                    </md-button>
+                                    <md-button ng-click="delTable(currentTable)">
+                                           刪除 
+                                    </md-button>
+
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                   
+                </md-tabs>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancelDbSetting()">
+                取消資料鏈結
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="cancel()">
+                取消
+            </md-button>
+            <md-button ng-click="save()">
+                儲存
+            </md-button>
+        </md-dialog-actions>
+
+        <md-sidenav class="md-sidenav-right md-whiteframe-4dp" md-component-id="rightAddTable">
+            <md-toolbar class="md-theme-light">
+                <h1 class="md-toolbar-tools">新增資料組別</h1>
+            </md-toolbar>
+            <md-content ng-controller="rightAddTableController" layout-padding>
+              
+                    <md-input-container>
+                        <label>名稱</label>
+                        <input type="text" ng-model="name" md-autofocus>
+                    </md-input-container>
+              
+                <span flex></span>
+                <md-button ng-click="add()" class="md-primary">新增</md-button>
+            </md-content>
+        </md-sidenav>
+
+    </form>

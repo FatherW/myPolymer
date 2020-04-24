@@ -1,0 +1,26 @@
+<form id="form1" style="margin:2em; width:50%;">
+  <div class="form-group" ng-repeat="f in model.form">
+
+    <label for="{{f.id}}">{{f.title}}</label>
+
+    <div ng-switch="f.type">
+
+  		<div ng-switch-when="input">
+  			<input type="input" ng-model="{{f.id"}} class="form-control" id="{{f.id}}">
+  		</div>
+
+  		<div ng-switch-when="textarea">
+  			<textarea ng-model="{{f.id}}" class="form-control" id="{{f.id}}"></textarea>
+  		</div>
+
+  		<div ng-switch-default> 			
+  		</div>
+
+	</div>
+
+
+
+  </div>
+  
+ <button type="submit" class="btn btn-primary">Submit</button>
+</form>

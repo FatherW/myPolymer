@@ -1,0 +1,143 @@
+<div class="row well2">
+        <h2 class="formTtitle">網上報名及付款</h2>
+       <h3 style="width:700px; margin:0 auto;">(處理以下報名及付款時，請必須填寫報名人士的英文全名，並必須與香港身份證相同，以供印刷證書之用。)</h3>
+       <form id="enrollForm" class="myForm form-horizontal label-left ng-invalid ng-invalid-required ng-valid-email ng-pristine ng-dirty ng-valid-parse" name="myForm" ng-init="initCourse()" style="">
+            <div id="enrollForm-0" class="form-group" style="">
+                <div>
+                    <div class="">
+                        <label class="control-label col-sm-2" for="姓名">英文姓名<span class="label-required">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" ng-model="formdata['姓名']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="姓名" placeholder="" required="required" aria-invalid="true" style="">
+                        </div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="enrollForm-1" class="form-group">
+                <div>
+                    <div class="">
+                        <label class="control-label col-sm-2" for="電郵">電郵<span class="label-required">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="email" ng-model="formdata['電郵']" class="form-control ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required" id="電郵" placeholder="" required="required" aria-invalid="true" style="">
+                        </div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="enrollForm-2" class="form-group" style="">
+                <div>
+                    <div class="">
+                        <label class="control-label col-sm-2" for="公司名稱">公司名稱</label>
+                        <div class="col-sm-10">
+                            <input type="text" ng-model="formdata['公司名稱']" class="form-control ng-pristine ng-untouched ng-valid ng-empty" id="公司名稱" placeholder="" aria-invalid="false" style="">
+                        </div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="enrollForm-3" class="form-group">
+                <div>
+                    <div class="">
+                        <label class="control-label col-sm-2" for="電話">手提電話<span class="label-required">*</span></label>
+                        <div class="col-sm-10">
+                            <input type="text" ng-model="formdata['電話']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="電話" placeholder="" required="required" aria-invalid="true" style="">
+                        </div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div id="enrollForm-4" class="form-group">
+                <div>
+                    <div class="">
+                        <label class="control-label col-sm-2" for="課程／講座">課程／講座<span class="label-required">*</span></label>
+                        <div class="col-sm-10">
+                            <select ng-model="formdata['課程/講座']" ng-change="changeCourse(formdata['課程/講座'])" class="form-control" id="課程／講座_3" required="required">
+                                <option value="">--請選擇--</option>
+                                <option ng-repeat="courseItem in courseData track by $index" value="{{courseItem['Course Code']}}">{{courseItem['Course Name']}}</option> 
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+           <div id="enrollForm-5" class="form-group">
+                <div>
+                    <div class="">
+                        <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="折扣">價錢／折扣</label>
+                        <div class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5 ng-binding" for="價錢" ng-bind="totalCoursePrice | currency:'HK$'"></div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 has-normall" ng-class="couponStatus" style="">
+                            <input type="text" ng-model="formdata['折扣碼']" ng-change="checkCoupon(formdata['折扣碼'])" class="form-control couponInput ng-pristine ng-valid ng-empty ng-touched" id="折扣" placeholder="折扣代碼" aria-invalid="false" style="">
+                            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="enrollForm-6" class="form-group">
+                <div>
+                    <div class="">
+                        <label class="control-label col-lg-2 col-md-2 col-sm-2 col-xs-12" for="驗證">驗證碼<span class="label-required">*</span></label>
+                        <div class="control-label col-lg-5 col-md-5 col-sm-5 col-xs-5" for="驗證" myangular122-bind="authCode"><canvas id="myCanvas" width="60" height="30" style="border:1px solid #d3d3d3;"></canvas></div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" ng-class="authStatus">
+                            <input type="text" ng-model="formdata['驗證']" required="required" ng-change="checkAuth(formdata['驗證'])" class="form-control authCodeInput" id="驗證" placeholder="驗證碼">
+                            <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                            <span class="glyphicon glyphicon-ok form-control-feedback"></span>
+                        </div>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="enrollForm-7" class="form-group">
+                <div>
+                    <div class="">
+                        <label class="col-sm-12" for="已閱讀及同意本會使用條款及免責聲明">
+                            <input type="checkbox" ng-model="formdata['是否閱讀條款']" class="form-check-input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="已閱讀及同意本會使用條款及免責聲明" placeholder="" required="required" aria-invalid="true" style=""> <span class="label-required">*</span>已閱讀及同意本會使用條款及免責聲明
+                        </label>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div id="enrollForm-8" class="form-group">
+                <div>
+                    <div class="">
+                        <label class="col-sm-12" for="不接受收取任何市場推廣資訊">
+                            <input type="checkbox" ng-model="formdata['是否不接受市場推廣資訊']" class="form-check-input ng-pristine ng-untouched ng-valid ng-empty" id="不接受收取任何市場推廣資訊" placeholder="" aria-invalid="false"> 不接受收取任何市場推廣資訊
+                        </label>
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-xs-6">
+                    <button type="button" class="btn btn-primary submitForm" ng-disabled="checkedOnlineSubmit" ng-click="submitThisForm('online')">提交報名</button>
+                </div>
+                <div class="col-lg-6 col-md-6 col-xs-6">
+                    <button type="button" class="btn btn-primary submitPay"  ng-click="submitThisForm('paypal')">網上付款</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+

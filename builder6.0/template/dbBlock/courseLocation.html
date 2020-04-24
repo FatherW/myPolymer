@@ -1,0 +1,35 @@
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAN_dIE_33pcsdRWaRqx-EnJWNTNzOfqQI&libraries=places&callback=initMap"></script>
+  <script>
+       var width = $('.map-container').innerWidth();
+        console.log('Width',width);
+        $('.map-container').css('height', width * 0.25+'px');
+        map = new google.maps.Map(document.getElementById('dazzle-map'), {
+          zoom: 8,
+          center: {lat: -34.397, lng: 150.644}
+        });
+        geocoder = new google.maps.Geocoder();
+
+        geocodeAddress(address, geocoder,map);
+        map.setZoom(17);
+        
+        function geocodeAddress(address,geocoder,resultsMap) {
+            geocoder.geocode({'address': address}, function(results, status) {
+              if (status === 'OK') {
+                resultsMap.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                  map: resultsMap,
+                  position: results[0].geometry.location
+                });
+              } else {
+                alert('Geocode was not successful for the following reason: ' + status);
+              }
+            });
+          }
+         var address= $('#dazzle-map').attr('address');
+        geocodeAddress( address,geocoder,map);
+      
+  </script>
+<div class="map-container">
+    地址：{{model.value}}
+    <div id="dazzle-map" address="{{model.value}}"></div>
+</div>

@@ -1,0 +1,145 @@
+<div id="tab_area" class="homepage_tab">
+                    <ul>
+                        <li class="borderRightWhite" style="border-left: 1px solid #ccc;"><a href="#tab-1">&#x6AC3;&#x8CA8;&#x50F9;&#x683C;</a></li>
+                        <li class="borderRightWhite"><a href="#tab-2">&#x6563;&#x8CA8;&#x50F9;&#x683C;</a></li>
+                        <li class="borderRightWhite"><a href="#tab-3">&#x4EBA;&#x6C11;&#x5E63;&#x50F9;&#x683C;</a></li>
+                        <li class=""><a href="#tab-4">&#x5DE5;&#x7A0B;&#x5851;&#x6599;&#x50F9;&#x683C;</a></li>
+                    </ul>
+                    <!--<div id="tab-1">
+                        <div class="newRowItem" ng-repeat='row in rowdata1 | limitTo:3'>
+                            <div class="newRowItemDate">{{row.date}}</div>
+                            <div class="newRowItemTitle">{{row.title2}}</div>
+                            <div class="newRowItemContent">{{row.content2 | htmlToPlaintext | limitTo: 150}}...</div>
+                        </div>
+                    </div>
+                    <div id="tab-2">
+                        <div class="newRowItem" ng-repeat='row in rowdata2 | limitTo:3'>
+                            <div class="newRowItemDate">{{row.date}}</div>
+                            <div class="newRowItemTitle">{{row.title2}}</div>
+                            <div class="newRowItemContent">{{row.content2 | htmlToPlaintext | limitTo: 150}}...</div>
+                        </div>
+                    </div>
+                    <div id="tab-3">
+                        <div class="newRowItem" ng-repeat='row in rowdata3 | limitTo:3'>
+                            <div class="newRowItemDate">{{row.date}}</div>
+                            <div class="newRowItemTitle">{{row.title2}}</div>
+                            <div class="newRowItemContent">{{row.content2 | htmlToPlaintext | limitTo: 150}}...</div>
+                        </div>
+                    </div>
+                    <div id="tab-4">
+                        <div class="newRowItem" ng-repeat='row in rowdata4 | limitTo:3'>
+                            <div class="newRowItemDate">{{row.date}}</div>
+                            <div class="newRowItemTitle">{{row.title2}}</div>
+                            <div class="newRowItemContent">{{row.content2 | htmlToPlaintext | limitTo: 150}}...</div>
+                        </div>
+                    </div>-->
+                    <div id="tab-1">
+            <table class="priceTable" st-table="displayedCollection1" st-safe-src="rowdate0">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">Qty (Ctnr)</th>
+                    <th class="column hidden-xs">ETA HK</th>
+                    <th>HKD/LB</th>
+                    <th class="column hidden-xs">USD/MT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in displayedCollection1">
+                    <td class="column hidden-xs"><div ng-bind-html="row.category | trust"></div></td>
+                    <td>{{row.producer}}</td>
+                    <td>{{row.model_no}}</td>
+                    <td class="column hidden-md hidden-xs">{{row.origin}}</td>
+                    <td class="column hidden-xs">{{row.qty}}</td>
+                    <td class="column hidden-xs">{{row.eta_hk}}</td>
+                    <td>{{row.hkd_lb}}</td>
+                    <td class="column hidden-xs">{{row.usd_mt}}</td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+
+          <div id="tab-2">
+            <table class="priceTable" st-table="displayedCollection2" st-safe-src="rowdate1">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">Warehouse</th>
+                    <th>HKD/LB</th>
+                    <th class="column hidden-xs">HKD/KG</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in displayedCollection2">
+                    <td class="column hidden-xs"><div ng-bind-html="row.category | trust"></div></td>
+                    <td>{{row.producer}}</td>
+                    <td>{{row.model_no}}</td>
+                    <td class="column hidden-md hidden-xs">{{row.origin}}</td>
+                    <td class="column hidden-xs">{{row.warehouse}}</td>
+                    <td>{{row.hkd_lb}}</td>
+                    <td class="column hidden-xs">{{row.hkd_kg}}</td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+          
+          <div id="tab-3">
+            <table class="priceTable" st-table="displayedCollection3" st-safe-src="rowdate2">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">ETA HK</th>
+                    <th class="column hidden-xs">Tariff</th>
+                    <th>VAT RMB/MT</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in displayedCollection3">
+                    <td class="column hidden-xs"><div ng-bind-html="row.category | trust"></div></td>
+                    <td>{{row.producer}}</td>
+                    <td>{{row.model_no}}</td>
+                    <td class="column hidden-md hidden-xs">{{row.origin}}</td>
+                    <td class="column hidden-xs">{{row.eta_hk}}</td>
+                    <td class="column hidden-xs">{{row.tariff}}</td>
+                    <td>{{row.vat_rmb}}</td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+          
+          <div id="tab-4">
+            <table class="priceTable" st-table="displayedCollection4" st-safe-src="rowdate3">
+                <thead>
+                <tr>
+                    <th class="column hidden-xs">Category</th>
+                    <th>Producer</th>
+                    <th>Model No.</th>
+                    <th class="column hidden-md hidden-xs">Origin</th>
+                    <th class="column hidden-xs">Warehouse</th>
+                    <th>HKD/LB</th>
+                    <th class="column hidden-xs">HKD/KG</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="row in displayedCollection4">
+                    <td class="column hidden-xs"><div ng-bind-html="row.category | trust"></div></td>
+                    <td>{{row.producer}}</td>
+                    <td>{{row.model_no}}</td>
+                    <td class="column hidden-md hidden-xs">{{row.origin}}</td>
+                    <td class="column hidden-xs">{{row.warehouse}}</td>
+                    <td>{{row.hkd_lb}}</td>
+                    <td class="column hidden-xs">{{row.hkd_kg}}</td>
+                </tr>
+                </tbody>
+            </table>
+          </div>
+                </div>

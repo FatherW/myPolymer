@@ -1,0 +1,72 @@
+<style>
+.btn_user{
+    cursor:pointer;
+}
+#header .member_bar .btn_user {
+    display: inline-block;
+    margin-left: 20px;
+    background: #ffd518;
+    color: #000;
+    padding: 0px 20px;
+    border: 1px solid #f4ca0f;
+    height: 24px;
+    line-height: 24px;
+    font-size: 13px;
+    border-radius: 3px;
+}
+
+</style>
+
+<div>
+    <div ng-if="isLogin()">
+    	<div class="user_bar">
+		賬戶: 
+		<span class="user_nav_wrapper">
+			<a href="#" class="username">{{user['name']}}<span class="arrow"></span></a>
+			<ul class="user_nav">
+
+<!-- 				<li ng-if="isSeller()"><a href="/my-company-order">檢視訂購記錄</a></li>
+				<li ng-if="isSeller()"><a href="/my_products">我的產品</a></li>-->
+<!-- 				<li ng-if="isSeller()"><a href="/user/user-comment/<?=$user->uid?>">產品問與答</a></li> -->
+				<!-- <li ng-if="isSeller()"><a href="/my_quotes">我的報價</a></li> -->
+				
+				<!-- <li ng-if="!isSeller()"><a href="/my-cart">我的購物車</a></li> -->
+				<!-- <li ng-if="!isSeller()"><a href="/my-order-history">我的購買記錄</a></li> -->
+				 <li ng-if="isAdmin()"><a ng-click="changeUser()" href="#">轉換用戶</a></li> 
+
+				<!-- <li><a href="/my_favorites">我的收藏</a></li> -->
+<!-- Has Company -->
+				<li><a ng-href="/user/modify.html">編輯公司資料</a></li>
+				<li><a ng-href="/node/{{user['company_id']}}">我的公司頁</a></li>
+<!-- Has Company -->
+				 <li ng-if="isAdmin()"><a ng-click="addProduct()" href="#">新增產品</a></li> 
+ 				 <li ng-if="isAdmin()"><a ng-click="addMyCompany()" href="#">新增公司專頁</a></li> 
+				 <li ng-if="isAdmin()"><a ng-click="addUser()" href="#">新增用戶</a></li> 
+
+				<li><a href="/user/profile">帳戶資料</a></li>
+<!--				<li><a ng-href="/user/{{user['uid']}}/edit">重設密碼</a></li>  -->
+				<li><a ng-click="logout()" href="#" >登出</a></li>
+			</ul>
+		</span> 
+
+	</div>
+
+</div>
+
+ 
+ <div class="member_bar">
+     <div ng-if="isLogin()">
+		<div class="btn_user" ng-click="addProduct()">刊登產品</div>
+		<a ng-if="isBuyer()" href="/node/add/purchase" class="btn_user">採購產品</a>
+     </div>
+    <div ng-if="!isLogin()">
+		<a href="#" class="btn_login" ng-click="loginPopup()">登錄</a>
+		<a href="/contact" class="btn_signup">註冊</a>        
+    </div>
+
+
+</div>
+
+    
+</div>
+

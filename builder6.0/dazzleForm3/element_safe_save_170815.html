@@ -1,0 +1,97 @@
+<style>
+  .label-required {
+    color:red;
+  } 
+  legend {
+    margin-bottom: 10px;
+  }
+</style>
+
+<div class="col-sm-8 marginBottom10 borderbox paddingTopBottom10">
+<div class="row well">     
+
+<form id="form1" name="myForm" style="margin:2em; width:70%;">
+  <div class="form-group" ng-repeat="f in model.form">
+
+    <div ng-switch="f.directiveName">
+
+    	<div ng-switch-when="文字">
+    		<label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+  			<input type="text" myangular-model="myForm['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+  		</div>
+  		
+  		<div ng-switch-when="數字">
+    		<label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+  			<input type="number" myangular-model="myForm['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+  		</div>
+  		
+  		<div ng-switch-when="密碼">
+    		<label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+  			<input type="password" myangular-model="myForm['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+  		</div>
+
+  		<div ng-switch-when="多行文字">
+  			<label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+  			<textarea myangular-model="myForm['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}"></textarea>
+  		</div>
+   
+
+  		<div ng-switch-when="勾選">
+  			<input type="checkbox" myangular-model="myForm['{{f.headerName}}']" class="form-control" id="{{f.headerName}}">
+  			<label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+  		</div>
+
+  		<div ng-switch-when="日期">
+  			<label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+  			<input type="date" myangular-model="myForm['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+  		</div>
+
+   		<div ng-switch-when="電郵">
+   			<label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+  			<input type="email" myangular-model="myForm['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+  		</div>		 		
+
+  		<div ng-switch-when="單選按鈕"> 
+  			<legend>{{f.headerName}}<span class="label-required" ng-if="f.required">(* 必需填寫)</span></legend>
+  			<div ng-repeat="optionItem in f.cellEditorParams.values track by $index">
+  			<label for="{{f.headerName}}" class="form-check-label">
+  			<input value="{{optionItem}}" type="radio" ng-required="f.required" myangular-required="{{f.required}} && !myForm['{{f.headerName}}']" myangular-model="myForm['{{f.headerName}}']" class="form-check-input" id="{{f.headerName}}_{{$index}}">	
+        			{{optionItem}}
+      		</label>
+      		</div>
+  		</div>
+		
+		<div ng-switch-when="選擇列表"> 
+   			<label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+  			<select myangular-model="myForm['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}_{{$index}}">
+      			<option value="">--請選擇--</option>
+      			<option ng-repeat="optionItem in f.cellEditorParams.values track by $index" value="{{optionItem}}">{{optionItem}}</option>
+    		</select>
+  		</div>
+		
+      <div ng-switch-when="連結"> 
+        <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+        <input type="text" myangular-model="myForm['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">     
+      </div>
+
+      <div ng-switch-when="檔案"> 
+        <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+        <div class="">
+        	<input id="{{f.headerName}}_{{$index}}" style="display:-webkit-inline-box;display:inline-block;" type="file" myangular-model="myForm['{{f.headerName}}']" class="form-control-file" ng-required="f.required">     
+      		<button type="button" myangular-click="uploadFile('{{f.headerName}}{{$index}}',myForm['{{f.headerName}}'])" class="btn btn-default">上載</button>
+      		<a ng-href="">檔案</a>
+      	</div>
+      </div>	
+
+  		<div ng-default>
+  			<label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+  			<input type="text" myangular-model="myForm['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+  		</div>
+	 </div>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+</div>
+</div>

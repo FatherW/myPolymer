@@ -1,0 +1,45 @@
+<div class="row">
+    <div class="column col-lg-3 hidden-md hidden-xs sidemenu">
+        
+        <div class="expanded active-trail"><a href="/about-us" class="active-trail active">關於我們</a>
+        
+            <ul class="menu nav nav-pills nav-stacked">
+                        <li class="leaf" ng-repeat="item in model.menu"><a ng-href="#tab{{$index}}" data-toggle="pill">{{item.title}}</a></li>
+            </ul>
+        </div>
+         <editor-container-element master id="sidepic">
+        <editor-image-element>
+            
+        </editor-image-element>
+        <editor-image-element>
+            
+        </editor-image-element>
+
+        <h2><a href="/resources-and-download/publications">最新<span>刊物</span></a></h2>
+        <editor-image-element>
+            
+        </editor-image-element>
+        <editor-image-element>
+            
+        </editor-image-element>
+            
+        </editor-container-element>
+
+
+
+    </div>
+    <div class="column col-lg-9">
+<div class="breadcrumb"><a href="/">首頁</a></div>
+<div class="sitepath_div"></div>
+        
+        <div class="tab-content content content_main">
+            <div id="tab{{$index}}" ng-repeat="item in model.menu" class="tab-pane fade in"
+                 ng-class="$index==0? 'active': '' ">
+                <h1>{{item.title}}</h1>
+                <hr>
+                <div ng-bind-html="atom['tab-'+item.id].html | to_trusted">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

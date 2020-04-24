@@ -1,0 +1,16 @@
+<div class="column-tab"> <ul>
+<!--    <li class="ng-scope active"><div class="tab active_tab tab_counter_0" itemprop="headline"><a data-toggle="pill" class="ng-binding" href="#tab-0">2017</a></div></li>
+    <li class="ng-scope"><div class="tab active_tab tab_counter_0" itemprop="headline"><a data-toggle="pill" class="ng-binding" href="#tab-1">2016</a></div></li>
+    <li class="ng-scope"><div class="tab active_tab tab_counter_0" itemprop="headline"><a data-toggle="pill" class="ng-binding" href="#tab-2">2015</a></div></li>
+    <li class="ng-scope"><div class="tab active_tab tab_counter_0" itemprop="headline"><a data-toggle="pill" class="ng-binding" href="#tab-3">2014</a></div></li>
+    <li class="ng-scope"><div class="tab active_tab tab_counter_0" itemprop="headline"><a data-toggle="pill" class="ng-binding" href="#tab-4">2013</a></div></li>-->
+
+    <li class="ng-scope" ng-class="$index? '': 'active'" ng-repeat="yeartab in model.data">
+        <div class="tab active_tab tab_counter_0" itemprop="headline">
+            <a data-toggle="pill" class="ng-binding" href="#tab-{{$index}}">{{yeartab['Year']}}</a>
+        </div>
+    </li>
+</ul>
+
+</div>
+       

@@ -1,0 +1,172 @@
+var app = angular.module('demoApp');
+app.directive('yesicanMenu', function ($ocLazyLoad) {
+    var path = "https://d27btag9kamoke.cloudfront.net/builder6.0/id-1489658626503";
+    var yesicanMenu = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        templateUrl: path + '/html/id-1489658626503.html' + '?id=' + new Date().getTime(),
+        controller: function ($scope, $element, $attrs, $uibModal) {
+            //element init
+
+            $scope.id = $element[0].id || "ele" + new Date().getTime();
+            $element[0].id = $scope.id;
+            if (angular.isUndefined($scope.atom[$scope.id])) {
+                $scope.atom[$scope.id] = {
+                    "id": $scope.id,
+                    "src": $scope.src,
+                    "link": "#",
+                    "html": "",
+                    "list":[
+                        {
+                            "title":"簡介",
+                            "link":"#",
+                            "list":[]
+                        },
+                        {
+                            "title":"獎學金資料",
+                            "link":"#",
+                            "list":[]
+                        },
+                        {
+                            "title":"得獎學生",
+                            "link":"#",
+                            "list":[]
+                        },
+                        {
+                            "title":"活動回顧",
+                            "link":"#",
+                            "list":[]
+                        },
+                        {
+                            "title":"傳媒報導",
+                            "link":"#",
+                            "list":[]
+                        },
+                        {
+                            "title":"聯絡我們",
+                            "link":"#",
+                            "list":[]
+                        }
+                    ]
+
+                };
+            }
+            $scope.model = $scope.atom[$scope.id];
+                  
+                  console.log('Page JSOn',$scope.pageJson);
+
+            $scope.editorMenuOptions = [
+                ["編輯選單", function ($itemScope) {
+                        var modalInstance = $uibModal.open({
+                            animation: true,
+                            templateUrl: 'views/menuPopup.html?id=' + Math.floor((Math.random() * 10000) + 1),
+                            controller: 'menuCtrl',
+                            size: 'lg',
+                            resolve: {
+                                list: function () {
+                                    return $scope.model.list;
+                                },
+                                pagejson : function(){
+                                    return $scope.pageJson;
+                                }
+                            }
+                        });
+                        modalInstance.result.then(function (list) {
+                            $scope.atom[$scope.id].list = list;
+                            //$scope.compile();
+                            $scope.atom[$scope.id].html = $element.outerHTML;
+                        });
+
+                }]
+            ];
+            $element[0].addEventListener("DOMSubtreeModified", function () {
+                console.log('DOM changed');
+            });
+            //element init
+        }
+    }
+    return yesicanMenu;
+});
+
+app.controller('menuCtrl', function ($scope, $uibModalInstance, list,pagejson) {
+
+    $scope.pageJson = pagejson;
+    $scope.data = [];
+    $scope.list = list || [];
+    $scope.newRootItem = function () {
+        var id = new Date().getTime();
+        $scope.list.push({
+            id: 'menu' + id,
+            title: "新項目",
+            link: "#",
+            img: "",
+            type: 'Menu',
+            list: []
+        });
+    };
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+    $scope.saveMenu = function () {
+        console.log($scope.list);
+        $uibModalInstance.close($scope.list);
+    };
+
+    $scope.saveLink = function (node, link) {
+        node.link = link;
+    };
+
+    $scope.newSubItem = function (node) {
+        var id = new Date().getTime();
+        node.list.push(
+            {
+                id: 'submenu' + id,
+                title: "新項目",
+                link: "#",
+                type: 'Menu',
+                list: [],
+                img: ""
+            }
+        );
+    };
+
+    $scope.removeHandle = function (node) {
+//        delete node;
+    };
+});
+
+
+
+
+
+
+app.controller('linkCtrl', function ($scope, $uibModalInstance, link, page, anchor) {
+    $scope.link = link;
+    $scope.page = page;
+    $scope.anchor = anchor;
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+    $scope.select = function (page) {
+        $scope.link = page + ".html";
+    };
+
+    $scope.selectAnchor = function (page) {
+        $scope.link = '#' + page;
+    };
+
+    $scope.changeLink = function (value) {
+        $scope.$apply(function () {
+            $scope.link = value;
+        });
+    };
+
+    $scope.saveLink = function () {
+        $uibModalInstance.close($scope.link);
+    };
+});

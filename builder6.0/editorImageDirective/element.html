@@ -1,0 +1,1 @@
+<img id="img-{{model.id}}" class="img-responsive" ng-src="{{model.src}}">

@@ -1,0 +1,34 @@
+
+            <div class="filter_search1">
+                <div class="catWrapper">
+                    <label ng-repeat="name in names">
+  						<input type="checkbox" name="selectedName[]" value="{{name.value}}" ng-model="name.selected"> {{name.name}}
+					</label>
+                </div>
+                <div class="dateInput">
+                    <span>From&#xFF1A;</span>
+                    <p class="input-group">
+                        <input type="text" uib-datepicker-popup="{{format}}" class="form-control" ng-model="minD" is-open="popupMin.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close">
+                        <span class="input-group-btn dateicon">
+                        <button type="button" class="btn btn-default" ng-click="openMin()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    </p>
+                    
+                </div>
+                <div class="dateInput">
+                    <span>To&#xFF1A;</span>
+                    <p class="input-group">
+                        <input type="text" uib-datepicker-popup="{{format}}" class="form-control" ng-model="maxD" is-open="popupMax.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close">
+                        <span class="input-group-btn dateicon">
+                        <button type="button" class="btn btn-default" ng-click="openMax()"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                    </p>
+                </div>
+                <div class="icon-search" ng-click="goSearch()"></div>
+            </div>
+            <div class="clear"></div>
+            <!--<div>{{ddd}} {{ddd | date:'yyyy EEEE,MMM d ,HH:mm:ss Z'}}</div>
+            <div ng-repeat="d in data track by $index" class="datarow">{{d.dateline*1000}} {{d.dateline*1000 | date:'yyyy EEEE,MMM d ,HH:mm:ss Z'}}</div>
+            -->
+            <div id="container"></div>
+        

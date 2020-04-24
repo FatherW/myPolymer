@@ -1,0 +1,125 @@
+var app = angular.module('demoApp');
+
+require(['store'],function(store){
+    app.directive('concustom', function ($compile) {
+        var custom = {
+            restrict: 'A',
+            priority: 1000,
+            scope: true,
+            link: function (scope, element, attrs) {
+                element.addClass('dazzle-custom');
+                element.addClass('dazzle-concustom');
+               // element.prop('droppable',true);
+                var id = element.attr('id');
+                var toolbar = `
+                <md-toolbar class="md-accent dazzle strColor">
+                    <div class="md-toolbar-tools-dazzle">
+                        <i class="fa fa-x fa-arrows" aria-hidden="true" ng-click="up()"></i>
+                        <i class="fa fa-x fa-cog" aria-hidden="true"></i>
+                        <i class="fa fa-x fa-bank" aria-hidden="true" ng-click="addElement()"></i>
+                        <i class="fa fa-x fa-database" aria-hidden="true"></i>                            
+                        <i class="fa fa-x fa-info" aria-hidden="true"></i>                            
+                        <i class="fa fa-close right" ng-click="remove()"></i>
+                    </div>
+                  </md-toolbar>
+                `;
+
+       var startX,startY,start,stop,drag,container,x=0,y=0;
+
+                element.bind('dragenter',function(event){
+                    console.log('Container: drag enter',id);    
+                    store.set('containerDropId',id);
+                });
+                element.bind('dragend',function(event){
+                    var dragId,dragPageX,dragPageY;
+                    var dropEle;
+                    var dropId = store.get('dropId');
+                    dragId= store.get('dragContentId');
+                    dragPageX = store.get('dragPageX');
+                    dragPageY = store.get('dragPageY');
+
+
+                    console.log(dragId +" drops "+dropId);
+  
+                });
+
+
+                 element.bind("mouseenter", function(event) {
+                        element.addClass('dazzle-frame');
+                            var newElement = $compile(toolbar)(scope);
+                            element.prepend(newElement);                            
+                  });
+                element.bind("mouseover",function(event){
+                        var id=element.attr('id');
+                        //console.log("Mouse Over",id);
+                });
+
+                 element.bind("mouseleave", function(event) {
+                        var id = element.attr('id');
+                          element.find('md-toolbar').remove();
+                          element.removeClass('dazzle-frame');
+                  });
+
+
+/*                 element.bind("click",function(e){
+                    e.preventDefault();
+                    element.find('md-toolbar').remove();
+                    startX = e.clientX - element[0].offsetLeft;
+                    startY = e.clientY - element[0].offsetTop;
+                    scope.screen = false;
+                    console.log('mousedown');
+                    console.log(scope.screen);
+
+                 });
+*/
+
+
+          },
+          
+          
+          controller: function ($scope, $http, $element, $attrs,$mdDialog,$dazzlePopup) {
+            $scope.up = function() {
+                console.log('Up');
+                var id = $element.attr('id');
+                var element;
+                var pid;
+                element = $('#'+id).parent().closest('.dazzle-custom');
+                pid = element.attr('id');
+                console.log('PID',pid);
+                if (!angular.isUndefined(pid)){
+                    $scope.atom[id].toolbar = false;
+                    $scope.atom[pid].toolbar = true;                
+                }
+             
+            }
+            $scope.remove= function(){
+                console.log('Remove');
+                $element.remove();
+            }
+            $scope.addElement = function(){
+            /*
+                $mdDialog.show({
+                    controller: 'elementPopupController',
+                    templateUrl: 'models/elementPopup/popup.html' + "?id=" + new Date().getTime(),
+                    locals: {
+                        rootScope: $scope
+                    }
+                }).then(function (element) {
+                    var html = angular.element(element.code);
+                    $element.children('[context-menu]').eq(0).append(html);
+                    $compile(html)($scope);
+                });
+              */  
+                $dazzlePopup.addElement($scope).then(function(ele) {
+                    $scope.$apply (function(){
+
+                    });
+                });
+                
+            }
+          }
+        };
+        return custom;
+    });
+
+});

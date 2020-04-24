@@ -1,0 +1,54 @@
+<md-fab-speed-dial id="head-dial" ng-hide="hidden" md-direction="left" md-open="isOpen"
+                   class="md-scale md-fab-top-right" ng-init="init()">
+    <md-fab-trigger ng-hide="dataManagement">
+        <md-button aria-label="menu" class="md-fab md-warn">
+            <i class="fa fa-2x fa-bars" aria-hidden="true"></i>
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <label style="background:white; line-height:60px;">{{thisPage}}</label>
+        <md-button aria-label="export" class="md-fab md-primary" ng-click="logout()">
+            <md-tooltip md-direction="down">登出</md-tooltip>
+            <i class="fa fa-sign-out fa-2x"></i>
+        </md-button>
+        <md-button aria-label="export" class="md-fab md-primary" ng-click="save()">
+            <md-tooltip md-direction="down">儲存</md-tooltip>
+            <i class="fa fa-save fa-2x"></i>
+        </md-button>
+        <md-button aria-label="recovery" class="md-fab md-primary" ng-click="recovery()">
+            <md-tooltip md-direction="down">還原</md-tooltip>
+            <i class="fa fa-cloud-download fa-2x"></i>
+        </md-button>
+        <md-button ng-if="isAdmin" aria-label="recovery" class="md-fab md-primary" ng-click="codeManager()">
+            <md-tooltip md-direction="down">HTML/CSS/JS管理</md-tooltip>
+            <i class="fa fa-code fa-2x" aria-hidden="true"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="changeDesign()">
+            <md-tooltip md-direction="down">轉換網頁樣辦</md-tooltip>
+            <i class="fa fa-cart-plus fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="imageManager()">
+            <md-tooltip md-direction="down">圖像及檔案管理</md-tooltip>
+            <i class="fa fa-image fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="reload()">
+            <md-tooltip md-direction="down">重載</md-tooltip>
+            <i class="fa fa-bolt fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="profile()">
+            <md-tooltip md-direction="down">個人設定</md-tooltip>
+            <i class="fa fa-user fa-2x"></i>
+        </md-button>
+
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="info()">
+            <md-tooltip md-direction="down">使用說明</md-tooltip>
+            <i class="fa fa-info fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="home()">
+            <md-tooltip md-direction="down">回到「學嘢」</md-tooltip>
+            <i class="fa fa-home fa-2x"></i>
+        </md-button>
+
+    </md-fab-actions>
+    
+</md-fab-speed-dial>

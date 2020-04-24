@@ -56,7 +56,6 @@
             }
         </style>
         <vaadin-dialog aria-label="simple" id="login" theme="login" width=900 height=900></vaadin-dialog>
-        <div id="dz-logo" on-click="login"></div>
     </template>
 </dom-module>
 
@@ -96,7 +95,7 @@
                     document.addEventListener('history',e=>{
 
                         dialog.renderer = function (root, dialog) {
-                            root.innerHTML = '<dz-history></dz-history';
+                            root.innerHTML = '<dz-history></dz-history>';
                         };
                         dialog.resizable = true;
                         dialog.resize('90%','90%');
@@ -113,8 +112,6 @@
                 const shadow = this.shadowRoot;
                 const dialog = shadow.querySelector('vaadin-dialog#login');
                 dialog.resizable = true;
-                // dialog.resize('900px','900px');
-                // dialog.addThemeVariants("theme1");
                 dialog.opened = true;
 
             }

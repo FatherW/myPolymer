@@ -1,0 +1,54 @@
+<!--
+<div>
+    <div ng-if="!isLogin()">
+        <a title="Nav - Gift Certificate" class="reservation visible-1000 ctc" ng-click="login()" target="_blank" id="_reservation_visible-1000_ctc">登入</a>
+    </div>
+    <div ng-if="isLogin()">
+    	<div class="user_bar">
+		賬戶: 
+		<span class="user_nav_wrapper">
+			<a href="#" class="username">{{user['name']}}<span class="arrow"></span></a>
+			<ul class="user_nav">
+
+
+				<li><a ng-click="edit()">編輯日記</a></li>
+				<li><a ng-click="add()">開新日記</a></li>
+				<li><a ng-click="delete()">刪除日記</a></li>
+				<li><a ng-click="delete()">管理相簿</a></li>
+				<li><a ng-click="profile()">帳戶資料</a></li>
+				<li><a ng-click="logout()">登出</a></li>
+			</ul>
+		</span> 
+
+	</div>
+
+</div>
+-->
+
+ <md-menu-bar>
+          <md-menu>
+            <button class="md-button md-raised md-default" ng-click="$mdOpenMenu()">
+             登入 
+            </button>
+            <md-menu-content>           
+              <md-menu-item>
+                  <md-button ng-click="$mdOpenMenu()">編輯日記</md-button>
+              </md-menu-item>
+              <md-menu-item>
+                  <md-button ng-click="$mdOpenMenu()">開新日記</md-button>
+              </md-menu-item>
+              <md-menu-item>
+                  <md-button ng-click="$mdOpenMenu()">刪除日記</md-button>
+              </md-menu-item>
+              <md-menu-item>
+                  <md-button ng-click="$mdOpenMenu()">管理相簿</md-button>
+              </md-menu-item>
+              <md-menu-item>
+                  <md-button ng-click="$mdOpenMenu()">帳戶資料</md-button>
+              </md-menu-item>
+              <md-menu-item>
+                  <md-button ng-click="$mdOpenMenu()">登出</md-button>
+              </md-menu-item>
+            </md-menu-content>
+          </md-menu>   
+        </md-menu-bar>

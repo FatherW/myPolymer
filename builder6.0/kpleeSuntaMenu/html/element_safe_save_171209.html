@@ -1,0 +1,29 @@
+<div context-menu="menuOptions" class="menu">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".example-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="display: none;">Dazzle</a>
+        </div>
+        <div class="collapse navbar-collapse example-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-first-level">
+                <li ng-repeat="item in model.menu" class="dropdown">
+                    <a ng-href="{{item.link}}" draggable="false" class="page-scroll">{{item.title}}</a>
+                    <ul class="dropdown-menu" ng-if="item.list.length>0" id="menu-second-level">
+                        <li ng-repeat="subitem in item.list">
+                        	<a ng-if="subitem.title!=''" class="page-scroll" ng-href="{{subitem.link}}" draggable="false">{{subitem.title}}</a>
+                        	<ul class="third-menu" ng-if="subitem.list.length>0" id="menu-third-level">
+                        			<li ng-repeat="thirditem in subitem.list"><a ng-href="{{thirditem.link}}">{{thirditem.title}}</a></li>
+                        	</ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+

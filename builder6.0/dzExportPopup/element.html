@@ -1,0 +1,57 @@
+<style>
+    .finish{
+        display:none;
+    }
+</style>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>匯出</h2>
+                <span flex></span>
+                <md-button class="md-primary md-raised" ng-click="exportSite()">
+                    全站匯出
+                </md-button>
+                <md-button class="md-primary md-raised" ng-click="exportPage()">
+                    本頁匯出
+                </md-button>
+                <md-button class="md-primary md-raised" ng-click="test()">
+                    測試
+                </md-button>
+                <md-button class="md-primary md-raised" ng-click="close()">
+                    <md-tooltip>取消</md-tooltip>
+                    <i class="fa fa-window-close"></i>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" ng-init="init()">
+             
+                    <div layout="row" layout-align="center center">
+                        <p>全站匯出需時5-15分鐘</p>
+                        <p>請用無痕模式檢查匯出結果</p>
+                    </div>
+
+
+
+                    <!--<div layout="row" layout-align="center center">-->
+                    <!--    <md-progress-circular md-mode="indeterminate"></md-progress-circular>-->
+                    <!--</div>-->
+                <div class="finish">
+                    <div layout="row" layout-align="center center">
+                        <h4>匯出成功！</h4>
+                    </div>
+
+                    <div layout="row" layout-align="center center">
+                        <h4>網址:
+                            http://{{exportBucket}}/{{thisPage}}
+                            <md-button ng-href="http://{{exportBucket}}/{{thisPage}}"
+                                       title="{{thisPage}}"
+                                       target="_blank"
+                                       class="md-icon-button launch">
+                                <i class="fa fa-2x fa-external-link"></i>
+                            </md-button>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </md-dialog-content>
+    

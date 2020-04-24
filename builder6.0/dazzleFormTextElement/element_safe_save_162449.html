@@ -1,0 +1,7 @@
+<md-input-container class="md-block">
+	<label ng-class="(model.textElement.required) ? 'md-required':''">{{model.textElement.label}}</label>
+	<input required id="{{model.textElement.name}}" type=text name="{{model.textElement.name}}" myangular-model="form['{{formElement.id}}']">
+	<div ng-if="model.textElement.required" myangular-messages="form{{formId}}['{{model.textElement.name}}'].$error" role="alert">
+        <div myangular-message="required">必需填寫.</div>
+    </div>
+</md-input-container>

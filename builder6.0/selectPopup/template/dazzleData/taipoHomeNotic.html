@@ -1,0 +1,9 @@
+<div id="latest-notice">
+<div class="views-row" ng-repeat="item in model.data | orderBy:'-nid' | limitTo:10">
+	<div class="views-field views-field-title">
+		<span class="field-content">
+			<a ng-href="{{item['標題']}}.html">{{item['標題']}}</a>
+		</span>
+	</div>
+</div>
+</div>

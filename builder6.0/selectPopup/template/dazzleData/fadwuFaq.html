@@ -1,0 +1,8 @@
+<section ng-repeat="item in model.data" class="av_toggle_section">    <div class="single_toggle">    
+    <p data-fake-id="#toggle-id-1" class="toggler activeTitle" itemprop="headline">{{item['Title']}}<span class="toggle_icon">        <span class="vert_icon"></span><span class="hor_icon"></span></span></p>       
+     <div id="toggle-id-1-container" class="toggle_wrap active_tc">           
+      <div class="toggle_content invers-color">
+      	<div ng-bind-html="item['Content'] | to_trusted">
+      	</div>
+      </div>        
+     </div>    </div></section>

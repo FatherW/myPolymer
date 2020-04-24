@@ -1,0 +1,13 @@
+jitpo-medi md-button {
+    width: 20px;
+    height: 20px;
+    display: block;
+    right: 0px;
+    position: absolute;
+}
+
+
+.dz-toolbar {
+    position: absolute;
+    left: 0px;
+}

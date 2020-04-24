@@ -1,0 +1,32 @@
+<ul class="nav navbar-nav navbar-right" style="padding-right: 5%; padding-top: 1%;">
+    <li ng-if="!cuser" class="col-md-12 col-xs-offset-4 col-xs-12 text-center">
+        <div>
+            <button type="button" class="btn hom_nav_btn btn--green" ng-click="loginPopup()">登入/註冊
+            </button>
+        </div>
+    </li>
+    <li ng-if="cuser" class="col-md-12 hidden-xs hidden-sm col-lg-12">
+        <div class="logined" id="userDropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                {{cuser.userName || cuser.uid}} | 餘額:{{cuser.balance || "0" }}
+                <b class="caret"></b></a>
+            <ul class="dropdown-menu multi-level">
+                <li><a href="#" ng-click="goToDashboard()">控制台</a></li>
+                <li class="dropdown-submenu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">我的網站
+                        <b class="caret" style="margin-top: 5px;margin-right: -10px;float: right;"></b>
+                    </a>
+                    <ul class="dropdown-menu" ng-init="getMyWebsite()">
+                        <li ng-repeat="(id, json) in myWebsites">
+                            <a href="#" ng-click="editWebsite(json)">
+                                <div ng-if="json.name">{{json.name}}</div>
+                                <div ng-if="!json.name">{{json.website}}</div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#" ng-click="logout()">登出</a></li>
+            </ul>
+        </div>
+    </li>
+</ul>

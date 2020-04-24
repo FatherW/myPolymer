@@ -1,0 +1,26 @@
+<div id="site-menu">
+          <nav>
+            <ul>
+
+
+              <li ng-repeat="item in model.menu" ng-class="{'current-menu-item':$index==0, 'menu-item-has-children':item.list.length}">
+                <a href="{{item.link}}">{{item.title}}</a>
+                <ul ng-if="item.list.length">
+                  <li ng-repeat="subitem in item.list"><a ng-href="{{subitem.link}}">{{subitem.title}}</a></li>
+                </ul>
+              </li>
+
+              
+              
+              <!--
+              <li class="menu-item-search">
+                <a href="search.html"><i class="fa fa-search"></i><i class="fa fa-times"></i></a>
+                <form method="get" id="site-searchform" class="searchform" action="search.html">
+                  <input type="search" name="s" autocomplete="off" placeholder="Search&hellip;">
+                  <input type="submit" value="&#xf002;">
+                </form>
+              </li>
+              -->
+            </ul>
+          </nav>
+        </div>

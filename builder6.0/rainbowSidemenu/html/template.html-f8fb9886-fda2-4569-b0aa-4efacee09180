@@ -1,0 +1,32 @@
+ 
+<div class="column col-lg-3 hidden-md hidden-xs">
+	<ul class="nav menu" context-menu="menuOptions">
+
+				<li class="item-66 actm active parent" ng-repeat="m in model.menu">
+
+
+						<a style="display:inline;" ng-href="{{m.link}}">{{m.title}}</a>			
+								<ul class="" style="display: block;">
+
+									<li class="item-72" ng-repeat="sm in m.list">
+																	
+															<a  data-toggle="tab" ng-href="{{sm.link}}">
+														
+									{{sm.title}}									</a>
+								
+														
+											</li>
+							</ul>
+					</li>
+
+			</ul>
+
+</div>
+
+
+	<div class="tab-content">
+		<div id="{{item.link}}" class="tab-pane fade in" ng-repeat="item in model.menu">
+			<h3>{{item.title}}</h3>
+			<p text> 請輸入內容</p>
+		</div>
+	</div>

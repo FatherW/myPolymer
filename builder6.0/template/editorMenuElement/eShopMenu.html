@@ -1,0 +1,20 @@
+<style>
+    .eshoptypelist {
+        list-style:none;
+    }
+    
+    .eshoptypelist li {
+        list-style:none;
+        float:left;
+    }
+</style>
+
+
+
+<ul class="eshoptypelist">
+    <li ng-repeat="item in model.menu" class="listtext">
+        <a href="#">{{item.title}}<i class="fa fa-chevron-right" aria-hidden="true"></i></a>        
+    </li>
+    
+    
+</ul>

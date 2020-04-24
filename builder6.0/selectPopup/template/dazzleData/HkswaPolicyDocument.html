@@ -1,0 +1,36 @@
+<div id="node-{{$index}}" class="node sticky hiddenText" ng-if="item['語言']!='en'" ng-repeat="item in model.data | filter: { '分類': 'Position Paper'} ">
+    <h2><a ng-href="{{item['標題']}}.html">{{item['標題']}}</a></h2>
+    <div class="clear-block"></div>
+</div>
+
+
+
+<table st-table="displayedCollection" st-safe-src="rowdate" class="table table-striped realText">
+		<thead>
+		<tr>
+			<!--<th></th>-->
+		</tr>
+        </thead>
+        <tbody>
+		<tr id="node-[[$index]]" class="node realText" myangular-repeat="item in displayedCollection">
+			<td><h2><a myangular-href="[[item['標題'] ]].html"><span myangular-bind="item['標題']"></span></a></h2>
+                <div class="clear-block"></div>
+            </td>
+		</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+				</td>
+			</tr>
+		</tfoot>
+	</table>
+	<!--
+<div id="node-[[$index]]" class="node sticky realText" myangular-repeat="item in rowdate | filter: { '分類': 'Position Paper'} | orderBy:'-nid'">
+    <h2><a myangular-href="[[item['標題'] | replacetitle]].html"><span myangular-bind="item['標題']"></span></a></h2>
+    <div class="clear-block"></div>
+</div>-->
+
+
+

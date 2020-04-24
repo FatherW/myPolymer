@@ -1,0 +1,33 @@
+         <style>
+             .md-light-green {
+                 background-color:rgb(139, 195, 74);
+             }
+             md-toolbar.data-dazzle {
+                min-height: 15px;
+                width: 80px;
+                position: absolute;
+                height: 15px;
+                z-index: 3;
+                right: 0px;
+                top: 0px;
+                /* font-size: 22px; */
+            }
+            dz-i.fa:hover {
+                color: orange;
+                cursor: pointer;
+            }
+            
+            dz-i.fa {
+                margin: 2px;
+            }
+
+         </style>
+            <md-toolbar class="md-light-green data-dazzle">
+                    <tb-div class="md-toolbar-tools-dazzle">
+                        <dz-i class="fa fa-x fa-arrows-alt" aria-hidden="true" ng-click="hideToggle()"></dz-i>
+                        <dz-i class="fa fa-x fa-cog" ng-click="dataSettings()" aria-hidden="true"></dz-i>
+                        <dz-i class="fa fa-x fa-bank" aria-hidden="true" ng-click="editTemplate()"></dz-i>
+                        <dz-i class="fa fa-x fa-database" aria-hidden="true" ng-click="editData()"></dz-i>                            
+                        <dz-i class="fa fa-x fa-bolt" aria-hidden="true" ng-click="updateDisplay()"></dz-i>         
+                    </tb-div>
+                  </md-toolbar>

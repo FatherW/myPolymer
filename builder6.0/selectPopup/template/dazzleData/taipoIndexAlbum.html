@@ -1,0 +1,19 @@
+
+
+  <div class="Cont" id="ISL_Cont_1" style="width: 450px; overflow: hidden;" ng-init="loadData()">
+                                                            <div style="overflow: hidden; zoom: 1; width: 32766px;">
+                                                                <div style="float: left;">
+                                                                    <div ng-repeat="item in model.data" class="views-row views-row-1 views-row-odd views-row-first">
+                                                                        <div class="views-field views-field-field-boolpic">
+                                                                            <div class="field-content">
+                                                                                <a ng-repeat="photo in item['相片'] | limitTo:1" ng-href="{{item['標題']}}.html"><img ng-src="//{{photo['bucket']}}.s3.amazonaws.com/{{photo['path']}}" width="130" height="90" alt=""></a>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="views-field views-field-title"> <span class="field-content"><a ng-href="{{item['標題']}}.html">{{item['標題']}}</a></span> </div>
+                                                                    </div>
+
+                                                                    
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>

@@ -1,0 +1,39 @@
+<div class="view view-enrolmentchild view-id-enrolmentchild view-display-id-block_1 view-dom-id-b2a88bb465afe7e12c031a2039eeca6a ng-scope">
+                                                            <div class="view-content"><table class="views-table cols-3">
+    <thead>
+    <tr>
+        <th class="views-field views-field-field-study">
+            分類
+        </th>
+        <th class="views-field views-field-title">
+            課程名稱
+        </th>
+        <th class="views-field views-field-field-teacher">
+            開始日期
+        </th>
+        <th class="views-field views-field-field-stime">
+            結束日期
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr class="views-row-first even" style="" ng-repeat = "item in model.data | orderBy : '-nid'">
+        <td class="views-field views-field-field-study">
+                {{item['分類']}}
+        </td>
+        <td class="views-field views-field-title">
+            <a ng-href="{{item['課程名稱']}}.html">{{item['課程名稱']}}</a>
+        </td>
+        <td class="views-field views-field-field-teacher">
+               {{myDate(item['開始日期'])  }}
+
+        </td>
+        <td class="views-field views-field-field-stime">
+           {{myDate(item['結束日期'])  }}
+
+        </td>
+    </tr>
+
+    </tbody>
+</table></div>
+                                                        </div>

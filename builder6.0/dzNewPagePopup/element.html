@@ -1,0 +1,39 @@
+
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>新增頁面</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()" aria-label="cancel">
+                    <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content layout-padding>
+            <div layout="row">
+                <div flex="15"></div>
+                <div layout="row" flex="70">
+                    <div flex="50">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>頁面名稱</label>
+                            <input ng-model="newPageName">
+                        </md-input-container>
+                    </div>
+                    <div flex="10"></div>
+                    <div flex="40" ng-init="init()">
+                        使用模板
+
+                    </div>
+                </div>
+                <div flex="15"></div>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="addPage()">
+                新增
+            </md-button>
+        </md-dialog-actions>
+    </form>

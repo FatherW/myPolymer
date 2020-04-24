@@ -1,0 +1,58 @@
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>CSS 管理員</h2>
+                <span flex></span>
+                <md-button class="md-primary md-raised" ng-click="save()">
+                    <md-tooltip>儲存</md-tooltip>
+                    <i class="fa fa-floppy-o"></i>
+                </md-button>
+                <md-button class="md-primary md-raised" ng-click="cancel()">
+                    <md-tooltip>取消</md-tooltip>
+                    <i class="fa fa-window-close"></i>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content" style="min-height: 400px;" ng-init="init()"> 
+                <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+                    <md-tab label="選擇CSS">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container flex="100">
+                                    <md-chips ng-model="csss" name="cssName"  md-removable="ctrl.removable"  placeholder="輸入CSS">
+                                      </md-chips>                               
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="編輯CSS">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container flex="100">
+                                        <div ui-ace="aceOption" ng-model="code" style="height: 100%; min-height:400px; width:100%;"></div>
+                                                                    
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancelFont()">
+                取消鏈結
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="cancel()">
+                取消
+            </md-button>
+            <md-button ng-click="save()">
+                儲存
+            </md-button>
+        </md-dialog-actions>
+
+    </form>

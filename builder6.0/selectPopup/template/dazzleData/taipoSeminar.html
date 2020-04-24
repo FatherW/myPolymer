@@ -1,0 +1,42 @@
+
+
+<div myangular-controller="DataController">
+主題搜尋：<input type="text" value="" myangular-model="search['title']">
+講員搜尋：<input type="text" value="" myangular-model="search['speaker']">
+
+<div class="view-content">
+  <table class="views-table cols-6">
+    <thead>
+      <tr>
+        <th class="views-field views-field-field-stime"><button myangular-click="toSort('publishDate')">日期</button></th>
+        <th class="views-field views-field-title"><button  myangular-click="toSort('title')">
+          主題
+          </button>
+        </th>
+        <th class="views-field views-field-field-speaker"><button  myangular-click="toSort('speaker')">講員/分享者</button></th>
+        <th class="views-field views-field-field-audio">
+          錄音
+        </th>
+        <th class="views-field views-field-field-magazine">簡報</th>
+        <th class="views-field views-field-field-youtube">視像</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="odd views-row-first" myangular-repeat="item in model.data | orderBy:sortType:sortReverse  | filter: search">
+        <td class="views-field views-field-field-stime"><span class="date-display-single">[[item['publishDate'] | date]]</span></td>
+        <td class="views-field views-field-title">[[item['title'] ]]</td>
+        <td class="views-field views-field-field-speaker">[[item['speaker'] ]]</td>
+        <td class="views-field views-field-field-audio">    <audio controls>
+              <source src="[[item['錄音'] ]]" type="audio/mpeg">
+          </audio>    
+        </td>
+        <td class="views-field views-field-field-magazine"><a myangular-href="[[item['簡報'] ]]"><img src="http://heart2heart.org.hk/new2/sites/all/themes/recycle/images/btn_download.png"></a></td>
+        <td class="views-field views-field-field-youtube"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
+
+

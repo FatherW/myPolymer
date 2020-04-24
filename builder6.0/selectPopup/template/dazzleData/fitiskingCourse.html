@@ -1,0 +1,36 @@
+<div ng-init="loadData()">                
+                
+        <div class="col-md-4 ng-scope">
+           <div class="event-menu-sidebar">
+              <div class="list-group nav-pills js-stick" data-parent=".event-menu" role="tablist">
+                 <a ng-repeat="item in model.data" class="list-group-item" data-toggle="pill" href="#menu{{$index}}" role="presentation" style="">
+                    <div class="media">
+                       <div class="media-body">
+                          <h4 class="list-group-item-heading">{{item['Course Name']}}</h4>
+                          <p class="list-group-item-text">導師：{{item['Tutor']}}</p>
+                       </div>
+                       <div class="media-right media-middle">
+                          <div class="icon icon-arrow visible-xs"></div>
+                       </div>
+                    </div>
+                 </a>
+              </div>
+           </div>
+        </div>
+        <div class="col-md-8 ng-scope">
+           <div class="event-menu-body tab-content" role="tablist">
+              <div ng-repeat="item in model.data" ng-class="$index? '':'active'" class="panel panel-default tab-pane fade in" id="menu{{$index}}" role="tabpanel" style="">
+                 <div class="panel-body">
+                    <h2 class="center">{{item['Course Name']}}</h2>
+                    <h6 class="center"></h6>
+                    <div text id="con-{{item['Course ID']}}" class="menu-entries space-top-lg space-bottom">
+                        <div ng-bind-html="item['Course Description']">
+                        
+                        </div>
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+        <div class="clear ng-scope"></div>
+</div>

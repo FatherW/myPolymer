@@ -1,0 +1,73 @@
+<md-fab-speed-dial id="head-dial" ng-hide="hidden" md-direction="left" md-open="isOpen"
+                   class="md-scale md-fab-top-right">
+    <md-fab-trigger ng-hide="dataManagement">
+        <md-button aria-label="menu" class="md-fab md-warn">
+            <i class="fa fa-2x fa-bars" aria-hidden="true"></i>
+        </md-button>
+    </md-fab-trigger>
+    <md-fab-actions>
+        <md-select class="page-md-select" style="background: white;"
+                   aria-label="selectPage" ng-model="selectedPage"
+                   md-on-close="changePage(selectedPage)"
+                   ng-init="selectedPage = thisPage">
+            <md-select-header>
+                <div layout="row" layout-align="center center">
+                    <md-button aria-label="addPage" ng-click="addPage()">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                    </md-button>
+                    <md-button aria-label="templatePage" ng-click="templatePage()">
+                        <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                    </md-button>
+                    <md-button aria-label="removePage" ng-click="removePage()">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </md-button>
+                </div>
+                <md-input-container class="md-block">
+                    <label>搜尋</label>
+                    <input id="selectSearchPage" ng-model="selectSearchPage" type="search">
+                </md-input-container>
+            </md-select-header>
+            <md-option ng-value="page" ng-repeat="page in pageJson | filter:selectSearchPage">
+                {{page}}
+            </md-option>
+        </md-select>
+        <md-select class="lang-md-select" style="background: white;"
+                   aria-label="selectedLang" ng-model="selectedLang"
+                   md-on-close="changeLang(selectedLang)"
+                   ng-init="selectedLang = thisLang">
+            <md-option value="zh">zh</md-option>
+            <md-option value="cn">cn</md-option>
+            <md-option value="eng">eng</md-option>
+        </md-select>
+        <md-button aria-label="export" class="md-fab md-primary" ng-click="export()">
+            <md-tooltip md-direction="down">匯出</md-tooltip>
+            <i class="fa fa-sign-out fa-2x"></i>
+        </md-button>
+        <md-button aria-label="saveAtom" class="md-fab md-primary" ng-click="saveAtom()">
+            <md-tooltip md-direction="down">儲存</md-tooltip>
+            <i class="fa fa-floppy-o fa-2x"></i>
+        </md-button>
+        <md-button aria-label="recovery" class="md-fab md-primary" ng-click="recovery()">
+            <md-tooltip md-direction="down">還原</md-tooltip>
+            <i class="fa fa-calendar-check-o fa-2x"></i>
+        </md-button>
+        <md-button aria-label="recovery" class="md-fab md-primary" ng-click="codeManager()">
+            <md-tooltip md-direction="down">HTML/CSS/JS管理</md-tooltip>
+            <i class="fa fa-code fa-2x" aria-hidden="true"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="directivePopup()">
+            <md-tooltip md-direction="down">Directive管理</md-tooltip>
+            <i class="fa fa-dashcube fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="home()">
+            <md-tooltip md-direction="down">回到管理台</md-tooltip>
+            <i class="fa fa-home fa-2x"></i>
+        </md-button>
+        <md-button aria-label="directive" class="md-fab md-primary" ng-click="info()">
+            <md-tooltip md-direction="down">使用說明</md-tooltip>
+            <i class="fa fa-info fa-2x"></i>
+        </md-button>
+
+
+    </md-fab-actions>
+</md-fab-speed-dial>

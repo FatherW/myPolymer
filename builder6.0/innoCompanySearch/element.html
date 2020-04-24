@@ -1,0 +1,189 @@
+<style>
+
+
+inno-company-search md-card.md-card-image {
+    height:450px;
+}
+
+inno-company-search div.md-card-image {
+    width: 364px;
+    height: 240px;
+}
+inno-company-search md-card {
+    padding: 20px 15px;
+}
+
+inno-company-search .date{
+    color:#A3A3A3;
+    font-size:20px;
+}
+inno-company-search .md-headline{
+    font-size:20px;
+}
+inno-company-search md-card{
+    color:#313131;
+}
+inno-company-search md-card-title{
+    font-size:20px;
+}
+inno-company-search md-card-content {
+    font-size:14px;
+    line-height:20px;
+}
+inno-company-search .date {
+    color: #A3A3A3;
+    font-size: 20px;
+    top: 28px;
+    position: relative;
+    left: 15px;
+}
+
+.settings {
+    background-image: url(images/settings.png);
+}
+
+</style>
+  <style>
+    @font-face {
+      font-family:"icomoon";
+      src:url("https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot");
+      font-weight:normal;
+      font-style:normal;
+    }
+
+    @font-face {
+      font-family: 'icomoon';
+      src:url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot?-cmq1um');
+      src:url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.eot?#iefix-cmq1um') format('embedded-opentype'),
+      url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.woff?-cmq1um') format('woff'),
+      url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.ttf?-cmq1um') format('truetype'),
+      url('https://cdn.rawgit.com/angular/material/master/docs/app/fonts/icomoon.svg?-cmq1um#icomoon') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  
+
+
+ <div layout="row" class="layout-row">
+  <div flex="70" class="flex-70" id="_flex-70">
+             <md-input-container>
+<!--             <button ng-click="addAllPage()">生成所有頁</button> -->
+            <label for="input_20">搜尋</label>
+            <input ng-model="search.keyword" class="ng-pristine ng-untouched ng-valid md-input ng-empty" id="input_20" aria-invalid="false" style=""><div class="md-errors-spacer" id="_md-errors-spacer"></div>
+          </md-input-container> 
+  </div>
+  
+    <div flex="25" class="flex-25" id="_flex-25">
+         <md-input-container>
+          <label for="select_22" class="md-placeholder" id="_md-placeholder">所有分類</label>
+          <md-select ng-model="ctrl.userState" class="ng-pristine ng-untouched ng-valid ng-empty" tabindex="0" aria-disabled="false" role="listbox" aria-expanded="false" aria-multiselectable="false" id="select_22" aria-invalid="false" aria-label="所有分類" style=""><md-select-value class="md-select-value md-select-placeholder" id="select_value_label_19"><span>所有分類</span><span class="md-select-icon" aria-hidden="true" id="_md-select-icon"></span></md-select-value><div class="md-select-menu-container" aria-hidden="true" role="presentation" id="select_container_23"><md-select-menu role="presentation" class="_md"><md-content class="_md">
+            <md-option tabindex="0" md-option-empty="" class="md-ink-ripple" role="option" aria-selected="false" id="select_option_21"><div class="md-text" id="_md-text"><em>None</em></div></md-option>
+            <!-- ngRepeat: state in ctrl.states -->
+          </md-content></md-select-menu></div></md-select>
+        </md-input-container> 
+    </div>
+
+    <div flex="5" class="company_settings flex-5" id="_company_settings_flex-5">
+        <button class="md-button md-ink-ripple" type="button" ng-transclude=""><img src="images/settings.png" class=""></button>
+    </div>
+
+  </div>
+
+
+
+  <dz-new-dataset id="company-search" table="company" key="name" class="">
+  
+  <div dz-template="" size=3>
+ 
+     <div layout="row" class="layout-row">
+      <div dz-data-item="" flex="33" class="flex-33" >
+          <md-card>
+            <div class="md-card-image _md">
+                <img dz-image="" src="http://dazzle.website.s3.amazonaws.com/image/noImage.png" dz-set-field="" data-field="photos" data-type="image" alt="Company Logo" class="">
+            </div>
+            <div layout="row" class="layout-row">
+
+                <div flex="100" class="flex-100">
+                      <md-card-title>
+                      <md-card-title-text>
+                      <a dz-set-field data-field="name" data-type="link">
+                        <span dz-set-field="" data-field="name" data-type="text" class="md-headline">公司名稱</span>
+                        </a>
+                      </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                      <div dz-set-field="" data-field="short_intro" data-type="html"><p>
+                        公司介紹      </p>
+                        </div>
+<!--                           <dz-tags></dz-tags> -->
+                    </md-card-content>
+
+                </div>
+            </div>
+
+          </md-card>
+      </div>
+      <div dz-data-item="" flex="33" class="flex-33" >
+          <md-card>
+            <div class="md-card-image _md">
+                <img dz-image="" src="http://dazzle.website.s3.amazonaws.com/image/noImage.png" dz-set-field="" data-field="photos" data-type="image" alt="Company Logo" class="">
+            </div>
+            <div layout="row" class="layout-row">
+
+                <div flex="100" class="flex-100">
+                      <md-card-title>
+                      <md-card-title-text>
+                        <a dz-set-field data-field="name" data-type="link">
+                        <span dz-set-field="" data-field="name" data-type="text" class="md-headline">公司名稱</span>
+                        </a>
+                      </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                      <div dz-set-field="" data-field="short_intro" data-type="html"><p>
+                        公司介紹      </p>
+                        </div>
+<!--                       <dz-tags></dz-tags> -->
+                    </md-card-content>
+
+                </div>
+            </div>
+
+          </md-card>
+      </div>
+
+            <div dz-data-item="" flex="33" class="flex-33" >
+          <md-card>
+            <div class="md-card-image _md">
+                <img dz-image="" src="http://dazzle.website.s3.amazonaws.com/image/noImage.png" dz-set-field="" data-field="photos" data-type="image" alt="Company Logo" class="">
+            </div>
+            <div layout="row" class="layout-row">
+
+                <div flex="100" class="flex-100">
+                      <md-card-title>
+                      <md-card-title-text>
+                       <a dz-set-field data-field="name" data-type="link">
+                        <span dz-set-field="" data-field="name" data-type="text" class="md-headline">公司名稱</span>
+                        </a>
+                        </md-card-title-text>
+                    </md-card-title>
+                    <md-card-content>
+                      <div dz-set-field="" data-field="short_intro" data-type="html"><p>
+                        公司介紹      </p>
+                        </div>
+<!--                          <dz-tags></dz-tags> -->
+                    </md-card-content>
+
+                </div>
+            </div>
+
+          </md-card>
+      </div>
+    </div>
+  </div>
+  <div dz-display></div>  
+  </dz-new-dataset>
+
+
+
+  <div class="clear"></div>

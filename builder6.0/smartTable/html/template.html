@@ -1,0 +1,117 @@
+
+<div id="myTable">
+                <div class="row">
+                    <div class="col col-md-12">
+                        <button type="button" ng-click="export()" class="btn btn-sm btn-success">
+                            <i class="glyphicon glyphicon-article">
+                            </i> 匯出 (只限xlsx)
+                        </button>
+                        <button type="button" ng-click="openUpload()" class="btn btn-sm btn-success">
+                            <i class="glyphicon glyphicon-article">
+                            </i> 匯入資料(只限xlsx)
+                        </button>
+                        <button id="addNew" type="button" ng-click="addItem()" class="btn btn-sm btn-success">
+                            <i class="glyphicon glyphicon-plus">
+                            </i> 加新項目
+                        </button>
+                        <button id="savData" type="button" ng-click="updateJSON()" class="btn btn-sm btn-success">
+                            <i class="glyphicon glyphicon-saved">
+                            </i> 儲存資料
+                        </button>
+                        <button type="button" ng-click="manageCol()" class="btn btn-sm btn-success">
+                            <i class="glyphicon glyphicon-article">
+                            </i> 欄目管理
+                        </button>
+                    </div>
+                    <div class="col col-md-12">
+                        <div ng-repeat="table in tableCollection" ng-include
+                             style="float: left;"
+                             ng-if="table.type == 'button'"
+                             src="table.component.template"></div>
+                    </div>
+                    <div class="col col-md-12">
+                        <button id="tableid-{{table.id}}" data-index="{{$index}}" type="button" ng-class="$index == tableIndex? 'active' : ''  "
+                                class="table-btn btn btn-sm"
+                                ng-class="'btn-'+table.id" ng-repeat="table in tableCollection"
+                                ng-if="table.type == 'S3' || table.type == 'dynamodb'"
+                                ng-click="changeTable($index)">
+                            {{table.label}}
+                        </button>
+                    </div>
+                </div>
+
+
+
+                <input type="file" id="uploadXls" style="display:none;" custom-on-change="uploadFile">
+
+
+                <div id="data-panel">
+                    <table st-table="displayData" st-safe-src="rowData" class="table table-striped">
+                        <thead>
+                        <tr>
+                            <td colspan="100%" class="text-center">
+                                <div class="tablePager" st-pagination="" st-items-by-page="itemsByPage"
+                                     st-displayed-pages="10"></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th width="3%">
+                                <st-select-all all="displayData"></st-select-all>
+                            </th>
+                            <th ng-if="col['show']" lr-drag-src="headers" lr-drop-target="headers"
+                                ng-repeat="(key,col) in colData  track by $index" st-sort="{{col['id']}}"
+                                width="{{col['width']}}">{{col['label']}}
+                            </th>
+                            <th>刪除／儲存</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th ng-if="col['show']" ng-repeat="(key,col) in colData  track by $index"
+                                width="{{col['width']}}">
+                                <input st-search="{{col['id']}}" placeholder="" class="input-sm form-control"
+                                       type="search"/>
+                            </th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr st-select-row="row" st-select-mode="multiple"
+                            ng-repeat="(rindex,row) in displayData  track by $index">
+                            <td>
+                                <!--<input type="checkbox" ng-init="row.isSelected = false" ng-model="row.isSelected">-->
+                            </td>
+                            <td ng-if="col['show']" width="{{col['width']}}" ng-repeat="col in colData track by $index">
+                                <!--old component loading-->
+                                <div ng-if="!col.component && !components[col.type].template" ng-include
+                                     src="'template/'+col.type+'.html'">
+                                </div>
+                                <!--new component loading-->
+                                <div ng-if="!col.component && components[col.type].template" ng-include
+                                     src="components[col.type].template">
+                                </div>
+                                <!--custom component loading-->
+                                <div ng-if="col.component" ng-include
+                                     src="col.component.template"></div>
+                            </td>
+                            <td>
+                                <button type="button" ng-click="removeItem(row)" class="btn btn-sm btn-danger">
+                                    <i class="glyphicon glyphicon-remove-circle">
+                                    </i>
+                                </button>
+                                <button type="button" ng-click="saveItem(row)" class="btn btn-sm btn-success">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <td colspan="100%" class="text-center">
+                                <div class="tablePager" st-pagination="" st-items-by-page="itemsByPage"
+                                     st-displayed-pages="10"></div>
+                            </td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+</div>

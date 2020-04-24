@@ -1,0 +1,2 @@
+<div ng-if="!isUser()"><md-button ng-click="login()">登入</md-button></div>
+<div ng-if="isUser()">用戶名稱：{{user['login']}}<md-button ng-click="logout()">登出</md-button></div>

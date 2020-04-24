@@ -1,0 +1,78 @@
+    <style>
+        .galleryCard .md-card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .galleryCard, md-card md-card-content {
+            padding-bottom: 0px !important;
+        }
+
+        .galleryCard .md-errors-spacer {
+            min-height: 0px !important;
+        }
+
+        .galleryCard md-input-container {
+            margin-bottom: 0px !important;
+        }
+    </style>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>表單設定</h2>
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="save()">
+                儲存
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="cancel()">
+                取消
+            </md-button>
+
+        </div>
+    </md-toolbar>
+    <md-dialog-content style="min-height:70%;">
+          <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+              <md-tab label="表單設定">
+                <md-content class="md-padding">
+                  <h1 class="md-display-2">表格</h1>
+                        <div class="cat_path" style="height:auto !important;"  ng-init="getTable()" >
+                        
+                            <div class="cat_order_list cat_ref_list">
+                                <div class="list_box">
+                                    <label class="order">表格</label>
+                                    <ul class="order_list" ng-init="getAllTables()">
+                                        <li ng-repeat="tab in tables">
+                                            <a ng-click="selectTable(tab)" href="#" id="sort_view">{{tab['name']}}</a></li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        
+                        </div>
+
+                </md-content>
+              </md-tab>
+              <md-tab label="顯示資料">
+                <md-content class="md-padding">
+                        <h1 class="md-display-2">欄位</h1>
+                        <div class="cat_path" style="height:auto !important;">
+                        
+                            <div class="cat_order_list cat_ref_list">
+                                <div class="list_box">
+                                    <label class="order">欄位</label>
+                                    <ul class="order_list" ng-init="getAllFields(currentTable)">
+                                        <li ng-repeat="field in fields" >
+                                            <a ng-click="selectField(field)" href="#" id="sort_view">{{field['name']}}</a></li>
+                                    </ul>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        
+                        </div>
+                </md-content>
+              </md-tab>
+            </md-tabs>
+
+    </md-dialog-content>
+

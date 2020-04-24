@@ -1,0 +1,31 @@
+<style>
+  .label-required {
+    color:red;
+  } 
+  legend {
+    margin-bottom: 10px;
+  }
+  img.image-thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+  }
+  .fileinputbox {
+    position: absolute;
+    opacity: 0;
+    width: 0px;
+ }
+ .myForm{
+ 	margin:2em;
+ 	width:70%;
+ }
+</style>
+
+<div ng-bind-html="model.value" ng-if="model.value">  
+    
+</div>
+
+<div ng-if="!model.value">
+    請右click  更新資料
+</div>

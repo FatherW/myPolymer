@@ -1,0 +1,24 @@
+<div class="view view-home-company view-id-home_company view-display-id-block view-dom-id-d739786977643e6598346c752ea3d073" style="height: 4040px;" ng-init="getInit()">
+        
+    <div id="overlay">
+     
+
+  <div class="marquee abc">
+<div class="view-content">
+        <div class="views-row views-row-1 views-row-odd views-row-first" ng-repeat="item in companys">
+      
+  <div class="views-field views-field-nothing">        <span class="field-content">
+      <div class="company">
+  <div class="logo"><a ng-href="/node/{{item['nid']}}"></a>
+  <a ng-href="/node/{{item['nid']}}">
+      <img ng-src="{{loadImage(item['company_logo'])}}" width="70" height="52" alt=""></a></div>
+  <div class="info">
+    <div class="title"><a ng-href="/node/{{item['nid']}}">{{item['title']}}</a></div>
+    <div class="type">公司主營：{{loadType(item['company_type'])}}</div>
+    <div class="rating">評價：</div>
+    <div class="bid_time">瀏覽次數：{{item['company_views']}} 次</div>
+  </div>
+  <div class="clearfix"></div>
+</div></span>  </div>  </div>
+</div></div>
+    </div></div>

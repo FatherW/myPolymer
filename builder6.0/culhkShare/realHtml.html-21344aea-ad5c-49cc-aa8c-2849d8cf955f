@@ -1,0 +1,42 @@
+                                                <div class="element" id="ele1483084528649">
+                                                    <h3>股金記錄表</h3>
+                                                    <p>
+                                                        <br>
+                                                    </p>
+                                                    <div id="mySaveController" ng-controller="mySaveController" ng-init="init()">
+                                                        <ul class="nav nav-pills">
+                                                            <li role="presentation" ng-repeat="s in saveTypes" ng-class="{'active':s == currentSaveType}">
+                                                                <a ng-click="setCurrentSaveType(s)">{{s}}</a>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="lgmdshow hidden-xs">
+                                                            <div class="row" ng-repeat="s in currentSaves">
+                                                                <div class="col col-lg-3 col-md-3"><label>編號</label>{{s['編號']}}</div>
+                                                                <div class="col col-lg-3 col-md-3"><label>日期</label>{{s['日期']}}</div>
+                                                                <div class="col col-lg-3 col-md-3"><label>結餘</label>{{s['結餘'] | currency:"$"}}</div>
+                                                                <div class="col col-lg-3 col-md-3">
+                                                                    <div ng-if="s['PDF'] == '-'">{{s['PDF']}}</div>
+                                                                    <a ng-if="s['PDF'] != '-'" target="_blank" ng-href="{{s['PDF']}}">下載</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="xsshow hidden-lg hidden-md">
+                                                            <div class="col col-xs-12 thumbnail" ng-repeat="s in currentSaves">
+
+                                                               <div class="row" ng-repeat="s in currentSaves">
+                                                                    <div class="col col-lg-3 col-md-3"><label>編號</label>{{s['編號']}}</div>
+                                                                    <div class="col col-lg-3 col-md-3"><label>日期</label>{{s['日期']}}</div>
+                                                                    <div class="col col-lg-3 col-md-3"><label>結餘</label>{{s['結餘'] | currency:"$"}}</div>
+                                                                    <div class="col col-lg-3 col-md-3">
+                                                                        <div ng-if="s['PDF'] == '-'">{{s['PDF']}}</div>
+                                                                        <a ng-if="s['PDF'] != '-'" target="_blank" ng-href="{{s['PDF']}}">下載</a>
+                                                                    </div>
+                                                                </div>
+ 
+
+ 
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                </div>

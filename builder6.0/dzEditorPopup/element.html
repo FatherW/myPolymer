@@ -1,0 +1,60 @@
+
+    <style>
+    .dz-content {
+        padding:20px;
+    }
+    .md-virtual-repeat-container.md-autocomplete-suggestions-container {
+        z-index: 9000;
+    }
+        .galleryCard .md-card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .galleryCard, md-card md-card-content {
+            padding-bottom: 0px !important;
+        }
+
+        .galleryCard .md-errors-spacer {
+            min-height: 0px !important;
+        }
+
+        .galleryCard md-input-container {
+            margin-bottom: 0px !important;
+        }
+        #popupDialog {
+            padding-bottom:200px;
+        }
+    </style>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>編輯介紹</h2>
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="viewHtml()">
+                HTML
+            </md-button>
+            <md-button class="md-raised md-primary" ng-click="save()">
+                儲存
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="cancel()">
+                取消
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content style="min-height:70%;" class="dz-content">
+          
+<!--            <metal-text class="editor">
+                
+            </metal-text>
+    -->        
+            <dz-text class="editor">
+            
+            </dz-text>
+      
+
+    </md-dialog-content>
+    
+    
+    

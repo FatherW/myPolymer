@@ -1,0 +1,171 @@
+<style>
+
+        .link {
+            cursor: pointer;
+            text-decoration: none;
+            color: #444;
+        }
+
+.ahotworkshop{
+    margin-top: 16px;
+    width: 258px;
+    height: 432px;
+    border: 1px solid #dedede;
+    font-family: 微軟正黑體, Arial, Verdana;
+    margin-right: 24px;
+    float: left;
+                border-width: 1px;
+            border-style: solid;
+            border-color: rgb(222, 222, 222);
+            border-image: initial;
+}
+.ahotworkshop.nomargin{
+    margin-right: 0px !important;
+}
+.ahotworkshop .pic{
+    float: left;
+}
+.ahotworkshop .days{
+    width: 87px;
+    height: 26px;
+    background: url(http://www.classes.com.hk/images/index/2015/clock.png) 8px 4px no-repeat #fcfcfc;
+    color: red;
+    line-height: 26px;
+    padding-left: 28px;
+    font-size: 14px;
+    font-weight:bold;
+    float: right;
+}
+.ahotworkshop .title{
+    font-size: 11pt;
+    color: #444;
+    margin: 8px 12px 0px 12px;
+    font-weight: bold;
+}
+.ahotworkshop .bylike{
+
+    margin: 12px 12px 12px 12px;
+    
+}
+.ahotworkshop .bylike .by{
+    float: left;
+    font-size: 10pt;
+    color: #aaa;
+}
+
+.ahotworkshop .bylike .by a{
+    color: #aaa;
+}
+
+.ahotworkshop .bylike .like{
+    float: right;
+}   
+.ahotworkshop .desc{
+    margin: 0 12px;
+    padding: 12px 0px;
+    border-top: 1px solid #efefef;
+    color: #666;
+    font-size: 10pt;
+    line-height: 22px;
+}
+.ahotworkshop .desc a{
+    color: #666;
+}
+.ahotworkshop .tagsbox{
+    height: 32px;
+    margin: 0px 12px;
+    border-top: 1px solid #efefef;
+    border-bottom: 1px solid #efefef;
+    padding-left: 30px;
+    line-height: 32px;
+    font-size: 10pt;
+
+    color: #888;
+    background: url(../images/index/2015/flag.png) 10px 11px no-repeat;
+}   
+.ahotworkshop .applynow{
+    margin: 0 auto;
+    margin-top: 16px;
+    text-align: center;
+}
+.ahotworkshop .applynow img{
+    cursor:pointer;
+}
+.moreworkshop{
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+}
+.moreworkshop img{
+    cursor:pointer;
+}
+
+</style>
+<div class="hotworkshoplist" style="min-height:300px">
+                        
+    
+<!--   <div class="ahotworkshop " ng-click="addData('hotyeah',['名稱','首圖','描述','標籤'])">
+        <img src="https://cdn4.iconfinder.com/data/icons/classic-icons-1/512/033.png" style="max-width:100%;" />
+        <h6>新增資料</h6>
+    </div>
+-->
+    <h6>新增課程</h6>
+    <div class="ahotworkshop " ng-repeat="item in model.data">
+                <dz-field index="hotyeah" table="course" field="首圖"></dz-field>
+            <div style="position:relative">
+            <div style="position:absolute;top:-134px;left:169px">
+            <div class="days">
+                        <div class="day">尚餘0日</div>
+                    </div>
+            </div>
+            </div>
+            <div class="clear"></div>
+            <div class="title"><dz-field index="hotyeah" table="course" field="名稱">右click更改課程名稱 </dz-field></div>
+            <div class="bylike">
+                <div class="by">by <a href="http://www.hot-yeah.com/{{schoolID}}.html" class="link">{{schoolName}}</a></div>
+                <div class="clear"></div>
+            </div>
+            <div class="desc" style="height:98px">
+                <a ng-href="http://www.hot-yeah.com/{{item['ID']}}.html" class="link">
+                            <div ng-bind-html="item['描述'] | to_trusted"></div>
+                        </a>
+            </div>
+            <div class="tagsbox">
+                                  {{myTags(item['標籤'])}}          </div>
+            <div class="applynow">
+                        <a ng-href="http://www.hot-yeah.com/{{item['ID']}}.html">
+                            <img src="http://www.classes.com.hk/images/brand/join.png" border="0"></a>
+                    </div>
+            <div class="clear"></div>
+    </div>
+
+    <div class="ahotworkshop " ng-repeat="item in model.data">
+            <a ng-href="http://www.hot-yeah.com/{{item['ID']}}.html" class="link">
+                <img ng-src="{{item['首圖']}}" width="258" height="128" alt="{{item['名稱']}}" title="{{item['名稱']}}"></a>
+            <div style="position:relative">
+            <div style="position:absolute;top:-134px;left:169px">
+            <div class="days">
+                        <div class="day">尚餘26日</div>
+                    </div>
+            </div>
+            </div>
+            <div class="clear"></div>
+            <div class="title"><a ng-href="http://www.hot-yeah.com/{{item['ID']}}.html" class="link"><dz-field index="hotyeah" table="course" field="名稱" id="[[dzID]]"> </dz-field></a></div>
+            <div class="bylike">
+                <div class="by">by <a href="http://www.hot-yeah.com/{{schoolID}}.html" class="link">{{schoolName}}</a></div>
+                <div class="clear"></div>
+            </div>
+            <div class="desc" style="height:98px">
+                <a ng-href="http://www.hot-yeah.com/{{item['ID']}}.html" class="link">
+                            <div ng-bind-html="item['描述'] | to_trusted"></div>
+                        </a>
+            </div>
+            <div class="tagsbox">
+                                  {{myTags(item['標籤'])}}          </div>
+            <div class="applynow">
+                        <a ng-href="http://www.hot-yeah.com/{{item['ID']}}.html">
+                            <img src="http://www.classes.com.hk/images/brand/join.png" border="0"></a>
+                    </div>
+            <div class="clear"></div>
+    </div>
+</div>

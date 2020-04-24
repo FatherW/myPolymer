@@ -1,0 +1,11 @@
+<div class="hiddenText">
+<h1>請右click 以更改資料</h1>
+
+</div>
+<div class="realText" style="display:none;">
+<ul id="slippry"  ng-init="loadData()">
+  <li ng-repeat="item in model.data">
+  <a href="#slide1"><img ng-src="{{item.image}}" ng-alt="{{item.alt}}"></a>
+  </li>
+  </ul>
+</div>

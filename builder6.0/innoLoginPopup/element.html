@@ -1,0 +1,287 @@
+
+    <style>
+
+    dz-login-popup p, dz-login-popup h2, dz-login-popup label, dz-login-poup input {
+        color: white !important;
+    }
+    dz-login-popup md-input-container .md-input {
+        color:white !important;
+    }
+
+    dz-login-popup md-content{
+        background:none;
+    }
+dz-login-popup md-tabs-wrapper {
+    background: none !important;
+}
+
+        .login-wrap .closeButton {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 20;
+            color: white;
+        }
+
+        .loginDialog {
+            width: 425px;
+        }
+
+        *:focus {
+            outline: none;
+        }
+
+        *, :after, :before {
+            box-sizing: border-box
+        }
+
+        .clearfix:after, .clearfix:before {
+            content: '';
+            display: table
+        }
+
+        .clearfix:after {
+            clear: both;
+            display: block
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .login-wrap {
+            width: 100%;
+            margin: auto;
+            min-width: 100%;
+            max-width: 100%;
+            min-height: 680px;
+            position: relative;
+        }
+
+		.login-form .group .label {
+			display:inline-block;
+		}
+
+        .login-html {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            padding: 90px 70px 25px 70px;
+            background: rgba(40, 57, 101, .9);
+        }
+
+        .login-html .sign-in-htm,
+        .login-html .sign-up-htm {
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            position: absolute;
+            transform: rotateY(180deg);
+            backface-visibility: hidden;
+            transition: all .4s linear;
+        }
+
+        .login-html .sign-in,
+        .login-html .sign-up,
+        .login-form .group .check {
+            display: none;
+        }
+
+        .login-html .tab,
+        .login-form .group .label,
+        .login-form .group .button,md-button {
+            text-transform: uppercase;
+        }
+
+        .login-html .tab {
+            font-size: 22px;
+            margin-right: 15px;
+            padding-bottom: 5px;
+            margin: 0 15px 10px 0;
+            display: inline-block;
+            border-bottom: 2px solid transparent;
+        }
+
+        .login-html .sign-in:checked + .tab,
+        .login-html .sign-up:checked + .tab {
+            color: #fff;
+            border-color: #1161ee;
+        }
+
+        .login-form {
+            min-height: 345px;
+            position: relative;
+            perspective: 1000px;
+            transform-style: preserve-3d;
+        }
+
+        .login-form .group {
+            margin-bottom: 15px;
+        }
+
+        .login-form .group .label,
+        .login-form .group .input,
+        .login-form .group .button,md-button {
+            width: 100%;
+            color: #fff;
+            display: block;
+        }
+
+        .login-form .group .input,
+        .login-form .group .button,md-button {
+            border: none;
+            padding: 15px 20px;
+            border-radius: 25px;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form .group input[data-type="password"] {
+            text-security: circle;
+            -webkit-text-security: circle;
+        }
+
+        .login-form .group .label {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        .login-form .group .button,md-button {
+            background: #1161ee;
+        }
+
+        .login-form .group .button:hover:enabled {
+            background: #496dff;
+        }
+
+        .login-form .group .button:disabled {
+            background: rgba(198, 203, 200, 0.64);
+        }
+
+        .login-form .group label .icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 2px;
+            position: relative;
+            display: inline-block;
+            background: rgba(255, 255, 255, .1);
+        }
+
+        .login-form .group label .icon:before,
+        .login-form .group label .icon:after {
+            content: '';
+            width: 10px;
+            height: 2px;
+            background: #fff;
+            position: absolute;
+            transition: all .2s ease-in-out 0s;
+        }
+
+        .login-form .group label .icon:before {
+            left: 3px;
+            width: 5px;
+            bottom: 6px;
+            transform: scale(0) rotate(0);
+        }
+
+        .login-form .group label .icon:after {
+            top: 6px;
+            right: 0;
+            transform: scale(0) rotate(0);
+        }
+
+        .login-form .group .check:checked + label {
+            color: #fff;
+        }
+
+        .login-form .group .check:checked + label .icon {
+            background: #1161ee;
+        }
+
+        .login-form .group .check:checked + label .icon:before {
+            transform: scale(1) rotate(45deg);
+        }
+
+        .login-form .group .check:checked + label .icon:after {
+            transform: scale(1) rotate(-45deg);
+        }
+
+        .login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm {
+            transform: rotate(0);
+        }
+
+        .login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
+            transform: rotate(0);
+        }
+
+        .hr {
+            height: 2px;
+            margin: 60px 0 50px 0;
+            background: rgba(255, 255, 255, .2);
+        }
+
+        .foot-lnk {
+            text-align: center;
+        }
+		.subdomain {
+			color: white;
+			font-size: 24px;
+			padding: 5px 20px;
+		}
+		.do-status {
+			color:green;
+			font-size:30px;
+		}
+    </style>
+    <div>
+
+ <md-content>
+    <md-tabs class="md-primary" md-center-tabs md-dynamic-height>
+      <md-tab label="登入">
+        <md-content class="md-padding">
+          <h2 class="md-display-1">登入</h2>
+                      <md-input-container>
+                        <label>用戶名</label>
+                        <input ng-model="login">
+                      </md-input-container>
+
+                      <md-input-container>
+                        <label>密碼</label>
+                        <input ng-model="password" type="password">
+                      </md-input-container>
+                        <div class="group layout-row">
+                                <div class="flex-50">
+                                    <md-button class="md-raised md-success" ng-click="log()" ng-disabled="loginJson.logining">
+                                        登入
+                                    </md-button>
+                                </div>
+                                <div class="flex-50">
+                                    <md-button class="md-raised md-warn" ng-click="forgetPW()">
+                                        忘記密碼
+                                    </md-button>
+                                </div>
+             </md-content>
+      </md-tab>
+      <md-tab label="註冊">
+        <md-content class="md-padding">
+          <h2 class="md-display-1">註冊</h2>
+          <p class="md-body-1">
+                        工程進行中
+          </p>
+        </md-content>
+      </md-tab>
+      <md-tab label="說明及條款">
+        <md-content class="md-padding">
+          <h2 class="md-display-1">說明及條款</h2>
+          <p class="md-body-1">
+            Dazzle 為香港本土第一家雲端網站自助平台。與一般自助網站平台不同，我們是以設計社群方式營運，任何設計師只要登記後，就能上載設計至本平台出售。任何自設的網站的擁有權都是屬於開發者，我們會記錄著他們的知識產權及跟進侵權行為。而本平台運用雲端技術，解決好多用家及設計師在網站架設的安裝及維護問題。
+          </p>
+          <p class="md-body-1">
+             過去，不懂程式的用家，既想用自家的設計，又想有個能改動內容的後台，都要找程式員幫忙，十分昂貴及困難。現在用家只需上載自己的設計/購買設計樣辦，就能即時插入Dazzle 的後台插件，即時享用到後台的功能、雲端儲存&寄存、實時備份及雲端資料庫等功能。非常方便。
+          </p>
+        </md-content>
+      </md-tab>
+    </md-tabs>
+  </md-content>
+    </div>

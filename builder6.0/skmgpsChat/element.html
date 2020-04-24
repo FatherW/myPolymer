@@ -1,0 +1,80 @@
+		<div>
+
+			<md-input-container class="md-block">
+				<label contenteditable="true" ng-model="title">我的留言</label>
+				<input ng-model="title" placeholder="標題">
+				<textarea style="width:100%; height:300px; border:none; overflow:auto;" ng-model="post" placeholder="內文">
+				</textarea>
+				<button ng-click="submitMessage()">發送</button>
+			</md-input-container>
+
+		</div>
+
+		<hr>
+
+		<h1>留言版</h1>
+		<div ng-cloak >
+		<md-content class="md-padding" layout-xs="column" layout="row">
+			<div flex-xs flex-gt-xs="50" layout="column">
+				<md-card ng-repeat="item in posts"  ng-if="$even">
+					<!--<img ng-src="{{item['image1']}}" class="md-card-image" alt="Washed Out">-->
+					<md-card-title>
+						<md-card-title-text>
+							<span class="md-headline">{{item['title']}}</span>
+						</md-card-title-text>
+						<md-card-title-text>
+							<div class="info"><my-user ng-init="userInit(item['user'])">{{model['name']}}</my-user> ({{myDate(item['timestamp'])}})</div>
+						</md-card-title-text>
+					</md-card-title>
+					<md-card-content>
+						{{item['message']}}
+					</md-card-content>
+					<md-card-actions layout="row" layout-align="end center">
+						<md-button ng-click="reply(item['id'])">回覆</md-button>
+						<md-button ng-if="isMyPost(item['user'])" class="md-raised" ng-click="deletePost(item['id'])">刪除</md-button>
+					</md-card-actions>
+
+					<md-card-content class="indent reply" id="reply-{{item['id']}}"><div class="thread">
+						<span>{{user['name']}} </span><input type="text" placeholder="請回覆" ng-model="item['reply_post']" my-enter="submitReply(item['id'],item['reply_post'])"></div>
+					</md-card-content>
+					<my-reply ng-init="replyInit(item['id'])">
+						<md-card-content class="indent" ng-repeat="replyPost in replies"><div class="thread">
+							<span><my-user ng-init="userInit(replyPost['user'])">{{model['name']}}</my-user></span>{{replyPost['message']}}</div>
+							<div class="fsm fwn fcg UFICommentActions"> <a href="#" ng-click="deletePost(replyPost['id'])">刪除</a> <span aria-hidden="true" role="presentation"> · </span><span class="timestampContent">{{beforeTime(item['timestamp'])}}</span></div>
+						</md-card-content>
+
+					</my-reply>
+				</md-card>
+			</div>
+			<div flex-xs flex-gt-xs="50" layout="column">
+				<md-card ng-repeat="item in posts" ng-if="$odd">
+					<!--<img ng-src="{{item['image1']}}" class="md-card-image" alt="Washed Out">-->
+					<md-card-title>
+						<md-card-title-text>
+							<span class="md-headline">{{item['title']}}</span>
+						</md-card-title-text>
+						<md-card-title-text>
+							<div class="info"><my-user ng-init="userInit(item['user'])">{{model['name']}}</my-user>({{myDate(item['timestamp'])}})</div>
+						</md-card-title-text>
+					</md-card-title>
+					<md-card-content>
+						{{item['message']}}
+					</md-card-content>
+					<md-card-actions layout="row" layout-align="end center">
+						<md-button>回覆</md-button>
+						<md-button ng-if="isMyPost(item['user'])" class="md-raised" ng-click="deletePost(item['id'])">刪除</md-button>
+					</md-card-actions>
+					<md-card-content class="indent reply" id="reply-{{item['id']}}"><div class="thread">
+						<span>{{user['name']}} </span><input type="text" placeholder="請回覆" ng-model="item['reply_post']" my-enter="submitReply(item['id'],item['reply_post'])"></div>
+					</md-card-content>
+					<my-reply ng-init="replyInit(item['id'])">
+						<md-card-content class="indent" ng-repeat="replyPost in replies"><div class="thread">
+							<span><my-user ng-init="userInit(replyPost['user'])">{{model['name']}}</my-user></span>{{replyPost['message']}}</div>
+							<div class="fsm fwn fcg UFICommentActions"> <a href="#" ng-click="deletePost(replyPost['id'])">刪除</a> <span aria-hidden="true" role="presentation"> · </span><span class="timestampContent">{{beforeTime(item['timestamp'])}}</span></div>
+						</md-card-content>
+
+					</my-reply>
+				</md-card>
+			</div>
+		</md-content>
+		</div>

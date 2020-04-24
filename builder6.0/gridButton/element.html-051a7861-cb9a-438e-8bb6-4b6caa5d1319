@@ -1,0 +1,5 @@
+<button>Grid 編輯</button>
+
+<button ng-click="onAddRow()">Add Row</button>
+
+<button ng-click="onRemoveSelected()">Remove Selected</button>

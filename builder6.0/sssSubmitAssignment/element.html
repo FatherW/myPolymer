@@ -1,0 +1,26 @@
+<div class="join_course_wrapper" ng-init="loadSubAssignment()">
+				<div class="header_title" id="pass_home_work_tab">Submitted Assignment</div>
+				<div class="clear"></div>
+				
+				<div class="pass_home_work_tab_content tab_content">
+				<div class="header_wrapper">
+					<div class="header_label">Course Code</div>
+				
+					<div class="header_label label_name">Assignment Name</div>
+					<div class="header_label label_assignment">Assignment</div>
+					<div class="header_label label_Deadline">Submitted Date</div>
+					<div class="header_label label_upload header_label_center">Student</div>
+					<div class="header_label label_comment header_label_center">Comment</div>
+				</div>
+
+    				<div class="header_wrapper" ng-repeat="item in model.subassignment">
+    					<div class="header_label">{{item['Course Code']}}</div>
+						<div class="header_label label_name">{{item['Assignment Name']}}</div>
+    					<div class="header_label label_assignment"><a ng-if="item['Assignment']" ng-href="{{item['Assignment']}}"><img src="https://rocketdock.com/images/screenshots/floppy.png" /></a></div>
+    					<div class="header_label label_Deadline">{{item['Submitted Date'] | date}}</div>
+    					<div class="header_label label_upload header_label_center">{{item['Student']}}</div>
+    					<div class="header_label label_comment header_label_center">{{item['Comment']}}</div>
+    				</div>
+			</div>
+
+			</div>

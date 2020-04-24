@@ -1,0 +1,13 @@
+
+
+
+
+        <md-input-container>
+          <label>Select</label>
+          <md-select ng-model="model.selection">
+            <md-option ng-repeat="item in model.select" ng-value="item.title">
+            		{{item.title}}
+            </md-option>
+          </md-select>
+        </md-input-container>
+

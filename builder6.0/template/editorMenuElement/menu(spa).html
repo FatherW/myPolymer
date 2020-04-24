@@ -1,0 +1,11 @@
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<ul class="nav navbar-right">
+		<li><a class="link-kumya active scroll" href="index.html"><span data-letters="Home">Home</span></a>
+		</li>
+			<li ng-repeat="item in model.menu" ng-if="item.title!='Home'">
+				<a class="link-kumya" ng-href="{{item.link}}"><span data-letters="{{item.title}}">{{item.title}}</span></a>
+			</li>
+			
+		</ul>
+		<div class="clearfix"></div>
+	</div>

@@ -1,0 +1,20 @@
+
+
+<div class="sliderContainer" ng-init="loadData()">
+				<div class="iosSlider">
+					<div class="slider">
+
+
+						<div class="item" ng-repeat="item in model.data">
+							<div class="inner" style="background-image:url({{item.photo}})">
+								<div class="text1"><span>{{item.caption1}}<br>{{item.caption2}}</span></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slideSelectors">
+					<div class="item selected"></div>
+					<div class="item"></div>
+					<div class="item"></div>
+				</div>
+			</div>

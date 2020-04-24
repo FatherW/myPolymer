@@ -1,0 +1,40 @@
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>學校用戶管理</h2>
+                <span flex></span>
+                <md-button class="md-primary md-raised" ng-click="create()">
+                    <md-tooltip>新增</md-tooltip>
+                    <i class="fa fa-plus"></i>
+                </md-button>
+                <md-button class="md-primary md-raised" ng-click="save()">
+                    <md-tooltip>儲存</md-tooltip>
+                    <i class="fa fa-floppy-o"></i>
+                </md-button>
+                <md-button class="md-primary md-raised" ng-click="cancel()">
+                    <md-tooltip>取消</md-tooltip>
+                    <i class="fa fa-window-close"></i>
+                </md-button>
+
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content" style="min-height: 400px;">
+                <div layout="row" ng-repeat="user in users">
+                    <md-input-container flex="30">
+    					<input type="text" placeholder="用戶名稱" ng-model="user.username">
+                    </md-input-container>
+    				<md-input-container flex="30">
+    					<input type="text" placeholder="密碼" ng-model="user.password">
+                    </md-input-container>
+    				<md-input-container flex="30">
+    				    <md-button ng-click="remove(user)">移除</md-button>
+    				    <md-button ng-click="createUser(user)">註冊</md-button>
+                    </md-input-container>
+
+                </div>
+            </div>
+        </md-dialog-content>
+
+    </form>

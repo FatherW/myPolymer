@@ -1,0 +1,218 @@
+var app = angular.module('demoApp');
+app.directive('editorMenu', function ($ocLazyLoad) {
+    var path = "https://d25k6mzsu7mq5l.cloudfront.net/builder6.0/id-1489549266453";
+    var editorMenu = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        templateUrl: path + '/html/id-1489549266453.html' + '?id=' + new Date().getTime(),
+        controller: function ($scope, $element, $attrs, $uibModal) {
+            //element init
+            $scope.id = $element[0].id || "ele" + new Date().getTime();
+            $element[0].id = $scope.id;
+            if (angular.isUndefined($scope.atom[$scope.id])) {
+                $scope.atom[$scope.id] = {
+                    "id": $scope.id,
+                    "src": $scope.src,
+                    "link": "#",
+                    "html": "",
+                    "list":[
+                        {
+                            "title":"項目一",
+                            "link":"#"
+                        },
+                        {
+                            "title":"項目二",
+                            "link":"#"
+                        },
+                        {
+                            "title":"項目三",
+                            "link":"#"
+                        }
+                    ]
+
+                };
+            }
+            $scope.model = $scope.atom[$scope.id];
+                  
+            $scope.editorMenuOptions = [
+                ["編輯選單", function ($itemScope) {
+                        var modalInstance = $uibModal.open({
+                            animation: true,
+                            templateUrl: 'views/menuPopup.html?id=' + Math.floor((Math.random() * 10000) + 1),
+                            controller: 'menuCtrl',
+                            size: 'lg',
+                            resolve: {
+                                list: function () {
+                                    return $scope.model.list;
+                                }
+                            }
+                        });
+                        modalInstance.result.then(function (list) {
+                            $scope.atom[id].list = list;
+                            $scope.compile();
+                        });
+
+                }]
+            ];
+            $element[0].addEventListener("DOMSubtreeModified", function () {
+                console.log('DOM changed');
+            });
+            //element init
+        }
+    }
+    return editorMenu;
+});
+
+
+app.controller('menuCtrl', function ($scope, $uibModalInstance, list) {
+
+    $scope.data = [];
+    $scope.list = list || [];
+    $scope.newRootItem = function () {
+        var id = new Date().getTime();
+        $scope.list.push({
+            id: 'menu' + id,
+            title: "新項目",
+            link: "#",
+            img: "",
+            type: 'Menu',
+            list: []
+        });
+    };
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+    $scope.saveMenu = function () {
+        console.log($scope.list);
+        $uibModalInstance.close($scope.list);
+    };
+
+    $scope.saveLink = function (node, link) {
+        node.link = link;
+    };
+
+    $scope.newSubItem = function (node) {
+        var id = new Date().getTime();
+        node.list.push(
+            {
+                id: 'submenu' + id,
+                title: "新項目",
+                link: "#",
+                type: 'Menu',
+                list: [],
+                img: ""
+            }
+        );
+        console.log('Node',node);
+    };
+
+    $scope.removeHandle = function (node) {
+        delete node;
+    };
+});
+
+
+
+app.controller('linkPopupCtrl', function ($scope, $uibModal) {
+
+    $scope.open = function (node, data) {
+        if (data) {
+            $scope.data = data;
+        }
+        console.log('Open Node', node);
+        var anchor = [];
+        var page = [];
+        if (typeof node.link === "undefined")
+            node.link = "#";
+
+        var pagejson;
+        pagejson = store.get('pagejson');
+        for (i = 0; i < pagejson.length; i++)
+            page.push({
+                'name': pagejson[i]
+            });
+
+        var modalInstance = $uibModal.open({
+            animation: true,
+            templateUrl: 'views/linkPopup.html?id=' + Math.floor((Math.random() * 10000) + 1),
+            controller: 'linkCtrl',
+            size: 'lg',
+            resolve: {
+                link: function () {
+                    return node.link;
+                },
+                page: function () {
+                    return page;
+                },
+                anchor: function () {
+                    for (var i = 0; i < $scope.data.structure.length; i++) {
+                        getNameAndId($scope.data.structure[i]);
+                    }
+                    return anchor;
+                }
+            }
+        });
+
+
+        modalInstance.result.then(function (list) {
+            node.link = list;
+        });
+
+
+        function getNameAndId(node) {
+            anchor.push({
+                "id": node.id,
+                "name": node.name
+            });
+            switch (node.type) {
+                case "Container":
+                    for (var i = 0; i < node.row.length; i++) {
+                        getNameAndId(node.row[i]);
+                    }
+                    break;
+                case "Row":
+                    for (var i = 0; i < node.column.length; i++) {
+                        getNameAndId(node.column[i]);
+                    }
+                    break;
+                case "Column":
+                    for (var i = 0; i < node.children.length; i++) {
+                        getNameAndId(node.children[i]);
+                    }
+                    break;
+            }
+        }
+
+    }
+});
+
+app.controller('linkCtrl', function ($scope, $uibModalInstance, link, page, anchor) {
+    $scope.link = link;
+    $scope.page = page;
+    $scope.anchor = anchor;
+
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss('cancel');
+    };
+
+    $scope.select = function (page) {
+        $scope.link = page + ".html";
+    };
+
+    $scope.selectAnchor = function (page) {
+        $scope.link = '#' + page;
+    };
+
+    $scope.changeLink = function (value) {
+        $scope.$apply(function () {
+            $scope.link = value;
+        });
+    };
+
+    $scope.saveLink = function () {
+        $uibModalInstance.close($scope.link);
+    };
+});

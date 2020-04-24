@@ -1,0 +1,6 @@
+.type_mobile .mobile_show {
+    display:block !important;
+}
+.type_mobile .mobile_hide{
+    display:none !important;
+}

@@ -1,0 +1,8 @@
+.flexslider .slides > li {
+    display: block;
+    position: absolute;
+}
+
+.image_slider {
+    overflow: initial;
+}

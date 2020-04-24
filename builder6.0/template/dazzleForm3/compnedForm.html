@@ -1,0 +1,253 @@
+<style>
+  .label-required {
+    color:red;
+  } 
+  legend {
+    margin-bottom: 10px;
+  }
+  img.image-thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+  }
+  .fileinputbox {
+    position: absolute;
+    opacity: 0;
+    width: 0px;
+ }
+ .myForm{
+ 	margin:2em;
+ 	width:70%;
+ }
+</style>
+
+
+<div class="myformWrapper">
+<div class="row well2">
+<form id="{{data}}" class="myForm" name="myForm" myangular-init="formdata={};hostname='{{userBucket}}';formname='{{data}}';receiveemail='{{receiveemail}}';websiteKey='{{websiteKey}}'">
+    <div class="form-group" ng-repeat="f in model.form">
+        <div ng-switch="f.directiveName">
+            <div ng-switch-when="文字">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <input type="text" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+                    </div>
+
+                </div>
+            </div>
+            <div ng-switch-when="數字">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <input type="number" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+                    </div>
+
+                </div>
+            </div>
+            <div ng-switch-when="密碼">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <input type="password" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="多行文字">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <textarea myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="勾選">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <input type="checkbox" myangular-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}">
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="日期">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <input type="date" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="電郵">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <input type="email" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+                    </div>
+                </div>
+            </div>
+            
+            <div ng-switch-when="勾選按鈕">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                    </div>
+                    <div layout="column" flex="70">
+                        <label for="{{f.headerName}}">
+                        	<input type="checkbox" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-check-input" id="{{f.headerName}}" placeholder="{{f.default}}">
+                    	{{f.headerName}}</label><span class="label-required" ng-if="f.required">(* 必需勾選)</span>
+                    </div>
+                </div>
+        
+            </div>
+            
+            <div ng-switch-when="單選按鈕">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <div ng-repeat="optionItem in f.cellEditorParams.values track by $index">
+                            <label for="{{f.headerName}}" class="form-check-label">
+                                <input value="{{optionItem}}" name="{{f.headerName}}" ng-required="f.required" type="radio" myangular-model="formdata['{{f.headerName}}']" class="form-check-input" id="{{f.headerName}}_{{$index}}"> {{optionItem}}
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="選擇列表">
+
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <select myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}_{{$index}}">
+                            <option value="">--請選擇--</option>
+                            <option ng-repeat="optionItem in f.cellEditorParams.values track by $index" value="{{optionItem}}">{{optionItem}}</option>
+                        </select>
+                    </div>
+                </div>
+
+
+            </div>
+            <div ng-switch-when="多項選擇列表">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <select multiple myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}_{{$index}}">
+                            <option ng-repeat="optionItem in f.cellEditorParams.values track by $index" value="{{optionItem}}">{{optionItem}}</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <div ng-switch-when="連結">
+               <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                      <input type="text" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+                    </div>
+                </div>
+            </div>
+            <div ng-switch-when="檔案">
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <div class="">
+                            <input type="text" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control fileinputbox" id="{{f.headerName}}" placeholder="{{f.default}}">
+                            <!--<input id="{{f.headerName}}_{{$index}}" style="display:-webkit-inline-box;display:inline-block;" type="file" class="form-control-file" ng-required="f.required">-->
+                            <button type="button" myangular-click="uploadToDomain('{{f.headerName}}','{{f.headerName}}_{{$index}}')" class="btn btn-default">選擇及上載檔案</button>
+                            <a href="#" target="_blank" id="{{f.headerName}}_{{$index}}"></a>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+            <div ng-switch-when="自動填寫">
+                
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                         <div  ng-controller="DemoCtrl as ctrl">
+                              <md-autocomplete
+                                  ng-disabled="ctrl.isDisabled"
+                                  md-no-cache="ctrl.noCache"
+                                  md-selected-item="ctrl.selectedItem"
+                                  md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                                  md-search-text="ctrl.searchText"
+                                  md-selected-item-change="ctrl.selectedItemChange(item)"
+                                  md-items="item in ctrl.querySearch(ctrl.searchText)"
+                                  md-item-text="item.display"
+                                  md-min-length="0"
+                                  placeholder="What is your favorite US state?">
+                                <md-item-template>
+                                  <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                                </md-item-template>
+                                <md-not-found>
+                                  No states matching "{{ctrl.searchText}}" were found.
+                                  <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>
+                                </md-not-found>
+                              </md-autocomplete>
+                         </div>
+                    </div>
+                </div>
+                    
+            </div>
+
+            <div ng-switch-when="圖片">
+                
+                <div layout="row">
+                    <div layout="column" flex="30">
+                         <label for="{{f.headerName}}"><span class="label-required" ng-if="f.required">*</span>{{f.headerName}}</label>
+                    </div>
+                    <div layout="column" flex="70">
+                        <div>
+                            <!--<input id="{{f.headerName}}_{{$index}}" style="display:-webkit-inline-box;display:inline-block;" type="file" class="form-control-file" ng-required="f.required">-->
+                            <input type="text" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control fileinputbox" id="{{f.headerName}}" placeholder="{{f.default}}">
+                            <button type="button" myangular-click="uploadToDomain('{{f.headerName}}','{{f.headerName}}_{{$index}}','imageOnly')" class="btn btn-default">選擇及上載圖片</button>
+                            <div class="" style="margin-top: 10px;" myangular-show="formdata['{{f.headerName}}']">
+                                <img class="image-thumbnail" id="img_{{f.headerName}}_{{$index}}" myangular-show="formdata['{{f.headerName}}']">
+                                <a href="#" target="_blank" id="{{f.headerName}}_{{$index}}"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+            </div>
+            <div ng-default>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required" ng-if="f.required">(* 必需填寫)</span>
+            <input type="text" myangular-model="formdata['{{f.headerName}}']" ng-required="f.required" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" myangular-click="submitMyForm()">提交</button>
+</form>
+
+
+
+</div>
+</div>

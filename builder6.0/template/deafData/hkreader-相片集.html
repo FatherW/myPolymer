@@ -1,0 +1,25 @@
+
+<div  ng-init="loadPhoto()">
+  <div id="myCarousel{{$index}}" class="carousel slide" data-ride="carousel" style="width:100%; margin:5px; float:left;" ng-repeat="item in model.data">
+    <!-- Indicators -->
+
+
+  <div class="carousel-inner">
+    <div class="item" ng-repeat="photo in item['相冊']" ng-class="$index? '':'active'">
+      <img ng-src="http://{{photo.bucket}}/{{photo.path}}">
+    </div>
+
+  </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel{{$index}}" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel{{$index}}" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>    
+</div>
+

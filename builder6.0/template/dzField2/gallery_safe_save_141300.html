@@ -1,0 +1,5 @@
+<p>可右Click 更新</p>
+<ul id="albums" ng-if="model.data.length>0">
+    <li ng-repeat="item in model.data" class="photo"><img ng-src="https://{{item.bucket}}.s3-ap-northeast-1.amazonaws.com/{{item.path}}">
+    </li>
+</ul>

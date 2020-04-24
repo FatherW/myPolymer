@@ -1,0 +1,145 @@
+<style>
+    dz-login-popup md-input-container {
+        margin:10px auto;
+    }
+
+
+    .layout-row md-select {
+        margin:0px;
+    }
+    .layout-row > div {
+        padding:5px;
+    }
+   md-icon#av_domain {
+        color: grey;
+        opacity: 0.2;
+    }
+    #av_undomain {
+        color:red;
+        opacity:0;
+    }
+    user-profile-popup ul,    user-profile-popup ol {
+        margin-left:20px;
+        line-height:20px;
+        
+    }
+
+    user-profile-popup md-content {
+        padding:20px;
+    }
+</style>
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>資料集設定</h2>
+            <span flex></span>
+            <md-button ng-click="cancel()">取消</md-button>
+            <md-button ng-click="save()">儲存</md-button>
+        </div>
+    </md-toolbar>
+     <md-dialog-content class="model" style="min-height:70%;" >
+            <md-tabs md-dynamic-height md-border-bottom>
+            
+                  <md-tab label="篩選方法">
+                        <md-content class="md-padding">
+                                <form name="userForm">
+                                    <div layout-gt-xs="row">
+                                      <md-input-container class="md-block" flex-gt-xs>
+                                        <label>資料表</label>
+                                        <input ng-model="db.table">
+                                      </md-input-container>
+                            
+                                      <md-input-container>
+                                        <label>Key Field</label>
+                                        <input ng-model="db.key">
+                                      </md-input-container>
+                                    </div>
+                                    <div layout-gt-xs="row">
+                                      <md-input-container class="md-block" flex-gt-xs>
+                                        <label>數目</label>
+                                        <input ng-model="db.count">
+                                      </md-input-container>
+                            
+                                      <md-input-container class="md-block" flex-gt-xs>
+                                        <label>排序</label>
+                                        <input ng-model="db.sort">
+                                      </md-input-container>
+                            
+                            
+                                    </div>
+                            
+                                  </form>
+
+                        </md-content>
+                    </md-tab>
+                    
+                    <md-tab label="資料來源" ng-init="loadTables()">
+                        <md-content class="md-padding">
+                                <form>
+                                     <md-input-container class="md-block" flex-gt-xs>
+                                        <label>已有資料表</label>
+                                        <md-select placeholder="選擇資料表" ng-model="selectedTable" md-on-open="loadTables()" style="min-width: 200px;">
+                                          <md-option ng-value="table.id" ng-repeat="table in tableList">{{table.label}}</md-option>
+                                        </md-select>
+                                        <md-button ng-click="addTable()">新增資料表</md-button>
+                                        
+                                     </md-input-container>
+                                     
+                                     <div layout="row">
+                                        <div flex="50">
+                                            <md-input-container>
+                                                <label>選擇資料頁面樣板</label>
+                                             <md-autocomplete
+                                                  ng-disabled=false
+                                                  md-no-cache=true
+                                                  md-selected-item="selectedPage"
+                                                  md-search-text-change="searchTextChange(searchText)"
+                                                  md-search-text="searchText"
+                                                  md-selected-item-change="selectedItemChange(item)"
+                                                  md-items="item in pageList(searchText)"
+                                                  md-item-text="item"
+                                                  md-min-length="0"
+                                                  placeholder="輸入樣版頁面"
+                                                  input-aria-labelledby="頁面">
+                                                <md-item-template>
+                                                  <span md-highlight-text="searchText" md-highlight-flags="^i">{{item}}</span>
+                                                </md-item-template>
+                                                <md-not-found>
+                                                  No states matching "{{searchText}}" were found.
+                                                <!--  <a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a> -->
+                                                </md-not-found>
+                                              </md-autocomplete>
+                                            
+                                                <md-select placeholder="選擇資料頁面" ng-model="db.template" md-on-open="loadPages()" style="min-width: 200px;">
+                                                  <md-option ng-value="page" ng-repeat="page in pageList">{{page}}</md-option>
+                                                </md-select>
+                                            
+                                            
+                                            </md-input-container>
+                                        </div>
+                                        <div flex="50">
+                                            <md-input-container>
+                                                <md-button ng-click="editColumn()">編輯資料欄位</md-button>
+                                                <md-button ng-click="editData()">編輯資料</md-button>
+                                            </md-input-container>
+                                        </div>
+                                     </div>
+                            
+
+                                
+                                </form>
+                                
+                                
+                    </md-content>
+                </md-tab>
+                
+              
+                    
+                    <md-tab label="匯出樣辦">
+                        <md-content class="md-padding">
+
+                        </md-content>
+                    </md-tab>
+            </md-tabs>
+        
+     </md-dialog-content>

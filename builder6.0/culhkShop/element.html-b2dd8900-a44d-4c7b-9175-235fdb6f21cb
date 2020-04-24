@@ -1,0 +1,8 @@
+<div>
+
+<h1>購物管理</h1>
+<button ng-click="productMng()">產品管理</button>
+<button ng-click="orderMng()">訂單管理</button>
+<p>閣下可右click，選擇需要管理的項目。</p><p>改動後，再匯出即可。 </p>
+
+</div>

@@ -1,0 +1,52 @@
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>選單管理員</h2>
+            <span flex></span>
+            <md-button ng-click="newRootItem()">新增選單</md-button>
+            <md-button ng-click="cancel()">取消</md-button>
+            <md-button ng-click="saveMenu()">儲存</md-button>
+        </div>
+    </md-toolbar>
+     <md-dialog-content class="model" style="min-height:70%;">
+        <div ui-tree id="tree-root">
+            <ol ui-tree-nodes ng-model="list">
+                <li type="Menu" class="menus" ng-repeat="node in list" ui-tree-node
+                    ng-include="'nodes_renderer.html'"></li>
+            </ol>
+        </div>
+        <script type="text/ng-template" id="nodes_renderer.html">
+            <div type="List" class="tree-node">
+                <div class="pull-left tree-handle" ui-tree-handle>
+                    <span class="glyphicon glyphicon-list"></span>
+                </div>
+                <div class="tree-node-content">
+                    <a class="btn btn-success " data-nodrag ng-click="toggle(node)">
+                            <span class="glyphicon" ng-class="{
+                              'glyphicon-chevron-right': collapsed,
+                              'glyphicon-chevron-down': !collapsed
+                              }">
+                            </span>
+                    </a>
+
+                    <input type="text" ng-model="node.title">
+                    <input id="link-{{node.id}}" class="hidLink" type="hidden" ng-model="node.link">
+                    <a class="pull-right btn btn-danger " data-nodrag ng-click="remove(node)"><span
+                            class="glyphicon glyphicon-remove"></span>
+                    </a>
+                    <a class="pull-right btn btn-success " data-nodrag ng-click="openLinkPopup(node)"><span
+                            class="glyphicon glyphicon-pencil"></span>
+                    </a>
+                    <a class="pull-right btn btn-primary " data-nodrag ng-click="newSubItem(node)"
+                       style="margin-right: 8px;"><span class="glyphicon glyphicon-plus"></span></a>
+                       
+                   <a class="pull-right btn btn-info " data-nodrag ng-click="addCss(node)"
+                       style="margin-right: 8px;"><i class="fa fa-css3" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <ol ui-tree-nodes="" ng-model="node.list" ng-class="{hidden: collapsed}">
+                <li type="Submenu" ng-repeat="node in node.list" class="submenus" ui-tree-node
+                    ng-include="'nodes_renderer.html'">
+                </li>
+            </ol>
+        </script>
+     </md-dialog-content>

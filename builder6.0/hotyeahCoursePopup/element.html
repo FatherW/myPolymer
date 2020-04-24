@@ -1,0 +1,59 @@
+   <style>
+        .ag-cell-value div {
+            display: inline;
+        }
+
+        .ag-cell-inline-editing div {
+            display: inline;
+        }
+
+        .md-tab {
+            text-transform: none
+        }
+        .ag-bl-normal-center-row{
+            height:600px !important;
+        }
+    </style>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>內容管理:{{table}}</h2>
+            <span flex></span>
+            <md-button class="md-primary md-raised" ng-click="save()" ng-if="inited">
+                <md-tooltip>儲存</md-tooltip>
+                <i class="fa fa-floppy-o"></i>
+            </md-button>
+            <md-button class="md-primary md-raised" ng-click="cancel()">
+                <md-tooltip>關閉</md-tooltip>
+                <i class="fa fa-window-close"></i>
+            </md-button>
+            <span flex="2"></span>
+        </div>
+    </md-toolbar>
+    <md-dialog-content ng-init="init()" style="height: 600px; width:100%;">
+        <div style="height: 100%;" ng-show="!inited" layout="row" layout-sm="column" layout-align="space-around">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+        <div style="max-height: 20%;" layout="row" layout-xs="column" ng-show="inited">
+            <div flex>
+                <md-button ng-click="add()">
+                    新增數據
+                </md-button>
+                <md-button ng-click="remove()">
+                    刪除數據
+                </md-button>
+<!--                <md-button ng-click="import()">
+                    匯入Excel
+                    <input type="file" id="uploadXls" style="display:none;" custom-on-change="uploadXls">
+                </md-button>
+                <md-button ng-click="export()">
+                    匯出Excel
+                </md-button>
+                -->
+                <md-button ng-click="refresh()">
+                    重新載入資料
+                </md-button>
+            </div>
+            <div flex id="customButtons" layout="row"></div>
+        </div>
+            <div style="height: 80%; min-height:400px; width:100%;" ng-show="inited" id="myGrid" ag-grid="gridOptions" class="ag-material"></div>
+    </md-dialog-content>

@@ -1,0 +1,19 @@
+<div class="row">
+<ul class="course_tab">
+    <li ng-repeat="item in model.menu"><a ng-href="#tab{{$index}}" data-toggle="pill">{{item.title}}</a></li>
+
+</ul>
+<div class="clear"></div>
+    <div class="tab-content">
+    <div id="tab{{$index}}" ng-repeat="item in model.menu" class="tab-pane fade in" ng-class="$index==0? 'active': '' ">
+        <h2>{{item.title}}</h2>
+        <hr>
+        <div ng-bind-html="item.html"></div>
+        	<div class="panel" bind-html-compile2="item.html">
+
+		    </div>    	
+    </div>    
+
+  </div>  
+
+</div>

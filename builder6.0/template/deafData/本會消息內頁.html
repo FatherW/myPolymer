@@ -1,0 +1,40 @@
+<!--<div>
+    <div class="views-row views-row-1 views-row-odd views-row-first" ng-repeat="item in model.data | orderBy: '-nid' | limitTo:2">
+        <div class="views-field views-field-field-events-picture">
+            <a ng-href="{{item['標題']}}.html">
+                <img class="img-responsive" style="max-width:100%;max-height: 100%;" ng-src="{{item['截圖']}}">
+            </a>
+        </div>
+        <span class="field-content">{{item['日期']*1000 | date:'yyyy-MM-dd'}}</span>
+        <div class="views-field views-field-title">
+            <span class="field-content">
+                <a ng-href="{{item['標題']}}.html">{{item['標題']}}</a>
+            </span>
+        </div>
+        <div class="views-field views-field-view-node">
+            <span class="field-content"><a ng-href="{{item['標題']}}.html">全文</a></span>
+        </div>
+        <div class="views-field views-field-nothing">
+            <span class="field-content">
+                <div class="grid_s"></div>
+            </span>
+        </div>
+    </div>
+</div>
+-->
+<div id="sub_bulletin">
+<h2><span>本會消息</span><a class="more" href="news-media.html#/item-14957232967501">更多</a></h2>
+<span class="news_det">
+
+<ul>
+    
+<li ng-repeat="item in model.data | orderBy: '-nid' | limitTo:1">
+ <span class="home_date">{{item['日期']*1000 | date:'yyyy-MM-dd'}}</span>
+ <span class="home_tit"><a ng-href="{{item['標題']}}.html">{{item['標題']}}</a></span>
+ <span class="home_arrow1"><a href="{{item['標題']}}.html">&gt;全文</a></span>
+ <span class="home_div"> </span>
+ </li>
+    
+</ul>
+</span>
+</div>

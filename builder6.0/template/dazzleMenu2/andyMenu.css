@@ -1,0 +1,12 @@
+.bar {
+    background: #ae7c0c; /* Old browsers */
+background: -moz-linear-gradient(top, #ae7c0c 0%, #d4960a 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top, #ae7c0c 0%,#d4960a 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom, #ae7c0c 0%,#d4960a 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ae7c0c', endColorstr='#d4960a',GradientType=0 ); /* IE6-9 */
+}
+
+.nav-items a {
+    color:white;
+    text-decoration:none;
+}

@@ -1,0 +1,92 @@
+
+    <style>
+    .md-virtual-repeat-container.md-autocomplete-suggestions-container {
+        z-index: 9000;
+    }
+        .galleryCard .md-card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .galleryCard, md-card md-card-content {
+            padding-bottom: 0px !important;
+        }
+
+        .galleryCard .md-errors-spacer {
+            min-height: 0px !important;
+        }
+
+        .galleryCard md-input-container {
+            margin-bottom: 0px !important;
+        }
+    </style>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>選擇分類</h2>
+            <span flex></span>
+            <md-button class="md-raised md-primary" ng-click="select()">
+                選擇
+            </md-button>
+            <md-button class="md-raised md-warn" ng-click="cancel()">
+                取消
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content style="min-height:70%;">
+          
+           <h2 class="md-title">所屬公司</h2>
+<div ng-controller="DemoCtrl as ctrl" layout="column" ng-cloak ng-init="init()">
+  <md-content class="md-padding">
+    <form ng-submit="$event.preventDefault()">
+      <p>選擇產品所屬公司. </p>
+      <md-autocomplete
+          ng-disabled="ctrl.isDisabled"
+          md-no-cache="ctrl.noCache"
+          md-selected-item="ctrl.selectedItem"
+          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+          md-search-text="ctrl.searchText"
+          md-selected-item-change="ctrl.selectedItemChange(item)"
+          md-items="item in ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.display"
+          md-min-length="0"
+          placeholder="輸入所屬公司">
+        <md-item-template>
+          <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+        </md-item-template>
+        <md-not-found>
+           "{{ctrl.searchText}}" 找不到適合公司
+          <!--<a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>-->
+        </md-not-found>
+      </md-autocomplete>
+      <br/>
+      <!--<md-checkbox ng-model="ctrl.simulateQuery">Simulate query for results?</md-checkbox>-->
+      <!--<md-checkbox ng-model="ctrl.noCache">Disable caching of queries?</md-checkbox>-->
+      <!--<md-checkbox ng-model="ctrl.isDisabled">Disable the input?</md-checkbox>-->
+
+      <!--<p>By default, <code>md-autocomplete</code> will cache results when performing a query.  After the initial call is performed, it will use the cached results to eliminate unnecessary server requests or lookup logic. This can be disabled above.</p>-->
+    </form>
+  </md-content>
+</div>
+      
+ <!--<md-autocomplete-->
+ <!--         ng-disabled="false"-->
+ <!--         md-no-cache="true"-->
+ <!--         md-selected-item="selectedItem"-->
+ <!--         md-search-text-change="searchTextChange(searchText)"-->
+ <!--         md-search-text="searchText"-->
+ <!--         md-selected-item-change="selectedItemChange(item)"-->
+ <!--         md-items="item in querySearch(searchText)"-->
+ <!--         md-item-text="item.display"-->
+ <!--         md-min-length="0"-->
+ <!--         placeholder="所屬公司?">-->
+ <!--       <md-item-template>-->
+ <!--         <span md-highlight-text="searchText" md-highlight-flags="^i">{{item.display}}</span>-->
+ <!--       </md-item-template>-->
+ <!--       <md-not-found>-->
+ <!--         No states matching "{{searchText}}" were found.-->
+ <!--       </md-not-found>-->
+ <!--     </md-autocomplete>-->
+
+    </md-dialog-content>

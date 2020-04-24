@@ -1,0 +1,21 @@
+ <div class="header__links--right ng-scope">
+
+                                            <div class="header__profile">
+                                                <a class="header__profile-link" ng-click="showDropdown()">
+                                                    <span class="header__profile-link__username ng-binding">dazzleadmin</span>
+                                                    <div class="header__link__chevron svg__next" ng-show="user" aria-hidden="false"></div>
+                                                </a>
+                                                <div ng-class="{showDropdown:show}" class="header__dropdown">
+                                                    <div class="header__dropdown-item">
+                                                        <a class="header__dropdown-link" ng-click="dashbroad()">我的網站</a></div>
+                                                    <!--<div class="header__dropdown-item">Your Favorites</a></div>-->
+                                                    <div class="header__dropdown--separator"></div>
+                                                    <div class="header__dropdown-item">
+                                                        <a class="header__dropdown-link" ng-click="logout()">登出</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                            <a ng-show="!user" class="header__link header__link--primary ng-hide" ng-click="openLogin()" aria-hidden="true" style="">
+                                                登入</a></div>

@@ -1,0 +1,14 @@
+
+<div class="hiddenText2 row">
+    <div ng-repeat="item in model.data" class="col-lg-3  col-sm-3 col-md-4 col-xs-6 member">
+        <div class="cusmiddle">
+            <div class="cusround_wrapper">
+                <img class="cusround_img" ng-src="{{item['相片']}}" />
+            </div>
+        </div>
+        <div class="clear"></div>
+        <p>{{item['學生名稱']}}：</p>
+        <div class="descc" style="text-align: left;" ng-bind-html="item['介紹'] | to_trusted | limitTo:66"></div>
+        <hr>
+    </div>
+</div>

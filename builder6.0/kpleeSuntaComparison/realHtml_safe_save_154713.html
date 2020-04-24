@@ -1,0 +1,206 @@
+<div class="filter_search">
+				<label for="catagory">&#x5206;&#x985E;</label>
+
+				<select ng-model="type" ng-change="changeCate(type)" id="catagory">
+					<option value="Engineerling">Engineerling</option>
+					<option value="Commodity Plastic">Commodity Plastic</option>
+				</select>
+			</div>
+
+			<div id="tab_area2" class="vertcial_tabs">
+			  <ul>
+			  	<li ng-repeat="item in items track by $index"><a href="#tab-{{$index +1}}">{{item.title}}</a></li>
+			    <!--<li><a href="#tab-1">FR ABS</a></li>
+			    <li><a href="#tab-2">PC</a></li>
+			    <li><a href="#tab-3">PP - Random Co</a></li>
+			    <li><a href="#tab-4">PP - Block Co</a></li>
+			    <li><a href="#tab-5">PP - Homo</a></li>
+			    <li><a href="#tab-6">HIPS</a></li>
+			    <li><a href="#tab-7">GPPS</a></li>
+			    <li><a href="#tab-8">ABS / MABS</a></li>-->
+			  </ul>
+			  <div class="tabContent" ng-repeat="item in items track by $index" id="tab-{{$index +1}}">
+			  		<div ng-bind-html="item[&apos;content1&apos;] | trust">
+			  		
+			  		</div>
+			  </div>
+			  <!--
+			  <div id="tab-1">
+
+			    <table class="compare_table">
+			    	<thead>
+			    		<tr><td>品牌</td></tr>
+			    		<tr><td>產地</td></tr>
+
+			    		<tr>
+			    			<td class="subject">
+			    				<div>款號</div>
+			    				<div>測試方法</div>
+			    				<div>單位</div>
+			    				<div>測試條件</div>
+			    			</td>
+			    		</tr>
+
+			    		<tr>
+			    			<td class="subject">
+			    				<div>融流指數</div>
+			    				<div>ASTM, D1238</div>
+			    				<div>g/10min</div>
+			    				<div>300°C, 1.2Kg</div>
+			    			</td>
+			    		</tr>
+
+			    		<tr>
+				    		<td class="subject">
+				    			<div>衝揧强度</div>
+				    			<div>ASTMD256</div>
+				    			<div>Kgf.cm/cm</div>
+				    			<div>1/8 inch</div>
+				    		</td>
+			    		</tr>
+
+			    		<tr>
+			    			<td class="subject">
+			    				<div>拉伸強度</div>
+			    				<div>ASTMD638</div>
+			    				<div>Kgf/cm2</div>
+			    				<div>23°C</div>
+			    			</td>
+			    		</tr>
+
+			    		<tr>
+			    			<td class="subject">
+			    				<div>比重</div>
+			    				<div>ASTMD792</div>
+			    				<div>-</div>
+			    				<div>Natural Color</div>
+			    			</td>
+			    		</tr>
+
+			    		<tr>
+			    			<td class="subject">
+			    				<div>彎曲强度</div>
+			    				<div>ASTM D790</div>
+			    				<div>Kgf/cm2</div>
+			    				<div>23°C</div>
+			    			</td>
+			    		</tr>
+
+			    		<tr>
+			    			<td class="subject">
+			    				<div>彎曲模數</div>
+			    				<div>ASTM D790</div>
+			    				<div>Kgf / cm2</div>
+			    				<div>23°C</div>
+			    			</td>
+			    		</tr>
+
+			    		<tr>
+			    			<td class="subject">
+			    				<div>硬度</div>
+			    				<div>ASTM D785</div>
+			    				<div>-</div>
+			    				<div>M-scale</div>
+			    			</td>
+			    		</tr>
+
+			    		<tr>
+			    			<td class="subject">
+			    				<div>熱變形溫度</div>
+			    				<div>ASTM D648</div>
+			    				<div>°C</div>
+			    				<div>18.6 Kgf/cm2 120°C/hr</div>
+			    			</td>
+			    		</tr>
+			    	</thead>
+
+			    	<tbody>
+				    	<tr>
+				    		<td>帝人</td>
+				    		<td>出光</td>
+				    	</tr>
+
+				    	<tr>
+				    		<td>中國/星加坡</td>
+				    		<td>日本/台灣</td>
+				    	</tr>
+
+				    	<tr>
+				    		<td>1250Y</td>
+				    		<td>IR2200</td>
+				    	</tr>
+
+				    	<tr>
+				    		<td>8</td>
+				    		<td>8</td>
+				    	</tr>
+
+				    	<tr>
+				    		<td>76</td>
+				    		<td>80</td>
+				    	</tr>
+
+				    	<tr>
+				    		<td>610</td>
+				    		<td>650</td>
+				    	</tr>
+
+				    	<tr>
+				    		<td>1.2</td>
+				    		<td>1.2</td>
+				    	</tr>
+
+				    	<tr>
+				    		<td>910</td>
+				    		<td>920</td>
+				    	</tr>
+
+				    	<tr>
+				    		<td>24000</td>
+				    		<td>24000</td>
+				    	</tr>
+
+				    	<tr>
+				    		<td>88</td>
+				    		<td>75</td>
+				    	</tr>
+
+				    	<tr>
+				    		<td>129</td>
+				    		<td>135</td>
+				    	</tr>
+				    </tbody>
+
+			    </table>
+
+			  </div>
+
+			  <div id="tab-2">
+			    tab2
+			  </div>
+
+			  <div id="tab-3">
+			    tab3
+			  </div>
+
+			  <div id="tab-4">
+			    tab3
+			  </div>
+
+			  <div id="tab-5">
+			    tab3
+			  </div>
+
+			  <div id="tab-6">
+			    tab3
+			  </div>
+
+			  <div id="tab-7">
+			    tab3
+			  </div>
+
+			  <div id="tab-8">
+			    tab3
+			  </div>
+			-->
+			</div>

@@ -1,0 +1,25 @@
+                                        <table style="width:100%">
+                                        
+                                        <tr>
+                                            <th style="text-align: left; ">從今天起我會做到以下的事，以實現我的目標</th>
+                                            <th style="text-align: left; ">預計完成日期</th>
+                                            <th style="text-align: left; ">完成日期</th>
+                                            <th style="text-align: left; ">備註/感受/回應</th>
+                                            <th style="text-align: left; ">
+                                                <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="addTimeline()">新增</md-button>
+                                                <md-button class="md-raised md-primary md-button md-ink-ripple" ng-click="save()">更新</md-button>
+                                                
+                                            </th>
+                                        </tr>
+                                        
+                                        <tr ng-repeat="item in result">
+                                            <td style="text-align: left; "><md-chips ng-model="item['工作']" readonly="false" md-removable="true"></md-chips></td>
+                                            <td style="text-align: left; "><dz-date date="item['預計完成日期']"></dz-date></td>
+                                            <td style="text-align: left; "><dz-date date="item['完成日期']"></dz-date></td>
+                                            <td style="text-align: left; "><md-chips ng-model="item['備註/感受/回應']" readonly="false" md-removable="true"></md-chips></td>
+                                            <td style="text-align: left; "><button ng-click="delTimeline($index)">刪除</button></td>
+                                        </tr>
+                                        
+                                                                                
+                                        
+                                        </table>

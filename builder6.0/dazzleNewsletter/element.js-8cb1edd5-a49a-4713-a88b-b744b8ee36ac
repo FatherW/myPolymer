@@ -1,0 +1,313 @@
+var app = angular.module('demoApp');
+
+
+
+      var newsletterSchema = [{
+                "id": "date",
+                "label": "日期",
+                "width": "10%",
+                "type": "datetime2",
+                "show": true
+            }, {
+                "id": "title",
+                "label": "標題",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }, {
+                "id": "content",
+                "label": "內容",
+                "width": "10%",
+                "type": "textarea",
+                "show": true
+            }];
+
+
+            var memberSchema = [{
+                "id": "id",
+                "label": "會員號碼",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }, {
+                "id": "name",
+                "label": "會員名稱",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }, {
+                "id": "mobile",
+                "label": "會員電話",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }, {
+                "id": "email",
+                "label": "會員電郵",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }, {
+                "id": "group",
+                "label": "分類",
+                "width": "10%",
+                "type": "text",
+                "show": true
+            }
+
+
+            ];
+
+            var newsletterTable =   {
+                    "id": "newsletter",
+                    "label": "電子報",
+                    "type": "S3"
+                  };
+
+            var memberTable =   {
+                    "id": "member",
+                    "label": "會員",
+                    "type": "S3"
+            };
+
+            var empty = [];
+
+app.controller('newsletterPopupController', function ($scope, $uibModalInstance) {
+
+    $scope.info = {
+        "from":"",
+        "to":"",
+        "subject":""
+    };
+
+    $scope.ok = function() {
+        $uibModalInstance.close($scope.info);
+    }
+    
+    $scope.cancel = function () {
+        $uibModalInstance.dismiss();
+    }
+});
+
+
+app.directive('dazzleNewsletter', function ($compile, $templateRequest,$mdDialog,$timeout,$http,$uibModal) {
+    var dazzleNewsletter = {
+        restrict: 'E',
+        priority: 1000,
+        scope: true,
+        link: function (scope, element, attrs) {
+            scope.http = "http://d27btag9kamoke.cloudfront.net/";
+            scope.directiveId = "dazzleNewsletter";
+            scope.type = "dazzleNewsletter";
+            scope.templatePath = "builder6.0/" + scope.directiveId + "/element.html?id=" + new Date().getTime()
+            scope.templateUrl = scope.http + scope.templatePath;
+            scope.editorCustomInit(scope, element, attrs).then(function () {
+                if (angular.isUndefined(scope.model.table)) {
+                    scope.model.table=JSON.parse(angular.toJson(newsletterTable));
+                    scope.updateHtml();
+
+                    scope.createTable(newsletterTable);
+                    scope.createSchema(newsletterTable,newsletterSchema);
+                    scope.createData(newsletterTable);
+
+                    // Create Member
+                    scope.createTable(memberTable);
+                    scope.createSchema(memberTable,memberSchema);
+                    scope.createData(memberTable);
+                }
+                var template = angular.element('<div bind-html-compile="model.html" context-menu="menuOptions"></div>');
+                element.html(template);
+                scope.$apply(function () {
+                    $compile(template)(scope);
+                });
+            });
+        },
+        controller: function ($scope, $element, $attrs) {
+
+            $scope.schema = newsletterSchema;
+            $scope.empty = [];
+
+            $scope.menuOptions = [
+                    ["數據管理", function () {
+                            $mdDialog.show({
+                                controller: 'contentPopupController',
+                                templateUrl: 'models/contentPopup/popup.html' + "?id=" + new Date().getTime(),
+                                locals: {
+                                    rootScope: $scope,
+                                    table: "member"
+                                }
+                            }).then(function () {
+                                $scope.updateHtml();
+                            });
+                    }],
+                  ["儲存電子報", function () {
+
+                  }],
+                  ["發送電子報", function () {
+
+                        $mdDialog.show({
+                          controller: DialogController,
+                          templateUrl: 'http://dazzle.website/builder/5.4/views/newsletterSetting.html?id=' + new Date().getTime(),
+                          parent: angular.element(document.body),
+                          clickOutsideToClose:true
+                        })
+                            .then(function(answer) {
+                                console.log(answer);
+                                var to = [];
+                                var html = $element.html();
+
+                                if (answer.test){
+                                    to.push(answer.receiver);
+                                    $http({
+                                        url: 'https://9hhtm40jpe.execute-api.ap-northeast-1.amazonaws.com/sendemail',
+                                        method: "POST",
+                                        data: {
+                                            "from": answer.sender,
+                                            "to": to,
+                                            "subject": answer.subject,
+                                            "html": html
+                                        }
+                                    }).then(function (result) {
+                                       alert('電郵已發. 接收時間有長有短，請耐心等候.');
+                                    });
+                                }
+                                else {
+                                    bengetJson(bucket, 'website/' + website.website + '/content/member-data.json').then(function (data) {
+                                        angular.forEach(data,function(item,index){
+                                            to.push(item['email']);
+                                            console.log(item);
+                                        });
+                                        to.push(answer.receiver);
+                                        $http({
+                                            url: 'https://9hhtm40jpe.execute-api.ap-northeast-1.amazonaws.com/sendemail',
+                                            method: "POST",
+                                            data: {
+                                                "from": answer.sender,
+                                                "to": to,
+                                                "subject": answer.subject,
+                                                "html": html
+                                            }
+                                        }).then(function (result) {
+                                           alert('電郵已發. 大概需要半日至一日時間，請耐心等候。 ');
+                                        });
+                                    });
+
+                                }
+
+                            }, function() {
+                                    
+                            });
+            }],          
+                ["更換模版", function () {
+                    $mdDialog.show({
+                        controller: 'templatePopupController',
+                        templateUrl: 'models/templatePopup/popup.html' + "?id=" + new Date().getTime(),
+                        locals: {
+                            rootScope: $scope
+                        }
+                    }).then(function (template) {
+                        $scope.useTemplate();
+                    });
+                }]
+            ];
+            $scope.beforeAtomSaved = function () {
+                $scope.createData(newsletterTable);
+                $scope.createData(memberTable);
+
+            }
+            $scope.afterAtomSaved = function () {
+
+            }
+
+                        //init start
+            $scope.createTable = function (table) {
+
+                var tableCollection = $scope.tableJson;
+                if (tableCollection.length)
+                    for (var i = 0; i < tableCollection.length; i++) {
+                        if (tableCollection[i].id == table.id) {
+                            return;
+                        }
+                        if (i + 1 == tableCollection.length) {
+                            tableCollection.push(table);
+                            $scope.saveJson($scope.userBucket,  $scope.websiteKey + 'json/tableCollection.json', JSON.parse(angular.toJson(tableCollection)));
+                            return;
+                        }
+                    }
+                else{
+                    tableCollection.push(table);
+                    $scope.saveJson($scope.userBucket,  $scope.websiteKey + 'json/tableCollection.json',JSON.parse(angular.toJson(tableCollection) ));
+                }
+            };
+
+            $scope.createSchema = function (table,schema) {
+                schema=$scope.saveJson($scope.userBucket,$scope.websiteKey+'content/'+table.id +'-schema.json', JSON.parse(angular.toJson(schema) ) );
+
+            };
+            $scope.createData = function (table) {
+
+                $scope.saveJson($scope.userBucket,$scope.websiteKey+'content/'+table.id+'-data.json',JSON.parse(angular.toJson(empty)));
+            }
+            $scope.saveData = function(table,data) {
+
+                var tableCollection = $scope.tableJson;
+                if (tableCollection.length)
+                    for (var i = 0; i < tableCollection.length; i++) {
+                        if (tableCollection[i].id == table.id) {
+                            return;
+                        }
+                        if (i + 1 == tableCollection.length) {
+                            tableCollection.push(table);
+                            $scope.saveJson($scope.userBucket,  $scope.websiteKey + 'json/tableCollection.json', JSON.parse(angular.toJson(tableCollection)));
+                            return;
+                        }
+                    }
+                else{
+                    tableCollection.push(table);
+                    $scope.saveJson($scope.userBucket,  $scope.websiteKey + 'json/tableCollection.json',JSON.parse(angular.toJson(tableCollection) ));
+                }                
+            }
+
+                $scope.loadNewsletterData = function () {
+                    return new Promise(function (resolve, reject) {
+                        $scope.getJson($scope.userBucket, $scope.websiteKey + 'content/newsletter-data.json').then(function (json) {
+                            $scope.$apply(function () {
+                                $scope.tableJson = json;
+                            });
+                            resolve();
+                        });
+                    });
+                }
+
+
+        }
+    };
+    return dazzleNewsletter;
+});
+
+function DialogController($scope, $mdDialog) {
+
+                $scope.model = {
+                    "sender":"",
+                    "receiver":"",
+                    "subject":"",
+                    "test":true
+                };
+
+                $scope.hide = function() {
+                  $mdDialog.hide();
+                };
+
+                $scope.cancel = function() {
+                  $mdDialog.cancel();
+                };
+
+                $scope.test = function() {
+                    $scope.model.test= true;
+                  $mdDialog.hide($scope.model);
+                };
+                $scope.send = function() {
+                    $scope.model.test= false;
+                  $mdDialog.hide($scope.model);
+                };
+}

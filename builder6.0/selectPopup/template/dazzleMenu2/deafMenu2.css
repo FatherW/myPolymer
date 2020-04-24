@@ -1,0 +1,38 @@
+.ddsmoothmenu ul {
+    z-index: 100;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.ddsmoothmenu ul li {
+    position: relative;
+    display: inline;
+    float: left;
+    margin: 4px;
+    height: 40px;
+    line-height: 40px;
+    /* background-color: red; */
+    padding: 0 10px;
+    background: -webkit-linear-gradient(#b4dc32, rgba(180, 220, 50, 0.39));
+    background: -o-linear-gradient(#b4dc32, rgba(180, 220, 50, 0.39));
+    background: -moz-linear-gradient(#b4dc32, rgba(180, 220, 50, 0.39));
+    background: linear-gradient(#b4dc32, rgba(180, 220, 50, 0.39));
+}
+
+.ddsmoothmenu ul li a:link, .ddsmoothmenu ul li a:visited {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.ddsmoothmenu ul li a {
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 0px;
+    margin: 0px;
+    height: 40px;
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}

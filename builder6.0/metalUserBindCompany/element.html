@@ -1,0 +1,17 @@
+<div ng-if="user['user_company']">
+    <h3>你的公司頁:{{user['user_company']}}</h3>
+	<a ng-href="/node/{{user['company_id']}}" value="編輯公司頁" class="form-btn next_btn">編輯公司頁</a>
+    <input type="button" class="form-submit form-btn" value="綁定"  ng-click="updateCompanyPage()">
+        
+</div>
+<div ng-if="isAdmin()">
+    <h3>新增私人公司頁</h3>
+     <input type="button" class="form-submit form-btn" value="新增"  ng-click="addMyCompanyPage()">
+</div>
+
+<div ng-if="!user['user_company']">
+    <h3>未有公司頁</h3>
+     <input type="button" class="form-submit form-btn" value="新增公司頁"  ng-click="addCompanyPage()">
+</div>
+
+	

@@ -1,0 +1,63 @@
+<div class="col-lg-12 col-md-12 hidden-xs clearPaddingLR">
+    <ol id="menu1" class="ng-scope">
+        <li ng-repeat="item in model.menu" class="ng-binding" style=""><a ng-href="{{item.link}}">{{item.title}}</a>
+            <ul ng-if="item.list.length">
+                <li class="ng-binding" ng-repeat="subitem in item.list"><a ng-href="{{subitem.link}}">{{subitem.title}}</a></li>
+            </ul>
+        </li>
+    </ol>
+</div>
+<div class="hidden-lg hidden-sm hidden-md col-xs-12 clearPaddingLR">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="logo_img navbar-brand-left">
+                    <img src="http://hkfspa2.dazzle.website/image/mobile_logo_left_white.png">
+                </div>
+                <div class="logo_img navbar-brand-center">
+                    <!--<img src="http://hkfspa2.dazzle.website/image/logo.png">-->
+                    <img src="http://hkfspa2.dazzle.website/image/mobile_center_logo.png">
+                </div>
+            </div>
+            <div class="navbar-collapse collapse ng-scope" id="myNavbar" aria-expanded="false" style="height: 1px;">
+                <div class="mobile_row">
+                    <div class="col-md-5 col-xs-5 mobileRow mobileSize changeText">
+                        <span myangular-click="changeText('small')" class="small">A</span>
+                        <span myangular-click="changeText('medium')" class="medium">A</span>
+                        <span myangular-click="changeText('large')" class="large">A</span>
+                    </div>
+                    <div class="col-md-7 col-xs-7 mobileRow mobileLang">
+                        <a href="#">EN</a> <span class="stroke">|</span>
+                        <a href="#">繁 </a><span class="stroke">|</span>
+                        <a href="#">簡 </a><span class="stroke">|</span>
+                    </div>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" ng-repeat="item in model.menu">
+                        <a ng-if="item.list.length==0" ng-href="{{item.link}}">{{item.title}}<span class="caret"></span></a>
+                        <a ng-if="item.list.length>0" class="dropdown-toggle" data-toggle="dropdown" ng-href="{{item.link}}">{{item.title}}<span class="caret"></span></a>
+                        <ul ng-if="item.list.length>0" class="dropdown-menu">
+                            <li ng-repeat="subitem in item.list"><a ng-href="{{subitem.link}}">{{subitem.title}}</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="mobile_icon_row" style="
+">
+	<span><a href="http://www.facebook.com/hkfspa" target="_blank"><i class="fa fa-facebook fa-2" aria-hidden="true"></i>FB</a></span>
+    <span><a href="http://www.twitter.com/hkfspa" target="_blank"><i class="fa fa-youtube fa-2" aria-hidden="true"></i>FB</a></span>
+    <span><a href="http://weibo.com/HKFsPA" target="_blank"><i class="fa fa-weibo fa-2" aria-hidden="true"></i>FB</a></span>
+</div>
+                <!--
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>-->
+            </div>
+        </div>
+    </nav>
+</div>

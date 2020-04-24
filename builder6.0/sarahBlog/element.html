@@ -1,0 +1,31 @@
+<div id="dzContextMenu" class="nk-carousel-2 nk-carousel-no-margin nk-carousel-all-visible nk-blog-isotope  nk-carousel-x2 " data-dots="true">
+                            <div class="nk-carousel-inner flickity-enabled is-draggable" tabindex="0">
+                                <div class="flickity-viewport" style="height: 531px;">
+                                    
+                                    <div class="flickity-slider">
+                                        
+                                        <div style="width:33%; position:relative; float:left;" ng-repeat="k in userGallery" style="max-height:444px;">
+                                            <div>
+                                                <div class="pl-15 pr-15">
+                                                    <div class="nk-blog-post post-103 post type-post status-publish format-standard has-post-thumbnail hentry category-nature category-uncategorized">
+                                                        <div class="nk-post-thumb" style="min-height:252.22px"> 
+                                                        <a ng-href="{{k.title}}.html"> <img ng-src="{{k.src}}" alt="{{k.title}}" class="nk-img-stretch"> </a>
+                                                            <div class="nk-post-category"> <a ng-href="#">{{k.tag}}</a></div>
+                                                    </div>
+                                                    <h2 class="nk-post-title h4"><a ng-href="{{k.title}}.html" rel="bookmark">{{k.title}}</a></h2>
+                                                    <div class="nk-post-date"> {{k.date | date: mediumDate}}</div>
+                                                    <div class="nk-post-text">{{k.text}}</div>
+                                                </div>
+                                            </div>
+                                            <div class="nk-gap-1"></div>
+                                        </div>
+                                        <div style="clear:both"></div>
+                                    </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>          

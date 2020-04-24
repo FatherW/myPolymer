@@ -1,0 +1,136 @@
+<style>
+     .grid {
+        border: 1px solid #cccccc;
+        list-style: none;
+        background: #ffffff;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-transition: all 0.6s ease-out;
+        transition: all 0.6s ease-out;
+    }
+
+    .grid-img {
+        width: 100%;
+        vertical-align: middle;
+        -webkit-transition: opacity 0.6s ease-out;
+        transition: opacity 0.6s ease-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .grid-img:hover {
+        opacity: 0.6 !important;
+    }
+
+    .grid-img:hover,
+    .grid-img:focus {
+        color: #bbb;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .dynamic-grid {
+        position: relative;
+        display: none;
+    }
+
+    .dynamic-grid.angular-grid {
+        display: block;
+    }
+
+    .grid {
+        position: absolute;
+        list-style: none;
+        background: #ffffff;;
+        box-sizing: border-box;
+        -webkit-transition: all 400ms ease;
+        transition: all 400ms ease;
+        overflow: hidden;
+        border-radius: 3.5px;
+    }
+
+    .grid.ng-leave {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+    }
+
+    .grid.ng-leave.ng-leave-active {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .grid.ng-enter {
+        -webkit-transition: all ease 400ms;
+        transition: all ease 400ms;
+        -webkit-transition-delay: 500ms;
+        transition-delay: 500ms;
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    .grid.ng-enter.ng-enter-active {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .grid-img {
+        width: 100%;
+        vertical-align: middle;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .grid-img.img-loaded {
+        visibility: visible;
+        opacity: 1;
+    }
+    .search-panel{
+        width:100%;
+        height:15%;
+        display:block;
+    }
+    .dazzle-gallery {
+        width:100%;
+        height:85%;
+        display:block;
+    }
+</style>   
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>User Gallery管理</h2>
+            <span flex></span>
+            <md-button ng-click="init()">重載</md-button>
+            <md-button ng-click="newUpload()">上載</md-button>
+            <md-button ng-click="closePopup()">關閉</md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content ng-init="init()" class="model" style="min-height:650px;">
+        <div layout="row" layout-sm="column" layout-align="space-around" ng-if="!inited">
+            <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+        </div>
+            <div class="search-panel">
+                <md-chips ng-model="tags" md-removable="true" md-autofocus placeholder="搜尋關鍵字"></md-chips>
+            </div>
+            <div class="dazzle-gallery">
+                <ul class="dynamic-grid" ng-if="inited"
+                    angular-grid="userGallery"
+                    ag-options="userGalleryAngularGridOptions"
+                    ag-infinite-scroll="loadMore()">
+                    <li data-ng-repeat="image in userGallery" class="grid">
+                        <img ng-click="choose(image)"  ng-src="{{getFileUrl('small-web',image.gid)}}" class="grid-img"/>
+                    </li>
+                </ul>
+            </div>
+
+
+    </md-dialog-content>

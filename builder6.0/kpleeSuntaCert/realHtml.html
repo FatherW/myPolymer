@@ -1,0 +1,60 @@
+<table class="newTable packingTable" st-table="displayedCollection" st-safe-src="items">
+        <thead>
+            <tr class="filterWrapper">
+                <th colspan="5">
+                    <div class="filter_search1">
+                        <div class="dateInput">
+                            <span>&#x985E;&#x522B;&#xFF1A;</span>
+                            <p class="input-group select-categroup">
+                                <select class="form-control" ng-model="getType" ng-change="changeType(getType)" id="catagory">
+                                    <option value="">All</option>
+        							<option value="Engineerling">Engineerling</option>
+									<option value="Commodity Plastic">Commodity Plastic</option>
+								</select>
+                            </p>
+                            <span>&#x5206;&#x985E;&#xFF1A;</span>
+                            <p class="input-group select-categroup">
+                                <select id="Select2" class="form-control" ng-model="getCateId" ng-change="changeCate(getCateId)">
+                                    <option value="">All</option>
+                                    <option ng-repeat="producerCateItem in cateItems[getType]" ng-selected="producerCateItem.cate_id==getCateId" value="{{producerCateItem.cate_id}}">{{producerCateItem.name2}}</option>
+                                </select>
+                            </p>
+                            <input st-search="" type="text" class="inputBox form-control column hidden-xs" placeholder="&#x95DC;&#x9375;&#x5B57;" ng-model="keyWrod">
+                        </div>
+                        <!--<div class="icon-search" ng-click="goSearch()"></div>-->
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                			<th class="column hidden-xs">CATEGORY</th>
+			  				<th>ORIGIN</th>
+			  				<th>PRODUCER</th>
+			  				<th>MODEL NO</th>
+			  				<th>CERTIFICATES (Click to download)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="row in displayedCollection">
+                			<td class="column hidden-xs">{{cateObject[row.cate_id].name2}}</td>
+			  				<td>{{row.orgin2}}</td>
+			  				<td>{{row.producer2}}</td>
+			  				<td>{{row.model_no}}</td>
+			  				<td class="cert_row">
+			  					<div ng-repeat="pdfrow in pdfObject[row.cert_id]" class="pdf"><a target="_blank" ng-href="{{pdfrow.pdf_link}}">{{pdfrow.pdf_name}}</a></div>
+			  					<!--<div class="pdf"><a href="#">MSDS</a></div>
+			  					<div class="pdf"><a href="#">ROHS</a></div>
+			  					<div class="pdf"><a href="#">SPEC</a></div>
+			  					<div class="pdf"><a href="#">UL</a></div>
+			  					<div class="pdf"><a href="#">EU</a></div>
+			  					<div class="pdf"><a href="#">ROHS</a></div>-->
+			  				</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7"></div>
+                </td>
+            </tr>
+        </tfoot>
+    </table>

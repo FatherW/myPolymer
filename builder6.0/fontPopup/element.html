@@ -1,0 +1,74 @@
+    <form ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>字款管理員</h2>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content" style="min-height: 400px;">
+                <md-tabs md-dynamic-height md-border-bottom md-selected="selectedIndex">
+                    <md-tab label="選擇字款">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                                <md-input-container flex="50">
+                                
+                                    <md-select ng-model="currentFont">
+                                        <md-option ng-value="font"
+                                                   ng-repeat="font in csss track by $index"
+                                                   ng-click="selectFont(font)">
+                                                   {{font.label? font.label:'開新字款'}}
+                                        </md-option>
+                                    </md-select>
+                                    <md-button ng-click="edit(font)">
+                                           編輯 
+                                    </md-button ng-click="add()">
+                                    <md-button>
+                                           新增 
+                                    </md-button>
+                                    <md-button ng-click="del(font)">
+                                           刪除 
+                                    </md-button>
+
+                                </md-input-container>
+                            </div>
+                        </md-content>
+                    </md-tab>
+                    <md-tab label="CSS設定" md-on-select="needAddHttp = true" md-on-deselect="needAddHttp = false">
+                        <md-content class="md-padding">
+                            <div layout="row">
+                              <form name="cssForm">
+                                <md-input-container md-no-float flex="100">
+                                     <label>CSS 名稱</label>
+                                     <input required ng-model="currentFont.label">
+                                </md-input-container>
+                                <md-input-container md-no-float flex="100">
+                                     <textarea ng-model="currentFont.text" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+                                    <md-button type="submit" aria-label="save" class="md-raised md-primary"
+                                       ng-click="saveCSS(currentFont)">
+                                        <i class="fa fa-2x fa-floppy-o"></i>  儲存
+                                    </md-button>
+                                </md-input-container>
+                              </form>
+                            </div>
+                        </md-content>
+                    </md-tab>
+
+                </md-tabs>
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <md-button ng-click="cancelFont()">
+                取消鏈結
+            </md-button>
+            <span flex></span>
+            <md-button ng-click="cancel()">
+                取消
+            </md-button>
+            <md-button ng-click="save()">
+                儲存
+            </md-button>
+        </md-dialog-actions>
+
+    </form>

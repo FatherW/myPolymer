@@ -1,0 +1,308 @@
+    <style class="">
+  .label-required {
+    color:red;
+  } 
+  legend {
+    margin-bottom: 10px;
+  }
+  img.image-thumbnail {
+    max-width: 100px;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+  }
+  .fileinputbox {
+    position: absolute;
+    opacity: 0;
+    width: 0px;
+ }
+ .myForm{
+ 	margin:2em;
+ 	width:70%;
+ }
+</style>
+
+
+<div class="myformWrapper">
+<div class="row well2">
+<form id="獎學金申請" class="myForm ng-pristine ng-invalid ng-invalid-required ng-valid-email" name="myForm" ng-init="formdata={};hostname='dazzle-user-www.yesican.org.hk';formname='獎學金申請';receiveemail='';websiteKey='website/原來我都得獎學金/'">
+    <div class="form-group" style="">
+        <div>
+            <div class="">
+                <label for="姓名(中文)" class="ng-binding">姓名(中文)</label> <span class="label-required">(* 必須填寫)</span>
+                <input type="text" ng-model="formdata['姓名(中文)']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="姓名(中文)" placeholder="Name in Chinese if applicable (Surname first)" required="required" aria-invalid="true">
+                <small id="emailHelp" class="form-text text-muted">(先寫姓氏)</small>
+
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required">(* 必須填寫)</span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div class="form-group">
+        <div>
+            <div class="">
+                <label for="姓名(英文)" class="ng-binding">姓名(英文)</label> <span class="label-required">(* 必須填寫)</span>
+                <input type="text" ng-model="formdata['姓名(英文)']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="姓名(英文)" placeholder="Name in English (surname first)" required="required" aria-invalid="true">
+                <small id="emailHelp" class="form-text text-muted">(先寫姓氏，如：Chan Siu Ming Peter)</small>
+
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required">(* 必須填寫)</span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div class="form-group">
+        <div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div class="">
+                <label class="ng-binding">性別(Gender)</label><span class="label-required">(* 必須填寫)</span>
+                <div class="">
+                    <label for="性別(Gender)" class="form-check-label">
+                        <input value="M 男" name="性別(Gender)" type="radio" ng-model="formdata['性別(Gender)']" class="form-check-input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="性別(Gender)_0" required="required" aria-invalid="true"> M 男
+                    </label>
+                </div><div class="">
+                    <label for="性別(Gender)" class="form-check-label">
+                        <input value="F 女" name="性別(Gender)" type="radio" ng-model="formdata['性別(Gender)']" class="form-check-input ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="性別(Gender)_1" required="required" aria-invalid="true"> F 女
+                    </label>
+                </div>
+            </div>
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required">(* 必須填寫)</span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div class="form-group">
+        <div>
+            <div class="">
+                <label for="電話" class="ng-binding">電話</label> <span class="label-required">(* 必須填寫)</span>
+                <input type="text" ng-model="formdata['電話']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="電話" placeholder="Phone Number" required="required" aria-invalid="true">
+                <small id="emailHelp" class="form-text text-muted"></small>
+
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required">(* 必須填寫)</span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div class="form-group">
+        <div>
+            
+            
+            
+            
+            
+            
+            <div class="">
+                <label for="電郵" class="ng-binding">電郵</label> <span class="label-required">(* 必須填寫) (注意: 電郵將為日後登入及通訊之用, 請確保電郵正確)</span>
+                <input type="email" ng-model="formdata['電郵']" class="form-control ng-pristine ng-untouched ng-empty ng-valid-email ng-invalid ng-invalid-required" id="電郵" placeholder="Email Address" required="required" aria-invalid="true">
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required">(* 必須填寫)</span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div class="form-group">
+        <div>
+            
+            
+            
+            
+            
+            
+            <div class="">
+                <label for="密碼" class="ng-binding">密碼</label> <span class="label-required">(* 必須填寫) (注意: 日後登入將使用此密碼，敬希注意。)</span>
+                <input type="text" ng-model="formdata['password']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="password" placeholder="密碼" required="required" aria-invalid="true">
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required">(* 必須填寫)</span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div class="form-group">
+        <div>
+            <div class="">
+                <label for="學校名稱 (中文)" class="ng-binding">學校名稱 (中文)</label> <span class="label-required">(* 必須填寫)</span>
+                <input type="text" ng-model="formdata['學校名稱 (中文)']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="學校名稱 (中文)" placeholder="" required="required" aria-invalid="true">
+                <small id="emailHelp" class="form-text text-muted"></small>
+
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required">(* 必須填寫)</span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div class="form-group">
+        <div>
+            <div class="">
+                <label for="Name of School (English)" class="ng-binding">Name of School (English)</label> <span class="label-required">(* 必須填寫)</span>
+                <input type="text" ng-model="formdata['Name of School (English)']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="Name of School (English)" placeholder="" required="required" aria-invalid="true">
+                <small id="emailHelp" class="form-text text-muted"></small>
+
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required">(* 必須填寫)</span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div><div class="form-group">
+        <div>
+            <div class="">
+                <label for="班別" class="ng-binding">班別</label> <span class="label-required">(* 必須填寫)</span>
+                <input type="text" ng-model="formdata['班別']" class="form-control ng-pristine ng-untouched ng-empty ng-invalid ng-invalid-required" id="班別" placeholder="Form" required="required" aria-invalid="true">
+                <small id="emailHelp" class="form-text text-muted"></small>
+
+            </div>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <div>
+                <!--
+            <label for="{{f.headerName}}">{{f.headerName}}</label> <span class="label-required">(* 必須填寫)</span>
+            <input type="text" ng-model="formdata['{{f.headerName}}']" class="form-control" id="{{f.headerName}}" placeholder="{{f.default}}">
+            -->
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-click="submitMyForm()">提交<br>Submit</button>
+</form>
+
+
+
+</div>
+</div>

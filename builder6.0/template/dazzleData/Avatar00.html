@@ -1,0 +1,32 @@
+<form>
+	<label for="predicate">selected predicate:</label>
+	<select class="form-control" id="predicate" ng-model="selectedPredicate" ng-options="item.firstName for item in model.data"></select>
+</form>
+<table st-table="rowCollection" class="table table-striped" ng-init="loadData()">
+	<thead>
+	<tr>
+		<th st-sort="firstName">first name</th>
+		<th st-sort="lastName">last name</th>
+		<th st-sort="birthDate">birth date</th>
+		<th st-sort="balance">balance</th>
+		<th>email</th>
+	</tr>
+	<tr>
+		
+		<th colspan="3">
+			<input st-search placeholder="global search" class="input-sm form-control" type="search"/>
+		</th>
+		
+	</tr>
+	</thead>
+	<tbody>
+	<tr ng-repeat="item in model.data">
+		<td>{{item.firstName | uppercase}}</td>
+		<td>{{item.lastName}}</td>
+		<td>{{item.birthDate | date}}</td>
+		<td>{{item.balance}}</td>
+		<td><a ng-href="mailto:{{item.email}}">email</a></td>
+	</tr>
+	</tbody>
+</table>
+

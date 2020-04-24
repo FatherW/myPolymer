@@ -1,0 +1,10 @@
+
+        <link rel="stylesheet" href="https://d25k6mzsu7mq5l.cloudfront.net/builder6.0/dazzleDataGallery/images-grid.css">
+        <div id="gallery1" class="imgs-grid imgs-grid-5">
+        
+            <div ng-repeat="item in model.gallery" class="imgs-grid-image">
+                <div class="image-wrap">
+                  <img ng-src="https://{{item['bucket']}}.s3.amazonaws.com/{{item['path']}}">
+                 </div>
+            </div>
+        </div>

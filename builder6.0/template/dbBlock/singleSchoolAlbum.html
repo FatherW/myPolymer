@@ -1,0 +1,11 @@
+
+<h4>相簿</h4>
+
+<div id="album">
+    <ul>
+        <li myangular-repeat="i in model['Albums']">
+            <img myangular-src="http://[[i.bucket]].s3.amazonaws.com/[[i.path]]">
+        </li>
+    </ul>
+    
+</div>

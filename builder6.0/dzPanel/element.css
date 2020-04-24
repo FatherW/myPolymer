@@ -1,0 +1,12 @@
+#dzPos{
+    background-color:green;
+    color:white;
+    font-size:8px;
+    max-width:35px;
+}
+
+#dzButton {
+    position: absolute;
+    top: 0%;
+    right: 0%;
+}

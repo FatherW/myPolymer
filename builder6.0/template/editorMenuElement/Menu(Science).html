@@ -1,0 +1,18 @@
+<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <div class="w3menu navbar-right">
+            <div class="container-fluid">
+					<ul class="nav navbar">
+						<li ng-repeat="item in model.menu"  ng-class="{'active':$index==0,'dropdown':item.list.length}">
+						<a ng-href="{{item.link}}">{{item.title}}</a>
+    						<ul ng-if="item.list.length" class="agile_short_dropdown">
+    									<li ng-repeat="subitem in item.list"><a href="{{subitem.link}}">{{subitem.title}}</a></li>
+    						</ul>
+    					</li>
+					</ul>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>	
+
+                
+              

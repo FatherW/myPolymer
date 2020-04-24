@@ -1,0 +1,43 @@
+<table class="views-table cols-7">
+    <thead>
+    <tr>
+        <th class="views-field views-field-field-notime">
+            日期
+        </th>
+        <th class="views-field views-field-title">
+            講題
+        </th>
+        <th class="views-field views-field-field-essay">
+            經文
+        </th>
+        <th class="views-field views-field-field-speaker2">
+            講員
+        </th>
+        <th class="views-field views-field-field-audio">
+            錄音
+        </th>
+        <th class="views-field views-field-field-video">
+            錄影
+        </th>
+        <th class="views-field views-field-field-magazine">
+            簡報
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="item in model.news | orderBy:'publishDate':true | limitTo:2">
+        <td class="views-field views-field-field-notime">
+            <span class="date-display-single">{{item['publishDate']}}</span> ({{item['timeslot']}})
+        </td>
+        <td class="views-field views-field-title">
+            {{item['title']}}
+        </td>
+        <td class="views-field views-field-field-essay">
+            {{item['script']}}
+        </td>
+        <td class="views-field views-field-field-speaker2">
+            {{item['speaker']}}
+        </td>
+    </tr>
+    </tbody>
+</table>

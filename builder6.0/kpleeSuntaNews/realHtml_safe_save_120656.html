@@ -1,0 +1,177 @@
+<form id="memberDetail" ng-controller="memberDetailController" class="ng-pristine ng-valid ng-scope">
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">會員編號:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.userid" ng-disabled="true" disabled="disabled">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">中文姓名:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.chinesename" ng-disabled="true" disabled="disabled">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">英文姓名:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.englishname" ng-disabled="true" disabled="disabled">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">出生日期:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.birthday" ng-disabled="true" disabled="disabled">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">性別:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.gender" ng-disabled="true" disabled="disabled">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">電郵:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.email">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">籍貫:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.homeland">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">宗教:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.religion">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">銀行號碼:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <input class="form-control ng-pristine ng-untouched ng-valid" type="text" ng-model="user.bank">
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <input class="form-control ng-pristine ng-untouched ng-valid" type="text" ng-model="user.bankaccount">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">手提電話:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <input class="form-control ng-pristine ng-untouched ng-valid" type="text" ng-model="user.mobilezip" ng-disabled="true" disabled="disabled">
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <input class="form-control ng-pristine ng-untouched ng-valid" type="text" ng-model="user.mobilenumber" ng-disabled="true" disabled="disabled">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">住宅電話:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <input class="form-control ng-pristine ng-untouched ng-valid" type="text" ng-model="user.homezip">
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <input class="form-control ng-pristine ng-untouched ng-valid" type="text" ng-model="user.homenumber">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">辦公室電話:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xs-12">
+                    <input class="form-control ng-pristine ng-untouched ng-valid" type="text" ng-model="user.officezip">
+                </div>
+                <div class="col-lg-8 col-md-8 col-xs-12">
+                    <input class="form-control ng-pristine ng-untouched ng-valid" type="text" ng-model="user.officenumber">
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">其他電話:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.othernumber">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">地址:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.address">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">介紹人:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="text" ng-model="user.referid" ng-disabled="true" disabled="disabled">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <div class="form-group row">
+        <div class="col-lg-3 col-md-4 col-xs-5">
+            <label class="pull-right col-form-label">登入密碼:</label>
+        </div>
+        <div class="col-lg-6 col-md-8 col-xs-7">
+            <input class="form-control input-md ng-pristine ng-untouched ng-valid" type="password" ng-model="user.password">
+        </div>
+        <div class="col-lg-2 hidden-md hidden-xs"></div>
+    </div>
+    <button class="btn btn-primary pull-right" ng-click="save()">保存</button>
+</form>

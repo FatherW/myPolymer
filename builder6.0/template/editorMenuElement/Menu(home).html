@@ -1,0 +1,14 @@
+<div class="menu_block ">
+                        <a href="#" class="donate">DONATE</a>
+                        <div class="clear"></div>
+                        <nav class="horizontal-nav full-width horizontalNav-notprocessed">
+                            <ul class="sf-menu">
+                                <li><a href="index.html" class="current">Home</a></li>
+                                <li ng-repeat="item in model.menu" ng-if="item.title!='Home'">
+                                
+                                <a ng-href="{{item.link}}">{{item.title}}</a></li>
+
+                            </ul>
+                        </nav>
+                        <div class="clear"></div>
+                    </div>

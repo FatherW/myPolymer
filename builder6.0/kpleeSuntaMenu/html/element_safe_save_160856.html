@@ -1,0 +1,42 @@
+<!--<nav class="myangular-scope" context-menu="menuOptions">
+    <ul id="mainmenu">
+        <li myangular-repeat="m in model.menu">
+            <a myangular-href="{{m.link}}">{{m.title}}</a>
+            <ul>
+                <li myangular-repeat="sm in m.list">
+                    <a myangular-href="{{sm.link}}">{{sm.title}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+-->
+<div context-menu="menuOptions" class="menu">
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".example-navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" style="display: none;">Dazzle</a>
+        </div>
+        <div class="collapse navbar-collapse example-navbar-collapse">
+            <ul class="nav navbar-nav" id="menu-first-level">
+                <li myangular-repeat="item in model.menu" class="dropdown">
+                    <a myangular-href="{{item.link}}" draggable="false" class="page-scroll" myangular-bind="item.title"></a>
+                    <ul class="dropdown-menu" myangular-if="item.list.length>0" id="menu-second-level">
+                        <li myangular-repeat="subitem in item.list">
+                        	<a myangular-if="subitem.title!=''" class="page-scroll" myangular-href="{{subitem.link}}" draggable="false" myangular-bind="subitem.title"></a>
+                        	<ul class="third-menu" myangular-if="subitem.list.length>0" id="menu-third-level">
+                        			<li myangular-repeat="thirditem in subitem.list"><a myangular-href="{{thirditem.link}}" myangular-bind="thirditem.title"></a></li>
+                        	</ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+

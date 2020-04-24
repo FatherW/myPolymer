@@ -3,6 +3,7 @@
 <link rel="import" href="../paper-fab-speed-dial/paper-fab-speed-dial-action.html?id=sdfjsl">
 <link rel="import" href="../iron-icons/iron-icons.html">
 <link rel="import" href="../dz-dazzle/dz-dazzle2.html">
+<link rel="import" href="../dz-dazzle/dz-dazzle.html">
 <!--
 A material design [Floating Action Button with Speed Dial](https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-transitions)
 
@@ -76,6 +77,7 @@ Style                                                   | Description
 			<paper-fab-speed-dial-action icon="icons:print">Print</paper-fab-speed-dial-action>
 		</paper-fab-speed-dial> -->
 		<dz-dazzle2></dz-dazzle2>
+			<dz-dazzle></dz-dazzle>
 	</template>
 </dom-module>
 
@@ -116,7 +118,10 @@ Style                                                   | Description
 		},
 		help:function(e,detail){
 				var url = prompt("請輸入匯入連結");
-				this.dzPage.import(url);
+				// this.dzPage.import(url);
+
+				document.dispatchEvent(new CustomEvent('img-stock', { detail: {} }));
+
 		},
 		logout: function(e,detail){
 			store.clearAll();

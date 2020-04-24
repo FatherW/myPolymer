@@ -1,0 +1,20 @@
+<!--<div id="news_detail" ng-init="loadNews()">
+    	<div id="row0" class="row" ng-repeat="item in model.news">
+            <div id="news0" class="new0 element wysiwyg-editor">
+                <a ng-href="{{item['連結']}}">{{item['標題']}}</a>
+            </div>
+        </div>
+
+</div>-->
+
+<div ng-init="loadNews()">
+<div ng-repeat="item in model.news" class="node sticky">
+<h2 class="title"><a href="http://www.cccg.org.hk/zh-hant/node/521" >{{item['標題']}}</a></h2>
+<div class="content clear-block">
+    <p><strong>{{item['內容]'}}</strong></p>
+<p><strong><a ng-href="item['檔案']" target="_blank" rel="nofollow">按此下載申請表格</a></strong></p>
+  </div>
+
+
+</div>
+</div>

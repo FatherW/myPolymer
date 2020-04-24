@@ -1,0 +1,3 @@
+<div class="logo" ng-repeat="item in model.logos">
+    <img ng-src="{{item.img}}"/>
+</div>
