@@ -784,12 +784,11 @@
 							<!---->
 							<p>
 								<button color="warn" mat-raised-button="" on-click="_login"
-									class="mat-raised-button mat-button-base mat-warn" style="
- border: none;
-padding: 5px 10px;
-color: white;
-font-size: 14px;
-"><span class="mat-button-wrapper">登入</span>
+									class="mat-raised-button mat-button-base mat-warn"
+									style="border: none;padding: 5px 10px;color: white;font-size: 14px;"><span
+										class="mat-button-wrapper">
+										登入
+									</span>
 									<div class="mat-button-ripple mat-ripple" matripple=""></div>
 									<div class="mat-button-focus-overlay"></div>
 								</button>
@@ -801,7 +800,7 @@ font-size: 14px;
 						<div class="ng-pristine ng-untouched ng-invalid" novalidate="">
 							<div>
 								<div class="group">
-									<input aria-invalid="false"
+									<input id="uid" aria-invalid="false"
 										class="input ng-pristine ng-untouched ng-empty ng-invalid" id="uid"
 										formcontrolname="uid" placeholder="用戶ID" type="text">
 								</div>
@@ -809,7 +808,7 @@ font-size: 14px;
 							<!---->
 							<div>
 								<div class="group">
-									<input aria-invalid="false"
+									<input id="uPhone" aria-invalid="false"
 										class="input ng-pristine ng-untouched ng-empty ng-invalid" id="uid"
 										formcontrolname="uid" placeholder="手提電話" type="text">
 								</div>
@@ -817,15 +816,17 @@ font-size: 14px;
 							<!---->
 							<div>
 								<div class="group">
-									<input aria-invalid="false"
+									<input id="uEmail" aria-invalid="false"
 										class="input ng-pristine ng-untouched ng-empty ng-invalid" id="uid"
 										formcontrolname="uid" placeholder="電郵" type="text">
 								</div>
 							</div>
 							<!---->
 							<p>
-								<button color="warn" mat-raised-button="" on-click="_login"
-									class="mat-raised-button mat-button-base mat-warn" style="border: none;padding: 5px 10px;color: white;font-size: 14px;"><span class="mat-button-wrapper">
+								<button color="warn" mat-raised-button="" on-click="_register"
+									class="mat-raised-button mat-button-base mat-warn"
+									style="border: none;padding: 5px 10px;color: white;font-size: 14px;"><span
+										class="mat-button-wrapper">
 										註冊
 									</span>
 									<div class="mat-button-ripple mat-ripple" matripple=""></div>
@@ -840,14 +841,18 @@ font-size: 14px;
 		<!-- <iron-ajax id="ajax" auto url="https://37nolo3390.execute-api.ap-northeast-1.amazonaws.com/prod" params='{"uid":"dnamatch", "password":"phy3math4", "type": "loginByUidPasswrd"}' handle-as="json" on-response="handleResponse" > </iron-ajax> -->
 
 	</template> </dom-module>
-<script> (function () {
+<script>
+	(function () {
 		Polymer({
-			is: 'dz-login', properties: {}
-			, created: function () {
+			is: 'dz-login',
+			properties: {}
+			,
+			created: function () {
 				this.loadScript("https://d25k6mzsu7mq5l.cloudfront.net/cdn7.2/js/data.common.js");
 				this.thisPage = decodeURIComponent(window.location.pathname).substring(window.location.pathname.indexOf('/') + 1) || 'index.html';
 			}
-			, _login: function () {
+			,
+			_login: function () {
 				console.log('Login');
 				let shadow = this.shadowRoot;
 				let that = this;
@@ -880,10 +885,42 @@ font-size: 14px;
 				}
 				);
 			}
-			, handleResponse: function (response) {
+			,
+			_register: function () {
+				// console.log('Register');
+				let shadow = this.shadowRoot;
+				let that = this;
+				let uid = shadow.querySelector('#uid').value;
+				let uPhone = shadow.querySelector('#uPhone').value;
+				let uEmail = shadow.querySelector('#uEmail').value;
+				let fileManager = new DataPackage('token');
+				let registerUrl = "https://d8fz9pfue5.execute-api.ap-northeast-1.amazonaws.com/prod/newMiscDazzleFunction";
+				let params = {
+					"action": "register",
+					"user": {
+						"uid": uid,
+						"phone": uPhone,
+						"email": uEmail
+					}
+				};
+				this.postData(registerUrl, params).then(res => {
+					if (res.code > 0) {
+						alert("成功注册");
+						
+					}
+					else {
+						console.log("Res",res);
+						alert('註冊失敗');
+					}
+				}
+				);
+			},
+
+			handleResponse: function (response) {
 				console.log('Response', response);
 			}
-			, generatePassword: function () {
+			,
+			generatePassword: function () {
 				var length = 16, charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", retVal = "";
 				for (var i = 0, n = charset.length;
 					i < length;
@@ -892,15 +929,17 @@ font-size: 14px;
 				}
 				return retVal;
 			}
-			, loadScript: function (url) {
+			,
+			loadScript: function (url) {
 				const fileref = document.createElement('script');
 				fileref.setAttribute("type", "text/javascript");
 				fileref.setAttribute("src", url + "?id=" + new Date().getTime());
 				document.getElementsByTagName("head")[0].appendChild(fileref);
 			}
-			, postData: function (url, data) {
+			,
+			postData: function (url, data) {
 				// Default options are marked with *
-				console.log('Post Data');
+				// console.log('Post Data');
 				return new Promise(function (resolve, reject) {
 					fetch(url, {
 						body: JSON.stringify(data), // must match 'Content-Type' header
