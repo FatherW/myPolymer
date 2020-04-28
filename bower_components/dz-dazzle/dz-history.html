@@ -61,10 +61,14 @@
 
                         <!-- 第二行 -->
                         <vaadin-horizontal-layout theme="spacing-s">
-                            <vaadin-text-field label="電話" theme="small"></vaadin-text-field>
+                            <vaadin-text-field id='SMS' label="電話" theme="small"></vaadin-text-field>
                             <vaadin-button id="popSms" style="top: 31px" theme="small">發送短訊驗證碼</vaadin-button>
-                            <vaadin-email-field label="電郵" name="email" error-message="請輸入正確的郵箱地址" theme="small"
-                                clear-button-visible></vaadin-email-field>
+                            <div id="bar2">
+                            </div>
+
+
+                            <vaadin-email-field id='Email1' label="電郵" name="email" error-message="請輸入正確的郵箱地址"
+                                theme="small" clear-button-visible></vaadin-email-field>
                             <vaadin-button id="email" style="top: 31px" theme="small">發送郵箱驗證碼</vaadin-button>
                         </vaadin-horizontal-layout>
                         <!-- 第二行 -->
@@ -85,7 +89,12 @@
                             <vaadin-date-picker readonly label="到期日期" value="1990-01-28"></vaadin-date-picker>
                         </vaadin-horizontal-layout>
                         <br>
-                        <vaadin-text-field label="每月扣除" theme="small">每月扣除</vaadin-text-field>
+                        <vaadin-text-field name="a" label="每月扣除" theme="small"></vaadin-text-field>
+                        <vaadin-number-field id="a" label="每月扣除a" theme="small"></vaadin-number-field>
+                        <vaadin-number-field id="b" label="每月扣除b" theme="small"></vaadin-number-field>
+                         <div id="bar">
+                        </div> 
+                        <vaadin-button id="onePlusOne" style="top: 31px" theme="small">一加一</vaadin-button>
                         </vaadin-horizontal-layout>
                     </vaadin-vertical-layout>
                 </page>
@@ -136,9 +145,15 @@
                         let comId = detail.component;
                         let width = detail.width;
                         let height = detail.height;
-                        console.log('Target', e);
+                        console.log('Target', e.detail);
+
                         dialog.renderer = function (root, dialog) {
-                            root.innerHTML = '<' + comId + '></' + comId + '>';
+                            let elm = document.createElement(comId);
+                            // elm.detail = e.detail;
+                            elm.ans = e.detail.ans;
+                            // elm.setAttribute('detail',e.detail);
+                            root.appendChild(elm);
+                            // root.innerHTML = '<' + comId + '></' + comId + '>';
                         };
                         dialog.resizable = true;
                         dialog.resize(width, height);
@@ -146,16 +161,11 @@
                     });
 
                 });
-
-
-
-
-
             },
 
             ready() {
                 let shadow = this.shadowRoot;
-
+                let that = this;
                 // 上載BR的button
                 let button1 = shadow.querySelector('#br');
                 let json1 = { 'component': 'dz-file-management', 'width': '90%', 'height': '90%' };
@@ -165,17 +175,51 @@
 
                 // 發短信button
                 let button2 = shadow.querySelector('#popSms');
+                button2.onclick = function () {
+                    button2.disabled = true;   //当点击后倒计时时候不能点击此按钮
+                    var time = 60;   //倒计时60秒
+                    var timer = setInterval(fun1, 1000);    //设置定时器
+                    function fun1() {
+                        time--;
+                        if (time >= 0) {
+                            button2.innerHTML = time + "s後重新發送";
+                        } else {
+                            button2.innerHTML = "重新發送驗證碼";
+                            button2.disabled = false;    //倒计时结束能够重新点击发送的按钮
+                            clearTimeout(timer);    //清除定时器
+                            time = 5;   //设置循环重新开始条件
+                        }
+                    }
+                }
                 let json2 = { 'component': 'dz-sms', 'width': '45%', 'height': '25%' };
                 button2.addEventListener('click', e => {
-                    Polymer.apiLibrary.sendSMS('91764463','Hello, 王國全');
+                    var SMS = shadow.querySelector('#SMS').value;
+                    Polymer.apiLibrary.sendSMS(SMS, 'Hello, 王國全');
                     document.dispatchEvent(new CustomEvent('dz-popup', { 'detail': json2 }));
                 });
 
                 // 發email的button
                 let button3 = shadow.querySelector('#email');
+                button3.onclick = function () {
+                    button3.disabled = true;   //当点击后倒计时时候不能点击此按钮
+                    var time = 60;   //倒计时60秒
+                    var timer = setInterval(fun1, 1000);    //设置定时器
+                    function fun1() {
+                        time--;
+                        if (time >= 0) {
+                            button3.innerHTML = time + "s後重新發送";
+                        } else {
+                            button3.innerHTML = "重新發送驗證碼";
+                            button3.disabled = false;    //倒计时结束能够重新点击发送的按钮
+                            clearTimeout(timer);    //清除定时器
+                            time = 5;   //设置循环重新开始条件
+                        }
+                    }
+                }
                 let json3 = { 'component': 'dz-email', 'width': '45%', 'height': '25%' };
                 button3.addEventListener('click', e => {
-                    Polymer.apiLibrary.sendEmail('673051389@qq.com','666','66666')
+                    var Email1 = shadow.querySelector('#Email1').value;
+                    Polymer.apiLibrary.sendEmail(Email1, '666', '66666')
                     document.dispatchEvent(new CustomEvent('dz-popup', { 'detail': json3 }));
                 });
 
@@ -186,11 +230,50 @@
                     document.dispatchEvent(new CustomEvent('dz-popup', { 'detail': json4 }));
                 });
 
+                // 一加一的button
+                let button5 = shadow.querySelector('#onePlusOne');
 
+                let json5 = { 'component': 'dz-increment', 'width': '45%', 'height': '25%', 'ans': 0 };
+
+                button5.addEventListener('click', e => {
+                    var a = shadow.querySelector('#a').value;
+                    var b = shadow.querySelector('#b').value;
+                    that.onePlusOne(a, b).then(ans => {
+                        shadow.querySelector("#bar").innerHTML = ans;
+                        // Polymer._ans = ans;
+                        console.log('Ans', ans);
+                        json5.ans = ans;
+                        document.dispatchEvent(new CustomEvent('dz-popup', { 'detail': json5 }));
+                    });
+                });
             },
+
             _login: function () {
 
             },
+
+            onePlusOne: function (a, b) {
+
+
+                return new Promise(function (resolve, reject) {
+                    let url = "https://d8fz9pfue5.execute-api.ap-northeast-1.amazonaws.com/prod/newMiscDazzleFunction";
+                    var action = {
+                        "action": "onePlusOne",
+                        "a": a,
+                        "b": b,
+                    }
+                    Polymer.postData(url, action).then(result => {
+                        console.log('Result', result);
+                        if (result.code > 0) {
+                            resolve(result.resolve);
+                        } else
+                            reject();
+                    });
+
+                });
+            },
+
+
 
         });
 

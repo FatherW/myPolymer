@@ -335,7 +335,7 @@
 
                 let params = {
                     Bucket: bucket,
-                    Key: 'user-data/' + window['uid'] + '/' + key,
+                    Key: 'user-data/' + Polymer.uid + '/' + key,
                     Body: string,
                     ContentType: 'text/html'
                 }
@@ -593,7 +593,7 @@
             let that = this;
             let json = {
                 "action": "addData",
-                "index": window['uid'],
+                "index": Polymer.uid,
                 "type": "_info",
                 "id": this.table,
                 "body": {
@@ -619,7 +619,7 @@
             let that = this;
             let json = {
                 "action": "createIndex",
-                "index": window['uid'] + "." + table
+                "index": Polymer.uid + "." + table
             }
             console.log(JSON.stringify(json));
             return new Promise(function (resolve, reject) {
@@ -641,7 +641,7 @@
             let that = this;
             let params = {
                 "action": "searchData",
-                "index": window['uid'],
+                "index": Polymer.uid,
                 "type": table,
                 "body": {
                     "query": {
@@ -668,7 +668,7 @@
             let that = this;
             let json = {
                 "action": "addData",
-                "index": window['uid'],
+                "index": Polymer.uid,
                 "type": table,
                 "id": id,
                 "body": data
@@ -782,7 +782,7 @@
             let that = this;
             let json = {
                 "action": "searchData",
-                "index": window['uid'],
+                "index": Polymer.uid,
                 "type": table,
                 "body": {
                     "query": {
@@ -814,7 +814,7 @@
             let that = this;
             let json = {
                 "action": "deleteData",
-                "index": window['uid'],
+                "index": Polymer.uid,
                 "type": table,
                 "id": id
             }
@@ -855,7 +855,7 @@
             let that = this;
             let json = {
                 "action": "getData",
-                "index": window['uid'],
+                "index": Polymer.uid,
                 "type": table,
                 "id": id
             }
@@ -882,7 +882,7 @@
 
             let params = {
                 "action": "addData",
-                "index": window['uid'],
+                "index": Polymer.uid,
                 "type": table,
                 "id": id,
                 "body": data
@@ -977,7 +977,9 @@
                         reject();
                 });
             });
+
         }
+      
 
         getDNS(domain) {
             return new Promise(function (resolve, reject) {
@@ -1046,6 +1048,7 @@
         }
     }
     Polymer.apiLibrary = new CommonPackage;
+
     Polymer.postData = function(url, data){
             
             return new Promise(function (resolve, reject) {
@@ -1140,7 +1143,6 @@
 
         }
     }
-
 
     Polymer.getPageContent = function (type) {
         let that = this;
