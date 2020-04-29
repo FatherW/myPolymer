@@ -36,6 +36,8 @@
             });
         }
 
+        
+
         grabPage(url) {
             let that = this;
             let params = {
@@ -497,6 +499,7 @@
                 });
             });
         }
+        
         constructColumns() {
 
             let fields = this.schema.field;
@@ -635,7 +638,6 @@
             });
         }
 
-
         matchData(json) {
             let table = this.table;
             let that = this;
@@ -690,6 +692,7 @@
             });
 
         }
+        
         getToken(token) {
             let that = this;
             let now = new Date().getTime();
@@ -714,6 +717,7 @@
             });
 
         }
+        
         saveToken(uid, token, user) {
             let table = this.table;
             let that = this;
@@ -809,6 +813,7 @@
             });
 
         }
+        
         removeData(id) {
             let table = this.table;
             let that = this;
@@ -850,6 +855,7 @@
             });
 
         }
+        
         loadData(id) {
             let table = this.table;
             let that = this;
@@ -874,6 +880,7 @@
             });
 
         }
+       
         updateData(id, data) {
             let that = this;
             let index = uid;
@@ -906,6 +913,7 @@
                     })
             });
         }
+       
         bulkUpdateData(params) {
             console.log('Params', params);
             let that = this;
