@@ -839,17 +839,15 @@
 	(function () {
 		Polymer({
 			is: 'dz-login',
-			
 			properties: {
 
 			},
-			
 			created: function () {
 				this.loadScript("https://d25k6mzsu7mq5l.cloudfront.net/cdn7.2/js/data.common.js");
 				this.thisPage = decodeURIComponent(window.location.pathname).substring(window.location.pathname.indexOf('/') + 1) || 'index.html';
 			},
-			
 			_login: function () {
+				console.log('Login');
 				let shadow = this.shadowRoot;
 				let that = this;
 				let uid = shadow.querySelector('#uid').value;
@@ -876,7 +874,6 @@
 					}
 				});
 			},
-			
 			_register: function () {
 				let shadow = this.shadowRoot;
 				let that = this;
@@ -923,6 +920,7 @@
 						"domain": uid + ".dazzle.website"
 					};
 					that.postData(registerUrl, params).then(res => {
+
 						if (res.code > 0) {
 							target.style.color = "white";
 							errMsg.innerHTML = "此ID未有人使用，可以註冊";
@@ -938,7 +936,6 @@
 			handleResponse: function (response) {
 				console.log('Response', response);
 			},
-			
 			generatePassword: function () {
 				var length = 16, charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", retVal = "";
 				for (var i = 0, n = charset.length;
@@ -948,15 +945,14 @@
 				}
 				return retVal;
 			},
-			
 			loadScript: function (url) {
 				const fileref = document.createElement('script');
 				fileref.setAttribute("type", "text/javascript");
 				fileref.setAttribute("src", url + "?id=" + new Date().getTime());
 				document.getElementsByTagName("head")[0].appendChild(fileref);
 			},
-			
 			postData: function (url, data) {
+				console.log('Json', JSON.stringify(data));
 				return new Promise(function (resolve, reject) {
 					fetch(url, {
 						body: JSON.stringify(data), // must match 'Content-Type' header
@@ -973,8 +969,10 @@
 					).then(response => {
 						resolve(response.json());
 					}) // parses response to JSON
-				});
+				}
+				);
 			}
-		});
+		}
+		);
 	})();
 </script>
