@@ -1,7 +1,31 @@
 <link rel="import" href="../polymer/polymer.html">
-<script src="https://d25k6mzsu7mq5l.cloudfront.net/cdn6.0/js/medium-editor-5.23.1.min.js"></script>
-<link rel="stylesheet" href="https://d25k6mzsu7mq5l.cloudfront.net/cdn6.0/css/medium-editor-5.23.1.min.css" />
 
+<!--
+A material design [Floating Action Button with Speed Dial](https://www.google.com/design/spec/components/buttons-floating-action-button.html#buttons-floating-action-button-transitions)
+
+### Styling
+
+Style                                                   | Description
+------------------------------------------------        | ------------
+--paper-fab-speed-dial-background                       | The background color of the Floating Action Button
+--paper-fab-speed-dial-keyboard-focus-background        | The background color of the Floating Action Button when focused
+--paper-fab-speed-dial-background-close                 | The background color of the Floating Action Button when opened
+--paper-fab-speed-dial-keyboard-focus-background-close  | The background color of the Floating Action Button when opened and focused
+--paper-fab-speed-dial-position                         | The type of positioning method used for the Floating Action Button (default: absolute)
+--paper-fab-speed-dial-right                            | Margin to the right of the screen (default: 16px)
+--paper-fab-speed-dial-bottom                           | Margin to the bottom of the screen (default: 16px)
+
+### Example
+
+```html
+<paper-fab-speed-dial>
+<paper-fab-speed-dial-action icon="icons:content-copy">Copy</paper-fab-speed-dial-action>
+<paper-fab-speed-dial-action icon="icons:print">Print</paper-fab-speed-dial-action>
+</paper-fab-speed-dial>
+```
+
+@demo demo/index.html
+-->
 <dom-module id="dz-editor">
 
 </dom-module>
@@ -20,6 +44,11 @@
 
 		created:function() {
 
+			this.dzPage = document.querySelector('dz-page');
+			this.tid = this.dzPage.tid;
+
+			this.dzPage.loadScript("https://d25k6mzsu7mq5l.cloudfront.net/cdn6.0/js/medium-editor-5.23.1.min.js");
+			this.dzPage.loadStyle("https://d25k6mzsu7mq5l.cloudfront.net/cdn6.0/css/medium-editor-5.23.1.min.css");
 			
 
 
@@ -29,7 +58,7 @@
 		},
 		loadEditor() {
     //    console.log('Load Editor',this.inUse);
-        let that = this;
+        
     
         console.log('Load　Editor');
         let SaveButton = MediumEditor.Extension.extend({
@@ -44,7 +73,6 @@
               return this.button;
           },
           handleClick: function (event) {
-                that.removeEditor();
           }
       });
     
@@ -65,7 +93,7 @@
           handleClick: function (event) {
             console.log('Anchor Selected',event);
             let text;
-            let selObj = window.getSelection(); 
+            let selObj = document.querySelector('dz-page').getSelection(); 
             console.log(selObj);
             text = selObj.toString();
             let newAnchor = document.createElement('a');
@@ -86,7 +114,7 @@
           init: function () {
               this.button = this.document.createElement('button');
               this.button.classList.add('medium-editor-action');
-              this.button.innerHTML = '<i class="fa fa-youtube-square"></i>';
+              this.button.innerHTML = '<i class="fab fa-youtube"></i>';
               this.on(this.button, 'click', this.handleClick.bind(this));
           },
           getButton: function () {
@@ -94,26 +122,7 @@
           },
           handleClick: function (event) {
              console.log('Youtube Selected');
-
-            // check youtube define yet. may prompt a purchase dialog
-            let bool = customElements.get('dz-youtube');
-            if (typeof bool === 'undefined'){
-                alert('你還未購買/下載此功能，快到我們的元件管理拿一個吧。');
-                return;
-            }
-            else
-                console.log('Bool',bool);
-
-             let html = "<img src='http://dazzle.website/image/lgo.png' />";
-              // const img: HTMLImageElement= this.renderer.createElement('img');
-           
-              let selObj = window.getSelection(); 
-              console.log(selObj);
-              let selectedText = selObj.getRangeAt(0);
-              console.log('Selection Obj',selObj);
-              let img = document.createElement("dz-youtube");
-            //   img.src = 'http://dazzle.website/image/lgo.png' ;   
-              selectedText.insertNode(img);
+    
     
           }
       });
@@ -132,7 +141,7 @@
               let html = "<img src='http://dazzle.website/image/lgo.png' />";
               // const img: HTMLImageElement= this.renderer.createElement('img');
            
-              let selObj = window.getSelection(); 
+              let selObj = document.querySelector('dz-page').getSelection(); 
               console.log(selObj);
               let selectedText = selObj.getRangeAt(0);
               console.log('Selection Obj',selObj);
@@ -244,11 +253,7 @@
         let toolbar = document.querySelector('#medium-editor-toolbar-'+id);
         // let toolbar = this.editor.getToolbarElement();
         toolbar.style.top = bound.y + c-50;
-        let top;
-        if (bound.y >=50)
-            top = bound.y + c-50;
-        else
-            top = bound.y + bound.height+ c-50;
+        let top = bound.y + c-50;
         let left;
         console.log('width',toolbar.getBoundingClientRect().width,bound.x,window.innerWidth);
         let docuW = window.innerWidth;

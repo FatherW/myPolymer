@@ -1,4 +1,17 @@
 <link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="dz-history.html">
+
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+<link rel="import" href="../iron-pages/iron-pages.html">
+<link rel="import" href="dz-vaadin.html">
+<link rel="import" href="dz-sms.html">
+<link rel="import" href="dz-email.html">
+<link rel="import" href="dz-increment.html">
+<link rel="import" href="../dz-file-management/css/style.html">
+<link rel="import" href="../dz-file-management/dz-file-management.html">
+<script src="../webcomponentsjs/webcomponents-lite.js"></script>
+
+
 <dom-module id="dz-login"> <template>
 		<style>
 			:host {
@@ -827,6 +840,7 @@
 									<div class="mat-button-ripple mat-ripple" matripple=""></div>
 									<div class="mat-button-focus-overlay"></div>
 								</button>
+								<vaadin-dialog aria-label="simple" id="dialog"></vaadin-dialog>
 								<p id="processing" style="font-size:20px;text-align:center;	"></p>
 							</p>
 						</div>
@@ -845,7 +859,34 @@
 			created: function () {
 				this.loadScript("https://d25k6mzsu7mq5l.cloudfront.net/cdn7.2/js/data.common.js");
 				this.thisPage = decodeURIComponent(window.location.pathname).substring(window.location.pathname.indexOf('/') + 1) || 'index.html';
-			},
+
+                // 用来点按钮出dialog的
+                let that = this;
+                customElements.whenDefined('vaadin-dialog').then(function () {
+                    const shadow = that.shadowRoot;
+                    const dialog = shadow.querySelector('vaadin-dialog#dialog');
+                    document.addEventListener('dz-popup', e => {
+                        let detail = e.detail;
+                        let comId = detail.component;
+                        let width = detail.width;
+                        let height = detail.height;
+                        console.log('Target', e.detail);
+
+                        dialog.renderer = function (root, dialog) {
+                            let elm = document.createElement(comId);
+                            // elm.detail = e.detail;
+                            elm.ans = e.detail.ans;
+                            // elm.setAttribute('detail',e.detail);
+                            root.appendChild(elm);
+                            // root.innerHTML = '<' + comId + '></' + comId + '>';
+                        };
+                        dialog.resizable = true;
+                        dialog.resize(width, height);
+                        dialog.opened = true;
+                    });
+
+                });
+            },
 			_login: function () {
 				console.log('Login');
 				let shadow = this.shadowRoot;
@@ -862,12 +903,14 @@
 					if (res.code > 0) {
 						let uid = res.resolve['uid'];
 						let user = res.resolve;
+						let token = res.resolve;
+						console.log("Token",token);
 						user['thisPage'] = this.thisPage;
 						store.set('user', res.resolve);
 						store.set('editMode', 'admin');
 						store.set('thisPage', this.thisPage);
-						let token = that.generatePassword();
-						console.log('Res',res.resolve);
+						store.set('token', res.resolve);
+						// let token = that.generatePassword();
 						location.reload();
 					}
 					else {
@@ -893,15 +936,19 @@
 						"email": uEmail
 					}
 				};
+				console.log('polymer',Polymer);
 
 				this.postData(registerUrl, params).then(res => {
 					if (res.code > 0) {
+						let token = res.resolve;
+						console.log("Token",token);
 						alert("成功注册");
 						processing.innerHTML = "";
 					}
-					else {
-						alert('註冊失敗');
+					else {	
 						processing.innerHTML = "出現不可預知的錯誤";
+						let json = { 'component': 'dz-history', 'width': '95%', 'height': '80%' };
+						document.dispatchEvent(new CustomEvent('dz-popup', { 'detail': json }));
 					}
 				});
 			},

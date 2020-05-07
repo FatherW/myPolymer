@@ -18,79 +18,37 @@
 		created:function() {
 			let that = this;
 			this.block = this.getAttribute('block') || '_default';
-			console.log('Block',this.block);
-			this.editMode = store.get('editMode') || 'normal';
-			// this.dzPage = document.querySelector('dz-page');
-			this.tid = document.querySelector('meta[tid]').getAttribute('tid') || '_default';
-			this.getContent('template/'+this.tid+'/_dz-block/'+this.block+'/html').then(html=>{
-				console.log('HTML',html);
+
+			// Polymer.getPageContent('css').then(css=>{
+			// 	let elm = document.createRange().createContextualFragment(css);
+			// 	elm.querySelectorAll('link').forEach(item=>{
+			// 		let href = item.getAttribute('href');
+			// 		let style = document.createElement('style');
+			// 		Polymer.getContent(href).then(html=>{
+			// 			style.innerHTML = html;
+			// 			that.appendChild(style);
+			// 		});
+			// 	});
+
+			// });
+			// console.log('Start Create','template/'+Polymer.tid+'/_dz-block/'+this.block+'/html');
+
+			Polymer.getUserDataContent('template/'+Polymer.tid+'/_dz-block/'+this.block+'/html?id='+new Date().getTime()).then(html=>{
+				console.log('Start Create',html);
+
 				that.innerHTML = html;
 			});
-			if (this.editMode === "admin")
+			if (Polymer.editMode === "admin")
 				this.save();
 		},
 		save:function(){
+			let that = this;
 			document.addEventListener('save',e=>{
-				
+				console.log('Block Save');
+				let content = that.innerHTML;
+				Polymer.fileManager.saveUserData('template/'+Polymer.tid+'/_dz-block/'+this.block+'/html',content);
 			});
 		},
-		loadScript:function(url){
-			const fileref=document.createElement('script');    
-			fileref.setAttribute("type","text/javascript");
-			fileref.setAttribute("src", url+"?id="+new Date().getTime());
-			document.getElementsByTagName("head")[0].appendChild(fileref);
-		},
-		getContent:function(url){
-        console.log('Query Url',url);
-        let that = this;
-
-        return new Promise(function (resolve, reject) {
-    
-          // if (url.indexOf("//")>=0){
-          //   that.getExternalContent(url).then(res=>resolve(res));
-          // } else {
-              fetch(url,{
-                "Access-Control-Allow-Origin" : "*" ,
-                "mode":"no-cors" 
-              }).then(function(response) {
-                  // When the page is loaded convert it to text
-                  console.log('Response',response);
-                  if (!response.ok)
-                    resolve('');
-                  else
-                    resolve(response.text());
-              }).catch(function(err) {
-                console.log('Err',err);
-                reject();
-              });
-          // }
-
-        });
-
-      },
-		postData:function(url, data) {
-			// Default options are marked with *
-			console.log('Post Data');
-			return new Promise(function (resolve, reject) {
-				fetch(url, {
-					body: JSON.stringify(data), // must match 'Content-Type' header
-					cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-					credentials: 'same-origin', // include, same-origin, *omit
-					headers: {
-					'user-agent': 'Mozilla/4.0 MDN Example',
-					'content-type': 'application/json'
-					},
-					method: 'POST', // *GET, POST, PUT, DELETE, etc.
-					mode: 'cors', // no-cors, cors, *same-origin
-					redirect: 'follow', // manual, *follow, error
-					referrer: 'no-referrer', // *client, no-referrer
-				})
-				.then(response => {
-					resolve(response.json());
-				}) // parses response to JSON
-			});
-			
-		}
 	});
 
 })();

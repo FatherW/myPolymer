@@ -1,13 +1,12 @@
 <link rel="import" href="../polymer/polymer.html">
-<link rel="import" href="../vaadin-dialog/vaadin-dialog.html">
-<link rel="import" href="dz-loader.html?id=sdfsdf">
+<link rel="import" href="../dz-dazzle/dz-block.html">
+
+<!-- <link rel="import" href="../vaadin-dialog/vaadin-dialog.html"> -->
+<!-- <link rel="import" href="dz-loader.html?id=sdsdfsdffsdf"> -->
 
 
 <dom-module id="dz-wrapper">
 
-	<template>
-        <style></style>
-    </template>
 </dom-module>
 
 <script>
@@ -23,11 +22,16 @@
 		},
 
 		created:function() {
-            Polymer.dzInit();
-
-        },
+            // Polymer.dzInit();
+				console.log('DZ Wrapper');
+        },	
         ready:function(){
-            Polymer.pageLoader(this.shadowRoot);
+            Polymer.pageLoader(this);
+
+			// this.querySelector('*').forEach(item=>{
+			// 	let style = window.getComputedStyle(item);
+			// 	console.log('Style',style);
+			// });
         },
 		login:function(){
 
