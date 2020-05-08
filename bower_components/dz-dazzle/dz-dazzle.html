@@ -71,6 +71,24 @@
 			// let editMode = store.get('editMode') || 'normal';
 			// let thisPage = decodeURIComponent(window.location.pathname).substring(window.location.pathname.indexOf('/') + 1) || 'index.html';
 			let that = this;
+			// let url = location.href;
+			// var vars = {};
+			// var parts = url.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+			// 	vars[key] = value;
+			// });
+			// console.log('URL',url,Polymer.dzLicense);
+	
+			if (Polymer.dzLicense['token'] !==""){
+				// this.token= vars['token'];
+				// console.log('This',this.token,Polymer.dataManager);
+				this._login();
+				// Polymer.dataManager.getToken(this.token).then(res=>{
+					
+				// });
+
+			}
+
+			// const myParam = urlParams.get('myParam');
 
 			customElements.whenDefined('vaadin-dialog').then(function() {
 				const shadow = that.shadowRoot;
@@ -78,6 +96,31 @@
 				dialog.renderer = function(root, dialog) {
 					root.innerHTML = '<dz-login></dz-login>';
 				};
+			});
+		},
+		_login: function () {
+			console.log('Login');
+			let shadow = this.shadowRoot;
+			let that = this;
+			let loginUrl = "https://d8fz9pfue5.execute-api.ap-northeast-1.amazonaws.com/prod/newMiscDazzleFunction";
+			let params = {
+				"action": "loginByToken", "token": Polymer.dzLicense['token']
+			};
+			Polymer.postData(loginUrl, params).then(res => {
+				if (res.code > 0) {
+					let uid = res.resolve['uid'];
+					let user = res.resolve;
+					user['thisPage'] = this.thisPage;
+					store.set('user', res.resolve);
+					store.set('editMode', 'admin');
+					store.set('thisPage', this.thisPage);
+					let token = that.generatePassword();
+					console.log('Res',res.resolve);
+					location.reload();
+				}
+				else {
+					alert('登入錯誤');
+				}
 			});
 		},
 		ready:function(){

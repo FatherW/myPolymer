@@ -13,6 +13,7 @@
     "@vaadin/vaadin-date-picker": "^4.0.8",
     "@vaadin/vaadin-upload": "^4.2.2",
     "@webcomponents/webcomponentsjs": "latest",
-    "aws-cli": "0.0.2"
+    "aws-cli": "0.0.2",
+    "git": "^0.1.5"
   }
 }

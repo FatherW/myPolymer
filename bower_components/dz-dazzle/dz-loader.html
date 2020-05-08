@@ -801,12 +801,12 @@
       let table = this.table;
       let that = this;
       let json = {
-        action: "addData",
-        index: this.uid,
-        type: table,
-        id: id,
-        body: data,
-      };
+        "action": "addData",
+        "index": this.uid,
+        "type": "table",
+        "id": id,
+        "body": data,
+      }; // 此处的addData方法可以增加或修改，会覆盖原有内容
       console.log(JSON.stringify(json));
       return new Promise(function (resolve, reject) {
         that.postData(that.dbUrl, json).then((result) => {
@@ -821,12 +821,12 @@
     }
     getToken(token) {
       let that = this;
-      let now = new Date().getTime();
+      // let now = new Date().getTime();
       let json = {
-        action: "getData",
-        index: "dazzle",
-        type: "token",
-        id: token,
+        "action": "getData",
+        "index": "dazzle",
+        "type": "token",
+        "id": token
       };
       console.log(json);
       return new Promise(function (resolve, reject) {
@@ -835,7 +835,12 @@
             resolve({});
           } else {
             console.log(result.resolve);
-            resolve(result.resolve);
+            let expiryDate= result.resolve['expiryDate'];
+            let now = new Date().getTime();
+            if (expiryDate<now)
+                reject();
+            else
+                resolve();
           }
         });
       });
@@ -845,16 +850,16 @@
       let that = this;
       let now = new Date().getTime();
       let json = {
-        action: "addData",
-        index: "dazzle",
-        type: "token",
-        id: token,
-        body: {
-          expiryDate: now + 6 * 3600 * 1000,
-          uid: uid,
-          id: token,
-          user: user,
-          createDate: now,
+        "action": "addData",
+        "index": "dazzle",
+        "type": "token",
+        "id": token,   // 测试用例 c45f480353d2c6ae28a2
+        body: {        // 测试时 body 可以为空 返回 "code": 30002,
+          "expiryDate": now + 6 * 3600 * 1000,
+          "uid": uid,
+          "id": token,
+          "user": user,
+          "createDate": now,
         },
       };
       console.log(json);
@@ -869,6 +874,7 @@
         });
       });
     }
+
 
     getAllTokenData() {
       let table = this.table;
