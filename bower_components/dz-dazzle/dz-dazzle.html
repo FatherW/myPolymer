@@ -1,6 +1,7 @@
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../vaadin-dialog/vaadin-dialog.html">
 <link rel="import" href="../dz-dazzle/dz-login.html">
+<link rel="import" href="../dz-dazzle/dz-history.html">
 
 <dom-module id="login-dialog-overlay-styles" theme-for="vaadin-dialog-overlay">
 	<template>
@@ -48,6 +49,7 @@
 		</style>
 		<vaadin-dialog aria-label="simple" id="login"  theme="login"></vaadin-dialog>
 		<div id="dz-logo" on-click="login"></div>
+		<vaadin-dialog id="dialog"></vaadin-dialog>
 	</template>
 </dom-module>
 
@@ -64,6 +66,9 @@
 		},
 
 		created:function() {
+
+
+
 			// super.ready();
 			// store.clearAll();
 			// let user = store.get('user') || null;
@@ -90,13 +95,10 @@
 
 			// const myParam = urlParams.get('myParam');
 
-			customElements.whenDefined('vaadin-dialog').then(function() {
-				const shadow = that.shadowRoot;
-				const dialog = shadow.querySelector('vaadin-dialog#login');
-				dialog.renderer = function(root, dialog) {
-					root.innerHTML = '<dz-login></dz-login>';
-				};
-			});
+
+
+
+
 		},
 		_login: function () {
 			console.log('Login');
@@ -112,11 +114,12 @@
 					let user = res.resolve;
 					user['thisPage'] = this.thisPage;
 					store.set('user', res.resolve);
-					store.set('editMode', 'admin');
+					// store.set('editMode', 'admin');
 					store.set('thisPage', this.thisPage);
-					let token = that.generatePassword();
 					console.log('Res',res.resolve);
-					location.reload();
+					// location.reload();
+					let dialog=this.shadowRoot.querySelector('#dialog');
+					Polymer.popup(dialog,'dz-dazzle','dz-history','90%','90%');					
 				}
 				else {
 					alert('登入錯誤');
@@ -147,13 +150,17 @@
 					}
 				});
 			}
+			let json2 = { 'component': 'dz-history', 'width': '90%', 'height': '80%' };
+                button2.addEventListener('click', e => {
+                    document.dispatchEvent(new CustomEvent('dz-popup', { 'detail': json2 }));
+                });
 
 		},
 		login:function(){
 			const shadow = this.shadowRoot;
-
 			const dialog = shadow.querySelector('vaadin-dialog#login');
-			dialog.opened = true;		
+			// dialog.opened = true;		
+			Polymer.popup(dialog,'dz-dazzle','dz-login','480px','800px');
 		}
 	});
 

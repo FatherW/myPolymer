@@ -805,8 +805,8 @@
         "index": this.uid,
         "type": "table",
         "id": id,
-        "body": data,
-      }; // 此处的addData方法可以增加或修改，会覆盖原有内容
+        "body": data
+      };  // 此处的addData方法可以增加或修改，会覆盖原有内容
       console.log(JSON.stringify(json));
       return new Promise(function (resolve, reject) {
         that.postData(that.dbUrl, json).then((result) => {
@@ -821,7 +821,7 @@
     }
     getToken(token) {
       let that = this;
-      // let now = new Date().getTime();
+      let now = new Date().getTime();
       let json = {
         "action": "getData",
         "index": "dazzle",
@@ -859,8 +859,8 @@
           "uid": uid,
           "id": token,
           "user": user,
-          "createDate": now,
-        },
+          "createDate": now
+        }
       };
       console.log(json);
       return new Promise(function (resolve, reject) {
@@ -874,7 +874,6 @@
         });
       });
     }
-
 
     getAllTokenData() {
       let table = this.table;
@@ -1193,6 +1192,25 @@
     }
   };
 
+  Polymer.popup=function(dialog,folder,component,width,height){
+
+          customElements.whenDefined(component).then(function() {
+            dialog.renderer = function(root, dialog) {
+              root.innerHTML = '<'+component+'></'+component+'>';
+            };
+            dialog.resizable = true;
+            dialog.resize(width,height);
+            dialog.opened = true;		 
+            // Polymer.activeDialog = dialog;   
+          });
+      
+      }
+      Polymer.closeDialog=function(dialog){
+
+        dialog.opened = false;
+      }
+
+
   Polymer.dzInit = function () {
     let editMode = store.get("editMode") || "normal";
     let thisPage =
@@ -1203,7 +1221,8 @@
     this.editMode = editMode;
     if (editMode === "admin") {
       let user = store.get("user") || null;
-
+      console.log('User',user);
+      user['userBucket'] = Polymer.dzLicense['userBucket'];
       this.fileManager = new AwsPackage(user);
       this.dataManager = new DataPackage("_info");
       this.user = user;

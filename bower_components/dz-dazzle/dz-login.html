@@ -850,9 +850,6 @@
 				console.log('Login');
 				let shadow = this.shadowRoot;
 				let that = this;
-				let now = new Date().getTime();
-				console.log("Time", now);
-				console.log("Time", now + 6 * 3600 * 1000);
 				let uid = shadow.querySelector('#uid').value;
 				let password = shadow.querySelector('#password').value;
 				let fileManager = new DataPackage('token');
